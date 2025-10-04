@@ -1,8 +1,28 @@
 # Apollo 13 Interactive Experience - Sitemap Specification
 
-**Version**: 1.0
+**Version**: 1.1
 **Date**: 2025-10-04
-**Purpose**: Standardized navigation structure for all pages
+**Purpose**: Standardized navigation structure and scoring system integration for all pages
+
+---
+
+## Scoring System Overview
+
+The Apollo 13 Interactive Experience includes a scoring system that tracks user decisions and compares them to NASA's historical choices. This sitemap identifies which pages affect scoring and which display score results.
+
+### Score-Impacting Pages (4 Decision Slides)
+- **Slide 02**: Freeze or Squeeze (Correct: `squeeze`)
+- **Slide 05**: Turn Around Decision (Correct: `freereturn`)
+- **Slide 09**: CO2 Mailbox (Correct: `buildmailbox`)
+- **Slide 12**: Power Conservation (Correct: `shutdown`)
+
+### Score Display Pages
+- **Slide 24**: Completion page (shows score badge, rank, comparison table, share form)
+
+### Score Sharing Pages
+- **index.html**: Landing page with dual mode:
+  - **Default mode**: Standard landing page with "Start Mission" CTA
+  - **Shared score mode**: Displays celebration card when visited via shared URL with hash parameters (`#name=...&troop=...&score=...&total=...&rank=...`)
 
 ---
 
@@ -34,6 +54,12 @@ All pages include:
 ### Landing Page
 **File**: `index.html`
 **Path**: `/index.html`
+**Scoring Role**: 🎯 **Score Sharing Landing Page**
+- **Default Mode**: Standard landing page for new users
+- **Shared Score Mode**: Displays celebration card when URL contains score parameters
+- **URL Format**: `/#name=Scout&troop=Troop%20123&score=3&total=4&rank=Flight%20Director`
+- **Functionality**: Parses hash parameters to display another scout's achievement and challenge visitors to match or beat their score
+
 **Links**:
 - Top Nav: N/A (no nav bar on landing page)
 - Primary CTA: `🚀 Start Mission` → `slides/01-launch.html`
@@ -94,6 +120,11 @@ All pages include:
 **File**: `slides/02-freeze-squeeze.html`
 **Type**: Decision
 **Data ID**: `data-slide-id="2"`
+**Scoring Impact**: ⭐ **DECISION SLIDE** (1 of 4)
+- **Correct Answer**: `squeeze` (Move to Lunar Module)
+- **Decision Tracked**: User choice saved to localStorage as `decisions['2']`
+- **Score Weight**: 25% of total score (1 of 4 decisions)
+
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
@@ -136,6 +167,11 @@ All pages include:
 **File**: `slides/05-turn-around.html`
 **Type**: Decision
 **Data ID**: `data-slide-id="5"`
+**Scoring Impact**: ⭐ **DECISION SLIDE** (2 of 4)
+- **Correct Answer**: `freereturn` (Free-Return Trajectory using Moon's gravity)
+- **Decision Tracked**: User choice saved to localStorage as `decisions['5']`
+- **Score Weight**: 25% of total score (1 of 4 decisions)
+
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
@@ -192,6 +228,11 @@ All pages include:
 **File**: `slides/09-co2-mailbox.html`
 **Type**: Decision
 **Data ID**: `data-slide-id="9"`
+**Scoring Impact**: ⭐ **DECISION SLIDE** (3 of 4)
+- **Correct Answer**: `buildmailbox` (Build improvised CO2 scrubber adapter)
+- **Decision Tracked**: User choice saved to localStorage as `decisions['9']`
+- **Score Weight**: 25% of total score (1 of 4 decisions)
+
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
@@ -234,6 +275,11 @@ All pages include:
 **File**: `slides/12-power-conservation.html`
 **Type**: Decision
 **Data ID**: `data-slide-id="12"`
+**Scoring Impact**: ⭐ **DECISION SLIDE** (4 of 4)
+- **Correct Answer**: `shutdown` (Shutdown Command Module to preserve batteries)
+- **Decision Tracked**: User choice saved to localStorage as `decisions['12']`
+- **Score Weight**: 25% of total score (1 of 4 decisions)
+
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
@@ -402,6 +448,17 @@ All pages include:
 **File**: `slides/24-completion.html`
 **Type**: Completion
 **Data ID**: `data-slide-id="24"`
+**Scoring Role**: 🏆 **Score Display & Sharing Page**
+- **Score Calculation**: Compares user's 4 decisions to NASA's historical choices
+- **Rank Assignment**: Assigns rank based on percentage (Mission Commander, Flight Director, Flight Controller, Ground Crew)
+- **Score Display**: Shows rank emoji, title, score (X/4), and personalized message
+- **Comparison Table**: Shows user's choice vs NASA's choice for each decision with color coding
+- **Share Functionality**:
+  - Input form for scout name and troop number
+  - Generates shareable URL with hash parameters
+  - Copy to clipboard or native share API
+  - Example URL: `/#name=Scout&troop=Troop%20123&score=3&total=4&rank=Flight%20Director`
+
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
@@ -430,6 +487,55 @@ For each page, verify:
 - [ ] Next button links to correct slide
 - [ ] Previous/Next button text follows standard format
 - [ ] `data-slide-id` matches slide number
+
+---
+
+## Scoring System Quick Reference
+
+### Decision Slides (Score Impact)
+
+| Slide | File | Decision Name | Correct Answer | Weight |
+|-------|------|---------------|----------------|--------|
+| 02 | `02-freeze-squeeze.html` | Freeze or Squeeze | `squeeze` | 25% |
+| 05 | `05-turn-around.html` | Turn Around Decision | `freereturn` | 25% |
+| 09 | `09-co2-mailbox.html` | CO2 Mailbox | `buildmailbox` | 25% |
+| 12 | `12-power-conservation.html` | Power Conservation | `shutdown` | 25% |
+
+### Score Ranks
+
+| Score | Rank | Emoji | Description |
+|-------|------|-------|-------------|
+| 4/4 (100%) | Mission Commander | 🏆 | Perfect score - matched all NASA decisions |
+| 3/4 (75-99%) | Flight Director | ⭐ | Excellent - strong NASA-like instincts |
+| 2/4 (50-74%) | Flight Controller | 🎯 | Good - helped bring crew home |
+| 0-1/4 (0-49%) | Ground Crew | 📡 | Review mission to learn NASA's decisions |
+
+### Score-Related Pages
+
+| Page | Role | Functionality |
+|------|------|---------------|
+| **index.html** | Score Sharing Landing | Dual mode: Default landing OR celebration card for shared scores |
+| **slides/24-completion.html** | Score Display & Generation | Shows score, rank, comparison table, generates shareable URL |
+
+### localStorage Keys
+
+| Key | Data Type | Purpose |
+|-----|-----------|---------|
+| `decisions` | Object | Stores user choices: `{slideId: {choice, timestamp}}` |
+| `visitedSlides` | Array | Tracks progress: `["1", "2", "3", ...]` |
+
+### Shared URL Format
+
+```
+https://robgruhl.github.io/apollo-mission/#name=Scout&troop=Troop%20123&score=3&total=4&rank=Flight%20Director
+```
+
+**Parameters**:
+- `name` - Scout's first name (URL encoded)
+- `troop` - Troop number/name (URL encoded)
+- `score` - Correct decisions (0-4)
+- `total` - Total decisions (always 4)
+- `rank` - Achieved rank (URL encoded)
 
 ---
 
