@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProgressTracking();
     initKeyboardNav();
     initExpandables();
+    initDecisionTracker();
 });
 
 /**
@@ -60,6 +61,12 @@ function initDecisions() {
             const choice = option.dataset.option;
             if (slideId && choice) {
                 saveDecision(slideId, choice);
+
+                // Show alignment indicator
+                showAlignmentFeedback(slideId, choice);
+
+                // Update decision tracker
+                updateDecisionTracker();
             }
         });
     });
@@ -331,6 +338,199 @@ function startNewMission() {
     // Clear URL hash
     window.location.hash = '';
     window.location.href = 'slides/01-launch.html';
+}
+
+/**
+ * PROGRESSIVE FEEDBACK SYSTEM
+ */
+
+/**
+ * Show alignment feedback after decision is made
+ */
+function showAlignmentFeedback(slideId, userChoice) {
+    const alignmentIndicator = document.getElementById('alignmentIndicator');
+    if (!alignmentIndicator) return;
+
+    const correctChoice = CORRECT_ANSWERS[slideId];
+    const isMatch = userChoice === correctChoice;
+
+    // Show the appropriate feedback
+    if (isMatch) {
+        alignmentIndicator.innerHTML = `
+            <div class="alignment-badge">
+                ✅ <strong>Your choice matches NASA!</strong>
+            </div>
+            <p>You and Mission Control are thinking alike. This was the decision that helped bring the crew home safely.</p>
+        `;
+        alignmentIndicator.className = 'alignment-indicator matched';
+    } else {
+        const decisionName = DECISION_NAMES[slideId];
+        alignmentIndicator.innerHTML = `
+            <div class="alignment-badge">
+                ⚠️ <strong>NASA chose differently</strong>
+            </div>
+            <p>While your choice had merit, NASA's actual decision on "${decisionName}" was different. You'll see the comparison at mission completion.</p>
+        `;
+        alignmentIndicator.className = 'alignment-indicator different';
+    }
+
+    alignmentIndicator.style.display = 'block';
+}
+
+/**
+ * Initialize decision tracker in navigation
+ */
+function initDecisionTracker() {
+    const tracker = document.getElementById('decisionTracker');
+    if (!tracker) return;
+
+    // Check if any decisions have been made
+    const decisions = getDecisions();
+    const hasDecisions = Object.keys(decisions).length > 0;
+
+    if (hasDecisions) {
+        tracker.style.display = 'flex';
+        updateDecisionTracker();
+    }
+}
+
+/**
+ * Update decision tracker badges
+ */
+function updateDecisionTracker() {
+    const tracker = document.getElementById('decisionTracker');
+    if (!tracker) return;
+
+    const decisions = getDecisions();
+
+    // Show tracker once first decision is made
+    if (Object.keys(decisions).length > 0) {
+        tracker.style.display = 'flex';
+    }
+
+    // Update each badge
+    for (const slideId of ['2', '5', '9', '12']) {
+        const badge = document.querySelector(`[data-decision="${slideId}"]`);
+        if (!badge) continue;
+
+        const decision = decisions[slideId];
+        const decisionName = DECISION_NAMES[slideId];
+
+        if (decision) {
+            const correctChoice = CORRECT_ANSWERS[slideId];
+            const isMatch = decision.choice === correctChoice;
+
+            if (isMatch) {
+                badge.textContent = '🏆';
+                badge.className = 'badge matched';
+                badge.title = `${decisionName}: Matched NASA ✅`;
+            } else {
+                badge.textContent = '📊';
+                badge.className = 'badge different';
+                badge.title = `${decisionName}: Different choice ⚠️`;
+            }
+        } else {
+            // Check if this decision is in the future or not yet reached
+            const currentSlide = parseInt(document.body.dataset.slideId) || 1;
+            const decisionSlide = parseInt(slideId);
+
+            if (currentSlide >= decisionSlide) {
+                badge.textContent = '⚪';
+                badge.className = 'badge pending';
+                badge.title = `${decisionName}: Not completed`;
+            } else {
+                badge.textContent = '⚪';
+                badge.className = 'badge pending';
+                badge.title = `${decisionName}: Coming soon`;
+            }
+        }
+    }
+}
+
+/**
+ * Toggle score summary modal
+ */
+function toggleScoreSummary() {
+    const modal = document.getElementById('scoreSummary');
+    if (!modal) return;
+
+    const isVisible = modal.style.display === 'flex';
+
+    if (isVisible) {
+        modal.style.display = 'none';
+    } else {
+        // Update summary content
+        updateScoreSummary();
+        modal.style.display = 'flex';
+    }
+}
+
+/**
+ * Update score summary modal content
+ */
+function updateScoreSummary() {
+    const decisions = getDecisions();
+    const decisionCount = Object.keys(decisions).length;
+    let matchCount = 0;
+
+    for (const [slideId, decision] of Object.entries(decisions)) {
+        const correctChoice = CORRECT_ANSWERS[slideId];
+        if (decision.choice === correctChoice) {
+            matchCount++;
+        }
+    }
+
+    // Update stats
+    const matchedStat = document.querySelector('.summary-stats .stat-value');
+    if (matchedStat) {
+        matchedStat.textContent = `${matchCount}/${decisionCount}`;
+    }
+
+    const totalStat = document.querySelectorAll('.summary-stats .stat-value')[1];
+    if (totalStat) {
+        totalStat.textContent = `${decisionCount}/4`;
+    }
+
+    // Update decision list
+    const decisionsList = document.querySelector('.decisions-list');
+    if (!decisionsList) return;
+
+    decisionsList.innerHTML = '';
+
+    for (const slideId of ['2', '5', '9', '12']) {
+        const decision = decisions[slideId];
+        const decisionName = DECISION_NAMES[slideId];
+        const item = document.createElement('div');
+
+        if (decision) {
+            const correctChoice = CORRECT_ANSWERS[slideId];
+            const isMatch = decision.choice === correctChoice;
+
+            item.className = `decision-item ${isMatch ? 'matched' : 'different'}`;
+            item.innerHTML = `
+                <span class="icon">${isMatch ? '✅' : '⚠️'}</span>
+                <span class="name">${decisionName}</span>
+            `;
+        } else {
+            item.className = 'decision-item pending';
+            item.innerHTML = `
+                <span class="icon">⚪</span>
+                <span class="name">${decisionName}</span>
+            `;
+        }
+
+        decisionsList.appendChild(item);
+    }
+}
+
+/**
+ * Close score summary modal
+ */
+function closeSummary() {
+    const modal = document.getElementById('scoreSummary');
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
 
 /**
