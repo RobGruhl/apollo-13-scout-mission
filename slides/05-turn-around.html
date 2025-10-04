@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 Decision #1: Turn around and blast home, or use Moon's gravity in a free-return trajectory?">
+    <title>Apollo 13 - Decision: Turn Around or Free-Return?</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="5">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 5 of 24</span>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="slide-container">
+        <article class="slide decision">
+            <header class="slide-header">
+                <span class="slide-type">🚨 Decision Point #1</span>
+                <h1>Turn Around or Free-Return?</h1>
+                <time class="timestamp">GET 61:29:42 | Post-Explosion Crisis</time>
+            </header>
+
+            <!-- The Situation -->
+            <section class="situation">
+                <h2>⚠️ The Situation</h2>
+                <ul>
+                    <li>Oxygen tank explosion 6 hours ago at 200,000 miles from Earth</li>
+                    <li>Currently traveling ~24,000 mph AWAY from Earth toward the Moon</li>
+                    <li>Service module damaged, Command Module engine operation uncertain</li>
+                    <li>Fuel cells offline, running on limited backup batteries</li>
+                    <li>Must decide route home NOW: direct reversal or loop around Moon</li>
+                </ul>
+            </section>
+
+            <!-- Decision Options -->
+            <section class="options">
+                <!-- Option 1: TURN AROUND -->
+                <div class="option" data-option="turnaround">
+                    <h3>🔄 TURN AROUND</h3>
+                    <p class="option-subtitle">Blast retrograde to stop and reverse direction</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Fastest route home (shortest total time)</li>
+                                <li>Direct path back to Earth</li>
+                                <li>Familiar trajectory calculations</li>
+                                <li>No need to wait for Moon flyby</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Requires massive fuel burn</li>
+                                <li>Risks explosion of already damaged systems</li>
+                                <li>Burns through all LM descent fuel</li>
+                                <li>May damage weakened spacecraft structure further</li>
+                                <li>Untested maneuver with damaged systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option 2: FREE-RETURN -->
+                <div class="option" data-option="freereturn">
+                    <h3>🌙 FREE-RETURN</h3>
+                    <p class="option-subtitle">Use Moon's gravity to slingshot back</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <figure style="margin: 1.5rem 0;">
+                            <img src="../assets/images/slide05_turn_or_free_return.png" alt="Free-return trajectory diagram showing path around the Moon" loading="lazy">
+                            <figcaption>Free-return trajectory uses lunar gravity</figcaption>
+                        </figure>
+
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Safer for damaged systems</li>
+                                <li>Uses significantly less fuel</li>
+                                <li>Proven orbital mechanics (tested on Apollo 8, 10)</li>
+                                <li>Uses undamaged LM descent engine</li>
+                                <li>Conserves resources for course corrections</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Takes much longer (must loop around Moon first)</li>
+                                <li>Crew waits 4+ days in damaged spacecraft</li>
+                                <li>More time for additional systems to fail</li>
+                                <li>Psychological stress of waiting</li>
+                                <li>More consumables needed (oxygen, water, power)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Decision Prompt -->
+            <div style="background: var(--nasa-blue); color: white; padding: 2rem; text-align: center; border-radius: 8px; margin: 2rem 0;">
+                <h2 style="color: white; font-size: 1.5rem; margin: 0;">🤔 WHAT SHOULD THE CREW DO?</h2>
+            </div>
+
+            <!-- Historical Decision (Hidden until choice made) -->
+            <section class="decision-result hidden" id="result">
+                <h2>NASA's Decision</h2>
+                <div class="result-content">
+                    <p class="result-choice">✓ FREE-RETURN TRAJECTORY</p>
+                    <p>
+                        At <strong>GET 61:29:42</strong>, the crew fired the Lunar Module descent engine for 31 seconds to put Apollo 13 back on a free-return trajectory - a path that would loop behind the Moon and use lunar gravity to slingshot them back to Earth.
+                    </p>
+                    <p>
+                        <strong>Why NASA chose FREE-RETURN:</strong>
+                    </p>
+                    <ul style="margin: 1rem 0;">
+                        <li>Safer approach that wouldn't stress already damaged systems</li>
+                        <li>Used the undamaged LM descent engine instead of the risky Service Module engine</li>
+                        <li>Conserved critical fuel for later course corrections</li>
+                        <li>Proven technique from previous Apollo missions</li>
+                        <li>Required patience, but minimized risk of catastrophic failure</li>
+                    </ul>
+                    <blockquote>
+                        "We're not going to try some crazy stunt to get them home faster. We're going to do this right, step by step, and bring them back alive."
+                        <cite>— Gene Kranz, Flight Director</cite>
+                    </blockquote>
+                    <p style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                        <strong>Outcome:</strong> The free-return trajectory worked perfectly. Apollo 13 swung around the Moon and headed back toward Earth, giving the crew a chance at survival. The conservative choice saved lives.
+                    </p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="slide-nav">
+        <a href="04-explosion.html" class="btn-prev">← Previous: The Explosion</a>
+        <a href="02-freeze-squeeze.html" class="btn-next">Next: Decision - Freeze or Squeeze? →</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
