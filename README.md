@@ -3,7 +3,7 @@
 > Experience NASA's greatest rescue mission through interactive storytelling and critical decision-making.
 
 **Status**: ✅ Complete (24 slides)
-**Live Site**: https://robgruhl.github.io/apollo-mission/
+**Live Site**: https://robgruhl.github.io/apollo-13-scout-mission/
 **Target Event**: 2026 Elevate Scout Jamboree - NASA Tent, Apollo Table
 **Presented by**: Ed Gruhl, Scout District Commissioner, Glacial Trails District
 
@@ -52,7 +52,7 @@ git push origin interactive-game
 # GitHub Pages auto-deploys in 1-2 minutes
 ```
 
-**Live URL**: https://robgruhl.github.io/apollo-mission/
+**Live URL**: https://robgruhl.github.io/apollo-13-scout-mission/
 
 ---
 
@@ -177,7 +177,7 @@ Scouts can share their scores via URL: scouts receive a shareable link with thei
 
 **URL for QR Code**:
 ```
-https://robgruhl.github.io/apollo-mission/
+https://robgruhl.github.io/apollo-13-scout-mission/
 ```
 
 **Generate QR Code**:
