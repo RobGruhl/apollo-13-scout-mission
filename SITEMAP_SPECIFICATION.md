@@ -527,7 +527,7 @@ For each page, verify:
 ### Shared URL Format
 
 ```
-https://robgruhl.github.io/apollo-mission/#name=Scout&troop=Troop%20123&score=3&total=4&rank=Flight%20Director
+https://robgruhl.github.io/apollo-13-scout-mission/#name=Scout&troop=Troop%20123&score=3&total=4&rank=Flight%20Director
 ```
 
 **Parameters**:

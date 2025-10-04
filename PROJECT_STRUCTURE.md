@@ -133,4 +133,4 @@ apollo-mission/
 
 **Last Updated**: 2025-10-04
 **Repository**: https://github.com/RobGruhl/apollo-13-scout-mission
-**Live Site**: https://robgruhl.github.io/apollo-mission/
+**Live Site**: https://robgruhl.github.io/apollo-13-scout-mission/
