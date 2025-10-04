@@ -52,10 +52,10 @@ git push origin interactive-game
 
 ```bash
 # Verify all navigation links
-./verify-navigation.sh
+./scripts/verify-navigation.sh
 
 # Verify button text format
-./verify-button-text.sh
+./scripts/verify-button-text.sh
 ```
 
 ---
@@ -74,6 +74,9 @@ git push origin interactive-game
 │   └── images/            # Web-optimized images
 ├── slides/
 │   └── 01-24.html         # All 24 interactive slides
+├── content/               # Source content (text files by type)
+├── scripts/               # Testing and verification scripts
+├── source/                # Original materials and source files
 ├── docs/archive/          # Historical planning documents
 ├── CLAUDE.md              # This file
 ├── README.md              # Project overview
@@ -232,8 +235,8 @@ Before deploying changes:
 - [ ] Verify all navigation links work
 - [ ] Check images load (WebP with fallbacks)
 - [ ] Test keyboard navigation (Arrow keys)
-- [ ] Run `./verify-navigation.sh` (all links)
-- [ ] Run `./verify-button-text.sh` (button format)
+- [ ] Run `./scripts/verify-navigation.sh` (all links)
+- [ ] Run `./scripts/verify-button-text.sh` (button format)
 - [ ] Validate HTML (validator.w3.org)
 - [ ] Run Lighthouse audit (target >90)
 

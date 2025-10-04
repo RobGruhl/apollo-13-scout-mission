@@ -34,3 +34,15 @@ Temporary Items
 
 # Logs
 *.log
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Temporary files
+*.tmp
+*.temp

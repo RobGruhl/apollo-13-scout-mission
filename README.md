@@ -112,6 +112,9 @@ Scouts can share their scores via URL: scouts receive a shareable link with thei
 │   ├── 02-freeze-squeeze.html  # Decision: Freeze or Squeeze?
 │   ├── 03-spacecraft.html # Info: Spacecraft Configuration
 │   └── [21 more slides...]
+├── content/               # Source content (text files by type)
+├── scripts/               # Testing and verification scripts
+├── source/                # Original materials and source files
 ├── docs/
 │   └── archive/           # Historical planning documents
 ├── CLAUDE.md              # Developer guidance for Claude Code
@@ -187,10 +190,10 @@ https://robgruhl.github.io/apollo-mission/
 
 ## Testing
 
-**Verification Scripts** (in root):
+**Verification Scripts**:
 ```bash
-./verify-navigation.sh      # Check all navigation links
-./verify-button-text.sh     # Check button text format
+./scripts/verify-navigation.sh      # Check all navigation links
+./scripts/verify-button-text.sh     # Check button text format
 ```
 
 **Manual Testing Checklist**:
