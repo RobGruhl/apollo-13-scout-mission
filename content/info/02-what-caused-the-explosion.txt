@@ -1,203 +1,247 @@
 INFO SLIDE #2
 WHAT CAUSED THE EXPLOSION?
-The Chain of Events That Nearly Killed Three Men
+Oxygen Tank #2 — A Chain of Small Mistakes
 
 === THE SIMPLE ANSWER ===
 Oxygen tank #2 in the Service Module exploded at GET 55:54:53
 
 But WHY did it explode?
-The real answer: A series of small mistakes over many months.
-
-=== THE OXYGEN TANKS ===
-Design Purpose:
-• Store oxygen as supercold liquid (-297°F / -183°C)
-• Feed fuel cells to generate electricity
-• Provide breathing oxygen for crew
-• Two tanks for redundancy
-
-Tank Specifications:
-• Highly insulated spheres
-• Stored at high pressure (900+ psi)
-• Internal heater to boil oxygen into gas
-• Stirring fans to prevent stratification
-• Thermostatic switches to control temperature
-
-Should be perfectly safe... but...
+The real answer: Three mistakes over two years.
 
 === MISTAKE #1: THE DROP (1968) ===
 During Manufacturing:
-• Oxygen tank #2 installed in Service Module
-• During removal for modification: DROPPED 2 inches
-• Technicians inspected exterior: looked fine
+
+What Happened:
+• Oxygen Tank #2 was dropped about 2 inches
+• Happened during removal before it was installed in Apollo 13's Service Module
+• This likely damaged its fill/drain line inside
+• Workers inspected the outside: looked fine
 • Internal damage NOT detected
-• Jarring may have loosened components inside
 
-Result: Potential internal damage went unnoticed
+The Problem:
+• Fill/drain system probably bent or cracked
+• Would cause trouble later during testing
+• But no one knew yet
 
-=== MISTAKE #2: DESIGN CHANGE (1965) ===
-The Voltage Problem:
-• Original design: 28-volt system
-• NASA changed to 65-volt system for better performance
-• MOST components upgraded to 65 volts
-• BUT: Thermostatic switches NOT upgraded (still rated for 28V)
+Result: Hidden damage went unnoticed
+
+=== MISTAKE #2: THE DESIGN CHANGE (1965) ===
+The Voltage Mismatch:
+
+Original Design:
+• All spacecraft systems ran on 28 volts
+• Thermostatic switches designed for 28 volts
+• Everything matched and worked safely
+
+NASA's Change:
+• Upgraded ground test equipment to 65 volts
+• More powerful, better for testing
+• MOST components upgraded to handle 65 volts
+• BUT: Tiny thermostat switches NOT upgraded (still rated for 28V)
 
 Why It Mattered:
-• Higher voltage = more current = more heat
+• Higher voltage = more heat in switches
 • Switches designed for 28V now carrying 65V
-• Switches could fuse shut if overheated
+• If they got too hot, they could weld shut
+• Then they couldn't turn off the heaters!
 
 Result: Safety system compromised
 
 === MISTAKE #3: THE TESTING INCIDENT (March 1970) ===
-Pre-Launch Ground Test:
-• Filling tanks with oxygen for test
-• Time to drain tank #2 after test
-• Normal drain valve wouldn't work (damaged from drop?)
-• Engineers improvised: Used HEATERS to boil off oxygen
-• Heaters ran for 8 HOURS continuously
+Pre-Launch Ground Test (CDDT):
 
-The Problem:
-• Temperature inside tank reached ~1000°F (540°C)
-• Far above safe limits (normal: ~80°F max)
-• Thermostatic switches fused shut from heat
-• Teflon insulation on wiring BURNED and peeled
-• Exposed bare wires inside oxygen-rich environment
+The Test:
+• March 1970 - About one month before launch
+• Fill oxygen tank for countdown test
+• Time to drain tank after test is done
+• Normal drain valve wouldn't work (damaged from drop?)
+
+The "Solution":
+• Workers couldn't drain tank normally
+• So they used heaters and fans to boil off the oxygen
+• Ran ground power at ~65 volts
+• Left heaters running for about 8 HOURS to empty tank
+
+What Actually Happened:
+• Temperature inside tank reached ~1,000°F (540°C!)
+• That's hot enough to melt aluminum
+• But temperature gauge only read up to 85°F
+• Workers saw 85°F and thought everything was fine
+• Real temperature was 12× hotter than gauge could show!
+
+The Damage:
+• Thermostat switches welded shut from extreme heat
+• Teflon wire insulation melted and burned off
+• Bare electrical wires exposed inside tank
+• Pure oxygen environment (extremely flammable)
+• Bomb waiting to explode
 
 Warning Signs Missed:
-• Technicians noted unusual readings
-• But didn't understand significance
-• Tank passed pressure tests
-• Exterior looked fine
+• Unusual readings during test
+• But technicians didn't understand what they meant
+• Tank passed pressure tests (pressure was fine)
+• Exterior looked normal
 • Cleared for flight
 
-Result: Bomb waiting to explode
+Result: Damaged tank loaded onto Apollo 13
 
-=== THE FATEFUL MOMENT ===
-April 13, 1970 - GET 55:54:53
+=== THE EXPLOSION (April 13, 1970) ===
+GET 55:54:53 — Routine Request, Catastrophic Result:
 
 Mission Control's Request:
 "We'd like you to stir up your cryo tanks."
 
 Standard Procedure:
-• Stir oxygen to get accurate quantity readings
-• Done dozens of times on previous missions
+• Stir oxygen fans to get accurate readings
+• Done many times on every mission
 • Should take 10 seconds
+• Completely routine
 
 What Happened:
-1. Swigert flips switch to activate tank #2 fans
-2. Fans turn on, electricity flows
-3. Current passes through DAMAGED WIRING (exposed from overheating)
-4. Spark ignites in oxygen-rich environment
-5. EXPLOSION rips through tank
-6. Blast blows off 13-foot panel
-7. Damages tank #1 (now leaking)
-8. Fuel cells fail (need oxygen)
-9. Spacecraft crippled
+1. Jack Swigert flips switch to activate Tank #2 fans
+2. Electricity flows through DAMAGED WIRING
+3. Bare wires spark inside tank
+4. Spark ignites in pure oxygen environment
+5. Fire spreads instantly (oxygen makes everything burn)
+6. Pressure builds rapidly
+7. EXPLOSION rips through tank
+8. Blast blows off entire 13-foot panel from Service Module
+9. Damages Tank #1 (now leaking oxygen)
+10. Fuel cells fail (need oxygen to make power)
+11. Spacecraft crippled 200,000 miles from Earth
 
-=== THE EXPLOSION PHYSICS ===
-What Made It So Destructive:
+The Physics:
+• Pure oxygen makes fire burn 10× hotter and faster
+• 900+ psi pressure released like bomb
+• Explosion visible through windows ("sparklies")
+• Oxygen venting into space like jet
+• Spacecraft tumbling from blast
 
-Pure Oxygen Environment:
-• Oxygen makes everything burn MUCH hotter and faster
-• Even metals burn in pure oxygen
-• Small spark = massive fire
+=== THE TIMELINE ===
+How Three Mistakes Combined:
 
-High Pressure:
-• 900+ psi stored pressure
-• Explosion released like bomb
-• Pressure wave shattered structure
+1968: Tank dropped → Fill line damaged
+1965: Voltage upgrade → Switches can't handle heat
+March 1970: 8-hour heater test → Wiring burned
+April 13, 1970: Routine stir → EXPLOSION
 
-Structural Damage:
-• Entire panel (13 feet) ripped off
-• Internal components exposed to space
-• Oxygen venting into vacuum
-• Debris field created around spacecraft
+Any ONE mistake prevented = no explosion
+All three mistakes together = disaster
 
-=== THE DAMAGE ASSESSMENT ===
+=== THE DAMAGE ===
+What the Explosion Destroyed:
+
 Service Module:
-❌ Oxygen tank #2: Destroyed (exploded)
-❌ Oxygen tank #1: Damaged, leaking
-❌ Fuel cell 1: Offline (no oxygen)
-❌ Fuel cell 2: Offline (no oxygen)
-❌ Fuel cell 3: Offline (no oxygen)
-❌ Exterior panel: Blown off
+❌ Oxygen Tank #2: Completely destroyed (exploded)
+❌ Oxygen Tank #1: Damaged, leaking rapidly
+❌ Fuel Cell 1: Offline (no oxygen to make power)
+❌ Fuel Cell 2: Offline (no oxygen to make power)
+❌ Fuel Cell 3: Offline (no oxygen to make power)
+❌ Side panel: Entire 13-foot section blown off
 ❌ High-gain antenna: Damaged
-⚠️ Main engine (SPS): Unknown condition, unsafe to use
+⚠️ Main engine (SPS): Unknown damage, unsafe to use
 
 Command Module:
-⚠️ Battery power only (fuel cells dead)
-⚠️ Oxygen supply from damaged SM
-⚠️ Heat from electrical systems (must power down)
-⚠️ Life support limited by oxygen
+⚠️ Running on batteries only (fuel cells dead)
+⚠️ Oxygen leaking from damaged Service Module
+⚠️ Must power down to save batteries
+⚠️ Temperature will drop to freezing
 
-Lunar Module (Unaffected):
-✅ Fully functional
-✅ Independent oxygen supply
-✅ Battery power available
-✅ Descent engine operational
-✅ Becomes lifeboat
+Lunar Module "Aquarius":
+✅ Completely undamaged (separate from explosion)
+✅ Own oxygen supply (independent tanks)
+✅ Own power (separate batteries)
+✅ Becomes the lifeboat that saves three lives
 
-=== THE ROOT CAUSES ===
-Contributing Factors:
+=== WHY THIS MATTERS ===
+Lessons About Safety:
 
-1. Manufacturing: Tank dropped during installation
-2. Design flaw: Voltage mismatch (28V switches on 65V circuit)
-3. Testing error: 8-hour heater burn damaged insulation
-4. Inspection failure: Damage not detected
-5. Bad luck: Multiple failures aligned perfectly
+Small Problems Can Become Big:
+• 2-inch drop seemed minor
+• Voltage mismatch seemed unimportant
+• 8-hour test seemed normal
+• Together: nearly killed three men
 
-Any ONE of these prevented = no explosion
+Check Everything Carefully:
+• Inspect inside, not just outside
+• Match voltage ratings exactly
+• Watch for unusual readings
+• Don't assume "looks fine" means "is fine"
 
-=== LESSONS LEARNED ===
+Multiple Backups Save Lives:
+• Tank #1 damaged but LM had oxygen
+• Fuel cells failed but LM had batteries
+• Main engine unsafe but LM engine worked
+• Redundancy meant survival
+
+=== WHAT NASA CHANGED ===
 After Apollo 13:
 
 Oxygen Tank Redesign:
-✅ Added third oxygen tank for redundancy
-✅ Improved thermostatic switches (proper voltage rating)
-✅ Better insulation and wiring
-✅ Redesigned heating elements
-✅ Improved testing procedures
+✅ Added third oxygen tank (more redundancy)
+✅ Put third tank in different location (separate from #1 and #2)
+✅ Upgraded all thermostatic switches to proper voltage
+✅ Better wire insulation (won't burn in oxygen)
+✅ Redesigned heaters (safer, can't overheat)
+✅ Temperature gauges read full range (no hidden overheating)
 
-Inspection Improvements:
-✅ More thorough internal inspections
-✅ Better documentation of anomalies
-✅ X-ray inspection of critical components
-✅ Temperature monitoring during tests
+Testing Improvements:
+✅ Never use heaters to drain tanks (new drain procedures)
+✅ X-ray inspect all pressure vessels
+✅ Document every unusual reading (investigate fully)
+✅ Double-check voltage ratings on ALL components
+✅ Temperature monitoring during all tests
 
-Spacecraft Changes:
-✅ LM validated as backup lifeboat
-✅ Emergency procedures expanded
-✅ Additional battery capacity in CM
-✅ Water storage increased
+Inspection Rules:
+✅ Report all drops, no matter how small
+✅ Full internal inspection after any damage
+✅ Don't launch if anything seems unusual
+✅ "When in doubt, check it out"
 
-The Price of Learning:
-• Could have been three deaths
-• Instead: successful rescue
-• Every Apollo mission after was safer
-• NASA's finest hour of problem-solving
-
-=== THE INVESTIGATION ===
-NASA Review Board Found:
-
-Primary Cause: Damaged Teflon insulation on wiring inside oxygen tank #2
-Contributing Factors: Drop during manufacturing + inadequate testing
-
-Blame: No single person responsible - systemic issues
-
-Outcome: Complete redesign of oxygen tank systems
+Every Apollo Mission After:
+• Used redesigned oxygen tanks
+• Safer testing procedures
+• More careful inspections
+• Zero oxygen tank failures
 
 === DID YOU KNOW? ===
 Strange Facts:
 
-• The explosion happened at 13:13 military time (1:13 PM) in Houston
-• Mission launched April 11 (4/11... add digits: 4+1+1 = 6... twice 13 = 13!)
-• Superstitious? Apollo 13 had plenty of "bad luck" numbers
+• The explosion happened at 13:13 military time (Houston)
+• Mission number: Apollo 13
+• Launch date: 4/11/70 (add digits: 4+1+1 = 6, plus 7+0 = 7... both unlucky?)
+• Superstitious? Maybe just coincidence.
 
-But luck had nothing to do with it.
-It was wiring, oxygen, and a spark.
+• The actual cause wasn't discovered until months after landing
+• Investigation took 3,000+ hours of testing
+• Engineers recreated the damage in lab
+• Found melted Teflon inside test tanks
 
-And three men who refused to die.
+• Tank #2 was originally built for Apollo 10
+• Moved to Apollo 13 after modifications
+• If it had stayed on Apollo 10, might have exploded there instead
+• Apollo 10 crew: Very lucky
 
-💥 → 🔥 → 💨 → 🚀 → 🏠
+=== THE LESSON ===
+Not Bad Luck. Bad Wiring.
 
-CAUSE IDENTIFIED. CREW SURVIVED. MISSION COMPLETE.
+Three mistakes:
+1. DROP (damaged fill line)
+2. VOLTAGE (switches couldn't handle it)
+3. TEST (8 hours of hidden overheating)
+
+One explosion.
+Three men survived.
+Countless lessons learned.
+
+Don't blame superstition.
+Blame damage no one caught.
+
+And remember:
+Small mistakes add up.
+Check everything twice.
+Safety always matters.
+
+💥 Three Mistakes → One Explosion → Zero Deaths
+
+CAUSE IDENTIFIED. CREW SAVED. NEVER REPEATED.
