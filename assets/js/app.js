@@ -187,6 +187,153 @@ function resetProgress() {
 }
 
 /**
+ * SCORING SYSTEM
+ */
+
+// Correct NASA decisions
+const CORRECT_ANSWERS = {
+    '2': 'squeeze',      // Freeze or Squeeze → SQUEEZE (move to LM)
+    '5': 'freereturn',   // Turn Around → FREE-RETURN (use Moon's gravity)
+    '9': 'buildmailbox', // CO2 Mailbox → BUILD (improvise adapter)
+    '12': 'shutdown'     // CM Power → SHUTDOWN (preserve batteries)
+};
+
+const DECISION_NAMES = {
+    '2': 'Freeze or Squeeze',
+    '5': 'Turn Around Decision',
+    '9': 'CO2 Mailbox',
+    '12': 'Power Conservation'
+};
+
+/**
+ * Calculate score based on decisions
+ */
+function calculateScore() {
+    const decisions = getDecisions();
+    let correct = 0;
+    let total = Object.keys(CORRECT_ANSWERS).length;
+
+    for (const [slideId, correctChoice] of Object.entries(CORRECT_ANSWERS)) {
+        if (decisions[slideId] && decisions[slideId].choice === correctChoice) {
+            correct++;
+        }
+    }
+
+    return { correct, total };
+}
+
+/**
+ * Get score rank/title
+ */
+function getScoreRank(correct, total) {
+    const percentage = (correct / total) * 100;
+
+    if (percentage === 100) {
+        return {
+            rank: 'Mission Commander',
+            emoji: '🏆',
+            message: 'Perfect score! You made every decision exactly like NASA!',
+            color: '#FFD700' // Gold
+        };
+    } else if (percentage >= 75) {
+        return {
+            rank: 'Flight Director',
+            emoji: '⭐',
+            message: 'Excellent work! You have the instincts of a NASA flight director.',
+            color: '#C0C0C0' // Silver
+        };
+    } else if (percentage >= 50) {
+        return {
+            rank: 'Flight Controller',
+            emoji: '🎯',
+            message: 'Good decisions! You helped bring the crew home.',
+            color: '#CD7F32' // Bronze
+        };
+    } else {
+        return {
+            rank: 'Ground Crew',
+            emoji: '📡',
+            message: 'Review the mission to see what NASA decided and why!',
+            color: '#666666' // Gray
+        };
+    }
+}
+
+/**
+ * Get decision comparison (your choice vs NASA)
+ */
+function getDecisionComparison() {
+    const decisions = getDecisions();
+    const comparison = [];
+
+    for (const [slideId, correctChoice] of Object.entries(CORRECT_ANSWERS)) {
+        const userDecision = decisions[slideId];
+        const userChoice = userDecision ? userDecision.choice : 'not made';
+
+        comparison.push({
+            slideId: slideId,
+            name: DECISION_NAMES[slideId],
+            userChoice: userChoice,
+            nasaChoice: correctChoice,
+            correct: userChoice === correctChoice
+        });
+    }
+
+    return comparison;
+}
+
+/**
+ * Generate shareable URL with score
+ */
+function generateShareURL(name, troop) {
+    const { correct, total } = calculateScore();
+    const rank = getScoreRank(correct, total);
+
+    const params = new URLSearchParams({
+        name: name,
+        troop: troop,
+        score: correct,
+        total: total,
+        rank: rank.rank
+    });
+
+    const baseURL = window.location.origin + window.location.pathname.replace(/slides\/.*/, '');
+    return `${baseURL}#${params.toString()}`;
+}
+
+/**
+ * Parse URL hash parameters
+ */
+function getURLParams() {
+    const hash = window.location.hash.substring(1);
+    if (!hash) return null;
+
+    const params = new URLSearchParams(hash);
+    const name = params.get('name');
+    const troop = params.get('troop');
+    const score = params.get('score');
+    const total = params.get('total');
+    const rank = params.get('rank');
+
+    if (name && troop && score && total) {
+        return { name, troop, score: parseInt(score), total: parseInt(total), rank };
+    }
+
+    return null;
+}
+
+/**
+ * Start new mission (clear progress)
+ */
+function startNewMission() {
+    localStorage.removeItem('decisions');
+    localStorage.removeItem('visitedSlides');
+    // Clear URL hash
+    window.location.hash = '';
+    window.location.href = 'slides/01-launch.html';
+}
+
+/**
  * Share functionality (for completion page)
  */
 async function shareExperience() {

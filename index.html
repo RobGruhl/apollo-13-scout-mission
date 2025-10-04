@@ -24,6 +24,34 @@
         <p class="tagline">Experience NASA's greatest rescue mission through interactive storytelling and critical decision-making</p>
     </section>
 
+    <!-- Shared Score Celebration Card (shown when URL has parameters) -->
+    <section id="sharedScoreCard" class="container" style="display: none; padding: 2rem 1rem; max-width: 600px; margin: 2rem auto;">
+        <div style="background: linear-gradient(135deg, #0B3D91 0%, #1a5db8 100%); color: white; padding: 3rem 2rem; border-radius: 12px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+            <div id="sharedRankEmoji" style="font-size: 5rem; margin-bottom: 1rem;">🏆</div>
+            <h2 style="color: white; font-size: 1.75rem; margin-bottom: 0.5rem;">
+                <span id="sharedScoutName">Scout</span> from <span id="sharedTroopNumber">Troop</span>
+            </h2>
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; opacity: 0.95;">completed the Apollo 13 mission!</p>
+
+            <div style="background: rgba(255,255,255,0.15); padding: 2rem 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; backdrop-filter: blur(10px);">
+                <p style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">Rank Achieved</p>
+                <h3 id="sharedRank" style="color: white; font-size: 2rem; margin-bottom: 1rem;">Mission Commander</h3>
+                <p style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">
+                    <span id="sharedScore">4</span>/<span id="sharedTotal">4</span>
+                </p>
+                <p style="font-size: 0.875rem; opacity: 0.85;">Correct Decisions</p>
+            </div>
+
+            <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">Can you match their score?</p>
+
+            <button onclick="startNewMission()" class="btn-primary" style="background: white; color: #0B3D91; font-weight: 700; padding: 1rem 2rem; border: none; border-radius: 8px; cursor: pointer; font-size: 1.125rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s;">
+                🚀 Start My Mission
+            </button>
+        </div>
+    </section>
+
+    <!-- Default Landing Content (hidden when shared score is shown) -->
+    <div id="defaultLandingContent">
     <!-- Mission Stats -->
     <section class="mission-stats">
         <div class="stat">
@@ -79,6 +107,7 @@
             Estimated time: 20-30 minutes | Works on any device | No account required
         </p>
     </section>
+    </div><!-- End defaultLandingContent -->
 
     <!-- Footer -->
     <footer style="background: #0B3D91; color: white; padding: 2rem 1rem; text-align: center;">
@@ -95,5 +124,49 @@
 
     <!-- JavaScript -->
     <script src="assets/js/app.js"></script>
+    <script>
+        // Check for shared score on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const sharedParams = getURLParams();
+
+            if (sharedParams) {
+                // Show shared score card, hide default content
+                displaySharedScore(sharedParams);
+                document.getElementById('sharedScoreCard').style.display = 'block';
+                document.getElementById('defaultLandingContent').style.display = 'none';
+            } else {
+                // Show default content, hide shared score card
+                document.getElementById('sharedScoreCard').style.display = 'none';
+                document.getElementById('defaultLandingContent').style.display = 'block';
+            }
+        });
+
+        function displaySharedScore(params) {
+            // Populate celebration card with shared scout's data
+            document.getElementById('sharedScoutName').textContent = params.name;
+            document.getElementById('sharedTroopNumber').textContent = params.troop;
+            document.getElementById('sharedScore').textContent = params.score;
+            document.getElementById('sharedTotal').textContent = params.total;
+            document.getElementById('sharedRank').textContent = params.rank || 'Scout';
+
+            // Get rank details to set emoji and styling
+            const rankDetails = getRankDetails(params.score, params.total);
+            document.getElementById('sharedRankEmoji').textContent = rankDetails.emoji;
+        }
+
+        function getRankDetails(score, total) {
+            const percentage = (score / total) * 100;
+
+            if (percentage === 100) {
+                return { emoji: '🏆' };
+            } else if (percentage >= 75) {
+                return { emoji: '⭐' };
+            } else if (percentage >= 50) {
+                return { emoji: '🎯' };
+            } else {
+                return { emoji: '📡' };
+            }
+        }
+    </script>
 </body>
 </html>
