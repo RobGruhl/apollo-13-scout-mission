@@ -1,0 +1,72 @@
+NARRATIVE SLIDE #1
+LAUNCH & MISSION OVERVIEW
+April 11, 1970 | "Houston, we're going to the Moon"
+
+=== THE MISSION ===
+Apollo 13
+Launched: April 11, 1970, 2:13 PM EST
+Destination: Fra Mauro highlands on the Moon
+Mission Duration (planned): 10 days
+
+=== MEET THE CREW ===
+Commander: Jim Lovell
+• Age 42, Navy Captain
+• Fourth spaceflight (Gemini 7, 12, Apollo 8)
+• Already orbited the Moon on Apollo 8
+• Most experienced astronaut flying
+
+Command Module Pilot: Jack Swigert
+• Age 38, civilian test pilot
+• First spaceflight
+• Replaced Ken Mattingly 72 hours before launch (measles exposure)
+• Backup crew member called up last minute
+
+Lunar Module Pilot: Fred Haise
+• Age 36, Marine Corps, test pilot
+• First spaceflight
+• Would have walked on Moon at Fra Mauro
+
+=== THE SPACECRAFT ===
+Command Module "Odyssey"
+• Crew cabin and re-entry capsule
+• Only module with heat shield
+• ~210 cubic feet living space
+
+Service Module
+• Oxygen tanks, fuel cells, main engine (SPS)
+• Provides power, oxygen, propulsion
+• Jettisoned before re-entry
+
+Lunar Module "Aquarius"
+• Moon landing craft (won't be used as intended)
+• Designed for 2 people for 2 days
+• Would become unlikely lifeboat
+
+=== LAUNCH DAY ===
+GET 00:00:00 - Liftoff from Kennedy Space Center
+• Saturn V rocket performs flawlessly
+• Minor issue: S-II center engine shuts down early (pogo vibrations)
+• Other engines compensate—still reach orbit
+
+GET ~00:05:30 - Trans-Lunar Injection (TLI)
+• Third stage fires—Apollo 13 heads for the Moon
+• Everything nominal—smooth flight ahead
+• Or so they thought...
+
+=== THE JOURNEY BEGINS ===
+Day 1-2: Routine cruise to Moon
+• Systems checks all green
+• Crew performs TV broadcast for public
+• Trajectory adjusted for Fra Mauro landing site
+• NOTE: Spacecraft taken OFF free-return trajectory to aim for landing
+
+Day 3: Everything changes...
+
+=== MISSION STATUS ===
+✅ Launch: Success
+✅ Trans-Lunar Injection: Success
+✅ Course to Moon: On track
+⏳ Fra Mauro landing: Still planned
+❓ What could possibly go wrong?
+
+NEXT: The Explosion (GET 55:54:53)

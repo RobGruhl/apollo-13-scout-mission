@@ -1,0 +1,51 @@
+DECISION POINT #2
+FREEZE OR SQUEEZE?
+GET ~56:00:00 | Command Module Failing
+
+=== THE SITUATION ===
+▸ Command Module "Odyssey" losing power and oxygen rapidly
+▸ Cabin heat comes from electrical systems—must shut down to save batteries
+▸ Temperature in CM will drop to freezing (38°F)
+▸ Lunar Module "Aquarius" designed for 2 people for 2 days
+▸ Need life support for 3 people for 4+ days
+
+=== OPTION 1: FREEZE ===
+Subtitle: Stay in Command Module
+
+PROS:
+• More spacious (~210 cubic feet)
+• Familiar systems and controls
+• Only module with heat shield for re-entry
+
+CONS:
+• No power = no heat, will freeze
+• Limited oxygen remaining
+• No life support systems active
+• Crew will not survive 4 days
+
+=== OPTION 2: SQUEEZE ===
+Subtitle: Move to Lunar Module
+
+PROS:
+• Power available from LM batteries
+• Life support systems functional
+• Oxygen reserves sufficient
+• Can survive the journey home
+
+CONS:
+• Extremely cramped (~160 cubic feet)
+• Designed for 2, now holding 3
+• Moving disturbs others—no sleep
+• Still cold (38°F), condensation on walls
+• Power & water very tight
+
+=== DECISION PROMPT ===
+🤔 WHAT SHOULD THE CREW DO?
+
+=== HISTORICAL DECISION ===
+NASA chose SQUEEZE into Lunar Module "Aquarius"
+• GET ~56:00:00 - Power down Command Module
+• All three crew moved to LM as lifeboat
+• So crowded that moving arms/legs disturbed others
+• Sleep deprivation became major issue
+• LM kept them alive for the entire journey home

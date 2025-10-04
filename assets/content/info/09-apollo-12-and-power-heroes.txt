@@ -1,0 +1,412 @@
+INFO SLIDE #9
+KEY SAVES: APOLLO 12 & THE POWER HEROES
+"SCE to AUX" and the Team That Saved Apollo 13
+
+=== TWO MISSIONS, ONE HERO ===
+John Aaron — The EECOM Who Saved Two Missions
+
+Apollo 12 (November 1969):
+• Lightning strike during launch
+• John Aaron: "SCE to AUX"
+• Mission saved
+
+Apollo 13 (April 1970):
+• Explosion crippled spacecraft
+• John Aaron: Led all power planning
+• Crew saved
+
+The Connection: Same engineer, same calm problem-solving, both times critical
+
+=== APOLLO 12: "SCE TO AUX" ===
+The Lightning Strike Crisis:
+
+Launch Day — November 14, 1969:
+• Apollo 12 lifts off in rainy weather
+• 36.5 seconds after liftoff: LIGHTNING STRIKE #1
+• A few seconds later: LIGHTNING STRIKE #2
+• Both strikes hit the tall Saturn V rocket
+
+What Happened:
+• Every warning light in spacecraft turned ON
+• Fuel cell gauges: crazy readings
+• Electrical systems: total confusion
+• Telemetry to ground: garbage data
+• Computer displays: nonsense
+• Crew: "We just lost the platform!"
+
+In Mission Control:
+• Screens showing chaos
+• No one understands what's wrong
+• Flight Director: considers ABORT
+• Clock ticking: 10 seconds to decide
+• Launch costs $375 million (1969 dollars)
+
+John Aaron (EECOM — Electrical Systems):
+• Sees strange pattern in data
+• Remembers similar pattern from obscure test 1 year earlier
+• Makes the call...
+
+The Miracle Words:
+John Aaron: "Flight, try SCE to AUX."
+
+Flight Director: "What?"
+
+John Aaron: "SCE to AUX!"
+
+CapCom (to crew): "Apollo 12, Houston. Try SCE to AUX."
+
+Pete Conrad (Commander): "SCE to what??"
+
+Alan Bean (Lunar Module Pilot):
+• Remembers the switch from training
+• Tiny switch, rarely used
+• Panel 16, under his hand
+• Flips it to AUXILIARY
+
+Result:
+✅ Telemetry instantly restored
+✅ Data flowing to Mission Control
+✅ Systems reading normally
+✅ Mission continues
+✅ Successful Moon landing!
+
+What "SCE to AUX" Did:
+• SCE = Signal Conditioning Electronics
+• Normal mode overloaded by lightning surge
+• AUX mode used backup signal path
+• Cleared the electrical confusion
+• Simple switch flip = mission saved
+
+The Legend Begins:
+• John Aaron became famous
+• "Steely-eyed missile man" (Gene Kranz)
+• Calm under pressure
+• Knew obscure switch from memory
+• Saved $375 million mission in 10 seconds
+
+=== APOLLO 13: JOHN AARON'S POWER LEADERSHIP ===
+After the Explosion — April 13, 1970:
+
+The Crisis:
+• Oxygen tanks damaged
+• Fuel cells offline
+• Running on batteries only
+• Limited power for 4+ days
+• Must manage every single amp
+
+Gene Kranz's Decision:
+• Flight Director Gene Kranz had ultimate authority
+• But he knew: This is a power/consumables problem
+• John Aaron (EECOM) was the best
+
+The Order:
+Flight Director Gene Kranz put John Aaron in charge of:
+✅ ALL power management for BOTH spacecraft
+✅ ALL consumables (oxygen, water, batteries)
+✅ VETO authority over checklist items
+✅ Final say on what systems stay on/off
+
+Translation: If John Aaron said "No power for that," it didn't happen.
+
+Why This Mattered:
+• Normally, many people share authority
+• Flight Director decides most things
+• But Kranz trusted Aaron completely
+• Gave him full power control
+• One person = clear decisions
+
+=== THE POWER TEAM ===
+Key Players Saving Apollo 13:
+
+John Aaron (EECOM):
+• In charge of all electrical and environmental systems
+• Led all power and consumables planning
+• Veto authority over procedures
+• Made final calls on power budget
+
+Arnie Aldrich:
+• Kept the master checklists
+• Documented every procedure
+• Made sure nothing was forgotten
+• Coordinated between teams
+
+Bill Peters:
+• Led work to turn LM into "survival vehicle"
+• Figured out how to make LM support 3 for 4+ days
+• Designed power-down procedures
+• Created LM lifeboat operations
+
+Jim Kelly:
+• Led the battery charging procedure
+• Figured out how to charge CM from LM
+• Never attempted before in space
+• Worked with Bill Peters on procedures
+
+The Team Effort:
+• John Aaron shaped overall power strategy
+• Bill Peters made LM a lifeboat
+• Jim Kelly solved battery charging
+• Arnie Aldrich kept everything organized
+• Hundreds of engineers supported them
+
+=== CHARGING CM BATTERIES FROM LM ===
+The Never-Before-Attempted Procedure:
+
+The Problem (GET ~122-126):
+• Command Module batteries at 2% (nearly dead)
+• Need full power for re-entry computers and parachutes
+• Lunar Module has remaining battery power
+• Must transfer power LM → CM
+• Never tested, could short-circuit and kill both systems
+
+Mission Control's Solution:
+• John Aaron continued shaping entry power-up plan
+• Jim Kelly led the actual charging procedure
+• Bill Peters helped with LM systems
+• Team designed step-by-step process in real-time
+• Radioed instructions to crew
+
+The Execution:
+1. Connect LM batteries to CM charging system
+2. Carefully monitor voltage and current
+3. Watch for short-circuits or overheating
+4. Charge CM batteries enough for re-entry
+5. Disconnect before anything fails
+
+The Moment:
+• Crew followed instructions precisely
+• Power flowing from LM to CM
+• One battery briefly "dropped off the line" (scary!)
+• But it came back online
+• Charging successful!
+
+Result:
+✅ CM batteries charged to sufficient levels
+✅ Re-entry computers have power
+✅ Parachutes will deploy
+✅ Crew can come home
+✅ Procedure added to NASA emergency playbook
+
+Without This:
+• Dead CM batteries = no re-entry computer
+• No computer = can't hit re-entry corridor
+• Can't hit corridor = skip off or burn up
+• Battery charging made survival possible
+
+=== POWER BUDGET MANAGEMENT ===
+Every Amp Mattered:
+
+The Challenge:
+• LM batteries designed for 45-hour Moon landing
+• Apollo 13 needed 87+ hours (nearly double!)
+• Every system drains power
+• Run out = death
+
+John Aaron's Decisions:
+What Stayed ON:
+✅ Life support (oxygen circulation)
+✅ Minimal cabin lights (just enough to see)
+✅ CO2 scrubbers (must breathe)
+✅ Attitude control (point spacecraft correctly)
+✅ Essential communications (but reduced!)
+
+What Turned OFF:
+❌ Heaters (temperature dropped to 38°F)
+❌ Most cabin lights (stumbling in dark)
+❌ Non-essential electronics
+❌ High-power radio amplifier (used backup)
+❌ Guidance computer (except during burns)
+
+The Result:
+• Batteries lasted entire journey
+• 20% power remaining at splashdown
+• Extremely close call
+• But they made it!
+
+=== THE ENTRY POWER-UP PLAN ===
+John Aaron's Final Challenge:
+
+The Problem (GET ~141:30):
+• Must power up Command Module for re-entry
+• Frozen at 38°F for 4 days
+• Condensation everywhere
+• Guidance computer not designed for shutdown/restart
+• Normal startup: 3 hours
+• Time available: 2 hours
+• Must work first time or crew dies
+
+John Aaron's Plan:
+• Designed careful power-up sequence
+• Every step calculated for minimum power use
+• Every system brought online in precise order
+• Built-in checks to detect problems early
+• Crew could abort sequence if needed
+
+The Systems:
+1. Heaters (warm up critical components)
+2. Guidance computer (frozen for 4 days)
+3. Navigation platform (must align)
+4. Life support (oxygen, cooling)
+5. Communications (stay in touch)
+6. Parachute systems (arm for deployment)
+
+The Execution:
+• Crew followed Aaron's procedure exactly
+• Systems came online one by one
+• Guidance computer restarted (miracle!)
+• Navigation aligned successfully
+• All systems GO for re-entry
+
+Result:
+✅ Power-up completed in 2 hours
+✅ Computer worked despite being frozen
+✅ Perfect re-entry
+✅ Safe splashdown
+✅ All three crew alive
+
+=== THE HEROES BEHIND THE HEROES ===
+While Crew Was in Space:
+
+Mission Control (Working 24/7):
+• Engineers sleeping in shifts
+• Coffee and determination
+• Simulating every procedure
+• Testing every step on the ground
+• Radioing final instructions to crew
+
+The Unsung Team:
+• John Aaron (power genius)
+• Bill Peters (LM survival expert)
+• Jim Kelly (battery charging)
+• Arnie Aldrich (master checklist keeper)
+• Hundreds of engineers
+• Simulator crews
+• Test pilots
+• Mathematicians
+
+No Single Hero:
+• Crew executed perfectly
+• Mission Control planned perfectly
+• Everyone trusted each other
+• Teamwork saved three lives
+
+=== LESSONS FROM BOTH MISSIONS ===
+What We Learn:
+
+Apollo 12 — "SCE to AUX":
+✅ Know your systems inside and out
+✅ Remember obscure training
+✅ Stay calm when everything looks wrong
+✅ One person with knowledge can save mission
+✅ Simple switch = big difference
+
+Apollo 13 — Power Leadership:
+✅ Give authority to the expert
+✅ Trust your team completely
+✅ Manage resources carefully (every amp counts)
+✅ Plan for worst-case scenarios
+✅ Never give up on impossible problems
+
+Both Missions:
+✅ John Aaron = calm problem-solver
+✅ Knowledge + experience = lives saved
+✅ Team coordination essential
+✅ Training pays off in crisis
+✅ "Steely-eyed missile man" twice over
+
+=== DID YOU KNOW? ===
+Amazing Facts:
+
+Apollo 12 Lightning:
+• Both strikes within 40 seconds of launch
+• Saturn V rocket acted like lightning rod
+• Rocket kept flying perfectly (no damage to engines)
+• Electrical systems confused but recoverable
+• Only mission hit by lightning during launch
+
+• Alan Bean found SCE switch from memory
+• Located on Panel 16 (not main panel)
+• Rarely used in training
+• Bean: "I remembered because it was so unusual"
+
+John Aaron's Memory:
+• Remembered pattern from test 1 year earlier
+• Test was just practice, not real mission
+• But he filed it away mentally
+• Recognized it instantly under pressure
+• 10 seconds to make the call
+
+Apollo 13 Power Budget:
+• Every single system calculated to the amp
+• Margins so tight that extra radio call could matter
+• 20% battery remaining = less than 1 hour of power left
+• If re-entry took 10 minutes longer, might have died
+• Perfect planning made survival possible
+
+=== QUOTES TO REMEMBER ===
+Words from the Heroes:
+
+Gene Kranz (on John Aaron):
+"John Aaron is a steely-eyed missile man."
+(Highest compliment in Mission Control)
+
+John Aaron (on both missions):
+"I just did my job. The crew did the hard part."
+
+Alan Bean (Apollo 12):
+"I don't know what that switch does, but I know where it is!"
+(After flipping SCE to AUX)
+
+Pete Conrad (Apollo 12):
+"I think we got hit by lightning!"
+(Understatement of the mission)
+
+Jim Lovell (Apollo 13):
+"The guys on the ground saved us. We just followed instructions."
+
+=== THE LEGACY ===
+How These Saves Changed NASA:
+
+From Apollo 12:
+✅ Never launch in lightning conditions (new rule)
+✅ Weather constraints tightened
+✅ Backup signal paths better understood
+✅ Obscure switches now part of main training
+
+From Apollo 13:
+✅ Power management procedures documented
+✅ Battery charging procedures added
+✅ LM as lifeboat validated
+✅ One person in charge of consumables (better than committee)
+
+From Both:
+✅ Trust the experts
+✅ Train for impossible scenarios
+✅ Calm problem-solving saves lives
+✅ Knowledge + experience = survival
+
+=== THE FINAL LESSON ===
+Two Missions. One Engineer. Same Calm.
+
+Apollo 12: "SCE to AUX" → Mission saved in 10 seconds
+Apollo 13: Power leadership → Crew saved over 4 days
+
+Different problems.
+Same principles:
+✅ Know your stuff
+✅ Stay calm
+✅ Trust the team
+✅ Work the problem
+
+John Aaron and his team:
+• Didn't panic
+• Used their training
+• Made hard calls
+• Saved lives
+
+"Steely-Eyed Missile Man" — Twice Over
+
+⚡ → 🔧 → ✅ (Apollo 12)
+💥 → 🔋 → 🏠 (Apollo 13)
+
+PROBLEMS SOLVED. MISSIONS SAVED. LIVES PRESERVED.

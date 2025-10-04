@@ -1,0 +1,830 @@
+/* Apollo 13 Interactive Experience - Main Stylesheet */
+/* Target: 2026 Elevate Scout Jamboree - NASA Tent, Apollo Table */
+/* Presented by Ed Gruhl, Scout District Commissioner, Glacial Trails District */
+
+/* ==================== CSS RESET ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==================== CSS VARIABLES ==================== */
+:root {
+    /* Colors (from poster design system) */
+    --nasa-blue: #0B3D91;
+    --mission-white: #FFFFFF;
+    --apollo-black: #000000;
+    --crisis-red: #DC143C;
+    --success-green: #2E7D32;
+    --caution-yellow: #FFA000;
+    --info-cyan: #00ACC1;
+
+    /* Backgrounds */
+    --bg-light: #F5F5F5;
+    --bg-blue-light: #E3F2FD;
+    --bg-yellow-light: #FFF9C4;
+    --bg-green-light: #E8F5E9;
+
+    /* Spacing */
+    --space-xs: 0.5rem;    /* 8px */
+    --space-sm: 1rem;      /* 16px */
+    --space-md: 1.5rem;    /* 24px */
+    --space-lg: 2rem;      /* 32px */
+    --space-xl: 3rem;      /* 48px */
+    --space-2xl: 4rem;     /* 64px */
+
+    /* Typography */
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+
+    --text-xs: 0.875rem;   /* 14px */
+    --text-sm: 1rem;       /* 16px */
+    --text-md: 1.125rem;   /* 18px */
+    --text-lg: 1.5rem;     /* 24px */
+    --text-xl: 2rem;       /* 32px */
+    --text-2xl: 2.5rem;    /* 40px */
+    --text-3xl: 3rem;      /* 48px */
+
+    /* Layout */
+    --max-width: 1200px;
+    --content-width: 800px;
+    --border-radius: 8px;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+    --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
+
+    /* Transitions */
+    --transition: 0.3s ease;
+}
+
+/* ==================== BASE STYLES ==================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--apollo-black);
+    background: var(--mission-white);
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: var(--text-md);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: var(--text-xl);
+    color: var(--nasa-blue);
+}
+
+h2 {
+    font-size: var(--text-lg);
+    color: var(--nasa-blue);
+}
+
+h3 {
+    font-size: var(--text-md);
+}
+
+@media (min-width: 768px) {
+    h1 { font-size: var(--text-3xl); }
+    h2 { font-size: var(--text-xl); }
+    h3 { font-size: var(--text-lg); }
+}
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+a {
+    color: var(--info-cyan);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--nasa-blue);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==================== LAYOUT ==================== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--space-lg);
+    }
+}
+
+/* ==================== NAVIGATION ==================== */
+.main-nav {
+    background: var(--nasa-blue);
+    color: var(--mission-white);
+    padding: var(--space-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.main-nav a {
+    color: var(--mission-white);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius);
+    transition: background var(--transition);
+    font-weight: 600;
+}
+
+.main-nav a:hover {
+    background: rgba(255,255,255,0.2);
+    text-decoration: none;
+}
+
+.nav-progress {
+    font-weight: 600;
+    font-size: var(--text-sm);
+}
+
+/* ==================== LANDING PAGE ==================== */
+.landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--nasa-blue) 0%, #1a5db8 100%);
+    color: var(--mission-white);
+    text-align: center;
+    padding: var(--space-2xl) var(--space-sm);
+}
+
+.hero img {
+    max-width: 200px;
+    margin: 0 auto var(--space-lg);
+}
+
+@media (min-width: 768px) {
+    .hero img {
+        max-width: 300px;
+    }
+}
+
+.hero h1 {
+    color: var(--mission-white);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: var(--text-3xl);
+    }
+}
+
+.tagline {
+    font-size: var(--text-md);
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .tagline {
+        font-size: var(--text-lg);
+    }
+}
+
+.mission-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-xl) var(--space-sm);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .mission-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .mission-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stat {
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.stat:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+    font-size: var(--text-3xl);
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.stat-value {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--nasa-blue);
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+    font-size: var(--text-sm);
+    color: #666;
+    display: block;
+}
+
+.cta {
+    text-align: center;
+    padding: var(--space-xl) var(--space-sm);
+    background: var(--bg-light);
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-primary,
+.btn-secondary,
+.btn-next,
+.btn-prev,
+.btn-choose {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition);
+    border: none;
+    font-size: var(--text-sm);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--nasa-blue);
+    color: var(--mission-white);
+}
+
+.btn-primary:hover {
+    background: #0d4fa3;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: var(--mission-white);
+    color: var(--nasa-blue);
+    border: 2px solid var(--nasa-blue);
+}
+
+.btn-secondary:hover {
+    background: var(--nasa-blue);
+    color: var(--mission-white);
+    text-decoration: none;
+}
+
+.btn-choose {
+    background: var(--info-cyan);
+    color: var(--mission-white);
+    width: 100%;
+    margin-top: var(--space-sm);
+}
+
+.btn-choose:hover {
+    background: #0097a7;
+    text-decoration: none;
+}
+
+/* ==================== SLIDES ==================== */
+.slide-container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-sm);
+    min-height: 60vh;
+}
+
+@media (min-width: 768px) {
+    .slide-container {
+        padding: var(--space-xl) var(--space-lg);
+    }
+}
+
+.slide-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 3px solid var(--nasa-blue);
+}
+
+.slide-type {
+    display: inline-block;
+    background: var(--info-cyan);
+    color: var(--mission-white);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--border-radius);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+}
+
+.timestamp {
+    display: block;
+    font-family: var(--font-mono);
+    color: #666;
+    font-size: var(--text-sm);
+    margin-top: var(--space-xs);
+}
+
+.slide-image {
+    margin: var(--space-xl) 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.slide-image img {
+    width: 100%;
+}
+
+figcaption {
+    padding: var(--space-sm);
+    background: var(--bg-light);
+    font-size: var(--text-sm);
+    color: #666;
+    text-align: center;
+    font-style: italic;
+}
+
+/* ==================== NARRATIVE SLIDES ==================== */
+.event-list {
+    list-style: none;
+    margin: var(--space-lg) 0;
+}
+
+.event-list li {
+    padding: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    background: var(--bg-light);
+    border-left: 4px solid var(--info-cyan);
+    border-radius: var(--border-radius);
+}
+
+.event-list strong {
+    color: var(--nasa-blue);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+/* ==================== DECISION SLIDES ==================== */
+.situation {
+    background: var(--bg-yellow-light);
+    border-left: 4px solid var(--caution-yellow);
+    padding: var(--space-lg);
+    margin: var(--space-xl) 0;
+    border-radius: var(--border-radius);
+}
+
+.situation h2 {
+    color: var(--apollo-black);
+    margin-bottom: var(--space-md);
+}
+
+.situation ul {
+    list-style: none;
+}
+
+.situation li {
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    position: relative;
+}
+
+.situation li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--caution-yellow);
+    font-weight: bold;
+}
+
+.options {
+    display: grid;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+@media (min-width: 768px) {
+    .options {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.option {
+    background: var(--bg-light);
+    border: 3px solid var(--info-cyan);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.option:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--nasa-blue);
+}
+
+.option.selected {
+    border-color: var(--nasa-blue);
+    background: var(--bg-blue-light);
+    box-shadow: var(--shadow-md);
+}
+
+.option h3 {
+    color: var(--nasa-blue);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-xs);
+}
+
+.option-subtitle {
+    color: #666;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-md);
+    font-style: italic;
+}
+
+.option-details {
+    margin-top: var(--space-md);
+}
+
+.pros, .cons {
+    margin-top: var(--space-md);
+}
+
+.pros h4 {
+    color: var(--success-green);
+    margin-bottom: var(--space-sm);
+}
+
+.cons h4 {
+    color: var(--crisis-red);
+    margin-bottom: var(--space-sm);
+}
+
+.pros ul, .cons ul {
+    list-style: none;
+}
+
+.pros li {
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-xs);
+    position: relative;
+}
+
+.pros li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success-green);
+    font-weight: bold;
+}
+
+.cons li {
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-xs);
+    position: relative;
+}
+
+.cons li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    color: var(--crisis-red);
+    font-weight: bold;
+}
+
+.decision-result {
+    background: var(--bg-blue-light);
+    border: 3px solid var(--nasa-blue);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.decision-result.hidden {
+    display: none;
+}
+
+.result-choice {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--nasa-blue);
+    margin-bottom: var(--space-md);
+}
+
+blockquote {
+    border-left: 4px solid var(--info-cyan);
+    padding-left: var(--space-md);
+    margin: var(--space-lg) 0;
+    font-style: italic;
+    color: #666;
+}
+
+cite {
+    display: block;
+    margin-top: var(--space-xs);
+    font-size: var(--text-sm);
+    color: #999;
+}
+
+/* ==================== INFO SLIDES ==================== */
+.info-grid {
+    display: grid;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+@media (min-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+.info-section {
+    margin-bottom: var(--space-md);
+    border: 2px solid var(--bg-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.info-section summary {
+    background: var(--nasa-blue);
+    color: var(--mission-white);
+    padding: var(--space-md);
+    cursor: pointer;
+    font-weight: 700;
+    user-select: none;
+    transition: background var(--transition);
+}
+
+.info-section summary:hover {
+    background: #0d4fa3;
+}
+
+.info-section[open] summary {
+    background: var(--info-cyan);
+}
+
+.info-section ul {
+    padding: var(--space-md);
+    background: var(--mission-white);
+}
+
+.info-section li {
+    margin-bottom: var(--space-xs);
+}
+
+/* ==================== FOOTER NAVIGATION ==================== */
+.slide-nav {
+    background: var(--bg-light);
+    padding: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    border-top: 3px solid var(--nasa-blue);
+}
+
+.btn-next, .btn-prev {
+    background: var(--nasa-blue);
+    color: var(--mission-white);
+    padding: var(--space-sm) var(--space-lg);
+}
+
+.btn-next:hover, .btn-prev:hover {
+    background: #0d4fa3;
+    transform: translateY(-2px);
+}
+
+/* ==================== TIMELINE PAGE ==================== */
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+    margin: var(--space-xl) 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--nasa-blue);
+}
+
+.timeline-event {
+    position: relative;
+    margin-bottom: var(--space-2xl);
+}
+
+.event-marker {
+    position: absolute;
+    left: -2.25rem;
+    width: 3rem;
+    height: 3rem;
+    background: var(--nasa-blue);
+    color: var(--mission-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: var(--text-sm);
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-event.crisis .event-marker {
+    background: var(--crisis-red);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.event-content {
+    background: var(--bg-light);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.event-content h3 {
+    margin-bottom: var(--space-md);
+}
+
+.event-links {
+    list-style: none;
+}
+
+.event-links li {
+    margin-bottom: var(--space-xs);
+}
+
+.event-links a {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--mission-white);
+    border-radius: var(--border-radius);
+    transition: all var(--transition);
+}
+
+.event-links a:hover {
+    background: var(--info-cyan);
+    color: var(--mission-white);
+    text-decoration: none;
+}
+
+/* ==================== LEARN MORE (EXPANDABLE) ==================== */
+.learn-more {
+    margin-top: var(--space-lg);
+    border: 2px solid var(--info-cyan);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.learn-more summary {
+    background: var(--bg-blue-light);
+    padding: var(--space-md);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--nasa-blue);
+    user-select: none;
+}
+
+.learn-more summary:hover {
+    background: var(--info-cyan);
+    color: var(--mission-white);
+}
+
+.learn-more[open] summary {
+    border-bottom: 2px solid var(--info-cyan);
+}
+
+.learn-more p, .learn-more ul {
+    padding: var(--space-md);
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-xl {
+    margin-top: var(--space-xl);
+}
+
+.mb-xl {
+    margin-bottom: var(--space-xl);
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+:focus {
+    outline: 3px solid var(--info-cyan);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+    .main-nav,
+    .slide-nav,
+    .btn-choose {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    .slide-container {
+        max-width: 100%;
+    }
+}
