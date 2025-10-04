@@ -1,0 +1,56 @@
+DECISION POINT #6
+SPEED UP BURN (PC+2)?
+GET 79:27:40 | Wrong Ocean Landing Zone
+
+=== THE SITUATION ===
+▸ Free-return trajectory will get them home, but too late and in wrong ocean
+▸ Current path would land far from recovery ships (wrong ocean)
+▸ Solution: Major burn 2 hours after pericynthion (PC+2) to speed up and retarget
+▸ Risk: LM Descent Engine will run for 4½-5 minutes in deep space
+▸ Longest burn yet—within design limits but high-stakes
+
+=== OPTION 1: COAST ON FREE-RETURN ===
+Subtitle: Accept current trajectory—no additional burn
+
+PROS:
+• No risk of engine failure during critical burn
+• Conserves fuel for emergency corrections
+• Simple—no complex maneuvers
+• Systems already stressed—why add more risk?
+
+CONS:
+• Longer mission time (~9-10 hours extra)
+• Lands in wrong ocean, far from recovery fleet
+• More time for systems to fail
+• Longer exposure to cold, dehydration, CO2
+• Recovery ships must reposition—delays rescue
+
+=== OPTION 2: PERFORM PC+2 BURN ===
+Subtitle: Fire LM descent engine for extended burn to retarget
+
+PROS:
+• Cuts ~9-10 hours off return time
+• Targets Pacific recovery zone near USS Iwo Jima
+• Less time for systems to fail
+• Faster medical attention for crew
+• Ships already positioned and waiting
+
+CONS:
+• Long engine burn (4½-5 minutes) stresses systems
+• Uses significant fuel (~900 ft/s delta-V)
+• Any failure during burn leaves crew stranded
+• Engine designed for lunar landing, not deep space burns
+• Single point of failure—if engine quits, no backup
+
+=== DECISION PROMPT ===
+🤔 WHAT SHOULD THE CREW DO?
+
+=== HISTORICAL DECISION ===
+NASA chose PERFORM THE PC+2 BURN
+• GET 79:27:40 - PC+2 burn using LM descent engine
+• Burn duration: ~4½-5 minutes total
+• Velocity change: ~900 ft/s of delta-V
+• Shortened the trip by ~9-10 hours
+• Targeted Pacific recovery zone near USS Iwo Jima
+• Engine performed flawlessly—never missed a beat
+• Crew grateful for shorter journey in freezing, cramped LM

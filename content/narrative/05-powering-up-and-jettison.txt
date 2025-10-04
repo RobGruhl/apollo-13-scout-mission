@@ -1,0 +1,170 @@
+NARRATIVE SLIDE #5
+POWERING UP & JETTISON
+April 17, 1970 | Final Preparations for Re-Entry
+
+=== THE FINAL COUNTDOWN ===
+Day 6 - April 17, 1970
+GET ~136:00:00 - 6 hours from splashdown
+Status: Alive, approaching Earth
+Challenge: Must transition from dead CM to working re-entry spacecraft
+
+=== THE BATTERY PROBLEM ===
+GET ~138:00:00 - Jump-Start Procedure
+
+The Situation:
+• Command Module batteries at 2% power
+• Powered down for 4 days to conserve for re-entry
+• Need full power for computers, parachutes, life support
+• LM has remaining battery power
+• Must transfer power LM → CM
+
+The Risk:
+• Procedure NEVER tested before
+• Could short-circuit both systems
+• Might electrocute crew
+• Could lose all remaining power
+• One shot to get it right
+
+Houston's Innovation:
+• Engineers design brand-new procedure
+• Written in real-time for emergency
+• Step-by-step power transfer sequence
+• Crew follows instructions precisely
+
+The Result:
+✅ Connection successful!
+✅ Power flows from LM to CM batteries
+✅ One battery briefly "drops off the line" but recovers
+✅ CM batteries charge to sufficient levels
+✅ Re-entry now possible
+
+New procedure added to NASA emergency playbook
+
+=== SERVICE MODULE JETTISON ===
+GET 138:02 - First Look at the Damage
+
+The Separation:
+• Pyrotechnic bolts fire
+• Service Module drifts away
+• Crew sees damage for FIRST TIME
+• Cameras ready to photograph
+
+What They See:
+• Entire 13-foot panel BLOWN OFF
+• Massive structural damage visible
+• Interior equipment exposed to space
+• Wiring and tubing dangling
+
+Jim Lovell: "There's one whole side of that spacecraft missing!"
+
+The Realization:
+• Explosion was catastrophic
+• They were lucky to survive initial blast
+• Right decision to avoid using SPS engine
+• Could have exploded during critical burn
+• Photos will help investigate cause
+
+Investigation Evidence:
+• Oxygen tank #2 completely destroyed
+• Panel ripped from Service Module
+• Damage much worse than feared
+• Proves how close they came to instant death
+
+=== SAYING GOODBYE TO AQUARIUS ===
+GET 141:30 - Lunar Module Jettison
+
+The Lifeboat's Final Moments:
+• Four days in cramped, freezing quarters
+• Aquarius kept three men alive
+• Designed for 2 for 2, gave life to 3 for 4
+• Now must separate for CM re-entry
+
+CapCom Joe Kerwin:
+"Farewell, Aquarius, and we thank you."
+
+The Separation:
+• Crew seals tunnel between LM and CM
+• Pyrotechnic bolts fire
+• Aquarius drifts away into space
+• Last view of their lifeboat
+
+Crew Emotions:
+• Gratitude for the trusty spacecraft
+• Sadness to see it go
+• Aquarius will eventually burn up in atmosphere
+• Or orbit Earth as space debris
+• Either way, its mission is complete
+
+What Aquarius Provided:
+✅ Oxygen for breathing (4 days)
+✅ Power for systems (limited but sufficient)
+✅ Descent engine for course corrections
+✅ Life support in freezing conditions
+✅ A chance at survival
+
+=== COMMAND MODULE POWER-UP ===
+GET ~141:30 - The Critical Restart
+
+The Challenge:
+• CM powered down for 4 days
+• Frozen at 38°F with condensation and ice
+• Guidance computer NOT designed for shutdown/restart
+• Will it work after days in cold?
+
+Houston's Procedure:
+• Carefully designed power-up sequence
+• Written for frozen, damaged spacecraft
+• Normal CM startup: 3 hours
+• Emergency startup: Must complete in 2 hours
+• Every step critical—no room for error
+
+Swigert Executes:
+• Following checklist precisely
+• Systems coming online one by one
+• Heaters, computers, navigation, life support
+• Holding breath for guidance computer...
+
+The Moment of Truth:
+• Guidance computer powers up
+• Screens flicker to life
+• Software loads successfully
+• Navigation platform aligns
+• All systems GO
+
+Success! Frozen computer works!
+
+=== FINAL SYSTEMS CHECK ===
+GET 142:00 - Ready for Re-Entry
+
+Command Module Status:
+✅ Batteries: Charged and functional
+✅ Guidance Computer: Online and aligned
+✅ Life Support: Operating
+✅ Parachutes: Armed and ready
+✅ Heat Shield: Inspected, appears intact
+✅ Re-entry Rockets: Tested
+✅ Communications: Functional
+
+Crew Status:
+• Dehydrated (weight loss: 31.5 lbs combined)
+• Exhausted (minimal sleep for 6 days)
+• Cold (hypothermia risk)
+• Fred Haise: Kidney infection, fever
+• But ALIVE and ready
+
+Distance to Entry Interface: ~45 minutes
+Re-entry Corridor: 0.5° margin for error
+Stakes: Survive or die
+
+=== THE WORLD WATCHES ===
+Global Audience:
+• Families gathered around TVs
+• Mission Control packed with engineers
+• Recovery ships positioned in Pacific
+• USS Iwo Jima standing by
+• Entire world holding breath
+
+One Question:
+Will they make it home?
+
+NEXT: Re-Entry & Splashdown

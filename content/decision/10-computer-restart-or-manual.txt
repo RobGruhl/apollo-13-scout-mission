@@ -1,0 +1,67 @@
+DECISION POINT #10
+COMPUTER RESTART OR MANUAL FLIGHT?
+GET 142:40:46 | Final Approach—The Re-Entry Corridor
+
+=== THE SITUATION ===
+▸ Final approach to Earth's atmosphere—one chance to get it right
+▸ The Re-entry Corridor: Extremely narrow margin
+  • Target angle: ~-6.5° (Apollo 13 aimed for ~-6.2°)
+  • Acceptable window: roughly -5.25° to -7.4° (only ~2° margin!)
+  • Too shallow (<-5.25°): Skip off atmosphere into space—lost forever
+  • Too steep (>-7.4°): Burn up from excessive heat and g-forces
+▸ Guidance computer powered down for 4 days (since GET ~56)
+▸ CM freezing cold (38-50°F) with condensation and ice on walls
+▸ Computer NOT designed to be turned off and restarted
+▸ Unknown if frozen computer will restart after days in cold
+
+=== OPTION 1: MANUAL RE-ENTRY ===
+Subtitle: Don't risk restarting frozen guidance computer
+
+PROS:
+• Avoids potential computer failure
+• Saves battery power for other systems
+• No risk of restart damaging circuits
+• Crew maintains direct control
+
+CONS:
+• Maintaining precise angle manually nearly impossible
+• Crew exhausted after 6 days of stress and no sleep
+• One small mistake = skip off atmosphere or burn up
+• No computer assistance for rocket adjustments
+• Extremely low probability of success
+• Manual control can't match computer precision
+
+=== OPTION 2: RESTART GUIDANCE COMPUTER ===
+Subtitle: Attempt to power up frozen systems
+
+PROS:
+• Computer can automatically maintain precise angle
+• Controls all rocket adjustments with perfect timing
+• Far higher survival probability
+• Computer designed for this (when working properly)
+• Removes human error from most critical phase
+
+CONS:
+• Computer may not restart after days frozen
+• Condensation may have damaged electrical circuits
+• Restart drains critical battery power
+• If startup fails, no time to switch to manual
+• Ice formation could short-circuit systems
+• Never tested—shutdown/restart not in design
+
+=== DECISION PROMPT ===
+🤔 WHAT SHOULD THE CREW DO?
+
+=== HISTORICAL DECISION ===
+NASA chose RISK THE COMPUTER RESTART
+• Engineers designed careful power-up sequence
+• Held their breath as frozen computer came online...
+• Success! The guidance computer restarted perfectly!
+• GET 142:40:46 - Entry Interface (400,000 ft altitude)
+• Computer-guided entry kept them in the corridor
+• Entry flight-path angle: ~-6.2° (perfectly within safe window!)
+• Splashdown: 12:07:44 PM CST, April 17, 1970
+• Pacific Ocean, near USS Iwo Jima
+• All crew survived
+• Computer performed flawlessly despite never being designed for shutdown/restart
+• A frozen computer saved three lives
