@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="You completed the Apollo 13 mission! Summary and share.">
+    <title>Apollo 13 - Mission Complete!</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="24">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Mission Complete!</span>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="slide-container">
+        <article class="slide">
+            <header class="slide-header">
+                <span class="slide-type" style="background: var(--success-green);">🎉 Mission Complete</span>
+                <h1>A Successful Failure</h1>
+                <p style="font-style: italic; color: #666;">April 11-17, 1970</p>
+            </header>
+
+            <section class="slide-content">
+                <div style="background: linear-gradient(135deg, var(--nasa-blue) 0%, #1a5db8 100%); color: white; padding: 3rem 2rem; border-radius: 8px; text-align: center; margin: 2rem 0;">
+                    <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">🏆 Mission Accomplished</h2>
+                    <p style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">Three astronauts launched to the Moon</p>
+                    <p style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">An explosion 200,000 miles from Earth</p>
+                    <p style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">10 critical decisions</p>
+                    <p style="font-size: 1.5rem; margin-top: 1.5rem; font-weight: 700; color: white;">Three lives saved</p>
+                </div>
+
+                <h2>Mission Summary</h2>
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <ul class="event-list">
+                        <li><strong>April 11, 1970:</strong> Launch from Kennedy Space Center</li>
+                        <li><strong>April 13, GET 55:54:53:</strong> Oxygen tank explosion</li>
+                        <li><strong>Decision:</strong> Free-return trajectory around Moon</li>
+                        <li><strong>Decision:</strong> Move to Lunar Module lifeboat</li>
+                        <li><strong>Challenge:</strong> Survive 4 days in freezing, cramped conditions</li>
+                        <li><strong>April 17, 1970:</strong> Safe splashdown in Pacific Ocean</li>
+                        <li><strong>Result:</strong> All three astronauts survived</li>
+                    </ul>
+                </div>
+
+                <h2>Key Lessons</h2>
+                <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">🧠 Problem-Solving</h3>
+                        <p>When faced with impossible odds, break problems into manageable pieces. "Work the problem" became NASA's mantra.</p>
+                    </div>
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">🤝 Teamwork</h3>
+                        <p>Success required cooperation between crew in space and hundreds of engineers on Earth working around the clock.</p>
+                    </div>
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">🎯 Stay Calm</h3>
+                        <p>"Failure is not an option" - Gene Kranz. Staying calm under pressure enabled clear thinking and good decisions.</p>
+                    </div>
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">🔧 Creativity</h3>
+                        <p>The "mailbox" CO2 scrubber adapter was built from spare parts. Sometimes you have to improvise with what you have.</p>
+                    </div>
+                </div>
+
+                <h2>The Legacy</h2>
+                <p>
+                    While Apollo 13 never landed on the Moon, it became one of NASA's finest hours. The mission demonstrated that when things go wrong, human ingenuity, teamwork, and determination can overcome seemingly impossible odds.
+                </p>
+                <p>
+                    Jim Lovell called it a <strong>"successful failure"</strong> - they didn't achieve the Moon landing, but they brought three astronauts home alive against all odds.
+                </p>
+
+                <div style="background: var(--bg-green-light); border: 2px solid var(--success-green); padding: 2rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+                    <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">🌟 You Helped Save Apollo 13! 🌟</p>
+                    <p style="font-size: 1.125rem;">By working through these decisions, you experienced the same choices NASA faced in 1970.</p>
+                </div>
+
+                <!-- Share Buttons -->
+                <div style="text-align: center; margin: 3rem 0;">
+                    <h3 style="margin-bottom: 1.5rem;">Share Your Achievement</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 0 auto;">
+                        <button onclick="shareExperience()" class="btn-primary">📱 Share with Friends</button>
+                        <a href="../index.html" class="btn-secondary">🔄 Start Over</a>
+                        <a href="../timeline.html" class="btn-secondary">📅 View Timeline</a>
+                    </div>
+                </div>
+
+                <!-- Credits -->
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 8px; margin: 3rem 0; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">🎪 2026 Elevate Scout Jamboree</h3>
+                    <p style="margin-bottom: 0.5rem;"><strong>NASA Tent - Apollo Table</strong></p>
+                    <p style="margin-bottom: 1rem;">Presented by <strong>Ed Gruhl</strong><br>Scout District Commissioner, Glacial Trails District</p>
+                    <p style="font-size: 0.875rem; color: #666; margin-top: 1.5rem;">
+                        Educational content based on NASA historical records<br>
+                        Apollo 13 mission: April 11-17, 1970<br>
+                        All three astronauts survived and returned safely
+                    </p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="slide-nav">
+        <a href="23-splashdown.html" class="btn-prev">← Previous: Splashdown</a>
+        <a href="../index.html" class="btn-next">🏠 Return to Home</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

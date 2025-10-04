@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 Decision #5: Shut down the Command Module to save power or keep it running?">
+    <title>Apollo 13 - Decision: Power Down the CM?</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="12">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 12 of 24</span>
+    </nav>
+    <main class="slide-container">
+        <article class="slide decision">
+            <header class="slide-header">
+                <span class="slide-type">🚨 Decision Point #5</span>
+                <h1>Shut Down the Command Module?</h1>
+                <time class="timestamp">GET 58:00:00 | Life Support Transferred to LM</time>
+            </header>
+
+            <section class="situation">
+                <h2>⚠️ The Situation</h2>
+                <ul>
+                    <li>Command Module "Odyssey" is dying—Service Module explosion destroyed oxygen supply</li>
+                    <li>Crew has moved to Lunar Module "Aquarius" as lifeboat</li>
+                    <li>CM systems are still running on remaining battery power, draining fast</li>
+                    <li>The CM is the ONLY spacecraft with heat shield for re-entry—they MUST have it working when they return to Earth</li>
+                    <li><strong>Problem:</strong> CM batteries are draining. At current rate, they'll be dead long before re-entry.</li>
+                    <li><strong>Critical reality:</strong> CM needs 40 amp-hours to power up computer, guidance, and parachutes for re-entry</li>
+                    <li>If batteries are dead at re-entry = no computer, no parachutes = crew dies on impact</li>
+                </ul>
+
+                <div style="background: var(--bg-yellow-light); border: 2px solid var(--caution-yellow); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">🔋 Current Battery Status:</h3>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>CM batteries remaining:</strong> ~100 amp-hours</li>
+                        <li><strong>Current drain rate:</strong> 15 amps/hour</li>
+                        <li><strong>Time until batteries dead:</strong> 6-7 hours</li>
+                        <li><strong>Time until re-entry:</strong> 90 hours (almost 4 days!)</li>
+                        <li><strong>Power needed for re-entry:</strong> 40 amp-hours minimum</li>
+                    </ul>
+                </div>
+
+                <p style="font-weight: 700; color: var(--crisis-red); font-size: 1.1rem; margin-top: 1rem;">
+                    The math is brutal: If they leave the CM running, it will be completely dead in 7 hours. But they need it working in 90 hours.
+                </p>
+            </section>
+
+            <section class="options">
+                <div class="option" data-option="keeprunning">
+                    <h3>⚡ KEEP CM RUNNING</h3>
+                    <p class="option-subtitle">Leave Command Module systems powered up</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>No risk of shutdown procedure failure</li>
+                                <li>No risk of restart procedure failure</li>
+                                <li>Systems stay warm, no condensation damage</li>
+                                <li>Can use CM computer for navigation</li>
+                                <li>Can monitor CM systems continuously</li>
+                                <li>Crew can move between CM and LM freely</li>
+                                <li>Psychologically comforting—always have it ready</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li><strong>FATAL FLAW: Batteries will die in 7 hours</strong></li>
+                                <li>No power for re-entry = certain death</li>
+                                <li>Computer won't boot without power</li>
+                                <li>Parachutes won't deploy without power</li>
+                                <li>Navigation systems dead = can't align for re-entry</li>
+                                <li>Heat shield angle controlled by computer—wrong angle = burn up or skip off atmosphere</li>
+                                <li><strong>This option guarantees crew death</strong></li>
+                            </ul>
+                        </div>
+
+                        <div style="background: var(--bg-light); border: 2px solid var(--crisis-red); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700; color: var(--crisis-red);">Mission Control Assessment:</p>
+                            <p>"This is not an option. The crew will die without power for re-entry. We MUST shut down the CM."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-option="shutdown">
+                    <h3>🔌 SHUT DOWN THE CM</h3>
+                    <p class="option-subtitle">Power down all Command Module systems immediately</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Preserves battery power for re-entry (the only thing that matters)</li>
+                                <li>Saves ~15 amps/hour × 90 hours = 1,350 amp-hours</li>
+                                <li>Guarantees enough power for computer restart</li>
+                                <li>Guarantees enough power for parachute deployment</li>
+                                <li>Gives margin for unexpected power needs</li>
+                                <li>Only option that gives crew a chance to survive re-entry</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li><strong>Never been done before—shutdown procedure doesn't exist</strong></li>
+                                <li><strong>Restart procedure never tested—might not work</strong></li>
+                                <li>CM will freeze to 38°F—condensation will form on electronics</li>
+                                <li>Water on circuit boards could cause shorts when powered back up</li>
+                                <li>Systems designed to stay warm—cold damage unknown</li>
+                                <li>If restart fails, crew burns up in atmosphere</li>
+                                <li>Engineers must write new procedures from scratch</li>
+                                <li>Crew must execute perfectly with frozen hands in 3 hours or less</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: var(--bg-yellow-light); border: 2px solid var(--caution-yellow); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700;">The Risks:</p>
+                            <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                                <li>❌ Cold damage to electronics</li>
+                                <li>❌ Condensation shorting circuits</li>
+                                <li>❌ Computer memory loss (1969 computers had no permanent storage)</li>
+                                <li>❌ Frozen fuel lines</li>
+                                <li>❌ Battery damage from cold</li>
+                                <li>❌ Restart procedure fails</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: var(--bg-blue-light); border: 2px solid var(--nasa-blue); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700;">What Makes This Decision Hard:</p>
+                            <p style="margin-top: 0.5rem;">You're choosing between two unknowns:</p>
+                            <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                                <li><strong>Option 1:</strong> Run out of power (100% chance of death)</li>
+                                <li><strong>Option 2:</strong> Risk restart failure (unknown % chance of death, but at least there's a CHANCE)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="background: var(--nasa-blue); color: white; padding: 2rem; text-align: center; border-radius: 8px; margin: 2rem 0;">
+                <h2 style="color: white; font-size: 1.5rem; margin: 0;">🤔 WHAT SHOULD MISSION CONTROL DECIDE?</h2>
+            </div>
+
+            <section class="decision-result hidden" id="result">
+                <h2>NASA's Decision</h2>
+                <div class="result-content">
+                    <p class="result-choice">✓ SHUT DOWN THE COMMAND MODULE</p>
+                    <p>
+                        Mission Control made the call: <strong>"We're going to power down Odyssey."</strong>
+                    </p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Shutdown Process:</h3>
+                    <p>Engineers at Mission Control worked frantically to create a shutdown procedure that had never existed before. The CM was designed to stay on from launch to splashdown. Shutting it down and restarting it later was never in the original plans.</p>
+
+                    <h4 style="margin-top: 1rem;">Challenges:</h4>
+                    <ul>
+                        <li>Systems had to be shut down in precise order to avoid damage</li>
+                        <li>Some systems needed to stay partially powered for protection</li>
+                        <li>Had to preserve computer memory alignments for restart</li>
+                        <li>Had to avoid creating power surges that could drain batteries</li>
+                        <li>Only one chance to get it right</li>
+                    </ul>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">GET 58:30:00 - The Shutdown Begins:</h3>
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <p style="font-weight: 700;">Step by step, the crew powered down Odyssey:</p>
+                        <ol style="margin-top: 1rem;">
+                            <li><strong>Computer shutdown:</strong> Saved critical navigation alignments to paper backup</li>
+                            <li><strong>Guidance system:</strong> Powered down IMU (Inertial Measurement Unit)</li>
+                            <li><strong>Environmental controls:</strong> Heaters, fans, pumps - all off</li>
+                            <li><strong>Communications:</strong> Reduced to minimum backup</li>
+                            <li><strong>Instruments:</strong> Everything non-essential - off</li>
+                            <li><strong>Final systems:</strong> Leaving only battery trickle charge and minimal monitoring</li>
+                        </ol>
+
+                        <p style="margin-top: 1.5rem; font-style: italic;">
+                            Jack Swigert flipped the final switches. The Command Module went dark. The hum of fans stopped. Silence.
+                        </p>
+
+                        <blockquote style="margin-top: 1rem;">
+                            "Odyssey is powered down, Houston."<br>
+                            <cite>— Jack Swigert, GET 58:40:00</cite>
+                        </blockquote>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Immediate Effects:</h3>
+                    <ul style="margin: 1rem 0;">
+                        <li>✓ <strong>Power drain reduced:</strong> From 15 amps/hour to ~1 amp/hour</li>
+                        <li>✓ <strong>Batteries preserved:</strong> Enough power for re-entry guaranteed (if restart works)</li>
+                        <li>✓ <strong>Critical systems saved:</strong> Computer, parachutes, heat shield controls will have power</li>
+                        <li>❄️ <strong>Temperature drop:</strong> CM begins cooling toward 38°F over next few days</li>
+                        <li>💧 <strong>Condensation begins:</strong> Water droplets forming on cold surfaces</li>
+                    </ul>
+
+                    <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Shutdown Successful!</p>
+                        <p style="margin-bottom: 0.5rem;">Odyssey powered down cleanly. Batteries preserved.</p>
+                        <p>But now the crew faced a new fear: <strong>Will it restart in 3 days?</strong></p>
+                    </div>
+
+                    <div style="background: var(--bg-yellow-light); border: 2px solid var(--caution-yellow); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <h3 style="margin-bottom: 1rem;">⏳ The New Challenge:</h3>
+                        <p>Mission Control now had 90 hours to:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>Write restart procedures from scratch</li>
+                            <li>Test them in simulators on Earth</li>
+                            <li>Account for cold damage and condensation</li>
+                            <li>Make sure procedures fit in 3-hour window before re-entry</li>
+                            <li>Transmit procedures to crew</li>
+                            <li>Hope everything works</li>
+                        </ul>
+
+                        <p style="margin-top: 1rem; font-weight: 700;">
+                            The crew's life now depended on engineers writing perfect procedures for something that had never been done before.
+                        </p>
+                    </div>
+
+                    <blockquote>
+                        "Shutting down Odyssey felt like closing the lid on our own coffin. We'd have to open it again in three days and hope everything inside still worked."
+                        <cite>— Jim Lovell</cite>
+                    </blockquote>
+
+                    <p style="margin-top: 1.5rem;">
+                        <strong>Why it was the right decision:</strong> Without power, there is no re-entry. The shutdown was mathematically necessary. The restart was uncertain, but it was their only chance. Mission Control chose the option that gave them a possibility of survival over certain death.
+                    </p>
+
+                    <p style="background: var(--bg-blue-light); padding: 1rem; border-radius: 8px; margin-top: 1.5rem; font-style: italic;">
+                        This decision illustrates the core of Apollo 13: Every choice was between bad and worse. They chose the option that kept hope alive, even when success was far from guaranteed.
+                    </p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="slide-nav">
+        <a href="11-long-journey.html" class="btn-prev">← Previous</a>
+        <a href="13-passive-thermal.html" class="btn-next">Next →</a>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

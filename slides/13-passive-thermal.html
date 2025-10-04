@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 - Passive Thermal Control. The barbecue roll maneuver to prevent freezing and overheating.">
+    <title>Apollo 13 - Passive Thermal Control</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="13">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 13 of 24</span>
+    </nav>
+    <main class="slide-container">
+        <article class="slide info">
+            <header class="slide-header">
+                <span class="slide-type">Background Information</span>
+                <h1>Passive Thermal Control</h1>
+                <time class="timestamp">The "Barbecue Roll" - Rotating to Stay Alive</time>
+            </header>
+            <figure class="slide-image">
+                <img src="../assets/images/slide13_ptc_diagram.png" alt="Passive Thermal Control rotation diagram" loading="lazy">
+                <figcaption>The spacecraft slowly rotating to distribute heat evenly</figcaption>
+            </figure>
+            <section class="slide-content">
+                <h2>The Problem: Space is Both Freezing AND Boiling</h2>
+                <p>In space, there's no air to carry heat away. This creates extreme temperature differences:</p>
+
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">Temperature Extremes:</h3>
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="background: linear-gradient(to right, #FF6B00, #FF0000); color: white; padding: 1rem; border-radius: 8px;">
+                            <strong>☀️ Side facing the Sun:</strong> +250°F (121°C)
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Hot enough to melt lead, boil water instantly</p>
+                        </div>
+                        <div style="background: linear-gradient(to right, #0066CC, #000033); color: white; padding: 1rem; border-radius: 8px;">
+                            <strong>❄️ Side in shadow:</strong> -250°F (-157°C)
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Colder than Antarctica's coldest day, instant freezing</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem;"><strong>Temperature difference:</strong> 500°F swing from one side to the other!</p>
+                </div>
+
+                <h2>What Happens Without Rotation?</h2>
+                <div style="background: var(--bg-light); border-left: 4px solid var(--crisis-red); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4>Sun-Facing Side:</h4>
+                    <ul>
+                        <li>🔥 Metal expands and warps from heat</li>
+                        <li>🔥 Electronics overheat and fail</li>
+                        <li>🔥 Fuel lines rupture from pressure</li>
+                        <li>🔥 Windows crack from thermal stress</li>
+                        <li>🔥 Seals melt, causing air leaks</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1.5rem;">Shadow Side:</h4>
+                    <ul>
+                        <li>❄️ Metal contracts and becomes brittle</li>
+                        <li>❄️ Batteries freeze and lose capacity</li>
+                        <li>❄️ Fuel freezes in lines</li>
+                        <li>❄️ Lubricants solidify, mechanisms jam</li>
+                        <li>❄️ Electronics fail from cold</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem; font-weight: 700; color: var(--crisis-red);">
+                        Result: Spacecraft destroyed by thermal stress within hours.
+                    </p>
+                </div>
+
+                <h2>The Solution: Passive Thermal Control (PTC)</h2>
+                <p>Apollo spacecraft used a simple but brilliant solution: <strong>rotate slowly</strong> so all sides get equal exposure to Sun and shadow.</p>
+
+                <details class="info-section" open>
+                    <summary>🔄 How the "Barbecue Roll" Works</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>The Maneuver:</h4>
+                        <ul>
+                            <li><strong>Rotation axis:</strong> Aligned with spacecraft's long axis (like a rotisserie chicken)</li>
+                            <li><strong>Rotation rate:</strong> ~3 revolutions per hour (one complete rotation every 20 minutes)</li>
+                            <li><strong>Method:</strong> Fire small RCS (Reaction Control System) thrusters to start spin</li>
+                            <li><strong>Maintenance:</strong> Occasional thruster pulses to maintain rotation rate</li>
+                            <li><strong>Duration:</strong> Continuous from Earth departure until re-entry prep</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">Why It Works:</h4>
+                        <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="margin-bottom: 0.5rem;"><strong>Think of a hot dog on a grill:</strong></p>
+                            <ul>
+                                <li>If you don't rotate it → one side burns, one side stays raw</li>
+                                <li>If you rotate it continuously → all sides cook evenly</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>Same concept in space:</strong></p>
+                            <ul>
+                                <li>Rotate the spacecraft → heat distributes evenly around all surfaces</li>
+                                <li>No single side stays in Sun too long (overheating)</li>
+                                <li>No single side stays in shadow too long (freezing)</li>
+                                <li>Average temperature stays moderate and safe</li>
+                            </ul>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">Temperature Result:</h4>
+                        <p>With PTC, spacecraft surfaces maintain moderate temperatures around 50-80°F—survivable range for systems.</p>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>⚠️ PTC Challenges on Apollo 13</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>Problem #1: Debris Cloud</h4>
+                        <p>The explosion created thousands of ice particles and debris pieces orbiting with the spacecraft. Normal PTC uses star sightings to maintain orientation, but stars were invisible through the debris cloud.</p>
+
+                        <h4 style="margin-top: 1.5rem;">Problem #2: Venting Thrust</h4>
+                        <p>Oxygen and water continuously venting from the damaged Service Module acted like tiny rocket engines, pushing the spacecraft off-course and disrupting the rotation.</p>
+
+                        <ul style="margin-top: 1rem;">
+                            <li>💨 Uneven venting caused wobble in rotation</li>
+                            <li>💨 Venting changed direction as spacecraft rotated</li>
+                            <li>💨 Hard to maintain steady rotation rate</li>
+                            <li>💨 Required frequent thruster corrections</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">Problem #3: Limited RCS Fuel</h4>
+                        <p>Every thruster firing to maintain PTC burned precious fuel needed for course corrections and re-entry alignment. The crew had to balance:</p>
+                        <ul>
+                            <li>Maintaining rotation for thermal control</li>
+                            <li>Conserving fuel for critical maneuvers later</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">Problem #4: Coupled Spacecraft Configuration</h4>
+                        <p>Apollo 13 was flying in an unusual configuration:</p>
+                        <ul>
+                            <li>LM "Aquarius" (active, crew inside)</li>
+                            <li>CM "Odyssey" (powered down, attached to LM)</li>
+                            <li>SM (damaged, venting, still attached)</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">This created unbalanced mass distribution, making PTC harder to maintain smoothly.</p>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <p style="font-weight: 700;">Solution:</p>
+                            <p style="margin-top: 0.5rem;">Mission Control calculated modified PTC procedures using Sun angle instead of star sightings. The crew had to manually monitor rotation with stopwatch and adjust with thruster pulses every 2-3 hours.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>🎯 Why PTC Was Critical for Apollo 13</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>Extended Mission Duration:</h4>
+                        <p>Apollo 13's trip took much longer than a normal lunar mission:</p>
+                        <ul>
+                            <li><strong>Normal mission:</strong> 8 days total (3 days out, 2 on Moon, 3 back)</li>
+                            <li><strong>Apollo 13:</strong> 5.9 days continuous (no lunar landing, free-return trajectory)</li>
+                            <li><strong>Time in PTC:</strong> ~4 days continuous rotation</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">Critical Systems That Needed Protection:</h4>
+                        <ul>
+                            <li>🔋 <strong>LM batteries:</strong> Must stay within operating temperature (-20°F to +160°F)</li>
+                            <li>💧 <strong>Water tanks:</strong> Can't freeze (needed for drinking and cooling)</li>
+                            <li>⚡ <strong>Electronics:</strong> Cold-soldered joints crack below -40°F</li>
+                            <li>🚀 <strong>RCS fuel:</strong> Freezes at -40°F, becomes unusable</li>
+                            <li>🪟 <strong>Windows:</strong> Thermal shock could crack them</li>
+                            <li>🛡️ <strong>Heat shield:</strong> Thermal cycling could weaken ablative material</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">Crew Comfort (Secondary Benefit):</h4>
+                        <p>While the cabin was still freezing cold (38°F), PTC prevented it from getting even worse:</p>
+                        <ul>
+                            <li>Without PTC: One wall at -250°F, one at +250°F</li>
+                            <li>With PTC: All walls averaging ~40°F</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; font-style: italic;">Still miserable, but survivable.</p>
+
+                        <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <p style="font-weight: 700;">Success!</p>
+                            <p style="margin-top: 0.5rem;">Despite the challenges, Apollo 13 maintained PTC for the entire journey home. All critical systems stayed within operating temperatures. The spacecraft structure remained intact.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <h2 style="margin-top: 2rem;">The Manual Process</h2>
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4>Every 2-3 Hours, the Crew Had To:</h4>
+                    <ol>
+                        <li><strong>Check rotation rate:</strong> Time how long one full rotation takes</li>
+                        <li><strong>Compare to target:</strong> Should be 20 minutes per rotation</li>
+                        <li><strong>Calculate correction:</strong> Determine thruster pulse duration needed</li>
+                        <li><strong>Fire thrusters:</strong> Short pulse to adjust rotation</li>
+                        <li><strong>Monitor result:</strong> Watch for next few rotations</li>
+                        <li><strong>Record fuel usage:</strong> Track RCS propellant consumption</li>
+                        <li><strong>Report to Houston:</strong> Update Mission Control on status</li>
+                    </ol>
+
+                    <p style="margin-top: 1.5rem; font-style: italic;">
+                        This became routine background work that had to be done every few hours for 4 days straight, in addition to all other survival tasks.
+                    </p>
+                </div>
+
+                <blockquote style="margin: 2rem 0;">
+                    "We're rotating like a chicken on a spit. Every 20 minutes, we'd go from looking at the Sun to looking at black space to looking at the Sun again. It was hypnotic. But it was keeping us alive."
+                    <cite>— Fred Haise</cite>
+                </blockquote>
+
+                <div style="background: var(--bg-blue-light); border: 2px solid var(--nasa-blue); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <h3 style="margin-bottom: 1rem;">🔬 The Engineering Genius</h3>
+                    <p>Passive Thermal Control demonstrates elegant engineering:</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>✓ <strong>Simple concept:</strong> Just rotate the spacecraft</li>
+                        <li>✓ <strong>No active systems needed:</strong> No heaters, no coolers, no pumps</li>
+                        <li>✓ <strong>Minimal fuel use:</strong> Small thruster pulses every few hours</li>
+                        <li>✓ <strong>Passive operation:</strong> Works without constant attention</li>
+                        <li>✓ <strong>Reliable:</strong> Hard to break, easy to fix if disrupted</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; font-weight: 700;">
+                        Sometimes the best solutions are the simplest ones.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-green-light); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                    <p style="font-weight: 700; font-size: 1.1rem;">The barbecue roll wasn't glamorous.</p>
+                    <p style="margin-top: 0.5rem;">But it was one more piece of the survival puzzle that worked perfectly.</p>
+                    <p style="margin-top: 0.5rem;">And in space, "it worked" is the highest praise.</p>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="slide-nav">
+        <a href="12-power-conservation.html" class="btn-prev">← Previous</a>
+        <a href="14-service-module-jettison.html" class="btn-next">Next →</a>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

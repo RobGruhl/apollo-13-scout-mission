@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 - Restarting the Command Module Computer. A procedure that never existed.">
+    <title>Apollo 13 - Computer Restart Challenge</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="16">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 16 of 24</span>
+    </nav>
+    <main class="slide-container">
+        <article class="slide info">
+            <header class="slide-header">
+                <span class="slide-type">Background Information</span>
+                <h1>Restarting the Computer</h1>
+                <time class="timestamp">The Impossible Procedure Written in 3 Days</time>
+            </header>
+            <figure class="slide-image">
+                <img src="../assets/images/slide16_computer.jpg" alt="Apollo Guidance Computer" loading="lazy">
+                <figcaption>The Apollo Guidance Computer - 1969 technology that had to work perfectly after 4 days frozen</figcaption>
+            </figure>
+            <section class="slide-content">
+                <h2>The Challenge Nobody Planned For</h2>
+                <p>When Apollo 13 shut down the Command Module to save power, they created a problem that had never been solved before:</p>
+
+                <div style="background: var(--bg-light); border: 2px solid var(--crisis-red); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <h3 style="color: var(--crisis-red); margin-bottom: 1rem;">The Problem:</h3>
+                    <ul>
+                        <li>❌ <strong>No shutdown procedure existed</strong> - CM designed to stay powered from launch to landing</li>
+                        <li>❌ <strong>No restart procedure existed</strong> - never tested, never planned for</li>
+                        <li>❌ <strong>Frozen electronics:</strong> 4 days at 38°F, well below operating specs</li>
+                        <li>❌ <strong>Condensation damage:</strong> Water droplets on circuit boards could cause shorts</li>
+                        <li>❌ <strong>Lost memory:</strong> 1969 computer had volatile RAM—power loss = memory loss</li>
+                        <li>❌ <strong>Limited time:</strong> 3 hours to power up EVERYTHING before re-entry</li>
+                        <li>❌ <strong>Limited power:</strong> Only ~40 amp-hours available, can't waste power on mistakes</li>
+                        <li>❌ <strong>One chance:</strong> If restart fails, crew burns up in atmosphere</li>
+                    </ul>
+                </div>
+
+                <h2>The Apollo Guidance Computer (AGC)</h2>
+                <details class="info-section" open>
+                    <summary>🖥️ What Made This Computer Special (and Challenging)</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>Technical Specs (1969 Cutting-Edge):</h4>
+                        <ul>
+                            <li><strong>Memory:</strong> 4KB RAM (yes, KILOBYTES), 72KB ROM</li>
+                            <li><strong>Speed:</strong> 0.043 MHz (43,000 operations/second)</li>
+                            <li><strong>Weight:</strong> 70 pounds</li>
+                            <li><strong>Power draw:</strong> 55 watts when running</li>
+                            <li><strong>Operating temp:</strong> 40°F to 160°F (now at 38°F—below spec)</li>
+                            <li><strong>Cost:</strong> $150,000 per unit (1969 dollars)</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">For Comparison - Your Modern Smartphone:</h4>
+                        <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <ul>
+                                <li><strong>Memory:</strong> 8,000,000 KB RAM (2 million times more)</li>
+                                <li><strong>Speed:</strong> 2,400 MHz (56,000 times faster)</li>
+                                <li><strong>Weight:</strong> 6 ounces (AGC was 12x heavier)</li>
+                                <li><strong>Power:</strong> 3-5 watts (AGC used 11x more power)</li>
+                            </ul>
+                            <p style="margin-top: 1rem; font-style: italic;">
+                                Your phone could run 100,000 Apollo missions simultaneously. But the AGC was enough to navigate to the Moon—if you could make it restart.
+                            </p>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">Critical AGC Functions for Re-Entry:</h4>
+                        <ul>
+                            <li>🎯 <strong>Navigation:</strong> Calculate spacecraft position and velocity</li>
+                            <li>📐 <strong>Attitude control:</strong> Orient heat shield to correct re-entry angle (-6.49°)</li>
+                            <li>🔥 <strong>Entry guidance:</strong> Continuously adjust angle during descent to stay in corridor</li>
+                            <li>🪂 <strong>Parachute deploy:</strong> Trigger sequence at precise altitude</li>
+                            <li>📊 <strong>System monitoring:</strong> Track fuel, power, temperatures, pressures</li>
+                            <li>⏱️ <strong>Timing:</strong> Coordinate every sequence to the split second</li>
+                        </ul>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <p style="font-weight: 700;">Without the computer:</p>
+                            <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                                <li>❌ Wrong re-entry angle = burn up or skip off atmosphere = death</li>
+                                <li>❌ Wrong attitude = heat shield not positioned = death</li>
+                                <li>❌ Parachutes don't deploy = impact at 300 mph = death</li>
+                            </ul>
+                            <p style="margin-top: 1rem; font-weight: 700; color: var(--crisis-red);">
+                                The computer HAD to work. No backup option.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>⚡ The Power Budget Crisis</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>The Math That Terrified Everyone:</h4>
+                        <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace;">
+                            <p><strong>Available power:</strong> ~43 amp-hours (after 4 days of battery drain)</p>
+                            <p style="margin-top: 0.5rem;"><strong>Time for startup to splashdown:</strong> 3 hours</p>
+                            <p style="margin-top: 0.5rem;"><strong>Maximum sustainable draw:</strong> 14-15 amps average</p>
+                            <p style="margin-top: 0.5rem; color: var(--crisis-red);"><strong>Margin for error:</strong> ~2-3 amp-hours (6-7%)</p>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">Power Requirements for Re-Entry:</h4>
+                        <ul>
+                            <li>🖥️ <strong>Computer:</strong> 4 amps continuous</li>
+                            <li>🎛️ <strong>Guidance system (IMU):</strong> 8 amps for warm-up, 2 amps running</li>
+                            <li>📻 <strong>Communications:</strong> 3-5 amps</li>
+                            <li>🎮 <strong>Control systems:</strong> 2-4 amps</li>
+                            <li>💡 <strong>Instruments:</strong> 2-3 amps</li>
+                            <li>🪂 <strong>Parachute pyros:</strong> 15 amps (brief surge)</li>
+                            <li>🔥 <strong>RCS heaters:</strong> 5 amps (to prevent frozen thrusters)</li>
+                            <li>🌡️ <strong>Equipment heaters:</strong> 3-4 amps</li>
+                        </ul>
+
+                        <p style="margin-top: 1.5rem; font-weight: 700;">Total draw: 25-30 amps at peak, 14-16 amps average</p>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700;">The Constraint:</p>
+                            <p style="margin-top: 0.5rem;">Every system had to be activated in precise order to avoid power surges. Turn on too much too fast = batteries drain instantly = death. Turn on too slow = not ready for re-entry = death.</p>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">Ken Mattingly's Marathon:</h4>
+                        <p>Ken Mattingly, the CM pilot who was replaced by Swigert 3 days before launch, became the hero of the restart procedure:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>⏱️ <strong>72 hours straight:</strong> No sleep, testing restart procedures in simulator</li>
+                            <li>🔋 <strong>Power optimization:</strong> Finding every way to save 0.1 amps</li>
+                            <li>📝 <strong>Procedure writing:</strong> Step-by-step checklist that would work</li>
+                            <li>🧪 <strong>Testing:</strong> Trying thousands of sequence combinations</li>
+                            <li>❄️ <strong>Cold simulation:</strong> Cooling simulator to match frozen CM conditions</li>
+                        </ul>
+
+                        <blockquote style="margin-top: 1.5rem;">
+                            "I ran that procedure 50 times. Timed every step. Measured every amp. If we couldn't do it in 3 hours with under 40 amp-hours, they were dead. I wasn't going to let that happen."
+                            <cite>— Ken Mattingly</cite>
+                        </blockquote>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>❄️ The Cold-Start Problem</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>What Happens to Electronics at 38°F:</h4>
+                        <ul>
+                            <li>🔌 <strong>Solder joints contract:</strong> Tiny cracks can form, breaking circuits</li>
+                            <li>🔌 <strong>Semiconductors slow down:</strong> Transistors don't switch as fast</li>
+                            <li>🔌 <strong>Capacitors lose capacity:</strong> Less able to store charge</li>
+                            <li>🔌 <strong>Resistors change value:</strong> Electrical properties shift with temperature</li>
+                            <li>🔌 <strong>Wire insulation stiffens:</strong> Brittle, can crack when moved</li>
+                            <li>🔌 <strong>Lubricants freeze:</strong> Mechanical switches and relays jam</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">The Condensation Nightmare:</h4>
+                        <p>For 4 days, the crew's breath created moisture that condensed on every cold surface:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>💧 Water droplets on circuit boards</li>
+                            <li>💧 Ice crystals in connectors</li>
+                            <li>💧 Moisture in switch contacts</li>
+                            <li>💧 Droplets bridging between electrical traces</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">Risk When Powering Up:</h4>
+                        <div style="background: var(--bg-light); border: 2px solid var(--crisis-red); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700; color: var(--crisis-red);">Scenario: Short Circuit Death Spiral</p>
+                            <ol style="margin-top: 0.5rem;">
+                                <li>Apply power to wet circuit board</li>
+                                <li>Water conducts electricity between traces</li>
+                                <li>Short circuit draws massive current</li>
+                                <li>Circuit board heats up, evaporates water (good?)</li>
+                                <li>But excessive current blows components (bad!)</li>
+                                <li>Battery drains trying to supply short circuit</li>
+                                <li>Computer never boots, power gone</li>
+                                <li>Re-entry without computer = death</li>
+                            </ol>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">NASA's Solution: Slow Warm-Up</h4>
+                        <p>The restart procedure included gradual power application:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>✓ Power on heaters FIRST (before turning on sensitive electronics)</li>
+                            <li>✓ Let systems warm up slowly (15-20 minutes per system)</li>
+                            <li>✓ Allow condensation to evaporate safely</li>
+                            <li>✓ Monitor current draw - any spike = short circuit = shut down immediately</li>
+                            <li>✓ Test each system before depending on it</li>
+                        </ul>
+
+                        <p style="margin-top: 1rem; font-style: italic;">
+                            This added critical time to the startup sequence, making the 3-hour window even tighter.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>🧮 The Memory Problem</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>How 1969 Computer Memory Worked:</h4>
+                        <ul>
+                            <li><strong>ROM (Read-Only Memory):</strong> 72KB permanent storage, not lost when powered off</li>
+                            <li><strong>RAM (Random Access Memory):</strong> 4KB volatile storage, <span style="color: var(--crisis-red); font-weight: 700;">ERASED when powered off</span></li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">What Was Lost When CM Powered Down:</h4>
+                        <ul>
+                            <li>❌ <strong>Navigation state:</strong> Current position, velocity, trajectory calculations</li>
+                            <li>❌ <strong>IMU alignment:</strong> Orientation reference (which way is "up")</li>
+                            <li>❌ <strong>Flight plan data:</strong> Time marks, re-entry targets, maneuver plans</li>
+                            <li>❌ <strong>System configurations:</strong> Settings, calibrations, parameters</li>
+                            <li>❌ <strong>Telemetry history:</strong> Recent sensor readings and trends</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">What Survived (ROM):</h4>
+                        <ul>
+                            <li>✓ <strong>Core software:</strong> Operating system, navigation equations, guidance programs</li>
+                            <li>✓ <strong>Re-entry programs:</strong> Code for atmospheric entry</li>
+                            <li>✓ <strong>Math routines:</strong> Calculations for orbits, attitude, trajectories</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">The Restart Challenge:</h4>
+                        <p>All the lost data had to be re-entered manually within 3 hours:</p>
+
+                        <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700;">Re-Loading Navigation Data:</p>
+                            <ol style="margin-top: 0.5rem;">
+                                <li><strong>Load current time:</strong> GET (Ground Elapsed Time) from Mission Control</li>
+                                <li><strong>Load position:</strong> Latitude, longitude, altitude (calculated by Houston)</li>
+                                <li><strong>Load velocity:</strong> Speed and direction vector</li>
+                                <li><strong>Load attitude:</strong> Spacecraft orientation (roll, pitch, yaw)</li>
+                                <li><strong>Re-align IMU:</strong> Sight on known star or Earth limb to establish reference</li>
+                                <li><strong>Load target:</strong> Re-entry corridor coordinates, splashdown point</li>
+                                <li><strong>Load parameters:</strong> Spacecraft weight, balance, aerodynamic properties</li>
+                            </ol>
+
+                            <p style="margin-top: 1rem; font-style: italic;">
+                                Every number had to be typed into the computer using the DSKY (Display and Keyboard). One typo = wrong re-entry angle = death.
+                            </p>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">The DSKY (Display and Keyboard):</h4>
+                        <div style="background: var(--bg-light); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p>Interface for entering data into the AGC:</p>
+                            <ul style="margin-top: 0.5rem;">
+                                <li><strong>Display:</strong> 3 rows of 5-digit numbers</li>
+                                <li><strong>Keyboard:</strong> 19 keys (0-9, +/-, VERB, NOUN, ENTER, CLEAR, etc.)</li>
+                                <li><strong>Speed:</strong> Typing on the DSKY was SLOW—every entry took 10-30 seconds</li>
+                                <li><strong>Verification:</strong> Had to double-check every number before pressing ENTER</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem; font-weight: 700;">
+                                The crew had to enter hundreds of numbers perfectly while exhausted, freezing, and terrified.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <h2 style="margin-top: 2rem;">The Final Restart Procedure</h2>
+                <div style="background: var(--bg-blue-light); border: 2px solid var(--nasa-blue); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <p style="font-weight: 700; margin-bottom: 1rem;">After 72 hours of non-stop testing, Ken Mattingly and the Mission Control team delivered a procedure that would work. It filled 400+ pages of step-by-step instructions.</p>
+
+                    <h4>Critical Innovations:</h4>
+                    <ul>
+                        <li>✓ Sequence optimized to minimize power draw</li>
+                        <li>✓ Gradual warm-up to prevent condensation shorts</li>
+                        <li>✓ Manual data entry sequences pre-calculated and verified</li>
+                        <li>✓ Backup procedures for every possible failure mode</li>
+                        <li>✓ Timing down to the second for every step</li>
+                        <li>✓ Power budget tracked for every switch flip</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem;">The procedure was radioed up to the crew. Jack Swigert would execute it, reading each step aloud, with Jim Lovell double-checking every action.</p>
+                </div>
+
+                <blockquote style="margin: 2rem 0;">
+                    "We had never turned this spacecraft off and then turned it back on. We had no idea if it would work. But we wrote the best procedure we could, and we sent it up. And then we waited."
+                    <cite>— Sy Liebergot, EECOM (Electrical, Environmental, and Consumables Manager)</cite>
+                </blockquote>
+
+                <div style="background: var(--bg-green-light); border: 2px solid var(--success-green); padding: 2rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">The Impossible Became Possible</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">
+                        In 3 days, engineers created procedures that didn't exist.<br>
+                        In 3 hours, astronauts executed them perfectly.<br>
+                        And the computer... it worked.
+                    </p>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="slide-nav">
+        <a href="15-lm-jettison.html" class="btn-prev">← Previous</a>
+        <a href="17-reentry-prep.html" class="btn-next">Next →</a>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

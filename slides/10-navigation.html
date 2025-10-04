@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 - Navigation Without the Computer. How did they find their way home?">
+    <title>Apollo 13 - Navigation Methods</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="10">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 10 of 24</span>
+    </nav>
+    <main class="slide-container">
+        <article class="slide info">
+            <header class="slide-header">
+                <span class="slide-type">Background Information</span>
+                <h1>Navigation Without the Computer</h1>
+                <time class="timestamp">How Do You Navigate 200,000 Miles Without GPS?</time>
+            </header>
+            <figure class="slide-image">
+                <img src="../assets/images/slide10_navigation.jpg" alt="Jim Lovell using manual navigation tools" loading="lazy">
+                <figcaption>Commander Lovell using the Alignment Optical Telescope</figcaption>
+            </figure>
+            <section class="slide-content">
+                <h2>The Challenge</h2>
+                <p>With the Command Module's computer powered down to save electricity, how do you navigate a spacecraft back to Earth from 200,000 miles away? The crew had to use manual methods developed in the early days of spaceflight.</p>
+
+                <details class="info-section" open>
+                    <summary>🔭 Method 1: Star Sighting with the AOT (Alignment Optical Telescope)</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>How It Works:</h4>
+                        <p>The Lunar Module's Alignment Optical Telescope (AOT) is a simple optical sight mounted in the ceiling. It has a 60-degree field of view with a reticle pattern of numbered lines.</p>
+
+                        <h4>The Process:</h4>
+                        <ul>
+                            <li><strong>Step 1:</strong> Manually align spacecraft to specific attitude</li>
+                            <li><strong>Step 2:</strong> Sight known stars through the AOT reticle</li>
+                            <li><strong>Step 3:</strong> Match star positions to reticle line numbers</li>
+                            <li><strong>Step 4:</strong> Calculate spacecraft orientation from star positions</li>
+                            <li><strong>Step 5:</strong> Use math and tables to determine trajectory corrections</li>
+                        </ul>
+
+                        <h4>The Problem for Apollo 13:</h4>
+                        <ul>
+                            <li>❌ <strong>Debris field:</strong> Thousands of ice particles from vented water/oxygen orbiting with spacecraft</li>
+                            <li>❌ <strong>Sunlight reflections:</strong> Ice crystals reflecting sunlight looked exactly like stars</li>
+                            <li>❌ <strong>Impossible to distinguish:</strong> Real stars vs. fake "stars" (ice particles)</li>
+                            <li>❌ <strong>Result:</strong> Star sightings unreliable and dangerous to use</li>
+                        </ul>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <strong>Lovell's frustration:</strong> "I can't tell a star from a piece of debris. It's like being in a snowstorm."
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>🌍 Method 2: Earth Terminator Alignment</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>How It Works:</h4>
+                        <p>Use the line between day and night on Earth (the terminator) as a reference point for spacecraft alignment.</p>
+
+                        <h4>The Process:</h4>
+                        <ul>
+                            <li><strong>Step 1:</strong> Look at Earth through the LM window</li>
+                            <li><strong>Step 2:</strong> Identify the terminator (day/night line)</li>
+                            <li><strong>Step 3:</strong> Align spacecraft so Earth's terminator matches a reference line</li>
+                            <li><strong>Step 4:</strong> Use this known orientation to calculate trajectory</li>
+                        </ul>
+
+                        <h4>Advantages:</h4>
+                        <ul>
+                            <li>✓ Earth is BIG and easy to see</li>
+                            <li>✓ No confusion with debris</li>
+                            <li>✓ Terminator is a clear, sharp line</li>
+                            <li>✓ Can be done with just eyeballs and a window</li>
+                        </ul>
+
+                        <h4>Disadvantages:</h4>
+                        <ul>
+                            <li>⚠️ Less precise than star sightings</li>
+                            <li>⚠️ Requires good visibility of Earth</li>
+                            <li>⚠️ Terminator position changes as Earth rotates</li>
+                            <li>⚠️ Need to know exact time to calculate terminator position</li>
+                        </ul>
+
+                        <div style="background: var(--bg-blue-light); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <strong>Mission Control guidance:</strong> "Use the Sun and Earth's terminator for your alignment. We'll walk you through the calculations."
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>☀️ Method 3: Sun Angle Alignment</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>How It Works:</h4>
+                        <p>The Sun is the brightest object in space and its position relative to Earth's orbit is precisely known. By measuring the angle between the Sun and Earth, you can determine your trajectory.</p>
+
+                        <h4>The Process:</h4>
+                        <ul>
+                            <li><strong>Step 1:</strong> Sight the Sun through the COAS (Crew Optical Alignment Sight)</li>
+                            <li><strong>Step 2:</strong> Measure the angle between Sun and Earth</li>
+                            <li><strong>Step 3:</strong> Use known orbital mechanics to calculate trajectory</li>
+                            <li><strong>Step 4:</strong> Compare actual angle to desired angle</li>
+                            <li><strong>Step 5:</strong> Calculate correction burn needed</li>
+                        </ul>
+
+                        <h4>Advantages:</h4>
+                        <ul>
+                            <li>✓ Sun is unmistakable - can't be confused with debris</li>
+                            <li>✓ Always visible (unless spacecraft blocks it)</li>
+                            <li>✓ Extremely bright - easy to sight accurately</li>
+                            <li>✓ Position is precisely predictable</li>
+                        </ul>
+
+                        <h4>Tools Used:</h4>
+                        <ul>
+                            <li><strong>COAS:</strong> Crew Optical Alignment Sight - reticle sight mounted in window</li>
+                            <li><strong>Protractor:</strong> Yes, literally a paper protractor taped to the window</li>
+                            <li><strong>Grease pencil:</strong> Mark positions on window for reference</li>
+                            <li><strong>Stopwatch:</strong> Precise timing for calculations</li>
+                        </ul>
+
+                        <div style="background: var(--bg-green-light); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <strong>This became Apollo 13's primary navigation method!</strong> Simple, reliable, and accurate enough to get them home.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>📐 Method 4: Manual Burns with Stopwatch and Eyeballs</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>How It Works:</h4>
+                        <p>Once you know what direction you need to burn the engine and for how long, you have to do it manually without the computer's guidance.</p>
+
+                        <h4>The Process:</h4>
+                        <ol>
+                            <li><strong>Align spacecraft:</strong> Use Sun/Earth terminator to point engine in correct direction</li>
+                            <li><strong>Hold attitude:</strong> One astronaut watches alignment, makes tiny thruster corrections</li>
+                            <li><strong>Time the burn:</strong> Another astronaut runs the stopwatch</li>
+                            <li><strong>Fire engine:</strong> Third astronaut controls throttle manually</li>
+                            <li><strong>Monitor velocity:</strong> Watch velocity gauge, count off feet per second gained</li>
+                            <li><strong>Shut down:</strong> Kill engine at precise moment when target velocity reached</li>
+                        </ol>
+
+                        <h4>Challenges:</h4>
+                        <ul>
+                            <li>⚠️ Engine vibration makes it hard to maintain alignment</li>
+                            <li>⚠️ No autopilot - all corrections done by hand</li>
+                            <li>⚠️ Stopwatch timing must be precise to 0.1 seconds</li>
+                            <li>⚠️ Over-burn or under-burn means missing Earth entirely</li>
+                            <li>⚠️ Only one chance - can't waste fuel on multiple attempts</li>
+                        </ul>
+
+                        <h4>Apollo 13's Manual Burns:</h4>
+                        <ul>
+                            <li><strong>PC+2 burn (behind Moon):</strong> 4.5 minutes, +900 ft/s - SUCCESS</li>
+                            <li><strong>Mid-course correction 5:</strong> 14 seconds, manual RCS thrusters - SUCCESS</li>
+                            <li><strong>Final course correction:</strong> Calculated but not needed - trajectory was perfect!</li>
+                        </ul>
+
+                        <div style="background: var(--bg-green-light); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Incredible Accuracy</p>
+                            <p>Using manual navigation and eyeball alignment, Apollo 13 hit the re-entry corridor within 0.01 degrees. The margin for error was ±2.15 degrees. They nailed it.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <div style="background: var(--bg-blue-light); border-left: 4px solid var(--nasa-blue); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <h3 style="margin-bottom: 1rem;">The Human Element</h3>
+                    <p>Modern spacecraft rely on computers, GPS, and automated systems. Apollo 13 proved that skilled astronauts with basic tools, good training, and Mission Control support could navigate 200,000 miles through space using nothing more than:</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>☀️ The Sun</li>
+                        <li>🌍 Earth's terminator</li>
+                        <li>⏱️ A stopwatch</li>
+                        <li>👁️ Human eyeballs</li>
+                        <li>🧮 Slide rules and paper calculations</li>
+                        <li>🎯 Nerves of steel</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic;">Commander Lovell had trained for this. As a Navy pilot, he'd navigated by stars over the Pacific. Now he did the same—just 200,000 miles higher.</p>
+                </div>
+
+                <blockquote style="margin: 2rem 0;">
+                    "Navigation is the same whether you're at sea level or in space. Find your reference points, calculate your position, make your corrections. The math doesn't change—just the stakes."
+                    <cite>— Jim Lovell</cite>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+    <footer class="slide-nav">
+        <a href="09-co2-mailbox.html" class="btn-prev">← Previous</a>
+        <a href="11-long-journey.html" class="btn-next">Next →</a>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
