@@ -1,0 +1,91 @@
+NARRATIVE SLIDE #2
+THE EXPLOSION
+April 13, 1970 | "Houston, we've had a problem"
+
+=== THE SETUP ===
+Day 3 - April 13, 1970
+GET 55:54:53 (~9:08 PM Houston time)
+Distance from Earth: ~200,000 miles
+Speed: ~24,000 mph (traveling away from Earth)
+Status: All systems normal, routine evening
+
+=== THE ROUTINE REQUEST ===
+Mission Control to Jack Swigert:
+"We'd like you to stir up your cryo tanks"
+
+Standard procedure:
+• Stir oxygen tanks to get accurate readings
+• Oxygen stored as supercold liquid
+• Fans stir tanks to prevent stratification
+• Done dozens of times on previous missions
+• Should take 10 seconds...
+
+=== 55:54:53 - BANG ===
+Swigert flips the switch...
+
+LOUD BANG
+Spacecraft shakes violently
+Master alarm sounds
+Warning lights everywhere
+Crew feels the ship lurch
+
+Jack Swigert: "Okay, Houston, we've had a problem here"
+Houston: "Say again please"
+Jim Lovell: "Houston, we've had a problem"
+
+=== WHAT THEY SAW ===
+Through the window:
+• "Sparklies" - glittering debris field
+• Venting gas creating cloud around spacecraft
+• Something is catastrophically wrong
+• Oxygen pouring into space
+
+On the instruments:
+• Oxygen tank 2 pressure: ZERO
+• Oxygen tank 1 pressure: FALLING
+• Two fuel cells offline
+• Main bus B voltage dropping
+• Warning lights cascading
+
+Lovell: "We are venting something out into space"
+
+=== THE DAMAGE (Unknown at the time) ===
+What actually happened:
+• Oxygen tank #2 exploded in Service Module
+• Entire 13-foot panel blown off spacecraft
+• Damaged oxygen tank #1 (now leaking)
+• Fuel cells failing (need oxygen to generate power)
+• Service module crippled
+• Main engine (SPS) unsafe to use
+
+Crew won't see the damage until SM jettison (GET 138:02)
+
+=== THE CRISIS UNFOLDS ===
+Immediate problems:
+• Losing oxygen rapidly (need it to breathe)
+• Losing power (fuel cells dying)
+• Losing main engine (can't thrust home directly)
+• 200,000 miles from Earth
+• Traveling AWAY from home at 24,000 mph
+• Command Module will be dead in hours
+
+Mission Control realizes:
+• Moon landing: IMPOSSIBLE
+• Normal return: IMPOSSIBLE
+• Crew survival: UNCERTAIN
+
+Gene Kranz (Flight Director):
+"Okay, let's everybody keep cool. Let's solve the problem, but let's not make it any worse by guessing."
+
+=== WHAT'S AT STAKE ===
+The math is brutal:
+• 3 astronauts
+• 200,000 miles from Earth
+• Crippled spacecraft
+• Limited oxygen, power, water
+• 4+ days to get home
+• Margin for error: ZERO
+
+This is now a survival mission.
+
+NEXT DECISION: Turn Around or Free-Return?

@@ -1,0 +1,54 @@
+DECISION POINT #1
+TURN AROUND OR FREE-RETURN?
+GET ~61:29:42 | Post-Explosion Crisis
+
+=== THE SITUATION ===
+▸ Oxygen tank explosion at GET 55:54:53 (~200,000 miles from Earth)
+▸ Currently traveling ~24,000 mph away from Earth
+▸ Service module damaged, command module rocket uncertain
+▸ Fuel cells offline, running on backup batteries
+▸ Must decide route home: direct reversal or loop around Moon
+
+=== OPTION 1: TURN AROUND ===
+Subtitle: Blast retrograde to stop and reverse direction
+
+PROS:
+• Fastest route home (shortest total time)
+• Direct path back to Earth
+• Familiar trajectory calculations
+• No need to wait for Moon flyby
+
+CONS:
+• Requires massive fuel burn
+• Risks explosion of damaged systems
+• Burns through all LM descent fuel
+• May damage weakened spacecraft structure
+• Untested with damaged systems
+
+=== OPTION 2: FREE-RETURN TRAJECTORY ===
+Subtitle: Use Moon's gravity to slingshot back
+
+PROS:
+• Safer for damaged systems
+• Uses significantly less fuel
+• Proven orbital mechanics (tested on Apollo 8, 10)
+• Uses undamaged LM descent engine
+• Conserves resources for course corrections
+
+CONS:
+• Takes much longer (must loop around Moon first)
+• Crew waits 4+ days in damaged spacecraft
+• More time for systems to fail
+• Psychological stress of waiting
+• More consumables needed (oxygen, water, power)
+
+=== DECISION PROMPT ===
+🤔 WHAT SHOULD THE CREW DO?
+
+=== HISTORICAL DECISION ===
+NASA chose FREE-RETURN TRAJECTORY
+• GET 61:29:42 - DPS burn (~31 seconds using LM descent engine)
+• Put spacecraft back on free-return path that loops behind Moon
+• Safer approach that doesn't stress damaged systems
+• Used undamaged LM engine instead of risky CSM engine
+• Required patience but conserved critical resources

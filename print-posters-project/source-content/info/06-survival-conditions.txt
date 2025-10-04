@@ -1,0 +1,383 @@
+INFO SLIDE #6
+SURVIVAL CONDITIONS
+Four Days in a Freezing, Cramped Lifeboat
+
+=== THE LUNAR MODULE AS LIFEBOAT ===
+Designed For: 2 astronauts, 45 hours (Moon landing mission)
+Apollo 13 Reality: 3 astronauts, 87+ hours (4 days in space)
+
+That's 2.9x the intended use!
+
+=== TEMPERATURE: THE FREEZING CHALLENGE ===
+The Cold Reality:
+
+Inside Aquarius:
+• Temperature: 38°F (3°C) minimum
+• Some areas: 50°F
+• Colder than a refrigerator
+• Below freezing in some spots
+
+Why So Cold?
+• Power conservation = minimal heaters
+• Electronics powered down to save batteries
+• Service Module damaged (no heat from there)
+• Space is -455°F (-270°C) all around
+• Only thin aluminum walls for insulation
+
+What the Crew Experienced:
+❄️ Shivering constantly (can't get warm)
+❄️ Numb fingers and toes
+❄️ Difficulty sleeping (too cold)
+❄️ Water condensation on every surface
+❄️ Ice forming on windows and equipment
+❄️ Can see breath in cabin air
+❄️ Frostbite risk on extremities
+
+Condensation Problem:
+• Crew breathing creates moisture
+• Cold walls cause condensation
+• Water droplets float in zero gravity
+• Equipment could short-circuit
+• Constant worry about electrical systems
+
+Medical Impact:
+• Hypothermia risk
+• Slowed reactions and thinking
+• Reduced immune system function
+• Fred Haise's kidney infection worsened by cold
+
+No Warm Clothing:
+• Only thin flight suits
+• No space for heavy jackets
+• Spacesuits too bulky to wear constantly
+• Just had to endure the cold
+
+=== WATER: SEVERE RATIONING ===
+The Water Crisis:
+
+Normal Consumption: 64 oz per person per day (8 cups)
+Apollo 13 Ration: 6 oz per person per day (3/4 cup)
+
+That's 1/10th of normal water intake!
+
+Water Uses on Spacecraft:
+1. Drinking (crew survival)
+2. Cooling electronics (prevents overheating/fires)
+3. Humidifying air (prevents lung damage from dry air)
+
+The Rationing Decision:
+• Prioritize crew survival (minimal drinking water)
+• Minimal electronics cooling (accept risk)
+• Minimal humidification (painful but survivable)
+
+What 6 Ounces Looks Like:
+• Less than 1 cup total per day
+• 2-3 small sips every few hours
+• Barely enough to swallow food
+• Severe dehydration guaranteed
+
+Effects of Dehydration:
+🥵 Extreme thirst (dry mouth, cracked lips)
+🥵 Dizziness and lightheadedness
+🥵 Impaired judgment and confusion
+🥵 Physical weakness
+🥵 Kidney stress (Fred Haise's infection)
+🥵 Dark urine (concentrated)
+🥵 Headaches
+
+Medical Consequences:
+• Combined weight loss: 31.5 pounds total
+  - Jim Lovell: 14 lbs
+  - Jack Swigert: 5 lbs
+  - Fred Haise: 6 lbs (+ kidney infection)
+• Dehydration weakened crew for re-entry
+• Recovery took weeks after splashdown
+
+The Psychological Torture:
+• Water available in CM (powered down, can't access)
+• LM water limited (must last entire trip)
+• Every drop counted
+• Watching each other's consumption
+
+=== POWER: EVERY AMP MATTERS ===
+The Battery Crisis:
+
+LM Battery Capacity:
+• Designed for 45-hour lunar mission
+• Now supporting 87+ hours (double!)
+• Used for life support, navigation, communications
+
+Power Budget:
+• Calculated down to individual amps
+• Every system evaluated: essential or not?
+• Continuous monitoring of remaining power
+• 20% remaining at splashdown (cutting it close!)
+
+What Was Powered Down:
+❌ Heaters (except critical components)
+❌ Most cabin lights
+❌ Non-essential electronics
+❌ Communications (reduced to minimum)
+❌ Guidance computer (except during burns)
+
+What Stayed On:
+✅ Life support (oxygen circulation)
+✅ Minimal lighting (stumbling in dark)
+✅ CO2 scrubbers (critical)
+✅ Attitude control (spacecraft orientation)
+✅ Communications (essential updates only)
+
+The Communication Dilemma:
+• Each radio transmission drains batteries
+• Families desperate for updates
+• Crew feels isolated
+• Some silence periods: 6+ hours
+• Mission Control flying blind
+
+Radio Discipline:
+• Essential updates only
+• No casual conversation
+• Families terrified during long silences
+• Crew felt abandoned but understood
+
+Battery Jump-Start (GET ~138:00:00):
+• Transfer power from LM to CM
+• Never tested before
+• Risk of short-circuit
+• Worked perfectly!
+• Charged CM batteries for re-entry
+
+=== FOOD: MINIMAL NUTRITION ===
+The Food Problem:
+
+Available Food:
+• Freeze-dried packets
+• Required water to prepare (don't have water!)
+• Some "wet pack" foods available
+• Limited variety
+
+Consumption Reality:
+• Hard to eat in extreme cold
+• Dry food hard to swallow without water
+• Stress kills appetite
+• Forcing down calories
+
+Nutrition Impact:
+• Calorie deficit (burning more than eating)
+• Weight loss from dehydration + malnutrition
+• Weakened for re-entry tasks
+• Mental fog from hunger + cold + stress
+
+=== SLEEP: NEARLY IMPOSSIBLE ===
+The Sleep Deprivation Crisis:
+
+Why Sleep Was Impossible:
+😴 Temperature too cold to relax
+😴 Cramped quarters (moving wakes others)
+😴 Constant stress and worry
+😴 Uncomfortable in zero gravity
+😴 Noise from systems and alarms
+😴 Bright sunlight through windows
+😴 No day/night cycle in space
+
+Sleep Attempts:
+• Brief naps (minutes, not hours)
+• Never deep sleep
+• Constantly startled awake
+• Exhaustion building
+
+Effects of Sleep Deprivation:
+• Impaired judgment
+• Slowed reactions
+• Irritability
+• Difficulty concentrating
+• Mistakes more likely
+• Dangerous during critical re-entry
+
+Jim Lovell's Experience:
+• Fourth spaceflight (used to discomfort)
+• But worst conditions ever
+• Pushed through on experience
+• Leadership required alertness
+
+Rookies Swigert & Haise:
+• First spaceflight
+• Expected Moon landing adventure
+• Got survival nightmare instead
+• Performed admirably under stress
+
+=== OXYGEN: THE ONE BRIGHT SPOT ===
+Oxygen Status:
+
+LM Oxygen Supply:
+✅ Sufficient for 3 people for journey
+✅ CO2 scrubbers working (thanks to mailbox)
+✅ Breathing not a problem (after mailbox fix)
+
+Oxygen Storage:
+• Stored in LM descent stage tanks
+• Separate from damaged SM tanks
+• Enough capacity for extended mission
+
+The Relief:
+• At least they could breathe
+• CO2 controlled at ~4.6 mmHg (safe)
+• One less thing to worry about
+
+=== SPACE: CRAMPED QUARTERS ===
+The Physical Constraints:
+
+Lunar Module Interior:
+• ~160 cubic feet (like walk-in closet)
+• Designed for 2 standing astronauts
+• Now holding 3 people
+• NO SEATS (standing room only)
+
+The Reality:
+• Can't stretch out
+• Bumping into each other constantly
+• Moving disturbs everyone
+• No privacy whatsoever
+• Personal space: zero
+
+Zero Gravity "Helps":
+• Can float in any orientation
+• Not standing on feet for days
+• But still cramped
+• Equipment everywhere
+
+=== WASTE MANAGEMENT ===
+The Uncomfortable Reality:
+
+Bathroom Facilities:
+• Urine collection bags
+• Fecal collection bags
+• No privacy
+• Difficult in zero gravity
+
+With Dehydration:
+• Less urine (darker, concentrated)
+• Uncomfortable but less frequent
+• Fred Haise's kidney infection made it painful
+
+The Psychological Toll:
+• No privacy for 4+ days
+• Three men in tiny space
+• Personal hygiene impossible
+• Just had to endure
+
+=== CUMULATIVE EFFECTS ===
+The Total Stress on Crew:
+
+Physical:
+❄️ Freezing temperature (38°F)
+💧 Severe dehydration (6 oz water/day)
+😴 Sleep deprivation (minimal sleep for 4+ days)
+🍽️ Malnutrition (limited food)
+🤒 Illness (Haise's kidney infection)
+😰 Exhaustion (complete physical drain)
+
+Mental:
+🧠 Stress (life-or-death situation)
+😟 Isolation (long radio silences)
+😨 Fear (will we make it?)
+🎯 Pressure (must execute perfectly)
+😤 Frustration (constant discomfort)
+
+Yet They Performed:
+✅ Built mailbox adapter
+✅ Executed navigation burns
+✅ Monitored systems continuously
+✅ Made critical decisions
+✅ Stayed calm under pressure
+✅ Landed safely
+
+=== COMPARISON TO ENDURANCE RECORDS ===
+Apollo 13 vs Other Extremes:
+
+Antarctic Explorers:
+• Have warm shelters
+• Have adequate food and water
+• Can move around
+• Ground beneath feet
+
+Mountain Climbers:
+• Can turn back
+• Rescue possible
+• Fresh air to breathe
+• Gravity works normally
+
+Submarine Crews:
+• More space
+• Adequate resources
+• Can surface if needed
+• Crew rotation for sleep
+
+Apollo 13:
+• NO warm shelter (38°F)
+• NO adequate water (6 oz/day)
+• NO room to move (160 cu ft)
+• NO rescue possible
+• NO turning back
+• Must execute perfectly or die
+
+=== THE HUMAN SPIRIT ===
+What They Proved:
+
+Humans Can Survive:
+• 4+ days at 38°F
+• Severe dehydration
+• Complete sleep deprivation
+• Extreme stress and fear
+• Cramped, uncomfortable conditions
+
+When Motivated By:
+• Desire to live
+• Trust in team
+• Professional training
+• Calm problem-solving
+• Refusal to give up
+
+Gene Kranz: "Failure is not an option."
+Crew's Actions: Proved it.
+
+=== THE RECOVERY ===
+After Splashdown:
+
+Immediate Medical Care:
+• Rehydration (IV fluids)
+• Warming (heated blankets)
+• Rest (finally!)
+• Medical monitoring
+
+Recovery Time:
+• Weeks to fully recover
+• Fred Haise: Kidney infection treated
+• Weight gain back to normal
+• Psychological impact: lifelong
+
+=== THE LESSON ===
+The human body can endure incredible hardship.
+The human spirit can overcome impossible odds.
+
+When you have to survive,
+You find a way.
+
+When comfort isn't an option,
+Endure.
+
+When sleep is impossible,
+Stay alert.
+
+When water runs out,
+Ration.
+
+When it's freezing,
+Shiver and continue.
+
+Four days in hell.
+Three men survived.
+
+🥶 + 💧 + 😴 + 🚀 = 🏠
+
+THEY MADE IT HOME.

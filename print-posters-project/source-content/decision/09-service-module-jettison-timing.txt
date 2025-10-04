@@ -1,0 +1,58 @@
+DECISION POINT #9
+SERVICE MODULE JETTISON TIMING
+GET 138:02 | When to Let Go?
+
+=== THE SITUATION ===
+▸ Approaching re-entry window—must shed weight
+▸ Damaged Service Module still attached to Command Module
+▸ Must jettison SM before re-entry, but timing is critical
+▸ SM provides radiation shielding and thermal protection
+▸ Need to photograph damage for investigation
+▸ Risk of collision if jettison goes wrong
+
+=== OPTION 1: EARLY JETTISON ===
+Subtitle: Release SM 6 hours before re-entry
+
+PROS:
+• Can photograph damage for NASA investigation
+• Reduces mass for more accurate trajectory calculations
+• Eliminates risk of SM collision during re-entry
+• More time to troubleshoot if jettison mechanism fails
+• Clear separation before critical phases
+
+CONS:
+• Crew exposed to more radiation from Van Allen belts
+• Lose thermal protection barrier sooner
+• Temperatures drop even further (already 38°F)
+• More time exposed to cosmic radiation
+• Psychological impact of seeing damage
+
+=== OPTION 2: LATE JETTISON ===
+Subtitle: Keep SM until 1 hour before re-entry
+
+PROS:
+• Maximum radiation protection through Van Allen belts
+• Thermal barrier against space cold maintained longer
+• Crew stays warmer for longer
+• Less time for things to go wrong after separation
+
+CONS:
+• Cannot assess or photograph damage
+• Extremely tight timeline if jettison fails
+• Risk of SM colliding with CM during separation
+• No margin for error—one chance only
+• Blind to actual damage until after landing
+
+=== DECISION PROMPT ===
+🤔 WHAT SHOULD THE CREW DO?
+
+=== HISTORICAL DECISION ===
+NASA chose EARLY JETTISON
+• GET 138:02 - Jettisoned Service Module
+• Crew photographed damage for first time
+• Saw entire panel blown off—massive structural damage
+• Lovell: "There's one whole side of that spacecraft missing!"
+• Explosion had ripped off entire 13-foot panel
+• Realized how close they came to complete disaster
+• Confirmed they were right to avoid using the SPS engine
+• Photos critical for investigating failure and preventing future accidents
