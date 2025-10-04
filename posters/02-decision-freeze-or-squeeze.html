@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=3600, height=2400">
+    <title>Apollo 13 - Decision Point #2: Freeze or Squeeze?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: white;
+            overflow: hidden;
+        }
+
+        .poster {
+            width: 3600px;
+            height: 2400px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+            padding: 45px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .decision-number {
+            font-size: 90px;
+            font-weight: 900;
+            color: #0B3D91;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .crisis-title {
+            font-size: 140px;
+            font-weight: 900;
+            color: #000000;
+            letter-spacing: -2px;
+            margin-bottom: 5px;
+            line-height: 0.92;
+        }
+
+        .get-timestamp {
+            font-size: 52px;
+            color: #666666;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+        }
+
+        /* Context Box */
+        .context-box {
+            background: #FFF3CD;
+            border-left: 16px solid #FFA000;
+            padding: 22px 38px;
+            margin-bottom: 18px;
+            border-radius: 12px;
+        }
+
+        .context-title {
+            font-size: 68px;
+            font-weight: 900;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .context-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .context-list li {
+            font-size: 48px;
+            line-height: 1.25;
+            color: #222222;
+            margin-bottom: 5px;
+            padding-left: 65px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .context-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #FFA000;
+            font-weight: bold;
+            font-size: 52px;
+        }
+
+        /* Options Container */
+        .options-container {
+            display: flex;
+            gap: 35px;
+            margin-bottom: 18px;
+        }
+
+        .option {
+            flex: 1;
+            background: white;
+            border: 8px solid #dee2e6;
+            border-radius: 16px;
+            padding: 26px 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .option.option-1 {
+            border-color: #00ACC1;
+        }
+
+        .option.option-2 {
+            border-color: #00ACC1;
+        }
+
+        .option-number {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 130px;
+            background: #00ACC1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+            font-weight: 900;
+            box-shadow: 0 6px 16px rgba(0, 172, 193, 0.4);
+        }
+
+        .option-title {
+            font-size: 130px;
+            font-weight: 900;
+            color: #000000;
+            margin-bottom: 5px;
+            margin-top: 32px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .option-subtitle {
+            font-size: 56px;
+            color: #666666;
+            margin-bottom: 12px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Option content layout */
+        .option-content {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        /* Spacecraft diagram */
+        .spacecraft-diagram {
+            flex: 0 0 40%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spacecraft-diagram svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* PROS/CONS container */
+        .pros-cons-container {
+            flex: 1;
+        }
+
+        .pros-cons-section {
+            margin-bottom: 12px;
+        }
+
+        .section-label {
+            font-size: 60px;
+            font-weight: 900;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label.pros {
+            color: #2E7D32;
+        }
+
+        .section-label.cons {
+            color: #DC143C;
+        }
+
+        .section-label:before {
+            content: "";
+            display: inline-block;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+        }
+
+        .section-label.pros:before {
+            background: #2E7D32;
+            content: "✓";
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        .section-label.cons:before {
+            background: #DC143C;
+            content: "✕";
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        .pros-cons-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pros-cons-list li {
+            font-size: 57px;
+            line-height: 1.25;
+            color: #222222;
+            margin-bottom: 2px;
+            padding-left: 60px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .pros-cons-list li:before {
+            content: "•";
+            position: absolute;
+            left: 12px;
+            font-size: 52px;
+            line-height: 1;
+        }
+
+        .pros-cons-list.pros li:before {
+            color: #2E7D32;
+        }
+
+        .pros-cons-list.cons li:before {
+            color: #DC143C;
+        }
+
+        /* Question Prompt */
+        .question-prompt {
+            background: #0B3D91;
+            color: white;
+            padding: 24px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(11, 61, 145, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-size: 78px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 42px;
+            color: #666666;
+        }
+
+        .mission-info {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+
+        .apollo-logo {
+            font-weight: 900;
+            font-size: 50px;
+            color: #0B3D91;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Header -->
+        <div class="header">
+            <div class="decision-number">Decision Point #2</div>
+            <div class="crisis-title">FREEZE OR SQUEEZE?</div>
+            <div class="get-timestamp">GET ~56:00:00 | Command Module Failing</div>
+        </div>
+
+        <!-- Context Box -->
+        <div class="context-box">
+            <div class="context-title">⚠️ THE SITUATION</div>
+            <ul class="context-list">
+                <li>Command Module "Odyssey" losing power and oxygen rapidly</li>
+                <li>Cabin heat comes from electrical systems—must shut down to save batteries</li>
+                <li>Temperature in CM will drop to freezing (38°F)</li>
+                <li>Lunar Module "Aquarius" designed for <strong>2 people for 2 days</strong></li>
+                <li>Need life support for <strong>3 people for 4+ days</strong></li>
+            </ul>
+        </div>
+
+        <!-- Options -->
+        <div class="options-container">
+            <!-- Option 1: Freeze -->
+            <div class="option option-1">
+                <div class="option-number">1</div>
+                <div class="option-title">FREEZE</div>
+                <div class="option-subtitle">Stay in Command Module</div>
+
+                <div class="option-content">
+                    <!-- Command Module Diagram -->
+                    <div class="spacecraft-diagram">
+                        <svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                            <!-- CM cone outline -->
+                            <path d="M 250 50 L 150 350 L 350 350 Z"
+                                  fill="#f0f0f0"
+                                  stroke="#333"
+                                  stroke-width="4"/>
+
+                            <!-- 3 Seats (circles with stick figures) -->
+                            <!-- Seat 1 - Left -->
+                            <circle cx="200" cy="280" r="35" fill="#00ACC1" stroke="#333" stroke-width="3"/>
+                            <text x="200" y="295" font-size="40" font-weight="bold" text-anchor="middle" fill="white">1</text>
+
+                            <!-- Seat 2 - Center -->
+                            <circle cx="250" cy="200" r="35" fill="#00ACC1" stroke="#333" stroke-width="3"/>
+                            <text x="250" y="215" font-size="40" font-weight="bold" text-anchor="middle" fill="white">2</text>
+
+                            <!-- Seat 3 - Right -->
+                            <circle cx="300" cy="280" r="35" fill="#00ACC1" stroke="#333" stroke-width="3"/>
+                            <text x="300" y="295" font-size="40" font-weight="bold" text-anchor="middle" fill="white">3</text>
+
+                            <!-- Label -->
+                            <text x="250" y="380" font-size="32" font-weight="600" text-anchor="middle" fill="#333">
+                                ~210 cu ft - Spacious
+                            </text>
+                        </svg>
+                    </div>
+
+                    <div class="pros-cons-container">
+                        <div class="pros-cons-section">
+                            <div class="section-label pros">PROS</div>
+                            <ul class="pros-cons-list pros">
+                                <li>More spacious (~210 cubic feet)</li>
+                                <li>Familiar systems and controls</li>
+                                <li>Only module with heat shield for re-entry</li>
+                            </ul>
+                        </div>
+
+                        <div class="pros-cons-section">
+                            <div class="section-label cons">CONS</div>
+                            <ul class="pros-cons-list cons">
+                                <li>No power = no heat, will freeze</li>
+                                <li>Limited oxygen remaining</li>
+                                <li>No life support systems active</li>
+                                <li>Crew will not survive 4 days</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 2: Squeeze -->
+            <div class="option option-2">
+                <div class="option-number">2</div>
+                <div class="option-title">SQUEEZE</div>
+                <div class="option-subtitle">Move to Lunar Module</div>
+
+                <div class="option-content">
+                    <!-- Lunar Module Diagram -->
+                    <div class="spacecraft-diagram">
+                        <svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                            <!-- LM box outline (smaller, rectangular standing room) -->
+                            <rect x="175" y="80" width="150" height="270"
+                                  fill="#f0f0f0"
+                                  stroke="#333"
+                                  stroke-width="4"
+                                  rx="8"/>
+
+                            <!-- 3 stick figures crammed together -->
+                            <!-- Figure 1 - Left (facing forward) -->
+                            <g>
+                                <!-- Head -->
+                                <circle cx="210" cy="150" r="20" fill="#DC143C" stroke="#333" stroke-width="2"/>
+                                <!-- Body -->
+                                <line x1="210" y1="170" x2="210" y2="250" stroke="#333" stroke-width="6"/>
+                                <!-- Arms -->
+                                <line x1="210" y1="190" x2="190" y2="220" stroke="#333" stroke-width="5"/>
+                                <line x1="210" y1="190" x2="230" y2="220" stroke="#333" stroke-width="5"/>
+                                <!-- Legs -->
+                                <line x1="210" y1="250" x2="200" y2="310" stroke="#333" stroke-width="5"/>
+                                <line x1="210" y1="250" x2="220" y2="310" stroke="#333" stroke-width="5"/>
+                            </g>
+
+                            <!-- Figure 2 - Center (slightly behind) -->
+                            <g>
+                                <!-- Head -->
+                                <circle cx="250" cy="160" r="20" fill="#DC143C" stroke="#333" stroke-width="2"/>
+                                <!-- Body -->
+                                <line x1="250" y1="180" x2="250" y2="260" stroke="#333" stroke-width="6"/>
+                                <!-- Arms (bent, cramped) -->
+                                <line x1="250" y1="200" x2="235" y2="230" stroke="#333" stroke-width="5"/>
+                                <line x1="250" y1="200" x2="265" y2="230" stroke="#333" stroke-width="5"/>
+                                <!-- Legs -->
+                                <line x1="250" y1="260" x2="240" y2="320" stroke="#333" stroke-width="5"/>
+                                <line x1="250" y1="260" x2="260" y2="320" stroke="#333" stroke-width="5"/>
+                            </g>
+
+                            <!-- Figure 3 - Right (squished) -->
+                            <g>
+                                <!-- Head -->
+                                <circle cx="290" cy="155" r="20" fill="#DC143C" stroke="#333" stroke-width="2"/>
+                                <!-- Body -->
+                                <line x1="290" y1="175" x2="290" y2="255" stroke="#333" stroke-width="6"/>
+                                <!-- Arms (very cramped) -->
+                                <line x1="290" y1="195" x2="270" y2="225" stroke="#333" stroke-width="5"/>
+                                <line x1="290" y1="195" x2="310" y2="225" stroke="#333" stroke-width="5"/>
+                                <!-- Legs -->
+                                <line x1="290" y1="255" x2="280" y2="315" stroke="#333" stroke-width="5"/>
+                                <line x1="290" y1="255" x2="300" y2="315" stroke="#333" stroke-width="5"/>
+                            </g>
+
+                            <!-- Warning indicator -->
+                            <text x="250" y="45" font-size="50" text-anchor="middle">⚠️</text>
+
+                            <!-- Label -->
+                            <text x="250" y="380" font-size="32" font-weight="600" text-anchor="middle" fill="#333">
+                                ~160 cu ft - CRAMPED!
+                            </text>
+                        </svg>
+                    </div>
+
+                    <div class="pros-cons-container">
+                        <div class="pros-cons-section">
+                            <div class="section-label pros">PROS</div>
+                            <ul class="pros-cons-list pros">
+                                <li>Power available from LM batteries</li>
+                                <li>Life support systems functional</li>
+                                <li>Oxygen reserves sufficient</li>
+                                <li>Can survive the journey home</li>
+                            </ul>
+                        </div>
+
+                        <div class="pros-cons-section">
+                            <div class="section-label cons">CONS</div>
+                            <ul class="pros-cons-list cons">
+                                <li>Extremely cramped (~160 cubic feet)</li>
+                                <li>Designed for 2, now holding 3</li>
+                                <li>Moving disturbs others—no sleep</li>
+                                <li>Still cold (38°F), condensation on walls</li>
+                                <li>Power & water very tight</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question Prompt -->
+        <div class="question-prompt">
+            <div class="question-text">🤔 WHAT SHOULD THE CREW DO?</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="mission-info">Apollo 13 | April 13-17, 1970</div>
+            <div class="apollo-logo">APOLLO 13</div>
+        </div>
+    </div>
+</body>
+</html>
