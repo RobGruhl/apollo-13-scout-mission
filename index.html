@@ -120,6 +120,10 @@
         <p style="font-size: 0.875rem; opacity: 0.8;">
             Created for Scouting America • 2026 Elevate Scout Jamboree
         </p>
+        <!-- Hidden reset button -->
+        <button id="resetButton" style="background: none; border: none; font-size: 1.2rem; opacity: 0.3; cursor: pointer; margin-top: 1rem; transition: opacity 0.3s; color: white;" title="Reset all progress">
+            🔄
+        </button>
     </footer>
 
     <!-- JavaScript -->
@@ -167,6 +171,35 @@
                 return { emoji: '📡' };
             }
         }
+
+        // Reset button functionality
+        document.getElementById('resetButton').addEventListener('click', () => {
+            if (confirm('⚠️ Reset all progress?\n\nThis will clear:\n• All decision choices\n• All visited slides\n• All localStorage data\n\nThis cannot be undone!')) {
+                // Clear all localStorage
+                localStorage.clear();
+
+                // Show confirmation
+                const button = document.getElementById('resetButton');
+                button.textContent = '✅';
+                button.style.opacity = '1';
+
+                setTimeout(() => {
+                    button.textContent = '🔄';
+                    button.style.opacity = '0.3';
+                    alert('✅ Progress reset!\n\nAll decisions and visited slides have been cleared.');
+                    // Reload page to show fresh state
+                    window.location.reload();
+                }, 1000);
+            }
+        });
+
+        // Hover effect for reset button
+        document.getElementById('resetButton').addEventListener('mouseenter', function() {
+            this.style.opacity = '0.8';
+        });
+        document.getElementById('resetButton').addEventListener('mouseleave', function() {
+            this.style.opacity = '0.3';
+        });
     </script>
 </body>
 </html>
