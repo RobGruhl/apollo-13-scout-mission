@@ -420,8 +420,8 @@ All pages include:
 
 ---
 
-### Slide 19: Service Module Jettison
-**File**: `slides/19-service-module-jettison.html`
+### Slide 19: Lunar Module Jettison
+**File**: `slides/19-lm-jettison.html`
 **Type**: Narrative
 **Data ID**: `data-slide-id="19"`
 **Top Nav**:
@@ -430,54 +430,54 @@ All pages include:
 - Progress: `Slide 19 of 29`
 **Footer Nav**:
 - Previous: `← Previous` → `18-sm-jettison-timing.html`
-- Next: `Next →` → `20-lm-jettison.html`
+- Next: `Next →` → `20-computer-restart.html`
 
 ---
 
-### Slide 20: Lunar Module Jettison
-**File**: `slides/20-lm-jettison.html`
-**Type**: Narrative
+### Slide 20: Computer Restart
+**File**: `slides/20-computer-restart.html`
+**Type**: Info
 **Data ID**: `data-slide-id="20"`
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 20 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `19-service-module-jettison.html`
-- Next: `Next →` → `21-computer-restart.html`
+- Previous: `← Previous` → `19-lm-jettison.html`
+- Next: `Next →` → `21-reentry-prep.html`
 
 ---
 
-### Slide 21: Computer Restart
-**File**: `slides/21-computer-restart.html`
-**Type**: Info
+### Slide 21: Re-Entry Preparation
+**File**: `slides/21-reentry-prep.html`
+**Type**: Narrative
 **Data ID**: `data-slide-id="21"`
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 21 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `20-lm-jettison.html`
-- Next: `Next →` → `22-the-blackout.html`
+- Previous: `← Previous` → `20-computer-restart.html`
+- Next: `Next →` → `22-reentry-physics.html`
 
 ---
 
-### Slide 22: The Blackout
-**File**: `slides/22-the-blackout.html`
-**Type**: Narrative
+### Slide 22: Re-Entry Corridor Physics
+**File**: `slides/22-reentry-physics.html`
+**Type**: Info
 **Data ID**: `data-slide-id="22"`
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 22 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `21-computer-restart.html`
-- Next: `Next →` → `23-parachutes.html`
+- Previous: `← Previous` → `21-reentry-prep.html`
+- Next: `Next →` → `23-the-blackout.html`
 
 ---
 
-### Slide 23: Parachutes Deploy
-**File**: `slides/23-parachutes.html`
+### Slide 23: The Re-Entry Blackout
+**File**: `slides/23-the-blackout.html`
 **Type**: Narrative
 **Data ID**: `data-slide-id="23"`
 **Top Nav**:
@@ -485,13 +485,13 @@ All pages include:
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 23 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `22-the-blackout.html`
-- Next: `Next →` → `24-recovery.html`
+- Previous: `← Previous` → `22-reentry-physics.html`
+- Next: `Next →` → `24-parachutes.html`
 
 ---
 
-### Slide 24: Recovery Operations
-**File**: `slides/24-recovery.html`
+### Slide 24: Parachutes Deploy
+**File**: `slides/24-parachutes.html`
 **Type**: Narrative
 **Data ID**: `data-slide-id="24"`
 **Top Nav**:
@@ -499,13 +499,13 @@ All pages include:
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 24 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `23-parachutes.html`
-- Next: `Next →` → `25-heroes.html`
+- Previous: `← Previous` → `23-the-blackout.html`
+- Next: `Next →` → `25-splashdown.html`
 
 ---
 
-### Slide 25: Heroes Return
-**File**: `slides/25-heroes.html`
+### Slide 25: Splashdown!
+**File**: `slides/25-splashdown.html`
 **Type**: Narrative
 **Data ID**: `data-slide-id="25"`
 **Top Nav**:
@@ -513,27 +513,27 @@ All pages include:
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 25 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `24-recovery.html`
-- Next: `Next →` → `26-john-aaron.html`
+- Previous: `← Previous` → `24-parachutes.html`
+- Next: `Next →` → `26-recovery.html`
 
 ---
 
-### Slide 26: John Aaron - Steely-Eyed Missile Man
-**File**: `slides/26-john-aaron.html`
-**Type**: Info (Hero Page)
+### Slide 26: Recovery Operations
+**File**: `slides/26-recovery.html`
+**Type**: Narrative
 **Data ID**: `data-slide-id="26"`
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 26 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `25-heroes.html`
-- Next: `Next →` → `27-reentry-physics.html`
+- Previous: `← Previous` → `25-splashdown.html`
+- Next: `Next →` → `27-heroes.html`
 
 ---
 
-### Slide 27: Reentry Physics
-**File**: `slides/27-reentry-physics.html`
+### Slide 27: The Unsung Heroes
+**File**: `slides/27-heroes.html`
 **Type**: Info
 **Data ID**: `data-slide-id="27"`
 **Top Nav**:
@@ -541,21 +541,21 @@ All pages include:
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 27 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `26-john-aaron.html`
-- Next: `Next →` → `28-splashdown.html`
+- Previous: `← Previous` → `26-recovery.html`
+- Next: `Next →` → `28-john-aaron.html`
 
 ---
 
-### Slide 28: Splashdown!
-**File**: `slides/28-splashdown.html`
-**Type**: Narrative
+### Slide 28: John Aaron - Steely-Eyed Missile Man
+**File**: `slides/28-john-aaron.html`
+**Type**: Info (Hero Page)
 **Data ID**: `data-slide-id="28"`
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Slide 28 of 29`
 **Footer Nav**:
-- Previous: `← Previous` → `27-reentry-physics.html`
+- Previous: `← Previous` → `27-heroes.html`
 - Next: `Next →` → `29-completion.html`
 
 ---
