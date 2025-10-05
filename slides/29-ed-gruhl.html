@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ed Gruhl - The Engineer Who Brought You This Experience">
+    <title>Apollo 13 - Meet Your Presenter</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="29">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 29 of 30</span>
+        <!-- Decision Tracker (shown after first decision) -->
+        <div class="decision-tracker" id="decisionTracker">
+            <span class="tracker-label">Decisions:</span>
+            <div class="decision-badges">
+                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
+            </div>
+        </div>
+    </nav>
+    <main class="slide-container">
+        <article class="slide info">
+            <header class="slide-header">
+                <span class="slide-type">Meet Your Presenter</span>
+                <h1>The Engineer at Your Table</h1>
+                <time class="timestamp">A Connection You Didn't Know You Had</time>
+            </header>
+
+            <figure class="slide-image">
+                <img src="../assets/images/ed-gruhl-portrait.jpg" alt="Ed Gruhl - Apollo Program Engineer" loading="lazy">
+                <figcaption>Ed Gruhl - From MIT to Delco Electronics to Your Jamboree Table</figcaption>
+            </figure>
+
+            <section class="slide-content">
+                <div style="background: var(--bg-blue-light); border-left: 4px solid var(--nasa-blue); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <h2 style="margin-top: 0;">Wait... What?</h2>
+                    <p style="font-size: 1.2rem; font-weight: 700;">The person who just walked you through these Apollo 13 decisions didn't just study this mission.</p>
+                    <p style="font-size: 1.2rem; font-weight: 700; margin-top: 1rem;">He helped make it possible.</p>
+                </div>
+
+                <h2>Ed Gruhl: From Oak Creek to the Moon</h2>
+
+                <details class="info-section" open>
+                    <summary>🏭 Delco Electronics & The Guidance Systems</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>Where Apollo's "Eyes" Were Built:</h4>
+                        <p>While MIT's Instrumentation Lab designed the Apollo Guidance Computer, the precision gyroscopes that told the spacecraft where it was in space came from Delco Electronics in Oak Creek, Wisconsin.</p>
+
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4>What Made Delco's Gyroscopes Special:</h4>
+                            <ul>
+                                <li>🔬 Built from beryllium - an incredibly light, toxic metal</li>
+                                <li>🏭 Assembled in clean rooms (both for precision and safety)</li>
+                                <li>🎯 More accurate than any other gyroscopes in the world</li>
+                                <li>✨ So precise that astronauts almost never needed to realign them</li>
+                                <li>🌙 Used in BOTH the Command Module and Lunar Module</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem; font-style: italic;">These weren't just backup systems. The gyroscopes were how Apollo knew which way was "up" in space, where Earth was, and how to navigate home.</p>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">Not Just Apollo:</h4>
+                        <p>Delco built guidance systems for:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>🚀 Apollo Command and Lunar Modules</li>
+                            <li>💣 Minuteman Intercontinental Ballistic Missiles</li>
+                            <li>🚢 Naval ship fire control systems</li>
+                            <li>🎖️ Main Battle Tank fire control</li>
+                            <li>✈️ Boeing 747 carousel guidance systems</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="info-section" open>
+                    <summary>💻 Ed's Role: Making Sure They Had Enough Gyroscopes</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>The Problem Ed Solved:</h4>
+                        <p>Building precision gyroscopes was incredibly difficult. At each stage of assembly:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>❌ Some units would fail quality testing</li>
+                            <li>🔧 Some failed units could be salvaged and repaired</li>
+                            <li>📊 Each assembly line had different yield rates</li>
+                            <li>⏰ Apollo needed X finished gyroscopes by specific dates</li>
+                        </ul>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4>The Challenge:</h4>
+                            <p>If you need 10 finished gyroscopes at the end, and the final assembly stage has a 90% success rate, you need to start with 11 units going into that stage. But what about the stage before that? And before that? And the salvage rates? And the repair times?</p>
+
+                            <p style="margin-top: 1rem; font-weight: 700;">Working backwards through 8+ assembly stages with different yields was beyond what humans could calculate manually.</p>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">Ed's Solution:</h4>
+                        <p>Ed maintained and improved a sophisticated scheduling program that:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>✅ Worked backwards from the required delivery date</li>
+                            <li>✅ Accounted for yield rates at each assembly stage</li>
+                            <li>✅ Factored in salvage and repair rates</li>
+                            <li>✅ Told manufacturing exactly how many units to start each week</li>
+                            <li>✅ Ensured Apollo always had the gyroscopes it needed</li>
+                        </ul>
+
+                        <div style="background: var(--bg-blue-light); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <p style="font-weight: 700;">In his own words from the interview:</p>
+                            <blockquote style="margin-top: 0.5rem;">
+                                "To do this mentally was very, very hard. But what this would do was it would back these off and they might know that they needed to start 40 units the first week and then 10 the second and so on. This program was used by the ICBM group, the main battle tank group, the ship's fire control group, and the 747 group."
+                            </blockquote>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">Why This Mattered:</h4>
+                        <p>Without accurate scheduling, one of two things would happen:</p>
+                        <ol style="margin-top: 0.5rem;">
+                            <li>Not enough gyroscopes ready → Mission delayed or cancelled</li>
+                            <li>Too many units started → Wasted money and resources</li>
+                        </ol>
+                        <p style="margin-top: 1rem;">Ed's program kept production running efficiently while ensuring every Apollo mission had the guidance systems it needed.</p>
+                    </div>
+                </details>
+
+                <details class="info-section" open>
+                    <summary>🎧 The Squawk Box: Listening to History</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>A Direct Line to Space:</h4>
+                        <p>The Apollo group at Delco had something special: a squawk box - a speaker system connected directly to Mission Control in Houston and the astronauts in space.</p>
+
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4>What Ed Heard:</h4>
+                            <p>During critical moments of Apollo missions, Ed would find reasons to visit the Apollo group's area. Through that squawk box, he heard:</p>
+                            <ul style="margin-top: 0.5rem;">
+                                <li>🎙️ Real-time communications between astronauts and Mission Control</li>
+                                <li>🎙️ Flight directors making decisions</li>
+                                <li>🎙️ The tension and urgency during Apollo 13's crisis</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1.5rem;">The Apollo 13 Moment:</h4>
+                            <p>Ed was at Delco during the entire Apollo 13 crisis. When the Command Module was shut down and reprogramming was sent to the Lunar Module, nobody knew if it would work while they were behind the Moon.</p>
+
+                            <blockquote style="margin-top: 1rem;">
+                                "When they cleared the moon and the communication came through with them, and they were asking what their heading was, and they said, 'Back to Earth,' the guys in the Apollo group cheered. Because they weren't the guys who sent the astronauts into outer space."
+                                <cite>— Ed Gruhl, recalling Apollo 13</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section" open>
+                    <summary>⚖️ The Vietnam War & The Deferment</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>1969-1971: A Different Kind of Service</h4>
+                        <p>Ed graduated from MIT during the height of the Vietnam War. His draft lottery number was 128. The draft went to 125 in 1971.</p>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4>The Close Call:</h4>
+                            <ul>
+                                <li>📋 Delco applied for an occupational deferment (military guidance systems work)</li>
+                                <li>❌ Local draft board rejected it - wanted him to serve anyway</li>
+                                <li>🏥 Ed reported for a draft physical (the day after a severe whiplash accident)</li>
+                                <li>⚖️ Delco appealed to the state draft board</li>
+                                <li>✅ State board approved the deferment</li>
+                                <li>⏰ Ed was days away from boot camp when approval came through</li>
+                            </ul>
+
+                            <blockquote style="margin-top: 1rem;">
+                                "The situation I was in was I could either get along with my boss or I could go to Vietnam. Those were my two choices."
+                                <cite>— Ed Gruhl</cite>
+                            </blockquote>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;">A Generation's Dilemma:</h4>
+                        <p>Like thousands of other young engineers, Ed faced an impossible choice. Working on guidance systems for ICBMs, tanks, and ships was considered essential defense work. But it came with complicated feelings:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>🎯 Pride in contributing to Apollo's success</li>
+                            <li>⚔️ Knowledge that the same skills supported weapons systems</li>
+                            <li>💭 Awareness of friends and classmates who were drafted</li>
+                            <li>🤝 Relief at avoiding combat, mixed with survivor's guilt</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>👨‍👦 The Gruhl Brothers: A Family in Apollo</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>Jim Gruhl: The Gimbal Expert</h4>
+                        <p>Ed's brother Jim worked directly on gyroscope control theory. His contribution:</p>
+
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4>The Gimbal Problem:</h4>
+                            <p>A gyroscope has a rotating mass that maintains orientation. Around it is a gimbal - a support structure that needs to track the gyroscope's movement.</p>
+
+                            <p style="margin-top: 1rem;">The gimbal can't just follow the gyroscope. It needs to <em>anticipate</em> where it's going. If the gyroscope starts turning, the gimbal should overshoot slightly because the turn will probably continue.</p>
+
+                            <h4 style="margin-top: 1.5rem;">Jim's Solution:</h4>
+                            <p>Jim developed 12 pages of formulas for the automatic control theory that allowed the gimbal motor mechanism to catch up in optimal time. This math was embedded directly into the guidance program.</p>
+
+                            <blockquote style="margin-top: 1rem;">
+                                "My brother Jim actually came up with 12 pages of formulas that allowed the gimbal motor mechanism to catch up in an optimum amount of time."
+                                <cite>— Ed Gruhl</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>📉 When Apollo Ended: 260 to 40</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>The Aerospace Contraction:</h4>
+                        <p>When Apollo missions were cancelled (originally planned through Apollo 20, ended at Apollo 17), the aerospace industry collapsed.</p>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4>The Human Cost:</h4>
+                            <ul>
+                                <li>📊 Delco's data processing department: 260 employees → 40 employees</li>
+                                <li>📅 Ed was laid off in December 1971</li>
+                                <li>💼 Thousands of aerospace engineers lost jobs nationwide</li>
+                                <li>🎯 Competition became brutal - one Minuteman contract bid at $60M vs competitor's $30M</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem;">Ed's first child was born right around his layoff. He didn't mind the time off to be with his son, but the aerospace industry was done hiring. He went into telecommunications instead.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <h2 style="margin-top: 2rem;">Why Ed Runs This Table at Jamborees</h2>
+
+                <div style="background: var(--bg-blue-light); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <h3 style="margin-top: 0;">Teaching Through Experience</h3>
+                    <p>Ed doesn't just teach the history of Apollo 13. He teaches:</p>
+
+                    <ul style="margin-top: 1rem;">
+                        <li>🧠 <strong>Systems thinking:</strong> How everything connects (power, water, oxygen, navigation)</li>
+                        <li>⚖️ <strong>Decision-making under pressure:</strong> No perfect choices, only better ones</li>
+                        <li>🤝 <strong>Teamwork:</strong> How thousands of people working together saved three lives</li>
+                        <li>📐 <strong>Engineering precision:</strong> Why getting the math right mattered life-or-death</li>
+                        <li>💡 <strong>Creative problem-solving:</strong> Making a square peg fit a round hole - literally</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem;">The decisions you just made in this interactive? Ed watched real engineers make those exact calls. He heard the communications through the squawk box. He knew people who built the simulators, wrote the procedures, calculated the burns.</p>
+
+                    <p style="margin-top: 1rem; font-weight: 700;">This isn't just history to him. It's personal.</p>
+                </div>
+
+                <h2>From Delco to the Jamboree</h2>
+
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4>Ed's Journey After Apollo:</h4>
+                    <ul>
+                        <li>🎓 MIT graduate in Electrical Engineering and Computer Science</li>
+                        <li>💼 Worked at Delco Electronics on Apollo guidance systems (1969-1971)</li>
+                        <li>📞 Later: Wisconsin Telephone (where he designed revolutionary line assignment systems)</li>
+                        <li>🏢 Corporate roles at Aldrich Chemical and others</li>
+                        <li>⚖️ Became an attorney while working full-time</li>
+                        <li>🎓 MBA from UW-Milwaukee</li>
+                        <li>👨‍🏫 Taught computer science courses at UWM</li>
+                        <li>🏕️ Decades of service to Scouting</li>
+                        <li>🚀 Now: Bringing Apollo 13 to life for Scouts at national Jamborees</li>
+                    </ul>
+                </div>
+
+                <blockquote style="margin: 2rem 0; font-size: 1.1rem;">
+                    "I feel a great deal of pleasure in solving complex problems and if I don't get recognition it doesn't diminish my satisfaction of having found a good solution."
+                    <cite>— Ed Gruhl, from his autobiography</cite>
+                </blockquote>
+
+                <div style="background: var(--bg-green-light); border: 2px solid var(--success-green); padding: 2rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">You Just Learned Apollo 13 From Someone Who Helped Make It Possible</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">
+                        The gyroscopes that told Odyssey and Aquarius where they were in space?<br>
+                        Ed helped make sure they were ready when NASA needed them.<br><br>
+
+                        The precision that let astronauts navigate home with Earth and Sun sightings?<br>
+                        That precision came from beryllium gyroscopes built where Ed worked.<br><br>
+
+                        The thousands of engineers who refused to let Apollo 13 fail?<br>
+                        Ed was one of them.<br><br>
+
+                        And now he's here, teaching you the lessons he learned<br>
+                        from one of humanity's greatest rescues.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                    <h4>Questions to Ask Ed:</h4>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>What did it feel like hearing "Back to Earth" through the squawk box?</li>
+                        <li>How accurate were the beryllium gyroscopes compared to others?</li>
+                        <li>Did you ever worry the guidance systems might fail?</li>
+                        <li>What was the closest call with the draft deferment?</li>
+                        <li>What surprised you most about how Apollo 13 was solved?</li>
+                        <li>Did your brother Jim ever tell you about developing the gimbal formulas?</li>
+                        <li>What happened to the land in Wisconsin you bought from the Apollo engineers?</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem; font-style: italic;">He saved this reveal for the end of your experience. Now you know: the person teaching you about Apollo 13 didn't just study it. He lived it.</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="slide-nav">
+        <a href="28-john-aaron.html" class="btn-prev">← Previous</a>
+        <a href="30-completion.html" class="btn-next">Next →</a>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
