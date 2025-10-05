@@ -248,9 +248,11 @@ Start by reading these files in order:
 
 ## License
 
-**Educational Content**: Free to use for educational purposes
-**NASA Content**: Public domain
-**Code**: Open source - check the [GitHub repository](https://github.com/robgruhl/apollo-mission)
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+**TL;DR**: You are free to use, modify, distribute, and build upon this project for any purpose (commercial or non-commercial) with no restrictions other than including the original copyright notice.
+
+**NASA Content**: All NASA images and mission data are in the public domain.
 
 ---
 
