@@ -1,8 +1,8 @@
 # Apollo 13 Interactive Experience - Sitemap Specification
 
-**Version**: 2.0
+**Version**: 2.1
 **Date**: 2025-10-04
-**Purpose**: Standardized navigation structure and scoring system integration for all pages (Updated for 29 slides, 10 decisions)
+**Purpose**: Standardized navigation structure and scoring system integration for all pages (Updated for 30 slides, 10 decisions)
 
 ---
 
@@ -39,7 +39,8 @@ The Apollo 13 Interactive Experience includes a scoring system that tracks user 
 **Previous Button**: `← Previous`
 **Next Button**: `Next →`
 **Exception - Slide 01**: `← Home` (links to index.html)
-**Exception - Slide 29**: `🏠 Home` (links to index.html)
+**Exception - Slide 29**: `🏕️ Merit Badges →` (links to 30-merit-badges.html)
+**Exception - Slide 30**: `🏠 Home` (links to ../index.html)
 
 ### Link Structure
 
@@ -47,7 +48,7 @@ All pages include:
 1. **Top Navigation Bar** (consistent across all pages):
    - `🏠 Home` → `../index.html` (or `index.html` for root pages)
    - `📅 Timeline` → `../timeline.html` (or `timeline.html` for root pages)
-   - Progress indicator (e.g., "Slide 5 of 29" or "Mission Complete!")
+   - Progress indicator (e.g., "Slide 5 of 30" or "Mission Complete!" or "Merit Badges")
 
 2. **Footer Navigation** (bottom of page):
    - Left: Previous button
@@ -109,6 +110,7 @@ All pages include:
 - Slide 27: Reentry Physics → `slides/27-reentry-physics.html`
 - Slide 28: Splashdown → `slides/28-splashdown.html`
 - Slide 29: Completion → `slides/29-completion.html`
+- Slide 30: Merit Badges → `slides/30-merit-badges.html`
 **Footer**: No slide navigation
 
 ---
@@ -576,7 +578,51 @@ All pages include:
 - Progress: `Mission Complete!`
 **Footer Nav**:
 - Previous: `← Previous` → `28-splashdown.html`
+- Next: `🏕️ Merit Badges →` → `30-merit-badges.html`
+
+---
+
+### Slide 30: Merit Badges
+**File**: `slides/30-merit-badges.html`
+**Type**: Resource / Educational
+**Data ID**: `data-slide-id="30"`
+**Purpose**: Scout-focused page explaining how this project helps earn three merit badges
+
+**Content**:
+- **Hero Message**: Explains the project is real code (HTML/CSS/JS) and open source (MIT License)
+- **Three Merit Badge Cards** with visual badge images:
+  - Programming Merit Badge (Requirements 4c, 5, General Knowledge, Careers)
+  - Digital Technology Merit Badge (Requirements 3c, 4a, 4b)
+  - Space Exploration Merit Badge (Requirements 1, 2, 5a, 7)
+- **How to Get Started** (4-step guide):
+  1. Talk to merit badge counselor
+  2. View code on GitHub
+  3. Download and experiment
+  4. Show work to counselor
+- **What You'll Learn**: HTML, CSS, JavaScript, localStorage, GitHub, Open Source
+- **Technical Details**: 29 pages, ~1,200 lines, 10 decisions, 0 dependencies, MIT License
+- **Encouragement**: "You can build things like this!" messaging
+- **Direct GitHub Links**: Multiple CTAs to view and fork the repository
+
+**Images Used**:
+- `merit_badge_programming.webp` (150px circle, 4px blue border)
+- `merit_badge_digital_technology.webp` (150px circle, 4px green border)
+- `merit_badge_space_exploration.webp` (150px circle, 4px red border)
+
+**Top Nav**:
+- `🏠 Home` → `../index.html`
+- `📅 Timeline` → `../timeline.html`
+- Progress: `Merit Badges`
+**Footer Nav**:
+- Previous: `← Previous` → `29-completion.html`
 - Next: `🏠 Home` → `../index.html`
+
+**Design Philosophy**:
+- Scout-centric: Visual, actionable, encouraging
+- Step-by-step guidance for using project with counselors
+- Emphasizes experimentation and modification
+- Clear connection between project features and specific merit badge requirements
+- Prominent GitHub repository links throughout
 
 ---
 
@@ -584,8 +630,9 @@ All pages include:
 
 All slides accessible from:
 1. **Timeline Page**: Direct links to any slide
-2. **Sequential Navigation**: Previous/Next buttons follow slide order (01→02→03...→29)
+2. **Sequential Navigation**: Previous/Next buttons follow slide order (01→02→03...→30)
 3. **Top Navigation**: Home and Timeline available from every slide
+4. **Merit Badges Page**: Accessible from index.html, timeline.html, and slide 29 completion page
 
 ---
 

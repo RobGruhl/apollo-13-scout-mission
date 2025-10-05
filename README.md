@@ -23,11 +23,12 @@ This interactive website lets you experience their story and **make the same cri
 
 ## How It Works
 
-### 📱 29 Interactive Slides
+### 📱 30 Interactive Slides
 Navigate through the mission timeline from launch to splashdown:
 - **9 Narrative Slides** - Experience the story as it happened
 - **10 Decision Points** - Make critical choices (will you match NASA's decisions?)
 - **10 Info Slides** - Learn the science and engineering behind the rescue
+- **1 Merit Badge Resource** - Earn three different merit badges with this project!
 
 ### 🎯 Make Real Decisions
 Face the same impossible choices NASA did:
