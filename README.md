@@ -198,8 +198,16 @@ This project is designed to help with multiple merit badge requirements:
 - Create a similar interactive story for Apollo 11, Mars rovers, or another mission
 - Add accessibility features (screen reader support, high-contrast mode)
 
-**🌐 Digital Technology Merit Badge** - Requirement 3 (create digital content)
-**🚀 Space Exploration Merit Badge** - Apollo 13 historical content
+**🌐 Digital Technology Merit Badge** (2025 requirements):
+- **Requirement 3c** - This project is a complete website with 29 HTML pages, text content, images, and navigation - perfect example of creating digital content for an audience
+- **Requirement 4a** - Discusses intellectual property protections (our MIT License demonstrates copyright and licensing)
+- **Requirement 4b** - Learn when it's permissible to use/modify open source software (MIT License allows free use and modification)
+
+**🚀 Space Exploration Merit Badge** (2025 requirements):
+- **Requirement 1** - Historical reasons for space exploration (Apollo 13 demonstrates problem-solving and international cooperation)
+- **Requirement 2** - Space pioneers (meet the Apollo 13 crew: Jim Lovell, Jack Swigert, Fred Haise, and heroes like John Aaron)
+- **Requirement 5a** - Discuss a historic crewed mission - Apollo 13 is one of NASA's most famous missions with major learnings about spacecraft safety and rescue procedures
+- **Requirement 7** - Explore careers in space (NASA flight controllers, engineers, astronauts)
 
 ### Want to Understand This Code?
 
