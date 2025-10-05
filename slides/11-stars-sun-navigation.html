@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 Decision #5: Should the crew use star sighting or Sun/Earth alignment for navigation?">
+    <title>Apollo 13 - Decision: Stars or Sun Navigation?</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="11">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 11 of 29</span>
+        <div class="decision-tracker" id="decisionTracker">
+            <span class="tracker-label">Decisions:</span>
+            <div class="decision-badges">
+                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
+            </div>
+        </div>
+    </nav>
+    <main class="slide-container">
+        <article class="slide decision">
+            <header class="slide-header">
+                <span class="slide-type">🚨 Decision Point #5</span>
+                <h1>Stars or Sun/Earth Navigation?</h1>
+                <time class="timestamp">GET ~79:27:38 | Lost in Space</time>
+            </header>
+
+            <section class="situation">
+                <h2>⚠️ The Situation</h2>
+                <ul>
+                    <li>Need to align spacecraft navigation platform for accurate course corrections</li>
+                    <li>Normal method: sight on known stars using alignment telescope (AOT)</li>
+                    <li>Problem: Explosion created debris field—"sparklies" everywhere</li>
+                    <li>Through telescope, debris looks identical to stars</li>
+                    <li>Impossible to determine which points of light are real stars</li>
+                    <li>Without proper alignment, can't aim precisely for Earth</li>
+                </ul>
+            </section>
+
+            <section class="options">
+                <div class="option" data-option="stars">
+                    <h3>⭐ STAR SIGHTING</h3>
+                    <p class="option-subtitle">Use alignment telescope to sight on stars</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <figure style="margin: 1.5rem 0;">
+                            <img src="../assets/images/slide09_aot.jpg" alt="Alignment Optical Telescope in Lunar Module" loading="lazy">
+                            <figcaption>AOT (Alignment Optical Telescope) - normally used for star sighting</figcaption>
+                        </figure>
+
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Most accurate navigation method available</li>
+                                <li>Standard Apollo procedure (proven technique)</li>
+                                <li>Provides precise platform orientation</li>
+                                <li>Computer can calculate exact trajectory</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Debris field makes stars invisible</li>
+                                <li>Cannot distinguish sparklies from real stars</li>
+                                <li>Multiple false sightings likely</li>
+                                <li>Could misalign platform completely</li>
+                                <li>Time-consuming trial and error</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700;">Lovell's frustration:</p>
+                            <p style="margin-top: 0.5rem; font-style: italic;">"I can't tell a star from a piece of debris. It's like being in a snowstorm."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-option="sunearth">
+                    <h3>☀️ SUN/EARTH TERMINATOR</h3>
+                    <p class="option-subtitle">Manually align using Sun in AOT + Earth edge in COAS</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <figure style="margin: 1.5rem 0;">
+                            <img src="../assets/images/slide09_earth_terminator.jpg" alt="Earth terminator - day/night line visible from space" loading="lazy">
+                            <figcaption>Earth terminator (day/night line) - unmistakable reference point</figcaption>
+                        </figure>
+
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Sun is unmistakable (brightest object)</li>
+                                <li>Earth terminator (day/night line) clearly visible</li>
+                                <li>No confusion with debris</li>
+                                <li>Faster than searching for stars</li>
+                                <li>"Good enough" accuracy for course corrections</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Less precise than star alignment</li>
+                                <li>Manual alignment is tricky</li>
+                                <li>Requires simultaneous viewing through two instruments</li>
+                                <li>Small errors could compound over distance</li>
+                                <li>Not the "approved" NASA procedure</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="background: var(--nasa-blue); color: white; padding: 2rem; text-align: center; border-radius: 8px; margin: 2rem 0;">
+                <h2 style="color: white; font-size: 1.5rem; margin: 0;">🤔 WHAT SHOULD THE CREW DO?</h2>
+                <p style="margin-top: 1rem; font-size: 1rem; opacity: 0.9;">👆 Choose one of the options above 👆</p>
+            </div>
+
+            <section class="decision-result hidden" id="result">
+                <h2>NASA's Decision</h2>
+                <div class="result-content">
+                    <p class="result-choice">✓ SUN/EARTH TERMINATOR METHOD</p>
+                    <p>
+                        Mission Control made the call: <strong>"Use the Sun and Earth's terminator for your alignment. We'll walk you through the calculations."</strong>
+                    </p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">GET ~79:27:38 - Manual Alignment Procedure:</h3>
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h4>The Process:</h4>
+                        <ol>
+                            <li><strong>Step 1:</strong> Sun positioned in AOT (Alignment Optical Telescope)</li>
+                            <li><strong>Step 2:</strong> Earth terminator (day/night line) centered in COAS (Crew Optical Alignment Sight)</li>
+                            <li><strong>Step 3:</strong> Jim Lovell performed delicate manual alignment</li>
+                            <li><strong>Step 4:</strong> "Good enough" accuracy achieved for safe trajectory</li>
+                        </ol>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Jim Lovell's Skill:</h3>
+                    <p>Commander Lovell had trained for this. As a Navy pilot, he'd navigated by stars over the Pacific Ocean. Now he did the same—just 200,000 miles higher.</p>
+
+                    <blockquote style="margin: 1.5rem 0;">
+                        "Navigation is the same whether you're at sea level or in space. Find your reference points, calculate your position, make your corrections. The math doesn't change—just the stakes."
+                        <cite>— Jim Lovell</cite>
+                    </blockquote>
+
+                    <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Perfect Alignment!</p>
+                        <p style="margin-bottom: 0.5rem;">The Sun/Earth terminator method worked beautifully.</p>
+                        <p><strong>Trajectory accuracy:</strong> Within 0.01 degrees of target.</p>
+                        <p style="margin-top: 0.5rem; font-style: italic;">Manual skill beat perfect equipment.</p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Why This Mattered:</h3>
+                    <ul>
+                        <li>✓ <strong>Improvisation works:</strong> Unorthodox methods saved the day</li>
+                        <li>✓ <strong>Simple is better:</strong> When high-tech fails, go low-tech</li>
+                        <li>✓ <strong>Human skill:</strong> Lovell's Navy training proved critical</li>
+                        <li>✓ <strong>Accuracy achieved:</strong> Hit re-entry corridor perfectly</li>
+                    </ul>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Manual Navigation Triumph:</h3>
+                    <p>Using Sun/Earth alignment, stopwatches, and eyeball sightings, Apollo 13 navigated 200,000 miles through space with incredible accuracy:</p>
+
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Final re-entry accuracy:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>☀️ The Sun (brightest object)</li>
+                            <li>🌍 Earth's terminator (day/night line)</li>
+                            <li>⏱️ A stopwatch</li>
+                            <li>👁️ Human eyeballs</li>
+                            <li>🎯 Result: Hit re-entry corridor within 0.01 degrees</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-style: italic;">
+                            Modern spacecraft rely on GPS and computers. Apollo 13 proved human navigators with basic tools could do the impossible.
+                        </p>
+                    </div>
+
+                    <p style="margin-top: 1.5rem;">
+                        <strong>Why it was the right decision:</strong> The debris field made star sighting impossible. By adapting to an improvised method, they proved that simple, reliable techniques beat complex systems when conditions are uncertain. Lovell's manual skill got them home.
+                    </p>
+
+                    <div id="alignmentIndicator" class="alignment-indicator"></div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="slide-nav">
+        <a href="10-co2-mailbox.html" class="btn-prev">← Previous</a>
+        <a href="12-long-journey.html" class="btn-next">Next →</a>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

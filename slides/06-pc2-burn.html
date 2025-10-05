@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 Decision #3: Should the crew speed up their return with a risky engine burn, or coast on the free-return trajectory?">
+    <title>Apollo 13 - Decision: Speed Up or Coast?</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="6">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 6 of 29</span>
+        <div class="decision-tracker" id="decisionTracker">
+            <span class="tracker-label">Decisions:</span>
+            <div class="decision-badges">
+                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
+            </div>
+        </div>
+    </nav>
+    <main class="slide-container">
+        <article class="slide decision">
+            <header class="slide-header">
+                <span class="slide-type">🚨 Decision Point #3</span>
+                <h1>Speed Up or Coast?</h1>
+                <time class="timestamp">GET 79:27:40 | Wrong Ocean Landing Zone</time>
+            </header>
+
+            <section class="situation">
+                <h2>⚠️ The Situation</h2>
+                <ul>
+                    <li>Free-return trajectory will get them home, but too late and in wrong ocean</li>
+                    <li>Current path would land far from recovery ships (wrong ocean)</li>
+                    <li>Solution: Major burn 2 hours after pericynthion (PC+2) to speed up and retarget</li>
+                    <li>Risk: LM Descent Engine will run for 4.5-5 minutes in deep space</li>
+                    <li>Longest burn yet—within design limits but high-stakes</li>
+                </ul>
+            </section>
+
+            <section class="options">
+                <div class="option" data-option="coast">
+                    <h3>🌊 COAST ON FREE-RETURN</h3>
+                    <p class="option-subtitle">Accept current trajectory—no additional burn</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>No risk of engine failure during critical burn</li>
+                                <li>Conserves fuel for emergency corrections</li>
+                                <li>Simple—no complex maneuvers</li>
+                                <li>Systems already stressed—why add more risk?</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Longer mission time (~9-10 hours extra)</li>
+                                <li>Lands in wrong ocean, far from recovery fleet</li>
+                                <li>More time for systems to fail</li>
+                                <li>Longer exposure to cold, dehydration, CO2</li>
+                                <li>Recovery ships must reposition—delays rescue</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-option="burn">
+                    <h3>🔥 PERFORM PC+2 BURN</h3>
+                    <p class="option-subtitle">Fire LM descent engine for extended burn to retarget</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <figure style="margin: 1.5rem 0;">
+                            <img src="../assets/images/decision06_engine_burn.jpg" alt="Lunar Module descent engine" loading="lazy">
+                            <figcaption>LM Descent Engine - designed for landing, now their only way to speed up</figcaption>
+                        </figure>
+
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Cuts ~9-10 hours off return time</li>
+                                <li>Targets Pacific recovery zone near USS Iwo Jima</li>
+                                <li>Less time for systems to fail</li>
+                                <li>Faster medical attention for crew</li>
+                                <li>Ships already positioned and waiting</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Long engine burn (4.5-5 minutes) stresses systems</li>
+                                <li>Uses significant fuel (~900 ft/s delta-V)</li>
+                                <li>Any failure during burn leaves crew stranded</li>
+                                <li>Engine designed for lunar landing, not deep space burns</li>
+                                <li>Single point of failure—if engine quits, no backup</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="background: var(--nasa-blue); color: white; padding: 2rem; text-align: center; border-radius: 8px; margin: 2rem 0;">
+                <h2 style="color: white; font-size: 1.5rem; margin: 0;">🤔 WHAT SHOULD MISSION CONTROL DECIDE?</h2>
+                <p style="margin-top: 1rem; font-size: 1rem; opacity: 0.9;">👆 Choose one of the options above 👆</p>
+            </div>
+
+            <section class="decision-result hidden" id="result">
+                <h2>NASA's Decision</h2>
+                <div class="result-content">
+                    <p class="result-choice">✓ PERFORM THE PC+2 BURN</p>
+                    <p>
+                        Mission Control made the call: <strong>"You are go for PC+2 burn."</strong>
+                    </p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">GET 79:27:40 - The Burn</h3>
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h4>Burn Parameters:</h4>
+                        <ul>
+                            <li><strong>Duration:</strong> ~4.5-5 minutes total</li>
+                            <li><strong>Velocity change:</strong> ~900 ft/s of delta-V</li>
+                            <li><strong>Time saved:</strong> ~9-10 hours</li>
+                            <li><strong>Target:</strong> Pacific recovery zone near USS Iwo Jima</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Execution:</h3>
+                    <p>Jim Lovell piloted the LM while Fred Haise watched the instruments. Jack Swigert monitored from the Command Module. The engine fired perfectly.</p>
+
+                    <blockquote style="margin: 1.5rem 0;">
+                        "That was the longest 4 and a half minutes of my life. If that engine had quit, we were dead. But it ran like a sewing machine."
+                        <cite>— Jim Lovell</cite>
+                    </blockquote>
+
+                    <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Perfect Burn!</p>
+                        <p style="margin-bottom: 0.5rem;">The LM descent engine performed flawlessly—never missed a beat.</p>
+                        <p><strong>New splashdown time:</strong> 9-10 hours earlier, Pacific Ocean near rescue ships.</p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Why This Mattered:</h3>
+                    <ul>
+                        <li>✓ <strong>Shortened the journey:</strong> Less time in freezing, cramped LM</li>
+                        <li>✓ <strong>Reduced system stress:</strong> Fewer hours for failures to occur</li>
+                        <li>✓ <strong>Positioned recovery:</strong> Ships ready and waiting in target zone</li>
+                        <li>✓ <strong>Crew morale:</strong> Knowing they'd get home faster helped them endure</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem;">
+                        <strong>Why it was the right decision:</strong> The crew was grateful for every hour saved. Fred Haise was developing a serious kidney infection from dehydration. The cold was unbearable. Getting home 9 hours sooner may have saved their lives.
+                    </p>
+
+                    <div id="alignmentIndicator" class="alignment-indicator"></div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="slide-nav">
+        <a href="05-turn-around.html" class="btn-prev">← Previous</a>
+        <a href="07-meet-crew.html" class="btn-next">Next →</a>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

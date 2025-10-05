@@ -93,7 +93,7 @@ function initProgressTracking() {
     }
 
     // Update progress indicator
-    const total = 24;
+    const total = 29;
     const current = parseInt(slideId) || 1;
     const progressText = document.querySelector('.nav-progress');
     if (progressText) {
@@ -197,19 +197,31 @@ function resetProgress() {
  * SCORING SYSTEM
  */
 
-// Correct NASA decisions
+// Correct NASA decisions (10 total)
 const CORRECT_ANSWERS = {
-    '2': 'squeeze',      // Freeze or Squeeze → SQUEEZE (move to LM)
-    '5': 'freereturn',   // Turn Around → FREE-RETURN (use Moon's gravity)
-    '9': 'buildmailbox', // CO2 Mailbox → BUILD (improvise adapter)
-    '12': 'shutdown'     // CM Power → SHUTDOWN (preserve batteries)
+    '2': 'squeeze',           // Decision #1: Freeze or Squeeze → SQUEEZE (move to LM)
+    '5': 'freereturn',        // Decision #2: Turn Around → FREE-RETURN (use Moon's gravity)
+    '6': 'burn',              // Decision #3: PC+2 Burn → PERFORM BURN (speed up return)
+    '10': 'buildmailbox',     // Decision #4: CO2 Mailbox → BUILD (improvise adapter)
+    '11': 'sunearth',         // Decision #5: Navigation → SUN/EARTH (manual alignment)
+    '13': 'shutdown',         // Decision #6: CM Power → SHUTDOWN (preserve batteries)
+    '14': 'extreme',          // Decision #7: Water Conservation → EXTREME RATIONING
+    '15': 'silence',          // Decision #8: Communication → RADIO SILENCE (save power)
+    '17': 'jumpstart',        // Decision #9: Battery Jump-Start → ATTEMPT JUMPSTART
+    '18': 'early'             // Decision #10: SM Jettison → EARLY JETTISON (photograph damage)
 };
 
 const DECISION_NAMES = {
     '2': 'Freeze or Squeeze',
     '5': 'Turn Around Decision',
-    '9': 'CO2 Mailbox',
-    '12': 'Power Conservation'
+    '6': 'PC+2 Burn (Speed Up)',
+    '10': 'CO2 Mailbox',
+    '11': 'Stars or Sun Navigation',
+    '13': 'Power Conservation',
+    '14': 'Water Conservation',
+    '15': 'Communication Discipline',
+    '17': 'Battery Jump-Start',
+    '18': 'SM Jettison Timing'
 };
 
 /**
@@ -230,7 +242,7 @@ function calculateScore() {
 }
 
 /**
- * Get score rank/title
+ * Get score rank/title (based on 10 decisions)
  */
 function getScoreRank(correct, total) {
     const percentage = (correct / total) * 100;
@@ -242,14 +254,14 @@ function getScoreRank(correct, total) {
             message: 'Perfect score! You made every decision exactly like NASA!',
             color: '#FFD700' // Gold
         };
-    } else if (percentage >= 75) {
+    } else if (percentage >= 80) {
         return {
             rank: 'Flight Director',
             emoji: '⭐',
             message: 'Excellent work! You have the instincts of a NASA flight director.',
             color: '#C0C0C0' // Silver
         };
-    } else if (percentage >= 50) {
+    } else if (percentage >= 60) {
         return {
             rank: 'Flight Controller',
             emoji: '🎯',

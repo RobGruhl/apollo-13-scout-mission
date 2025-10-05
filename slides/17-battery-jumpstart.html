@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 Decision #9: Should they attempt an untested battery jump-start from the LM to the CM?">
+    <title>Apollo 13 - Decision: Battery Jump-Start</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="17">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 17 of 29</span>
+        <div class="decision-tracker" id="decisionTracker">
+            <span class="tracker-label">Decisions:</span>
+            <div class="decision-badges">
+                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
+            </div>
+        </div>
+    </nav>
+    <main class="slide-container">
+        <article class="slide decision">
+            <header class="slide-header">
+                <span class="slide-type">🚨 Decision Point #9</span>
+                <h1>Battery Jump-Start?</h1>
+                <time class="timestamp">GET ~138:00:00 | Dead Batteries for Re-Entry</time>
+            </header>
+
+            <section class="situation">
+                <h2>⚠️ The Situation</h2>
+                <ul>
+                    <li>Approaching Earth—Command Module needed for re-entry (only module with heat shield)</li>
+                    <li>CM batteries drained to 2% during 4-day power-down</li>
+                    <li>LM has remaining battery power available</li>
+                    <li>Need to transfer power from LM to CM to charge batteries</li>
+                    <li>Procedure never tested—could short-circuit both systems</li>
+                    <li>Without power, CM computers, parachutes, and life support won't function</li>
+                </ul>
+
+                <div style="background: var(--bg-light); border: 2px solid var(--crisis-red); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h3 style="color: var(--crisis-red); margin-bottom: 1rem;">The Critical Reality:</h3>
+                    <p style="font-weight: 700;">2% battery power = certain death</p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>❌ Not enough for guidance computer</li>
+                        <li>❌ Not enough for parachute deployment</li>
+                        <li>❌ Not enough for life support</li>
+                        <li>❌ Crew will die during re-entry</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="options">
+                <div class="option" data-option="reserve">
+                    <h3>🔋 USE ONLY CM RESERVE BATTERIES</h3>
+                    <p class="option-subtitle">Attempt re-entry with 2% battery power</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>No risk of short-circuit damaging systems</li>
+                                <li>Avoids untested procedure</li>
+                                <li>Simple—no complex power transfer</li>
+                                <li>Can't make batteries worse than they are</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Insufficient power for guidance computers</li>
+                                <li>Not enough power for parachute deployment</li>
+                                <li>Life support systems won't function</li>
+                                <li><strong>Crew will die during re-entry</strong></li>
+                                <li><strong>2% power = certain death</strong></li>
+                            </ul>
+                        </div>
+
+                        <div style="background: var(--bg-light); border: 2px solid var(--crisis-red); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="font-weight: 700; color: var(--crisis-red);">This is not a viable option.</p>
+                            <p style="margin-top: 0.5rem;">The crew needs at least 40 amp-hours for re-entry. They have ~1 amp-hour remaining.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-option="jumpstart">
+                    <h3>⚡ JUMP-START FROM LM</h3>
+                    <p class="option-subtitle">Connect LM batteries to charge CM systems</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <figure style="margin: 1.5rem 0;">
+                            <img src="../assets/images/decision08_battery_jumpstart.png" alt="Apollo electrical system and battery connections" loading="lazy">
+                            <figcaption>Electrical systems - never designed to transfer power between spacecraft</figcaption>
+                        </figure>
+
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Can fully charge CM batteries for re-entry</li>
+                                <li>Provides power for computers and navigation</li>
+                                <li>Enables parachute deployment systems</li>
+                                <li>Only option with chance of survival</li>
+                                <li>LM power otherwise wasted after jettison</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Never attempted in space—completely improvised</li>
+                                <li>Could short-circuit both LM and CM systems</li>
+                                <li>Might electrocute crew through metal hulls</li>
+                                <li>Could lose ALL remaining power</li>
+                                <li>Electrical fire risk in oxygen environment</li>
+                                <li>If it fails, no backup plan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="background: var(--nasa-blue); color: white; padding: 2rem; text-align: center; border-radius: 8px; margin: 2rem 0;">
+                <h2 style="color: white; font-size: 1.5rem; margin: 0;">🤔 WHAT SHOULD MISSION CONTROL DECIDE?</h2>
+                <p style="margin-top: 1rem; font-size: 1rem; opacity: 0.9;">👆 Choose one of the options above 👆</p>
+            </div>
+
+            <section class="decision-result hidden" id="result">
+                <h2>NASA's Decision</h2>
+                <div class="result-content">
+                    <p class="result-choice">✓ ATTEMPT THE JUMP-START</p>
+                    <p>
+                        Mission Control had no choice: <strong>"We're going to attempt the LM-to-CM power transfer. It's never been done, but it's the only option."</strong>
+                    </p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Emergency Procedure:</h3>
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <p style="font-weight: 700; margin-bottom: 1rem;">Houston designed a brand-new power-up procedure:</p>
+                        <ul>
+                            <li><strong>Step 1:</strong> Connect LM batteries to CM charging system</li>
+                            <li><strong>Step 2:</strong> Carefully monitor voltage and current</li>
+                            <li><strong>Step 3:</strong> Transfer power slowly to avoid surges</li>
+                            <li><strong>Step 4:</strong> Watch for short circuits or battery failures</li>
+                            <li><strong>Step 5:</strong> Charge CM batteries to sufficient levels</li>
+                        </ul>
+
+                        <p style="margin-top: 1rem; font-style: italic;">
+                            Engineers held their breath. This had never been tested. Not in simulators. Not on the ground. Never.
+                        </p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Execution:</h3>
+                    <p>Jack Swigert executed the procedure step by step, calling out voltages and currents. Mission Control tracked every amp transferred.</p>
+
+                    <div style="background: var(--bg-yellow-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h4>The Close Call:</h4>
+                        <p style="margin-top: 0.5rem;">
+                            During the transfer, one CM battery briefly "dropped off the line"—the voltage dipped and engineers feared it had failed. But it recovered. The transfer continued.
+                        </p>
+                    </div>
+
+                    <blockquote style="margin: 1.5rem 0;">
+                        "We watched those numbers like hawks. Every volt, every amp. If we saw a short circuit, we'd have to abort. But the procedure worked. The batteries charged."
+                        <cite>— John Aaron, EECOM (who designed the power plan)</cite>
+                    </blockquote>
+
+                    <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Success!</p>
+                        <p style="margin-bottom: 0.5rem;">The jump-start worked perfectly.</p>
+                        <p><strong>CM batteries charged to sufficient levels for re-entry.</strong></p>
+                        <p style="margin-top: 0.5rem; font-style: italic;">This procedure was added to NASA's emergency playbook.</p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Hero: John Aaron</h3>
+                    <p>John Aaron, the EECOM (Electrical, Environmental, and Communications) flight controller, led the power plan that made this possible. He was the same engineer who saved Apollo 12 with "SCE to AUX" after a lightning strike. Now, he saved Apollo 13 with a power transfer procedure written from scratch.</p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Why This Mattered:</h3>
+                    <ul>
+                        <li>✓ <strong>Re-entry made possible:</strong> Without this, crew would have died</li>
+                        <li>✓ <strong>Computer power:</strong> Guidance system had sufficient power</li>
+                        <li>✓ <strong>Parachute deployment:</strong> Enough power for pyrotechnics</li>
+                        <li>✓ <strong>Survival margin:</strong> Extra power for unexpected issues</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem;">
+                        <strong>Why it was the right decision:</strong> There was no alternative. The jump-start was risky, untested, and could have failed catastrophically. But 2% power was certain death. They gambled on ingenuity and it paid off. This made re-entry possible.
+                    </p>
+
+                    <div id="alignmentIndicator" class="alignment-indicator"></div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="slide-nav">
+        <a href="16-passive-thermal.html" class="btn-prev">← Previous</a>
+        <a href="18-sm-jettison-timing.html" class="btn-next">Next →</a>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

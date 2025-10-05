@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 Decision #8: Should the crew maintain regular radio contact or enforce radio silence to save battery power?">
+    <title>Apollo 13 - Decision: Communication Discipline</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="15">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 15 of 29</span>
+        <div class="decision-tracker" id="decisionTracker">
+            <span class="tracker-label">Decisions:</span>
+            <div class="decision-badges">
+                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
+            </div>
+        </div>
+    </nav>
+    <main class="slide-container">
+        <article class="slide decision">
+            <header class="slide-header">
+                <span class="slide-type">🚨 Decision Point #8</span>
+                <h1>Communication Discipline</h1>
+                <time class="timestamp">GET ~110:00:00 | Battery Power Critical</time>
+            </header>
+
+            <section class="situation">
+                <h2>⚠️ The Situation</h2>
+                <ul>
+                    <li>Power levels critical—every amp-hour counts</li>
+                    <li>Radio communication drains precious battery power</li>
+                    <li>Families on Earth desperate for updates on crew status</li>
+                    <li>Crew psychologically isolated and stressed in freezing LM</li>
+                    <li>Mission Control needs periodic status checks</li>
+                    <li>Batteries must last for re-entry computer and parachute deployment</li>
+                </ul>
+            </section>
+
+            <section class="options">
+                <div class="option" data-option="regular">
+                    <h3>📻 MAINTAIN REGULAR COMMUNICATION</h3>
+                    <p class="option-subtitle">Check in with Mission Control every 2 hours</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Crew morale supported—feels connected to Earth</li>
+                                <li>Families reassured that crew is alive</li>
+                                <li>Mission Control can monitor systems and troubleshoot</li>
+                                <li>Crew can ask questions and get guidance</li>
+                                <li>Public stays informed of progress</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Each transmission drains batteries significantly</li>
+                                <li>Could lose 5-8% of remaining power with regular comms</li>
+                                <li>Might not have enough power for re-entry computers</li>
+                                <li>Radio heater uses power even when not transmitting</li>
+                                <li>Could die during re-entry due to dead batteries</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-option="silence">
+                    <h3>🤐 RADIO SILENCE</h3>
+                    <p class="option-subtitle">Minimize communication to emergency-only</p>
+                    <button class="btn-choose">Choose This Option</button>
+
+                    <div class="option-details">
+                        <figure style="margin: 1.5rem 0;">
+                            <img src="../assets/images/decision07_radio_communication.png" alt="Apollo radio communication equipment" loading="lazy">
+                            <figcaption>Radio equipment - every transmission drained precious battery power</figcaption>
+                        </figure>
+
+                        <div class="pros">
+                            <h4>✓ Advantages</h4>
+                            <ul>
+                                <li>Conserves maximum power for re-entry</li>
+                                <li>Ensures computer functionality during critical phases</li>
+                                <li>Saves power for parachute deployment systems</li>
+                                <li>More margin for error with remaining batteries</li>
+                                <li>Power available for unexpected emergencies</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>✕ Disadvantages</h4>
+                            <ul>
+                                <li>Crew feels abandoned and alone</li>
+                                <li>Families terrified—no updates for 12+ hours</li>
+                                <li>Mission Control can't help if problems develop silently</li>
+                                <li>Psychological toll on crew is severe</li>
+                                <li>No guidance for unexpected situations</li>
+                                <li>Public assumes the worst during silence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="background: var(--nasa-blue); color: white; padding: 2rem; text-align: center; border-radius: 8px; margin: 2rem 0;">
+                <h2 style="color: white; font-size: 1.5rem; margin: 0;">🤔 WHAT SHOULD MISSION CONTROL DECIDE?</h2>
+                <p style="margin-top: 1rem; font-size: 1rem; opacity: 0.9;">👆 Choose one of the options above 👆</p>
+            </div>
+
+            <section class="decision-result hidden" id="result">
+                <h2>NASA's Decision</h2>
+                <div class="result-content">
+                    <p class="result-choice">✓ STRICT COMMUNICATION DISCIPLINE</p>
+                    <p>
+                        Mission Control made the hard call: <strong>"Essential status updates only. We need to save every amp-hour for re-entry."</strong>
+                    </p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Communication Plan:</h3>
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <ul>
+                            <li><strong>Reduced communications</strong> to essential status updates only</li>
+                            <li><strong>Silence periods</strong> lasted 6+ hours at times</li>
+                            <li><strong>Critical updates only:</strong> Navigation data, system failures, re-entry procedures</li>
+                            <li><strong>No casual conversation</strong>—every word had to count</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Impact on Families:</h3>
+                    <p>On Earth, the silence was agonizing. Marilyn Lovell, Barbara Lovell, and the other families waited by radios for any word. News broadcasters filled airtime with speculation. The world held its breath during those silent hours.</p>
+
+                    <blockquote style="margin: 1.5rem 0;">
+                        "Not knowing was the worst part. Every hour of silence, you wonder: Are they still alive? Did something go wrong? We just had to wait and hope."
+                        <cite>— Marilyn Lovell</cite>
+                    </blockquote>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Impact on the Crew:</h3>
+                    <div style="background: var(--bg-yellow-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>The crew felt isolated and alone in the freezing, dark Lunar Module. They understood the necessity but the psychological toll was real:</p>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>💭 Feeling disconnected from Mission Control's expertise</li>
+                            <li>💭 Wondering if engineers were still working on solutions</li>
+                            <li>💭 Wanting reassurance but knowing they couldn't ask</li>
+                            <li>💭 The silence amplified every noise, every fear</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Power Savings:</h3>
+                    <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Critical Power Saved!</p>
+                        <p style="margin-bottom: 0.5rem;">By minimizing radio use, they saved enough power for re-entry systems.</p>
+                        <p><strong>Battery level at splashdown:</strong> ~20% remaining</p>
+                        <p style="margin-top: 0.5rem; font-style: italic;">Without communication discipline, batteries would have been dead.</p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Why This Mattered:</h3>
+                    <ul>
+                        <li>✓ <strong>Re-entry power guaranteed:</strong> Enough for guidance computer</li>
+                        <li>✓ <strong>Parachute deployment:</strong> Power available for pyrotechnics</li>
+                        <li>✓ <strong>Emergency margin:</strong> 20% reserve for unexpected issues</li>
+                        <li>✓ <strong>Crew discipline:</strong> Accepted isolation to stay alive</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem;">
+                        <strong>Why it was the right decision:</strong> The crew and their families endured agonizing silence, but it saved their lives. Mission Control calculated that regular communications would have drained batteries below critical levels. It was a brutal choice between comfort and survival—they chose survival.
+                    </p>
+
+                    <div id="alignmentIndicator" class="alignment-indicator"></div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="slide-nav">
+        <a href="14-water-conservation.html" class="btn-prev">← Previous</a>
+        <a href="16-passive-thermal.html" class="btn-next">Next →</a>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

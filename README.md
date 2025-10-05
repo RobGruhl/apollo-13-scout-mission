@@ -23,25 +23,31 @@ This interactive website lets you experience their story and **make the same cri
 
 ## How It Works
 
-### 📱 24 Interactive Slides
+### 📱 29 Interactive Slides
 Navigate through the mission timeline from launch to splashdown:
-- **6 Narrative Slides** - Experience the story as it happened
-- **4 Decision Points** - Make critical choices (will you match NASA's decisions?)
-- **14 Info Slides** - Learn the science and engineering behind the rescue
+- **9 Narrative Slides** - Experience the story as it happened
+- **10 Decision Points** - Make critical choices (will you match NASA's decisions?)
+- **10 Info Slides** - Learn the science and engineering behind the rescue
 
 ### 🎯 Make Real Decisions
 Face the same impossible choices NASA did:
 - Move to the Lunar Module or stay in the Command Module?
 - Turn around immediately or use the Moon's gravity?
+- Speed up the return with a risky engine burn?
 - Build an improvised CO₂ scrubber or risk suffocation?
-- Shut down the Command Module to save power for re-entry?
+- Navigate using stars or Sun/Earth alignment?
+- Shut down the Command Module to save power?
+- Ration water supplies for crew or equipment?
+- Maintain radio contact or enforce silence to save batteries?
+- Attempt an untested battery jump-start?
+- When to jettison the damaged Service Module?
 
 ### 🏆 Earn Your Rank
 Compare your decisions to NASA's actual choices:
-- 🏆 **Mission Commander** - 4/4 correct (You think like NASA!)
-- ⭐ **Flight Director** - 3/4 correct
-- 🎯 **Flight Controller** - 2/4 correct
-- 📡 **Ground Crew** - 0-1/4 correct
+- 🏆 **Mission Commander** - 10/10 correct (You think like NASA!)
+- ⭐ **Flight Director** - 8-9/10 correct
+- 🎯 **Flight Controller** - 6-7/10 correct
+- 📡 **Ground Crew** - 0-5/10 correct
 
 ### 📲 Share Your Score
 Generate a shareable link to challenge your troop or patrol to beat your score!
