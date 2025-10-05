@@ -189,7 +189,7 @@ img {
 .hero img {
     max-width: 200px;
     margin: 0 auto var(--space-lg);
-    border-radius: 12px;
+    border-radius: 24px;
 }
 
 @media (min-width: 768px) {
