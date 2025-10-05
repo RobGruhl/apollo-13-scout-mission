@@ -1,8 +1,8 @@
 # Apollo 13 Interactive Experience - Sitemap Specification
 
-**Version**: 2.1
+**Version**: 2.2
 **Date**: 2025-10-04
-**Purpose**: Standardized navigation structure and scoring system integration for all pages (Updated for 30 slides, 10 decisions)
+**Purpose**: Standardized navigation structure and scoring system integration for all pages (Updated for 33 slides total: 29 mission + 4 merit badge resource pages, 10 decisions)
 
 ---
 
@@ -110,7 +110,10 @@ All pages include:
 - Slide 27: Reentry Physics → `slides/27-reentry-physics.html`
 - Slide 28: Splashdown → `slides/28-splashdown.html`
 - Slide 29: Completion → `slides/29-completion.html`
-- Slide 30: Merit Badges → `slides/30-merit-badges.html`
+- Slide 30: Merit Badges Hub → `slides/30-merit-badges.html`
+- Slide 31: Programming Merit Badge → `slides/31-merit-badge-programming.html`
+- Slide 32: Digital Technology Merit Badge → `slides/32-merit-badge-digital-technology.html`
+- Slide 33: Space Exploration Merit Badge → `slides/33-merit-badge-space-exploration.html`
 **Footer**: No slide navigation
 
 ---
@@ -700,6 +703,94 @@ https://robgruhl.github.io/apollo-mission/#name=Scout&troop=Troop%20123&score=8&
 - `score` - Correct decisions (0-10)
 - `total` - Total decisions (always 10)
 - `rank` - Achieved rank (URL encoded)
+
+---
+
+### Slide 31: Programming Merit Badge Detail
+**File**: `slides/31-merit-badge-programming.html`
+**Type**: Resource / Educational
+**Data ID**: `data-slide-id="31"`
+**Purpose**: Detailed guide for using this project to earn Programming Merit Badge
+
+**Content**:
+- Official BSA Programming Merit Badge requirements (verbatim)
+- **Requirement 4c** (Intellectual Property): MIT License explanation, comparison table (open source vs freeware vs commercial)
+- **Requirement 5** (Programming Projects): How to use this as one of three projects, modification ideas (easy/medium/hard/advanced), code walkthrough
+- **Requirement 3** (General Knowledge): JavaScript + 4 other popular languages
+- **Requirement 6** (Careers): Web Developer career path details
+- Code examples: `initDecisions()`, `showAlignmentFeedback()`, `calculateScore()`
+- Links to GitHub repository and specific code files
+- Discussion points for counselor
+
+**Top Nav**:
+- `🏠 Home` → `../index.html`
+- `📅 Timeline` → `../timeline.html`
+- Progress: `Programming Merit Badge`
+**Footer Nav**:
+- Previous: `← Merit Badges Hub` → `30-merit-badges.html`
+- Next: `Digital Technology →` → `32-merit-badge-digital-technology.html`
+
+---
+
+### Slide 32: Digital Technology Merit Badge Detail
+**File**: `slides/32-merit-badge-digital-technology.html`
+**Type**: Resource / Educational
+**Data ID**: `data-slide-id="32"`
+**Purpose**: Detailed guide for using this project to earn Digital Technology Merit Badge
+
+**Content**:
+- Official BSA Digital Technology Merit Badge requirements (verbatim)
+- **Requirement 3c** (Create Digital Content): This project IS a complete website (30 articles, 20+ images, multiple links)
+- Website structure walkthrough: index.html, timeline.html, 30 slides, images folder
+- How to create your own version for your troop/patrol
+- **Requirement 4a** (Intellectual Property): Four types table (copyright, patents, trademarks, trade secrets)
+- **Requirement 4b** (Accepting Free Software): When sharing is permissible vs not permissible
+- MIT License explanation and how to verify software licenses
+- Discussion points for counselor
+
+**Top Nav**:
+- `🏠 Home` → `../index.html`
+- `📅 Timeline` → `../timeline.html`
+- Progress: `Digital Technology Merit Badge`
+**Footer Nav**:
+- Previous: `← Programming` → `31-merit-badge-programming.html`
+- Next: `Space Exploration →` → `33-merit-badge-space-exploration.html`
+
+---
+
+### Slide 33: Space Exploration Merit Badge Detail
+**File**: `slides/33-merit-badge-space-exploration.html`
+**Type**: Resource / Educational
+**Data ID**: `data-slide-id="33"`
+**Purpose**: Detailed guide for using this project to earn Space Exploration Merit Badge
+
+**Content**:
+- Official BSA Space Exploration Merit Badge requirements (verbatim)
+- **Requirement 1** (Purpose of Space Exploration): All four aspects demonstrated through Apollo 13
+  - Historical reasons (Space Race)
+  - Immediate goals (lunar geology → crisis management lessons)
+  - Benefits to Earth (CO₂ scrubber, water filtration, computer miniaturization)
+  - International cooperation (Soviet Union offered help)
+- **Requirement 2** (Space Pioneers): Five pioneers from Apollo 13 (Lovell, Swigert, Haise, Kranz, Aaron)
+- How to create collector's card with info from project slides
+- **Requirement 5a** (Historic Crewed Mission): Apollo 13 as perfect discussion topic
+  - Major discoveries (spacecraft safety, human survival)
+  - Importance ("successful failure", changed NASA)
+  - Lessons learned (design flaws, backup systems, teamwork)
+- **Requirement 7** (Space Careers): Three career paths with education/preparation/responsibilities
+  - Astronaut (like Lovell, Swigert, Haise)
+  - Flight Controller/EECOM (like John Aaron)
+  - Aerospace Engineer (like CO₂ scrubber designers)
+- Links to relevant mission slides for each requirement
+- Discussion points for counselor
+
+**Top Nav**:
+- `🏠 Home` → `../index.html`
+- `📅 Timeline` → `../timeline.html`
+- Progress: `Space Exploration Merit Badge`
+**Footer Nav**:
+- Previous: `← Digital Technology` → `32-merit-badge-digital-technology.html`
+- Next: `Merit Badges Hub →` → `30-merit-badges.html`
 
 ---
 
