@@ -177,10 +177,29 @@ python3 -m http.server 8000
 - 📖 **MDN Web Docs** - The best reference for HTML/CSS/JavaScript
 
 **For Scouts Working on Merit Badges:**
-This project could help with:
-- 💻 **Programming Merit Badge** - Requirement 5 (web development)
-- 🌐 **Digital Technology Merit Badge** - Requirement 3 (create digital content)
-- 🚀 **Space Exploration Merit Badge** - Apollo 13 historical content
+
+This project is designed to help with multiple merit badge requirements:
+
+**💻 Programming Merit Badge** (January 2025 requirements):
+- **Requirement 4c** - Learn about open source software (this project uses MIT License), understand licensing vs. owning software, and the differences between freeware, open source, and commercial software
+- **Requirement 5** - Use this as one of your three programming projects! You can:
+  - Modify existing code (add a feature, change styling, fix a bug)
+  - Create your own version for a different space mission
+  - Study how the decision tracking, scoring system, and localStorage work
+  - Demonstrate your modifications to your counselor
+- **General Knowledge** - Real-world example of web development with HTML, CSS, and JavaScript
+- **Careers** - Explore software engineering and web development career paths
+
+**Project Ideas for Requirement 5:**
+- Add audio narration to slides
+- Create a timer to track decision-making speed
+- Add new decision points or slides
+- Translate the content into another language
+- Create a similar interactive story for Apollo 11, Mars rovers, or another mission
+- Add accessibility features (screen reader support, high-contrast mode)
+
+**🌐 Digital Technology Merit Badge** - Requirement 3 (create digital content)
+**🚀 Space Exploration Merit Badge** - Apollo 13 historical content
 
 ### Want to Understand This Code?
 
