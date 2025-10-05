@@ -158,12 +158,12 @@ function getScoreRank(correct, total) {
 
 **Base URL:**
 ```
-https://robgruhl.github.io/apollo-mission/
+https://robgruhl.github.io/apollo-13-scout-mission/
 ```
 
 **Shared Score URL:**
 ```
-https://robgruhl.github.io/apollo-mission/#name=John&troop=Troop%20123&score=4&total=4&rank=Mission%20Commander
+https://robgruhl.github.io/apollo-13-scout-mission/#name=John&troop=Troop%20123&score=4&total=4&rank=Mission%20Commander
 ```
 
 **Parameters (in hash fragment):**
@@ -619,7 +619,7 @@ function formatChoice(choice) {
 ### Test Case 3: Shared URL Landing
 
 **Steps:**
-1. Visit: `https://robgruhl.github.io/apollo-mission/#name=Test&troop=Troop%20999&score=3&total=4&rank=Flight%20Director`
+1. Visit: `https://robgruhl.github.io/apollo-13-scout-mission/#name=Test&troop=Troop%20999&score=3&total=4&rank=Flight%20Director`
 2. Observe landing page
 
 **Expected:**

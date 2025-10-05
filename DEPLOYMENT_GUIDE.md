@@ -1,8 +1,8 @@
 # Apollo 13 Interactive - GitHub Pages Deployment Guide
 
-**Status**: ✅ Code Pushed to GitHub | ⏳ Ready for Pages Setup
-**Branch**: `interactive-game`
-**Target URL**: `https://robgruhl.github.io/apollo-mission/interactive/`
+**Status**: ✅ Deployed to GitHub Pages
+**Branch**: `main`
+**Live URL**: `https://robgruhl.github.io/apollo-13-scout-mission/`
 
 ---
 
@@ -22,19 +22,18 @@ On the Pages settings screen:
    - Select: **Deploy from a branch**
 
 2. **Branch**:
-   - Select: `interactive-game` (from dropdown)
+   - Select: `main` (from dropdown)
    - Folder: `/` (root)
    - Click **Save**
 
 3. **Wait for deployment** (1-2 minutes)
-   - GitHub will show: "Your site is live at https://robgruhl.github.io/apollo-mission/"
-   - Note: The `/interactive/` path is part of the URL structure
+   - GitHub will show: "Your site is live at https://robgruhl.github.io/apollo-13-scout-mission/"
 
 ### Step 3: Test Your Site
 
 After 1-2 minutes, visit:
 ```
-https://robgruhl.github.io/apollo-mission/interactive/
+https://robgruhl.github.io/apollo-13-scout-mission/
 ```
 
 You should see the Apollo 13 landing page with:
@@ -49,12 +48,12 @@ You should see the Apollo 13 landing page with:
 
 ### Option 1: Direct URL
 1. Open your phone browser
-2. Type: `robgruhl.github.io/apollo-mission/interactive/`
+2. Type: `robgruhl.github.io/apollo-13-scout-mission/`
 3. Bookmark for easy access
 
 ### Option 2: QR Code (Recommended)
 1. Go to: https://www.qr-code-generator.com/
-2. Paste URL: `https://robgruhl.github.io/apollo-mission/interactive/`
+2. Paste URL: `https://robgruhl.github.io/apollo-13-scout-mission/`
 3. Download QR code (PNG or SVG)
 4. Scan with phone camera to test
 
@@ -100,13 +99,13 @@ You should see the Apollo 13 landing page with:
 **Fix**:
 1. Wait 2-3 minutes after enabling Pages
 2. Check Settings → Pages shows "Your site is live"
-3. Make sure branch is `interactive-game` and folder is `/`
+3. Make sure branch is `main` and folder is `/`
 
 ### Images Don't Load
 **Cause**: Path issues or images not pushed
 **Fix**:
-1. Check images exist in GitHub: https://github.com/RobGruhl/apollo-13-scout-mission/tree/interactive-game/interactive/assets/images
-2. Verify paths in HTML use `../assets/images/` (relative paths)
+1. Check images exist in GitHub: https://github.com/RobGruhl/apollo-13-scout-mission/tree/main/assets/images
+2. Verify paths in HTML use `assets/images/` or `../assets/images/` (relative paths)
 
 ### CSS Not Applying
 **Cause**: Path to stylesheet incorrect
@@ -131,7 +130,7 @@ You should see the Apollo 13 landing page with:
 # In your local project
 git add .
 git commit -m "Update interactive experience"
-git push origin interactive-game
+git push origin main
 
 # GitHub automatically redeploys in 1-2 minutes
 # Visit URL to see changes
@@ -139,7 +138,7 @@ git push origin interactive-game
 
 **Tip**: Add `?v=2` to URL to bypass browser cache:
 ```
-https://robgruhl.github.io/apollo-mission/interactive/?v=2
+https://robgruhl.github.io/apollo-13-scout-mission/?v=2
 ```
 
 ---
@@ -168,7 +167,7 @@ https://robgruhl.github.io/apollo-mission/interactive/?v=2
 
 2. **Settings**:
    - Content Type: URL
-   - URL: `https://robgruhl.github.io/apollo-mission/interactive/`
+   - URL: `https://robgruhl.github.io/apollo-13-scout-mission/`
    - Error Correction: High (30%)
    - Size: 1000×1000 px minimum
 
@@ -259,7 +258,7 @@ Caption: "Continue online →"
 
 Once deployed, verify:
 
-- [ ] Site loads at: https://robgruhl.github.io/apollo-mission/interactive/
+- [ ] Site loads at: https://robgruhl.github.io/apollo-13-scout-mission/
 - [ ] Landing page displays correctly
 - [ ] All 3 sample slides work (Launch, Decision, Info)
 - [ ] Timeline page shows prototype notice
@@ -281,7 +280,7 @@ Once deployed, verify:
    - Tablet (if available)
 
 2. **Share with Ed**:
-   - Send URL: https://robgruhl.github.io/apollo-mission/interactive/
+   - Send URL: https://robgruhl.github.io/apollo-13-scout-mission/
    - Get feedback on prototype
    - Discuss full build (21 more slides)
 
@@ -329,23 +328,20 @@ Once deployed, verify:
 
 ```
 apollo-13-scout-mission/
-├── branch: main
-│   └── (original work)
-│
-└── branch: interactive-game  ← GitHub Pages serves from here
-    ├── assets/              # Source materials
-    ├── static-posters/      # Print version
-    └── interactive/         # 🌐 THIS IS THE LIVE SITE
-        ├── index.html       # https://robgruhl.github.io/apollo-mission/interactive/
-        ├── timeline.html    # https://robgruhl.github.io/apollo-mission/interactive/timeline.html
-        ├── slides/
-        │   ├── 01-launch.html
-        │   ├── 02-freeze-squeeze.html
-        │   └── 03-spacecraft.html
-        └── assets/
-            ├── css/style.css
-            ├── js/app.js
-            └── images/
+└── branch: main  ← GitHub Pages serves from root of this branch
+    ├── index.html           # https://robgruhl.github.io/apollo-13-scout-mission/
+    ├── timeline.html        # https://robgruhl.github.io/apollo-13-scout-mission/timeline.html
+    ├── slides/              # 30+ HTML slide files
+    │   ├── 01-launch.html
+    │   ├── 02-freeze-squeeze.html
+    │   └── ... (29 more slides)
+    ├── assets/
+    │   ├── css/style.css
+    │   ├── js/app.js
+    │   └── images/
+    ├── content/             # Source content files
+    ├── scripts/             # Testing scripts
+    └── docs/                # Documentation
 ```
 
 ---

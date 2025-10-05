@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Apollo 13 Interactive Experience - A complete mobile-first web application for the 2026 Elevate Scout Jamboree. This is a static HTML/CSS/JavaScript site that tells the story of NASA's Apollo 13 rescue mission through 24 interactive slides with scoring and social sharing features.
 
 **Status**: ✅ Complete (24 slides implemented)
-**Live Site**: https://robgruhl.github.io/apollo-mission/
+**Live Site**: https://robgruhl.github.io/apollo-13-scout-mission/
 **Branch**: `main` (auto-deploys to GitHub Pages from root)
 **Target**: Zero dependencies, static deployment, QR code accessible
 
@@ -45,7 +45,7 @@ git commit -m "Description of changes"
 git push origin main
 
 # Site deploys automatically in 1-2 minutes
-# Live at: https://robgruhl.github.io/apollo-mission/
+# Live at: https://robgruhl.github.io/apollo-13-scout-mission/
 ```
 
 ### Testing
@@ -252,7 +252,7 @@ Before deploying changes:
 
 ## Quick Reference
 
-**Live Site**: https://robgruhl.github.io/apollo-mission/
+**Live Site**: https://robgruhl.github.io/apollo-13-scout-mission/
 **Total Slides**: 24 (6 narrative, 4 decision, 14 info/support)
 **Decisions Tracked**: 4 (slides 2, 5, 9, 12)
 **Ranks**: 4 tiers (Ground Crew → Mission Commander)

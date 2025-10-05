@@ -2,7 +2,7 @@
 
 > **Experience NASA's greatest rescue mission** through interactive storytelling and make the same critical decisions that saved three astronauts 200,000 miles from Earth.
 
-**🌐 Try it now**: https://robgruhl.github.io/apollo-mission/
+**🌐 Try it now**: https://robgruhl.github.io/apollo-13-scout-mission/
 
 ---
 
@@ -130,7 +130,7 @@ You could make a similar interactive story about:
 ## Quick Start Guide
 
 ### Option 1: Just Use It! 🌐
-Visit **https://robgruhl.github.io/apollo-mission/** and start exploring.
+Visit **https://robgruhl.github.io/apollo-13-scout-mission/** and start exploring.
 
 ### Option 2: Run It Locally 💻
 
@@ -305,7 +305,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 **Ready to save Apollo 13?** 🚀
-**Start here**: https://robgruhl.github.io/apollo-mission/
+**Start here**: https://robgruhl.github.io/apollo-13-scout-mission/
 
 ---
 
