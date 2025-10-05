@@ -139,8 +139,8 @@ Want to see the code and experiment? Here's how:
 **1. Download the code:**
 ```bash
 # If you have Git installed:
-git clone https://github.com/robgruhl/apollo-mission.git
-cd apollo-mission
+git clone https://github.com/RobGruhl/apollo-13-scout-mission.git
+cd apollo-13-scout-mission
 
 # Or just download the ZIP from GitHub
 ```
@@ -263,7 +263,7 @@ Start by reading these files in order:
 
 ## Contributing
 
-**Found a bug?** [Open an issue on GitHub](https://github.com/robgruhl/apollo-mission/issues)
+**Found a bug?** [Open an issue on GitHub](https://github.com/RobGruhl/apollo-13-scout-mission/issues)
 
 **Have an idea?** This is an open source educational project! Contributions welcome:
 - Fix typos or improve explanations
