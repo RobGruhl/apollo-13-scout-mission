@@ -92,11 +92,14 @@ function initProgressTracking() {
         localStorage.setItem('visitedSlides', JSON.stringify(visited));
     }
 
-    // Update progress indicator
-    const total = 29;
+    // Update progress indicator (only for mission slides 1-29)
     const current = parseInt(slideId) || 1;
     const progressText = document.querySelector('.nav-progress');
-    if (progressText) {
+
+    // Only update progress for mission slides (1-29)
+    // Merit badge pages (30-33) use custom progress text
+    if (progressText && current >= 1 && current <= 29) {
+        const total = 29;
         progressText.textContent = `Slide ${current} of ${total}`;
     }
 }
@@ -420,8 +423,8 @@ function updateDecisionTracker() {
         tracker.style.display = 'flex';
     }
 
-    // Update each badge
-    for (const slideId of ['2', '5', '9', '12']) {
+    // Update each badge (all 10 decisions)
+    for (const slideId of ['2', '5', '6', '10', '11', '13', '14', '15', '17', '18']) {
         const badge = document.querySelector(`[data-decision="${slideId}"]`);
         if (!badge) continue;
 
@@ -509,7 +512,8 @@ function updateScoreSummary() {
 
     decisionsList.innerHTML = '';
 
-    for (const slideId of ['2', '5', '9', '12']) {
+    // Show all 10 decisions
+    for (const slideId of ['2', '5', '6', '10', '11', '13', '14', '15', '17', '18']) {
         const decision = decisions[slideId];
         const decisionName = DECISION_NAMES[slideId];
         const item = document.createElement('div');
