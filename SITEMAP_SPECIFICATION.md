@@ -1,8 +1,8 @@
 # Apollo 13 Interactive Experience - Sitemap Specification
 
-**Version**: 2.2
-**Date**: 2025-10-04
-**Purpose**: Standardized navigation structure and scoring system integration for all pages (Updated for 33 slides total: 29 mission + 4 merit badge resource pages, 10 decisions)
+**Version**: 2.3
+**Date**: 2025-10-05
+**Purpose**: Standardized navigation structure and scoring system integration for all pages (Updated for 34 slides total: 30 mission + 4 merit badge resource pages, 10 decisions)
 
 ---
 
@@ -39,8 +39,8 @@ The Apollo 13 Interactive Experience includes a scoring system that tracks user 
 **Previous Button**: `← Previous`
 **Next Button**: `Next →`
 **Exception - Slide 01**: `← Home` (links to index.html)
-**Exception - Slide 29**: `🏕️ Merit Badges →` (links to 30-merit-badges.html)
-**Exception - Slide 30**: `🏠 Home` (links to ../index.html)
+**Exception - Slide 30**: `🏕️ Merit Badges →` (links to 31-merit-badges.html)
+**Exception - Slide 31**: `🏠 Home` (links to ../index.html)
 
 ### Link Structure
 
@@ -102,18 +102,19 @@ All pages include:
 - Slide 19: Service Module Jettison → `slides/19-service-module-jettison.html`
 - Slide 20: LM Jettison → `slides/20-lm-jettison.html`
 - Slide 21: Computer Restart → `slides/21-computer-restart.html`
-- Slide 22: The Blackout → `slides/22-the-blackout.html`
-- Slide 23: Parachutes → `slides/23-parachutes.html`
-- Slide 24: Recovery → `slides/24-recovery.html`
-- Slide 25: Heroes → `slides/25-heroes.html`
-- Slide 26: John Aaron → `slides/26-john-aaron.html`
-- Slide 27: Reentry Physics → `slides/27-reentry-physics.html`
-- Slide 28: Splashdown → `slides/28-splashdown.html`
-- Slide 29: Completion → `slides/29-completion.html`
-- Slide 30: Merit Badges Hub → `slides/30-merit-badges.html`
-- Slide 31: Programming Merit Badge → `slides/31-merit-badge-programming.html`
-- Slide 32: Digital Technology Merit Badge → `slides/32-merit-badge-digital-technology.html`
-- Slide 33: Space Exploration Merit Badge → `slides/33-merit-badge-space-exploration.html`
+- Slide 22: Re-Entry Corridor Physics → `slides/22-reentry-physics.html`
+- Slide 23: The Blackout → `slides/23-the-blackout.html`
+- Slide 24: Parachutes → `slides/24-parachutes.html`
+- Slide 25: Splashdown → `slides/25-splashdown.html`
+- Slide 26: Recovery → `slides/26-recovery.html`
+- Slide 27: Heroes → `slides/27-heroes.html`
+- Slide 28: John Aaron → `slides/28-john-aaron.html`
+- Slide 29: Ed Gruhl → `slides/29-ed-gruhl.html`
+- Slide 30: Completion → `slides/30-completion.html`
+- Slide 31: Merit Badges Hub → `slides/31-merit-badges.html`
+- Slide 32: Programming Merit Badge → `slides/32-merit-badge-programming.html`
+- Slide 33: Digital Technology Merit Badge → `slides/33-merit-badge-digital-technology.html`
+- Slide 34: Space Exploration Merit Badge → `slides/34-merit-badge-space-exploration.html`
 **Footer**: No slide navigation
 
 ---
@@ -125,7 +126,7 @@ All pages include:
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
-- Progress: `Slide 1 of 29`
+- Progress: `Slide 1 of 30`
 **Footer Nav**:
 - Previous: `← Home` → `../index.html`
 - Next: `Next →` → `02-freeze-squeeze.html`
@@ -553,17 +554,33 @@ All pages include:
 **Top Nav**:
 - `🏠 Home` → `../index.html`
 - `📅 Timeline` → `../timeline.html`
-- Progress: `Slide 28 of 29`
+- Progress: `Slide 28 of 30`
 **Footer Nav**:
 - Previous: `← Previous` → `27-heroes.html`
-- Next: `Next →` → `29-completion.html`
+- Next: `Next →` → `29-ed-gruhl.html`
 
 ---
 
-### Slide 29: Mission Complete
-**File**: `slides/29-completion.html`
-**Type**: Completion
+### Slide 29: Ed Gruhl - The Engineer at Your Table
+**File**: `slides/29-ed-gruhl.html`
+**Type**: Info (Presenter Page)
 **Data ID**: `data-slide-id="29"`
+**Top Nav**:
+- `🏠 Home` → `../index.html`
+- `📅 Timeline` → `../timeline.html`
+- Progress: `Slide 29 of 30`
+**Footer Nav**:
+- Previous: `← Previous` → `28-john-aaron.html`
+- Next: `Next →` → `30-completion.html`
+
+**Content**: Personal story of Ed Gruhl, the jamboree presenter who worked at Delco Electronics (1969-1971) on Apollo guidance systems. Includes his role in gyroscope production scheduling, listening to Apollo 13 through the squawk box, draft deferment during Vietnam War, brother Jim's gimbal work, and journey from MIT to Scouting. Reveals the personal connection between the presenter and the Apollo program.
+
+---
+
+### Slide 30: Mission Complete
+**File**: `slides/30-completion.html`
+**Type**: Completion
+**Data ID**: `data-slide-id="30"`
 **Scoring Role**: 🏆 **Score Display & Sharing Page**
 - **Score Calculation**: Compares user's 10 decisions to NASA's historical choices
 - **Rank Assignment**: Assigns rank based on percentage (Mission Commander, Flight Director, Flight Controller, Ground Crew)
@@ -580,15 +597,15 @@ All pages include:
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Mission Complete!`
 **Footer Nav**:
-- Previous: `← Previous` → `28-splashdown.html`
-- Next: `🏕️ Merit Badges →` → `30-merit-badges.html`
+- Previous: `← Previous` → `29-ed-gruhl.html`
+- Next: `🏕️ Merit Badges →` → `31-merit-badges.html`
 
 ---
 
-### Slide 30: Merit Badges
-**File**: `slides/30-merit-badges.html`
+### Slide 31: Merit Badges
+**File**: `slides/31-merit-badges.html`
 **Type**: Resource / Educational
-**Data ID**: `data-slide-id="30"`
+**Data ID**: `data-slide-id="31"`
 **Purpose**: Scout-focused page explaining how this project helps earn three merit badges
 
 **Content**:
@@ -603,7 +620,7 @@ All pages include:
   3. Download and experiment
   4. Show work to counselor
 - **What You'll Learn**: HTML, CSS, JavaScript, localStorage, GitHub, Open Source
-- **Technical Details**: 29 pages, ~1,200 lines, 10 decisions, 0 dependencies, MIT License
+- **Technical Details**: 30 pages, ~1,200 lines, 10 decisions, 0 dependencies, MIT License
 - **Encouragement**: "You can build things like this!" messaging
 - **Direct GitHub Links**: Multiple CTAs to view and fork the repository
 
@@ -617,7 +634,7 @@ All pages include:
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Merit Badges`
 **Footer Nav**:
-- Previous: `← Previous` → `29-completion.html`
+- Previous: `← Previous` → `30-completion.html`
 - Next: `🏠 Home` → `../index.html`
 
 **Design Philosophy**:
@@ -635,7 +652,7 @@ All slides accessible from:
 1. **Timeline Page**: Direct links to any slide
 2. **Sequential Navigation**: Previous/Next buttons follow slide order (01→02→03...→30)
 3. **Top Navigation**: Home and Timeline available from every slide
-4. **Merit Badges Page**: Accessible from index.html, timeline.html, and slide 29 completion page
+4. **Merit Badges Page**: Accessible from index.html, timeline.html, and slide 30 completion page
 
 ---
 
@@ -682,7 +699,7 @@ For each page, verify:
 | Page | Role | Functionality |
 |------|------|---------------|
 | **index.html** | Score Sharing Landing | Dual mode: Default landing OR celebration card for shared scores |
-| **slides/29-completion.html** | Score Display & Generation | Shows score, rank, comparison table, generates shareable URL |
+| **slides/30-completion.html** | Score Display & Generation | Shows score, rank, comparison table, generates shareable URL |
 
 ### localStorage Keys
 
@@ -727,8 +744,8 @@ https://robgruhl.github.io/apollo-13-scout-mission/#name=Scout&troop=Troop%20123
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Programming Merit Badge`
 **Footer Nav**:
-- Previous: `← Merit Badges Hub` → `30-merit-badges.html`
-- Next: `Digital Technology →` → `32-merit-badge-digital-technology.html`
+- Previous: `← Merit Badges Hub` → `31-merit-badges.html`
+- Next: `Digital Technology →` → `33-merit-badge-digital-technology.html`
 
 ---
 
@@ -753,15 +770,15 @@ https://robgruhl.github.io/apollo-13-scout-mission/#name=Scout&troop=Troop%20123
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Digital Technology Merit Badge`
 **Footer Nav**:
-- Previous: `← Programming` → `31-merit-badge-programming.html`
-- Next: `Space Exploration →` → `33-merit-badge-space-exploration.html`
+- Previous: `← Programming` → `32-merit-badge-programming.html`
+- Next: `Space Exploration →` → `34-merit-badge-space-exploration.html`
 
 ---
 
-### Slide 33: Space Exploration Merit Badge Detail
-**File**: `slides/33-merit-badge-space-exploration.html`
+### Slide 34: Space Exploration Merit Badge Detail
+**File**: `slides/34-merit-badge-space-exploration.html`
 **Type**: Resource / Educational
-**Data ID**: `data-slide-id="33"`
+**Data ID**: `data-slide-id="34"`
 **Purpose**: Detailed guide for using this project to earn Space Exploration Merit Badge
 
 **Content**:
@@ -789,8 +806,8 @@ https://robgruhl.github.io/apollo-13-scout-mission/#name=Scout&troop=Troop%20123
 - `📅 Timeline` → `../timeline.html`
 - Progress: `Space Exploration Merit Badge`
 **Footer Nav**:
-- Previous: `← Digital Technology` → `32-merit-badge-digital-technology.html`
-- Next: `Merit Badges Hub →` → `30-merit-badges.html`
+- Previous: `← Digital Technology` → `33-merit-badge-digital-technology.html`
+- Next: `Merit Badges Hub →` → `31-merit-badges.html`
 
 ---
 
