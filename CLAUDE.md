@@ -8,7 +8,7 @@ Apollo 13 Interactive Experience - A complete mobile-first web application for t
 
 **Status**: ✅ Complete (24 slides implemented)
 **Live Site**: https://robgruhl.github.io/apollo-mission/
-**Branch**: `interactive-game` (auto-deploys to GitHub Pages)
+**Branch**: `main` (auto-deploys to GitHub Pages from root)
 **Target**: Zero dependencies, static deployment, QR code accessible
 
 ---
@@ -16,7 +16,7 @@ Apollo 13 Interactive Experience - A complete mobile-first web application for t
 ## Technology Stack
 
 - **Frontend**: Pure HTML5, CSS3, Vanilla JavaScript ES6+ (NO frameworks)
-- **Hosting**: GitHub Pages (free, auto-deploy from `interactive-game` branch)
+- **Hosting**: GitHub Pages (free, auto-deploy from `main` branch root)
 - **Storage**: localStorage for progress tracking (client-side only)
 - **Images**: WebP with PNG/JPG fallbacks, lazy loaded
 - **Design**: Mobile-first responsive, WCAG 2.1 AA compliant
@@ -42,7 +42,7 @@ python3 -m http.server 8000
 # All changes auto-deploy to GitHub Pages
 git add .
 git commit -m "Description of changes"
-git push origin interactive-game
+git push origin main
 
 # Site deploys automatically in 1-2 minutes
 # Live at: https://robgruhl.github.io/apollo-mission/
@@ -198,10 +198,9 @@ All styles in `assets/css/style.css`. Uses CSS variables:
 
 ## Git Workflow
 
-**Main branch**: Contains original project materials (not used for website)
-**interactive-game branch**: Live website (GitHub Pages serves from here)
+**Main branch**: Live website (GitHub Pages serves from root of main branch)
 
-Always work in `interactive-game` branch for website changes.
+All website changes should be committed to the `main` branch.
 
 **Commit Format**:
 Use github noreply email for commits. Include co-authoring footer:
