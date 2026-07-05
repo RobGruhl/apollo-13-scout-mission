@@ -448,7 +448,11 @@ function startNewMission() {
     localStorage.removeItem('visitedSlides');
     // Clear URL hash
     window.location.hash = '';
-    window.location.href = 'slides/01-launch.html';
+    // Works from the landing page AND from inside slides/ (e.g. the replay button)
+    const target = window.location.pathname.includes('/slides/')
+        ? '01-launch.html'
+        : 'slides/01-launch.html';
+    window.location.href = target;
 }
 
 /**

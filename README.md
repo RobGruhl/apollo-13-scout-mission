@@ -2,7 +2,7 @@
 
 > **Experience NASA's greatest rescue mission** through interactive storytelling and make the same critical decisions that saved three astronauts 200,000 miles from Earth.
 
-**🌐 Try it now**: https://robgruhl.github.io/apollo-13-scout-mission/
+**🌐 Try it now**: https://apollo13.quest/
 
 ---
 
@@ -41,17 +41,17 @@ Navigate through the mission timeline from launch to splashdown, plus earn merit
 - **2 Bonus Pages** - Meet your presenter, then see your final score and rank
 
 ### 🎯 Make Real Decisions
-Face the same impossible choices NASA did:
-- Move to the Lunar Module or stay in the Command Module?
-- Turn around immediately or use the Moon's gravity?
-- Speed up the return with a risky engine burn?
-- Build an improvised CO₂ scrubber or risk suffocation?
-- Navigate using stars or Sun/Earth alignment?
-- Shut down the Command Module to save power?
-- Ration water supplies for crew or equipment?
-- Maintain radio contact or enforce silence to save batteries?
-- Attempt an untested battery jump-start?
-- When to jettison the damaged Service Module?
+Face the same impossible choices NASA did, in the order the mission threw them at the crew:
+1. **Freeze or Squeeze?** - Move to the Lunar Module or stay in the Command Module?
+2. **Shut Down the Command Module?** - Power down the mothership to save its batteries?
+3. **Turn Around or Free-Return?** - Reverse course immediately or use the Moon's gravity?
+4. **Stars or Sun/Earth Navigation?** - Navigate by the stars, or by lining up the Sun and Earth?
+5. **Speed Up or Coast?** - Fire a risky engine burn to get home faster?
+6. **Water Conservation** - Ration water for the crew or for the equipment?
+7. **Build the CO₂ Mailbox?** - Improvise a scrubber adapter or risk suffocation?
+8. **Comm Power: Loud or Lean?** - Keep the radios at full power or drop to a power-saving whisper?
+9. **Recharge for Re-Entry?** - Attempt a never-before-tried battery recharge from the LM to the Command Module?
+10. **Service Module Jettison Timing** - When do you cut loose the damaged Service Module?
 
 ### 🏆 Earn Your Rank
 Compare your decisions to NASA's actual choices:
@@ -60,19 +60,27 @@ Compare your decisions to NASA's actual choices:
 - 🎯 **Flight Controller** - 6-7/10 correct
 - 📡 **Ground Crew** - 0-5/10 correct
 
+**Playing at the jamboree?** Score 8 or better at the Apollo table and you earn a real, physical **Apollo card** to take home.
+
 ### 📲 Share Your Score
-Generate a shareable link to challenge your troop or patrol to beat your score!
+Finish the mission and get a shareable link — plus a QR code right on your screen that a friend can scan to see your score. Challenge your troop or patrol to beat it!
 
 ---
 
 ## Features
 
 ✅ **Works on any device** - Phone, tablet, or computer
+✅ **Works offline** - Once it loads, it keeps working with zero signal (handy at camp!)
 ✅ **No login required** - Just click and start
 ✅ **Saves your progress** - Come back anytime to continue
+✅ **Quick Mission mode** - Short on time? Play just the 10 decisions in about 10 minutes
+✅ **Share by QR code** - Your final score becomes a QR code friends can scan
 ✅ **Fast loading** - Works even on slow connections
 ✅ **Free forever** - No ads, no tracking, no cost
 ✅ **Educational** - Based on real NASA mission records
+
+### 📚 Sources for Skeptics
+Every decision result links to the **real NASA mission documents** — flight journals, mission transcripts, and official reports. Think we got an answer wrong? Follow the link, read the primary source, and make your case. Disputing a claim with evidence is exactly what real engineers do.
 
 ---
 
@@ -95,15 +103,18 @@ This website is built with the **simplest possible tech stack** - perfect for le
 
 ```
 apollo-13-scout-mission/
-├── index.html              # Home page
+├── index.html              # Home page (full mission or Quick Mission)
 ├── timeline.html           # Timeline navigator
-├── slides/                 # 34 HTML files (one per slide)
+├── sw.js                   # Service worker — makes the site work offline
+├── slides/                 # 34 HTML files, in true mission chronological order
 │   ├── 01-launch.html
-│   ├── 02-freeze-squeeze.html
-│   └── ... 32 more slides
+│   ├── 02-spacecraft.html
+│   ├── 03-explosion.html
+│   └── ... 31 more slides, from the crisis to splashdown to merit badges
 ├── assets/
-│   ├── css/style.css      # All the styling (~1,050 lines)
-│   ├── js/app.js          # All the JavaScript (~580 lines)
+│   ├── css/style.css      # All the styling (~1,090 lines)
+│   ├── js/app.js          # All the JavaScript (~660 lines)
+│   ├── js/qrcode.js       # QR code library (the one borrowed file — open source, MIT)
 │   └── images/            # Pictures for each slide
 ├── docs/                   # Guides: deployment, sitemap, scoring
 ├── exhibit/                # The jamboree table: posters, cards, QR codes
@@ -111,16 +122,17 @@ apollo-13-scout-mission/
 └── README.md               # This file!
 ```
 
-**Total size**: About 1,600 lines of CSS and JavaScript make the whole site work — you could read all of it in an afternoon.
+**Total size**: About 1,750 lines of CSS and JavaScript make the whole site work — you could read all of it in an afternoon. (The only code we didn't write ourselves is `qrcode.js`, a small open-source MIT-licensed library that draws QR codes.)
 
 ### 🎨 Cool Features You Can Learn From
 
 **1. Decision Tracking** - Uses `localStorage` to remember your choices
 **2. Score Calculation** - Compares your decisions to NASA's actual choices
-**3. URL Sharing** - Encodes your score into a shareable link
+**3. URL Sharing** - Encodes your score into a shareable link and QR code
 **4. Keyboard Navigation** - Arrow keys work to move between slides
 **5. Responsive Design** - Automatically adjusts for phone/tablet/desktop
 **6. Progress Indicators** - Shows which slides you've visited
+**7. Offline Support** - A service worker (`sw.js`) caches the site so it runs with no signal
 
 ### 💡 Want to Build Your Own Version?
 
@@ -143,7 +155,7 @@ You could make a similar interactive story about:
 ## Quick Start Guide
 
 ### Option 1: Just Use It! 🌐
-Visit **https://robgruhl.github.io/apollo-13-scout-mission/** and start exploring.
+Visit **https://apollo13.quest/** and start exploring.
 
 ### Option 2: Run It Locally 💻
 
@@ -318,7 +330,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 **Ready to save Apollo 13?** 🚀
-**Start here**: https://robgruhl.github.io/apollo-13-scout-mission/
+**Start here**: https://apollo13.quest/
 
 ---
 

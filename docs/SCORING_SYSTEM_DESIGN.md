@@ -1,9 +1,11 @@
 # Apollo 13 Scoring & Score-Sharing System - Design Documentation
 
-**Version**: 1.1
-**Date**: 2026-07-04
+**Version**: 2.0
+**Date**: 2026-07-05
 **Status**: ✅ Implemented
-**Implementation**: `assets/js/app.js`, `slides/30-completion.html`, `index.html`
+**Implementation**: `assets/js/app.js`, `slides/30-completion.html`, `assets/js/qrcode.js`, `index.html`
+
+**Changelog**: v2.0 — slides renumbered into mission chronology (10 scored decisions now on slides 4, 5, 6, 9, 11, 12, 13, 16, 17, 18); decisions lock on first tap; running-score tracker badge; new `bestScore` key; score-first completion page with empty state, Apollo-card banner (≥8/10), "Fly the Mission Again" replay, and QR share; Quick Mission mode.
 
 ---
 
@@ -29,6 +31,20 @@ The Apollo 13 Interactive Experience includes a scoring system that tracks user 
 - Generates shareable URLs with score embedded in hash parameters
 - Displays celebratory landing page when users visit shared URLs
 - Encourages friendly competition among scouts
+- QR code rendered from the share link (vendored `qrcode.js`) so scouts share phone-to-phone
+
+### 4. Decision Locking
+- Each decision locks the moment a scout taps a choice — both buttons disable and the pick can't be changed
+- Locked state is restored on revisit (choice highlighted, buttons still disabled)
+- Keeps on-screen scores honest so they match the physical Apollo card handed out at the table
+
+### 5. Running Score Tracker
+- A `🏆 N/10` badge in the decision tracker updates live as decisions are made
+- Lets scouts always see whether they're on pace for the Apollo card
+
+### 6. Quick Mission Mode
+- `?mode=quick` chains just the 10 decision slides (~10 minutes) for scouts at the table
+- Exits automatically at the completion page (or via `?mode=full`)
 
 ---
 
@@ -39,20 +55,20 @@ The Apollo 13 Interactive Experience includes a scoring system that tracks user 
 **Key: `decisions`**
 ```javascript
 {
-  "2": {
-    "choice": "squeeze",           // User's selected option
-    "timestamp": "2025-10-04T12:34:56.789Z"
+  "4": {
+    "choice": "squeeze",           // User's selected option (locked after first tap)
+    "timestamp": "2026-07-05T12:34:56.789Z"
   },
   "5": {
-    "choice": "freereturn",
-    "timestamp": "2025-10-04T12:38:22.123Z"
+    "choice": "shutdown",
+    "timestamp": "2026-07-05T12:38:22.123Z"
   },
   "6": {
-    "choice": "burn",
-    "timestamp": "2025-10-04T12:42:15.456Z"
+    "choice": "freereturn",
+    "timestamp": "2026-07-05T12:42:15.456Z"
   }
   // ... one entry per decision made
-  // (10 scored decisions: slides 2, 5, 6, 10, 11, 13, 14, 15, 17, 18)
+  // (10 scored decisions: slides 4, 5, 6, 9, 11, 12, 13, 16, 17, 18)
 }
 ```
 
@@ -61,34 +77,40 @@ The Apollo 13 Interactive Experience includes a scoring system that tracks user 
 ["1", "2", "3", "4", "5", "6", ...]
 ```
 
+**Key: `bestScore`**
+```javascript
+"8"   // Highest correct-decision count across replays (stored as a string)
+```
+Written by `flyAgain()` on the completion page just before it clears `decisions` for a replay, and read back on the next completion to show a "Best so far: N/10" line when the current run scores lower. It deliberately survives the replay reset (which clears `decisions` and `visitedSlides`).
+
 ### Correct Answers Reference
 
 Defined in `assets/js/app.js`:
 
 ```javascript
 const CORRECT_ANSWERS = {
-    '2': 'squeeze',           // Decision #1: Freeze or Squeeze → SQUEEZE (move to LM)
-    '5': 'freereturn',        // Decision #2: Turn Around → FREE-RETURN (use Moon's gravity)
-    '6': 'burn',              // Decision #3: PC+2 Burn → PERFORM BURN (speed up return)
-    '10': 'buildmailbox',     // Decision #4: CO2 Mailbox → BUILD (improvise adapter)
-    '11': 'sunearth',         // Decision #5: Navigation → SUN/EARTH (manual alignment)
-    '13': 'shutdown',         // Decision #6: CM Power → SHUTDOWN (preserve batteries)
-    '14': 'extreme',          // Decision #7: Water Conservation → EXTREME RATIONING
-    '15': 'silence',          // Decision #8: Communication → RADIO SILENCE (save power)
-    '17': 'jumpstart',        // Decision #9: Battery Jump-Start → ATTEMPT JUMPSTART
+    '4': 'squeeze',           // Decision #1: Freeze or Squeeze → SQUEEZE (move to LM)
+    '5': 'shutdown',          // Decision #2: CM Power → SHUTDOWN (preserve batteries)
+    '6': 'freereturn',        // Decision #3: Turn Around → FREE-RETURN (use Moon's gravity)
+    '9': 'sunearth',          // Decision #4: Navigation → SUN/EARTH (manual alignment)
+    '11': 'burn',             // Decision #5: PC+2 Burn → PERFORM BURN (speed up return)
+    '12': 'extreme',          // Decision #6: Water Conservation → EXTREME RATIONING
+    '13': 'buildmailbox',     // Decision #7: CO2 Mailbox → BUILD (improvise adapter)
+    '16': 'silence',          // Decision #8: Comm Power → LOW-POWER CONFIG
+    '17': 'jumpstart',        // Decision #9: Battery Recharge → ATTEMPT LM-TO-CM CHARGE
     '18': 'early'             // Decision #10: SM Jettison → EARLY JETTISON (photograph damage)
 };
 
 const DECISION_NAMES = {
-    '2': 'Freeze or Squeeze',
-    '5': 'Turn Around Decision',
-    '6': 'PC+2 Burn (Speed Up)',
-    '10': 'CO2 Mailbox',
-    '11': 'Stars or Sun Navigation',
-    '13': 'Power Conservation',
-    '14': 'Water Conservation',
-    '15': 'Communication Discipline',
-    '17': 'Battery Jump-Start',
+    '4': 'Freeze or Squeeze',
+    '5': 'Power Conservation',
+    '6': 'Turn Around Decision',
+    '9': 'Stars or Sun Navigation',
+    '11': 'PC+2 Burn (Speed Up)',
+    '12': 'Water Conservation',
+    '13': 'CO2 Mailbox',
+    '16': 'Comm Power',
+    '17': 'Battery Recharge',
     '18': 'SM Jettison Timing'
 };
 ```
@@ -162,18 +184,72 @@ function getScoreRank(correct, total) {
 
 ---
 
+## Decision Locking
+
+Every scored decision **locks on the first tap**. When a scout chooses an option, `initDecisions()` saves the choice, then calls `lockDecision()`:
+
+```javascript
+function lockDecision(options, result, chosenValue) {
+    options.forEach(opt => {
+        const btn = opt.querySelector('.btn-choose');
+        if (opt.dataset.option === chosenValue) {
+            opt.classList.add('selected');
+            if (btn) {
+                btn.textContent = '✅ Your Call — Locked In';
+                btn.disabled = true;
+            }
+        } else {
+            opt.classList.remove('selected');
+            if (btn) {
+                btn.disabled = true;   // every choice button disables
+            }
+        }
+    });
+    if (result) {
+        result.classList.remove('hidden');
+    }
+}
+```
+
+On revisit, `initDecisions()` reads the stored decision and re-applies the locked state (highlighted choice, buttons disabled, result revealed) before wiring any click handlers — so a scout can re-read a slide but not re-answer it.
+
+**Why lock?** The on-screen `N/10` score is the ticket to a **physical Apollo card** at the table. If scouts could revise past answers after seeing later feedback, the number on the completion screen would drift away from the calls they actually made. Locking keeps the digital score honest so table staff can trust it when handing out cards. Real mission decisions couldn't be taken back either — neither can these.
+
+---
+
+## Running Score Tracker
+
+`updateDecisionTracker()` runs after every decision and keeps a live `🏆 N/10` badge in the decision tracker up to date, creating the element on first use:
+
+```javascript
+// Running score text ("🏆 4/10") so scouts always know if they're on pace
+const { correct } = calculateScore();
+let scoreText = document.getElementById('trackerScore');
+if (!scoreText) {
+    scoreText = document.createElement('span');
+    scoreText.id = 'trackerScore';
+    scoreText.className = 'tracker-score';
+    tracker.appendChild(scoreText);
+}
+scoreText.textContent = `🏆 ${correct}/${Object.keys(CORRECT_ANSWERS).length}`;
+```
+
+The tracker itself only appears once the first decision is made (`initDecisionTracker()`), so scouts always know whether they're on pace for the 8/10 Apollo card without waiting for the completion page.
+
+---
+
 ## URL Sharing System
 
 ### URL Structure
 
 **Base URL:**
 ```
-https://robgruhl.github.io/apollo-13-scout-mission/
+https://apollo13.quest/
 ```
 
 **Shared Score URL:**
 ```
-https://robgruhl.github.io/apollo-13-scout-mission/#name=John&troop=Troop%20123&score=10&total=10&rank=Mission%20Commander
+https://apollo13.quest/#name=John&troop=Troop%20123&score=10&total=10&rank=Mission%20Commander
 ```
 
 **Parameters (in hash fragment):**
@@ -255,33 +331,79 @@ function getURLParams() {
 
 ### Completion Flow (Slide 30)
 
-**Step 1: User completes the mission slides**
-- Reaches `slides/30-completion.html`
-- JavaScript runs `calculateScore()` on page load
+The completion page is **score-first**: score badge, Apollo-card banner, and replay button come before the mission recap. `displayScore()` runs on `DOMContentLoaded`.
+
+**Step 1: Empty-state guard (deep-link safe)**
+The page is linkable from the timeline, so a scout can arrive without having played. If none of the 10 decision slides has a stored decision, `displayScore()` shows the empty state (a prompt to go make the first decision) rather than a fake 0/10, and returns early.
+```javascript
+// DECISION_KEYS = ['4', '5', '6', '9', '11', '12', '13', '16', '17', '18'] (defined inline on the page)
+const decisions = getDecisions();
+const answered = DECISION_KEYS.filter(k => decisions[k]).length;
+if (answered === 0) {
+    document.getElementById('emptyState').style.display = 'block';
+    return;
+}
+```
 
 **Step 2: Score display**
 ```javascript
-// On page load (displayScore() in slides/30-completion.html)
 const { correct, total } = calculateScore();
 const rank = getScoreRank(correct, total);
+const comparison = getDecisionComparison();
 
-// Display score badge
+document.getElementById('scoreSection').style.display = 'block';
 document.getElementById('rankEmoji').textContent = rank.emoji;
 document.getElementById('rankTitle').textContent = rank.rank;
 document.getElementById('scoreDisplay').textContent = `${correct}/${total}`;
 document.getElementById('rankMessage').textContent = rank.message;
-
-// Show comparison table (one row per decision)
-const comparison = getDecisionComparison();
 ```
 
-**Step 3: Share form**
-- User enters name and troop number
-- Clicks "🔗 Generate Share Link"
-- URL is generated and displayed in a text field
-- User copies the link with the "📋 Copy Link" button
+**Step 3: Personal best**
+`bestScore` (see Data Storage) is read back, and if a previous run beat this one, a "Best so far: N/10" line appears:
+```javascript
+const best = parseInt(localStorage.getItem('bestScore') || '0', 10);
+if (best > correct) {
+    bestLine.textContent = `Best so far: ${best}/${total}`;
+    bestLine.style.display = 'block';
+}
+```
 
-**Step 4: Share options**
+**Step 4: Apollo card banner (≥ 8/10)**
+Matching NASA on **8 of 10** calls (Flight Director or better) earns the physical Apollo card. At 8+ the banner shows the big score and directs the scout to the table; below 8 it's an encouraging "go for it" prompt.
+```javascript
+if (correct >= 8) {
+    card.className = 'card-banner earned';
+    card.innerHTML =
+        '<div class="card-score">' + correct + '/10</div>' +
+        '<h3>🎖️ You earned the Apollo card!</h3>' +
+        '<p>Show this screen at the <strong>Apollo Table in the NASA Tent</strong> to pick up your card.</p>';
+} else {
+    card.className = 'card-banner tryagain';
+    // ... "Go for the Apollo card!" — match NASA on 8 of 10 to earn it
+}
+```
+
+**Step 5: Comparison table**
+One row per decision (`getDecisionComparison()`), green for matches, red for misses.
+
+**Step 6: Fly the Mission Again (replay loop)**
+The "🔁 Fly the Mission Again" button calls `flyAgain()`, which records the personal best, clears progress, and restarts from slide 01. It intentionally mirrors `startNewMission()` rather than calling it — `startNewMission()` hardcodes the root-relative `slides/01-launch.html`, which would 404 from inside `slides/`.
+```javascript
+function flyAgain() {
+    const { correct } = calculateScore();
+    const stored = parseInt(localStorage.getItem('bestScore') || '0', 10);
+    const best = Math.max(correct, isNaN(stored) ? 0 : stored);
+    localStorage.setItem('bestScore', String(best));   // personal best survives the reset
+
+    localStorage.removeItem('decisions');
+    localStorage.removeItem('visitedSlides');
+    window.location.hash = '';
+    window.location.href = '01-launch.html';
+}
+```
+
+**Step 7: Share form + QR**
+The scout enters name and troop, clicks "🔗 Generate Share Link", and the URL appears in a text field (copyable with "📋 Copy Link"). `generateShareLink()` also renders the link as a QR code via `renderShareQR()` (vendored `assets/js/qrcode.js`) so scouts share phone-to-phone at the table.
 ```javascript
 function generateShareLink() {
     const name = document.getElementById('scoutName').value.trim();
@@ -296,6 +418,8 @@ function generateShareLink() {
     document.getElementById('shareURL').value = shareURL;
     document.getElementById('shareLinkDisplay').style.display = 'block';
     document.getElementById('shareLinkDisplay').scrollIntoView({ behavior: 'smooth' });
+
+    renderShareQR(shareURL);   // QR is a bonus; the copyable link still works if it fails
 }
 
 async function copyShareLink() {
@@ -316,7 +440,7 @@ async function copyShareLink() {
 
 **Step 1: User clicks shared URL**
 ```
-https://robgruhl.github.io/apollo-13-scout-mission/#name=Sarah&troop=Troop%20456&score=8&total=10&rank=Flight%20Director
+https://apollo13.quest/#name=Sarah&troop=Troop%20456&score=8&total=10&rank=Flight%20Director
 ```
 
 **Step 2: Landing page detects parameters**
@@ -367,6 +491,31 @@ function startNewMission() {
     window.location.href = 'slides/01-launch.html';
 }
 ```
+
+---
+
+## Quick Mission Mode
+
+For scouts at the table with ~10 minutes, **Quick Mission mode** chains just the 10 decision slides and skips the narrative/info slides between them.
+
+**Entry:** any link with `?mode=quick`. `initQuickMode()` sets a `quickMode` flag in `sessionStorage`:
+```javascript
+if (params.get('mode') === 'quick') sessionStorage.setItem('quickMode', '1');
+if (params.get('mode') === 'full') sessionStorage.removeItem('quickMode');
+```
+
+**While active:** on each decision slide the prev/next buttons are rewritten to walk `QUICK_CHAIN` (the 10 decision slides plus the completion page), and the nav progress reads `⚡ Decision N of 10`:
+```javascript
+const QUICK_CHAIN = [
+    '04-freeze-squeeze.html', '05-power-conservation.html', '06-turn-around.html',
+    '09-stars-sun-navigation.html', '11-pc2-burn.html', '12-water-conservation.html',
+    '13-co2-mailbox.html', '16-communication-discipline.html', '17-battery-jumpstart.html',
+    '18-sm-jettison-timing.html', '30-completion.html'
+];
+```
+The first slide's "prev" points back to `../index.html`; scoring, locking, and the running tracker behave exactly as in the full mission.
+
+**Exit:** reaching `30-completion.html` clears the `quickMode` flag (the mission is over, so the full site returns). `?mode=full` clears it too, and because the flag lives in `sessionStorage` it also ends when the tab closes.
 
 ---
 
@@ -423,17 +572,30 @@ function formatChoice(choice) {
         'squeeze': 'Squeeze (Move to LM)',
         'turnaround': 'Turn Around',
         'freereturn': 'Free-Return',
+        'burn': 'Perform PC+2 Burn',
+        'coast': 'Coast on Free-Return',
         'donothing': 'Do Nothing',
         'buildmailbox': 'Build Mailbox',
+        'sunearth': 'Sun/Earth Terminator',
+        'stars': 'Star Sighting',
         'keeprunning': 'Keep Running',
         'shutdown': 'Shut Down',
+        'extreme': 'Extreme Rationing',
+        'equal': 'Equal Rationing',
+        'drinking': 'Prioritize Drinking Water',
+        'silence': 'Low-Power Comms',
+        'regular': 'Full-Power Comms',
+        'jumpstart': 'Jump-Start from LM',
+        'reserve': 'CM Reserve Batteries Only',
+        'early': 'Early Jettison',
+        'late': 'Late Jettison',
         'not made': '(Not Made)'
     };
     return labels[choice] || choice;
 }
 ```
 
-**Note:** Option values without a label fall back to their raw value. The newer decision options (`burn`/`coast`, `sunearth`/`stars`, `extreme`/`equal`/`drinking`, `silence`/`regular`, `jumpstart`/`reserve`, `early`/`late`) still need friendly labels added here.
+**Note:** Every option value across the 10 decisions now has a friendly label; any unmapped value falls back to its raw string.
 
 ---
 
@@ -445,6 +607,7 @@ function formatChoice(choice) {
 - Decision choices (which option selected for each decision)
 - Timestamps of decisions
 - Visited slides
+- Personal best score (`bestScore` — highest correct count across replays)
 
 **Shared via URL:**
 - Scout's first name (user-provided)
@@ -530,16 +693,16 @@ function formatChoice(choice) {
 - Every decision is a real choice NASA faced (nothing invented)
 - Spread decisions throughout the mission to keep scouts engaged slide after slide
 
-**The 10 Critical Decisions:**
-1. **Freeze or Squeeze** (Slide 02) - Lifeboat decision
-2. **Turn Around** (Slide 05) - Trajectory choice
-3. **PC+2 Burn** (Slide 06) - Speeding up the return
-4. **CO2 Mailbox** (Slide 10) - Life support improvisation
-5. **Stars or Sun Navigation** (Slide 11) - Manual alignment check
-6. **Power Conservation** (Slide 13) - Battery management
-7. **Water Conservation** (Slide 14) - Rationing for the crew
-8. **Communication Discipline** (Slide 15) - Radio silence to save power
-9. **Battery Jump-Start** (Slide 17) - Reviving the command module
+**The 10 Critical Decisions** (in mission chronology):
+1. **Freeze or Squeeze** (Slide 04) - Lifeboat decision
+2. **Power Conservation** (Slide 05) - Shut the CM down to preserve batteries
+3. **Turn Around Decision** (Slide 06) - Free-return trajectory choice
+4. **Stars or Sun Navigation** (Slide 09) - Manual alignment check
+5. **PC+2 Burn** (Slide 11) - Speeding up the return
+6. **Water Conservation** (Slide 12) - Rationing for the crew
+7. **CO2 Mailbox** (Slide 13) - Life support improvisation
+8. **Comm Power** (Slide 16) - Low-power comms to save power
+9. **Battery Recharge** (Slide 17) - Reviving the command module
 10. **SM Jettison Timing** (Slide 18) - Photographing the damage
 
 ### Why Ranks Instead of Raw Scores?
@@ -575,10 +738,11 @@ function formatChoice(choice) {
 - "Researcher" - Expand all "Learn More" sections
 
 **Advanced Sharing:**
-- QR code generation from share URL
 - Social media cards (Open Graph meta tags)
 - Print certificate with score
 - Email share option
+
+_(QR code generation from the share URL shipped in v2.0 — see the completion flow.)_
 
 **Analytics (Privacy-Friendly):**
 - Most common wrong answers
@@ -599,15 +763,15 @@ function formatChoice(choice) {
 
 **Steps:**
 1. Start fresh (clear localStorage)
-2. Make all 10 decisions correctly:
-   - Slide 02: Choose "squeeze"
-   - Slide 05: Choose "freereturn"
-   - Slide 06: Choose "burn"
-   - Slide 10: Choose "buildmailbox"
-   - Slide 11: Choose "sunearth"
-   - Slide 13: Choose "shutdown"
-   - Slide 14: Choose "extreme"
-   - Slide 15: Choose "silence"
+2. Make all 10 decisions correctly (each locks on the first tap):
+   - Slide 04: Choose "squeeze"
+   - Slide 05: Choose "shutdown"
+   - Slide 06: Choose "freereturn"
+   - Slide 09: Choose "sunearth"
+   - Slide 11: Choose "burn"
+   - Slide 12: Choose "extreme"
+   - Slide 13: Choose "buildmailbox"
+   - Slide 16: Choose "silence"
    - Slide 17: Choose "jumpstart"
    - Slide 18: Choose "early"
 3. Complete to slide 30
@@ -615,6 +779,7 @@ function formatChoice(choice) {
 **Expected:**
 - Score: 10/10 (100%)
 - Rank: Mission Commander 🏆
+- Apollo-card banner in "earned" state (10 ≥ 8): "Show this screen at the Apollo Table"
 - All 10 rows in comparison table show ✅
 - Share URL contains `score=10&total=10&rank=Mission%20Commander`
 
@@ -622,14 +787,14 @@ function formatChoice(choice) {
 
 **Steps:**
 1. Make 6 correct, 4 incorrect:
-   - Slide 02: ✅ squeeze
-   - Slide 05: ❌ turnaround (wrong)
-   - Slide 06: ✅ burn
-   - Slide 10: ✅ buildmailbox
-   - Slide 11: ❌ stars (wrong)
-   - Slide 13: ✅ shutdown
-   - Slide 14: ❌ equal (wrong)
-   - Slide 15: ✅ silence
+   - Slide 04: ✅ squeeze
+   - Slide 05: ❌ keeprunning (wrong)
+   - Slide 06: ✅ freereturn
+   - Slide 09: ❌ stars (wrong)
+   - Slide 11: ✅ burn
+   - Slide 12: ❌ equal (wrong)
+   - Slide 13: ✅ buildmailbox
+   - Slide 16: ✅ silence
    - Slide 17: ✅ jumpstart
    - Slide 18: ❌ late (wrong)
 2. Complete to slide 30
@@ -637,13 +802,14 @@ function formatChoice(choice) {
 **Expected:**
 - Score: 6/10 (60%)
 - Rank: Flight Controller 🎯
+- Apollo-card banner in "try again" state (6 < 8): "Go for the Apollo card!"
 - 6 green rows, 4 red rows in table
 - Share URL contains `score=6&total=10&rank=Flight%20Controller`
 
 ### Test Case 3: Shared URL Landing
 
 **Steps:**
-1. Visit: `https://robgruhl.github.io/apollo-13-scout-mission/#name=Test&troop=Troop%20999&score=8&total=10&rank=Flight%20Director`
+1. Visit: `https://apollo13.quest/#name=Test&troop=Troop%20999&score=8&total=10&rank=Flight%20Director`
 2. Observe landing page
 
 **Expected:**
@@ -655,17 +821,16 @@ function formatChoice(choice) {
 - Shows ⭐ emoji
 - "Start My Mission" button clears params and goes to slide 01
 
-### Test Case 4: No Decisions Made
+### Test Case 4: No Decisions Made (Empty State)
 
 **Steps:**
-1. Navigate directly to slide 30 without making decisions
-2. Observe score display
+1. Navigate directly to slide 30 without making any decisions (deep link from the timeline)
+2. Observe the completion page
 
 **Expected:**
-- Score: 0/10 (0%)
-- Rank: Ground Crew 📡
-- All 10 rows show "(Not Made)" for user choice
-- Encouraging message to review
+- Empty state shown: "You haven't made your decisions yet, astronaut! 🚀"
+- Score section, card banner, and comparison table stay hidden (no fake 0/10 score)
+- "Make Your First Decision" links to slide 04; "Mission Home" links to `index.html`
 
 ### Test Case 5: localStorage Persistence
 
@@ -678,6 +843,39 @@ function formatChoice(choice) {
 - Decisions are remembered
 - Score reflects only decisions made
 - Missing decisions show "not made"
+
+### Test Case 6: Decision Locks on First Tap
+
+**Steps:**
+1. Start fresh; open slide 04
+2. Tap "Squeeze", then try to tap "Freeze"
+3. Navigate away and return to slide 04
+
+**Expected:**
+- After the first tap, both choice buttons are disabled; the chosen button reads "✅ Your Call — Locked In"
+- The result / alignment feedback reveals; the choice cannot be changed
+- On return, the locked state is restored (choice highlighted, buttons disabled) — no second answer possible
+
+### Test Case 7: Replay Loop and Personal Best
+
+**Steps:**
+1. Complete a run scoring 8/10; on the completion page click "🔁 Fly the Mission Again"
+2. Play again scoring 6/10; reach the completion page
+
+**Expected:**
+- `bestScore` = `"8"` persists across the reset; `decisions` and `visitedSlides` are cleared
+- Second completion shows 6/10 plus a "Best so far: 8/10" line
+- Replay restarts from slide 01 (resolves to `01-launch.html` from inside `slides/` — no 404)
+
+### Test Case 8: Quick Mission Mode
+
+**Steps:**
+1. Open a decision slide with `?mode=quick` (e.g. `slides/04-freeze-squeeze.html?mode=quick`)
+2. Advance with Next through the chain
+
+**Expected:**
+- Nav progress reads "⚡ Decision N of 10"; Next/Prev chain only the 10 decision slides (`QUICK_CHAIN`)
+- Reaching slide 30 clears the `quickMode` sessionStorage flag (mode ends); `?mode=full` also clears it
 
 ---
 
@@ -739,15 +937,27 @@ getVisitedSlides() → Array<string>
 resetProgress() → void
 startNewMission() → void
 
+// Decision Flow (app.js)
+lockDecision(options, result, chosenValue) → void   // disables both buttons, restores locked state
+
 // Progressive Feedback (app.js)
 showAlignmentFeedback(slideId, userChoice) → void
-updateDecisionTracker() → void
+initDecisionTracker() → void
+updateDecisionTracker() → void                       // also maintains the "🏆 N/10" #trackerScore badge
 toggleScoreSummary() → void
+updateScoreSummary() → void
+closeSummary() → void
+
+// Mode & Offline (app.js)
+initQuickMode() → void                               // ?mode=quick chains QUICK_CHAIN via sessionStorage
+initOfflineCache() → void                            // registers the service worker
 
 // Page Helpers (slides/30-completion.html)
-displayScore() → void
+displayScore() → void                                // score-first; empty-state guard; card banner; best score
 formatChoice(choice) → string
+flyAgain() → void                                    // saves bestScore, clears progress, restarts at 01
 generateShareLink() → void
+renderShareQR(url) → void                            // qrcode.js; QR of the share link
 copyShareLink() → Promise<void>
 
 // Page Helpers (index.html)
@@ -764,9 +974,10 @@ To add/modify decision answers:
 
 1. Edit `CORRECT_ANSWERS` object in `app.js` (the total is derived from this object in `calculateScore()`)
 2. Update `DECISION_NAMES` object
-3. Update the hardcoded slide-ID lists in `updateDecisionTracker()` and `updateScoreSummary()` in `app.js`
-4. Add friendly labels for any new option values to `formatChoice()` in `slides/30-completion.html`
-5. Test all score percentages still make sense
+3. Update the hardcoded slide-ID lists in `updateDecisionTracker()` and `updateScoreSummary()` in `app.js`, and `DECISION_KEYS` in `slides/30-completion.html`
+4. If a decision slide's filename changes, update `QUICK_CHAIN` in `app.js` (the Quick Mission slide order)
+5. Add friendly labels for any new option values to `formatChoice()` in `slides/30-completion.html`
+6. Test all score percentages still make sense
 
 ### Changing Rank Thresholds
 
@@ -790,4 +1001,4 @@ To add new share channels:
 
 **Document Status**: ✅ Complete
 **Implementation Status**: ✅ Fully Implemented
-**Last Updated**: 2026-07-04
+**Last Updated**: 2026-07-05

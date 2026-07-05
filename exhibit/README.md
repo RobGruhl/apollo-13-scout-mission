@@ -8,7 +8,7 @@ The exhibit and this repository work together:
 
 1. A scout walks past the NASA tent and sees the posters.
 2. They scan the QR code (or take an invitation card for later).
-3. Their phone opens the [interactive web experience](https://robgruhl.github.io/apollo-13-scout-mission/) — the code in this repo.
+3. Their phone opens the [interactive web experience](https://apollo13.quest/) — the code in this repo.
 4. They make the 10 real decisions NASA faced and earn a rank.
 5. Scouts who score 8+ correct earn the **Apollo reward card** — excellent, but
    perfection not required. The completion page tells them to show their screen
@@ -56,10 +56,14 @@ not an ad.
 
 ## QR codes
 
-`qr-code.png` (2050×2050 px — use for print) and `qr-code-small.png` (1312×1312 px —
-the version used on the cards) both decode to
-`https://robgruhl.github.io/apollo-13-scout-mission/`. If you regenerate them, keep
-dark-on-white — inverted QR codes fail on many phone cameras.
+`qr-code.png` (2294×2294 px — use for print) and `qr-code-small.png` (1480×1480 px —
+for cards/web) decode to **`https://apollo13.quest/`** (regenerated 2026-07-05 for the
+custom domain; zbarimg-verified, error correction Q). The QR codes baked into the
+existing print masters point at the old
+`robgruhl.github.io/apollo-13-scout-mission/` URL — those still work because GitHub
+301-redirects to apollo13.quest, but any *newly generated* print materials should use
+these files. If you regenerate, keep dark-on-white — inverted QR codes fail on many
+phone cameras.
 
 ---
 
