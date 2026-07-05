@@ -71,7 +71,7 @@ After changing any page or asset list, bump `CACHE_VERSION` in `sw.js` so return
 ├── CLAUDE.md / README.md / LICENSE
 ```
 
-**Not in this repo**: print masters (~170 MB), design drafts, planning notes → private local archive `~/Projects/apollo-working-materials/` (see `exhibit/README.md`).
+**Print masters are CANONICAL here** in `print-ready/` (~173 MB, the four files sent to the printer — see `print-ready/README.md`). Design drafts, superseded candidates, and planning notes → private local archive `~/Projects/apollo-working-materials/`.
 
 ### Slide inventory (chronological)
 
@@ -161,7 +161,7 @@ All styles in `assets/css/style.css` (CSS variables in `:root`). Components: `.o
 Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
-**Keep this repo small**: never commit print masters, drafts, or large binaries — they belong in `~/Projects/apollo-working-materials/`. History was flattened to one commit on 2026-07-04 precisely to make clones kid-sized (~20MB); don't undo that with binary churn.
+**Keep binary churn out of history**: the four canonical print masters in `print-ready/` are the deliberate exception (added 2026-07-05 at Rob's direction). Never commit drafts, superseded candidates, or other large binaries — those belong in `~/Projects/apollo-working-materials/`. If a print master changes, replace it in ONE commit — iterate in the archive, commit only the winner.
 
 ---
 

@@ -14,11 +14,10 @@ The exhibit and this repository work together:
    perfection not required. The completion page tells them to show their screen
    at the Apollo Table.
 
-> ⚠️ **Poster discrepancy — partially resolved**: `poster-1-attract-preview.jpg` in
-> this repo now says "Score 8+ trophies" (updated 2026-07-05, masked gpt-image-2 edit,
-> QR re-verified). The full-resolution **print masters** (~170 MB, private
-> `apollo-working-materials` archive) still say 5+ and have not been regenerated —
-> do that (or brief Ed to honor 8+ regardless of what's printed) before ordering prints.
+> ✅ **Poster discrepancy — RESOLVED 2026-07-05**: the print masters in
+> [`../print-ready/`](../print-ready/) now say "Score 8+ trophies" and carry the
+> `apollo13.quest` QR (zbarimg-verified). Previews here are rendered directly from
+> those masters. Everything is consistent: app, previews, and print files all say 8+.
 
 ---
 
@@ -78,6 +77,6 @@ QR codes fail on many phone cameras.
 | Reward card | 3.5″ × 2″ + bleed | 4080 × 2448 px (includes ⅛″ bleed) |
 
 Cards: 350gsm+ stock. The images here are **web previews only** — the full-resolution
-print masters (~170 MB) live outside this repo in the private
-`apollo-working-materials` archive under `print-ready/`, along with all design sources,
-drafts, and the design brief.
+print masters live in this repo at [`../print-ready/`](../print-ready/) (canonical as
+of 2026-07-05). Design sources, drafts, and the design brief remain in the private
+`apollo-working-materials` archive.

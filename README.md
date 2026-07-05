@@ -117,10 +117,15 @@ apollo-13-scout-mission/
 │   ├── js/qrcode.js       # QR code library (the one borrowed file — open source, MIT)
 │   └── images/            # Pictures for each slide
 ├── docs/                   # Guides: deployment, sitemap, scoring
-├── exhibit/                # The jamboree table: posters, cards, QR codes
+├── exhibit/                # The jamboree table: posters, cards, QR codes (web previews)
+├── print-ready/            # The actual print files for the posters & cards (big!)
 ├── scripts/                # Small scripts that check the site's links
 └── README.md               # This file!
 ```
+
+> **Heads up for cloners**: `print-ready/` holds the full-resolution poster and card
+> files (~170 MB), so the repo is bigger than the website itself. The site you run
+> locally is still tiny and fast.
 
 **Total size**: About 1,750 lines of CSS and JavaScript make the whole site work — you could read all of it in an afternoon. (The only code we didn't write ourselves is `qrcode.js`, a small open-source MIT-licensed library that draws QR codes.)
 
@@ -281,6 +286,8 @@ Start by reading these files in order:
 - Jim Lovell's book "Lost Moon"
 
 **Code & Design**: Built in October 2025 by Rob Gruhl with assistance from Claude (Anthropic AI)
+
+**July 2026 Refresh**: Rebuilt with **Claude Fable 5**, Anthropic's Mythos-class AI model — slides reordered into true mission chronology, every fact checked against NASA's primary sources (70 corrections!), real transcript quotes, "Sources for Skeptics" citations on every decision, offline support, and the print pipeline for the jamboree table. A small Apollo program of its own: dozens of AI agents fanned out like flight controllers, each checking the others' work before anything shipped.
 
 **Images**: NASA historical photos (public domain)
 
