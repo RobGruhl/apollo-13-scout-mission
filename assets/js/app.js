@@ -12,7 +12,65 @@ document.addEventListener('DOMContentLoaded', () => {
     initKeyboardNav();
     initExpandables();
     initDecisionTracker();
+    initQuickMode();
+    initOfflineCache();
 });
+
+/**
+ * Offline support: register the service worker so the whole game downloads
+ * on first visit — jamboree cell coverage is spotty, and a scout who scans
+ * the QR at the table shouldn't lose the mission walking away from the tent.
+ */
+function initOfflineCache() {
+    if (!('serviceWorker' in navigator)) return;
+    const swPath = window.location.pathname.includes('/slides/') ? '../sw.js' : 'sw.js';
+    navigator.serviceWorker.register(swPath).catch(() => {
+        // Offline caching is a bonus, never a blocker
+    });
+}
+
+/**
+ * Quick Mission mode: just the 10 decisions (~10 minutes) for scouts at the
+ * table. Entered via any link with ?mode=quick; exits via ?mode=full or the
+ * completion page. Rewrites prev/next so decisions chain directly.
+ */
+const QUICK_CHAIN = [
+    '04-freeze-squeeze.html',
+    '05-power-conservation.html',
+    '06-turn-around.html',
+    '09-stars-sun-navigation.html',
+    '11-pc2-burn.html',
+    '12-water-conservation.html',
+    '13-co2-mailbox.html',
+    '16-communication-discipline.html',
+    '17-battery-jumpstart.html',
+    '18-sm-jettison-timing.html',
+    '30-completion.html'
+];
+
+function initQuickMode() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('mode') === 'quick') sessionStorage.setItem('quickMode', '1');
+    if (params.get('mode') === 'full') sessionStorage.removeItem('quickMode');
+    if (sessionStorage.getItem('quickMode') !== '1') return;
+
+    const here = window.location.pathname.split('/').pop();
+    const i = QUICK_CHAIN.indexOf(here);
+    if (i === -1) return; // not part of the quick chain — leave normal nav
+
+    if (here === '30-completion.html') {
+        sessionStorage.removeItem('quickMode'); // mission over, back to full site
+        return;
+    }
+
+    const prevLink = document.querySelector('.btn-prev');
+    const nextLink = document.querySelector('.btn-next');
+    if (nextLink) nextLink.href = QUICK_CHAIN[i + 1];
+    if (prevLink) prevLink.href = i === 0 ? '../index.html' : QUICK_CHAIN[i - 1];
+
+    const progressText = document.querySelector('.nav-progress');
+    if (progressText) progressText.textContent = `⚡ Decision ${i + 1} of 10`;
+}
 
 /**
  * Navigation initialization
@@ -39,6 +97,16 @@ function initDecisions() {
 
     if (!options.length) return; // Not a decision page
 
+    const slideId = document.body.dataset.slideId;
+
+    // Decisions lock in on first choice — restore the locked state on revisit
+    const existing = slideId ? getDecisions()[slideId] : null;
+    if (existing) {
+        lockDecision(options, result, existing.choice);
+        showAlignmentFeedback(slideId, existing.choice);
+        return;
+    }
+
     options.forEach(option => {
         const button = option.querySelector('.btn-choose');
         if (!button) return;
@@ -57,10 +125,12 @@ function initDecisions() {
             }
 
             // Track decision (localStorage)
-            const slideId = document.body.dataset.slideId;
             const choice = option.dataset.option;
             if (slideId && choice) {
                 saveDecision(slideId, choice);
+
+                // Lock it in — mission decisions don't get do-overs
+                lockDecision(options, result, choice);
 
                 // Show alignment indicator
                 showAlignmentFeedback(slideId, choice);
@@ -70,6 +140,32 @@ function initDecisions() {
             }
         });
     });
+}
+
+/**
+ * Lock a decision after the first choice: disable all choose buttons,
+ * highlight the chosen option, and reveal the result. Real mission
+ * decisions couldn't be taken back — neither can these.
+ */
+function lockDecision(options, result, chosenValue) {
+    options.forEach(opt => {
+        const btn = opt.querySelector('.btn-choose');
+        if (opt.dataset.option === chosenValue) {
+            opt.classList.add('selected');
+            if (btn) {
+                btn.textContent = '✅ Your Call — Locked In';
+                btn.disabled = true;
+            }
+        } else {
+            opt.classList.remove('selected');
+            if (btn) {
+                btn.disabled = true;
+            }
+        }
+    });
+    if (result) {
+        result.classList.remove('hidden');
+    }
 }
 
 /**
@@ -216,14 +312,14 @@ const CORRECT_ANSWERS = {
 
 const DECISION_NAMES = {
     '4': 'Freeze or Squeeze',
-    '6': 'Turn Around Decision',
-    '11': 'PC+2 Burn (Speed Up)',
-    '13': 'CO2 Mailbox',
-    '9': 'Stars or Sun Navigation',
     '5': 'Power Conservation',
+    '6': 'Turn Around Decision',
+    '9': 'Stars or Sun Navigation',
+    '11': 'PC+2 Burn (Speed Up)',
     '12': 'Water Conservation',
-    '16': 'Communication Discipline',
-    '17': 'Battery Jump-Start',
+    '13': 'CO2 Mailbox',
+    '16': 'Comm Power',
+    '17': 'Battery Recharge',
     '18': 'SM Jettison Timing'
 };
 
@@ -384,7 +480,7 @@ function showAlignmentFeedback(slideId, userChoice) {
             <div class="alignment-badge">
                 ⚠️ <strong>NASA chose differently</strong>
             </div>
-            <p>While your choice had merit, NASA's actual decision on "${decisionName}" was different. You'll see the comparison at mission completion.</p>
+            <p>While your choice had merit, NASA made a different call on "${decisionName}" — read on to see why. Think NASA got it wrong? Check the sources below and argue your case!</p>
         `;
         alignmentIndicator.className = 'alignment-indicator different';
     }
@@ -460,6 +556,18 @@ function updateDecisionTracker() {
             }
         }
     }
+
+    // Running score text ("🏆 4/10") so scouts always know if they're on pace
+    const { correct } = calculateScore();
+    let scoreText = document.getElementById('trackerScore');
+    if (!scoreText) {
+        scoreText = document.createElement('span');
+        scoreText.id = 'trackerScore';
+        scoreText.className = 'tracker-score';
+        tracker.appendChild(scoreText);
+    }
+    scoreText.textContent = `🏆 ${correct}/${Object.keys(CORRECT_ANSWERS).length}`;
+    scoreText.title = `${correct} of ${Object.keys(CORRECT_ANSWERS).length} decisions matched NASA`;
 }
 
 /**

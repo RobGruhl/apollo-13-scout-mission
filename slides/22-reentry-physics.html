@@ -15,15 +15,15 @@
         <div class="decision-tracker" id="decisionTracker">
             <span class="tracker-label">Decisions:</span>
             <div class="decision-badges">
-                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
-                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
-                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
-                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
-                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
-                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
-                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
-                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
-                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="4" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="6" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="9" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="11" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="12" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="13" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="16" title="Comm Power">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Recharge">⚪</span>
                 <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
             </div>
         </div>    </nav>
@@ -39,30 +39,38 @@
             </figure>
             <section class="slide-content">
                 <h2>The Narrow Window</h2>
-                <p>Re-entering Earth's atmosphere from the Moon requires hitting a corridor just 2.15 degrees wide - like threading a needle from 200,000 miles away.</p>
+                <p>Re-entering Earth's atmosphere from the Moon means hitting a corridor just 2.15 degrees wide — like threading a needle from 200,000 miles away.</p>
                 <details class="info-section" open>
                     <summary>Too Steep (-7.4° or steeper)</summary>
                     <div style="padding: 1.5rem;">
                         <p style="color: var(--crisis-red); font-weight: 700;">Result: Burn up</p>
-                        <p>Too much friction, too much heat. Heat shield fails at 5,000°F+. Crew dies.</p>
+                        <p>The capsule slams into thick air too fast. Deceleration and heat climb past what the heat shield — or the crew — can survive.</p>
                     </div>
                 </details>
                 <details class="info-section">
                     <summary>Just Right (-6.5° target)</summary>
                     <div style="padding: 1.5rem;">
                         <p style="color: var(--success-green); font-weight: 700;">Result: Safe landing</p>
-                        <p>Gradual descent, heat shield works, parachutes deploy. Crew survives.</p>
+                        <p>Gradual descent. The heat shield does its job, the parachutes deploy, the crew survives.</p>
                     </div>
                 </details>
                 <details class="info-section">
                     <summary>Too Shallow (-5.25° or shallower)</summary>
                     <div style="padding: 1.5rem;">
-                        <p style="color: var(--crisis-red); font-weight: 700;">Result: Skip off atmosphere</p>
-                        <p>Bounce back into space like a stone on water. Lost in orbit. Crew dies.</p>
+                        <p style="color: var(--crisis-red); font-weight: 700;">Result: Skip off the atmosphere</p>
+                        <p>Like a stone skipping off a pond, the capsule bounces back into space. It would eventually fall back to Earth — but hours or days later, long after the oxygen and battery power ran out.</p>
                     </div>
                 </details>
-                <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
-                    <p style="font-size: 1.25rem; font-weight: 700;">Apollo 13 hit -6.49° - nearly perfect!</p>
+
+                <h2 style="margin-top: 2rem;">Why the Radio Goes Silent</h2>
+                <p>Hitting the atmosphere at nearly 25,000 mph, the capsule compresses the air ahead of it into a 5,000°F sheath of plasma — gas so hot that electrons are ripped off the atoms. Plasma blocks radio waves completely. No voice, no telemetry, nothing in or out.</p>
+                <p>Every Apollo crew coming home from the Moon flew through this blackout — normally around four minutes. Until the capsule slows down and the plasma fades, nobody on Earth can know whether the crew is alive.</p>
+
+                <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                    <h3 style="margin-bottom: 0.75rem;">Apollo 13's Angle: Slightly Shallow</h3>
+                    <p>The target was -6.5°. Odyssey actually crossed entry interface at about -6.2°.</p>
+                    <p style="margin-top: 0.75rem;">Nobody chose that. On the way home the trajectory kept drifting shallow — post-flight analysis traced it to a tiny push from the Lunar Module's cooling-system vent, acting like a weak thruster for days. A final course correction steepened the path, but not all the way back to the target.</p>
+                    <p style="margin-top: 0.75rem; font-weight: 700;">Still safely inside the corridor. But a shallower path means a longer, flatter glide through the plasma — and a longer blackout. Remember that on the next slide.</p>
                 </div>
             </section>
         </article>

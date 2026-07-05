@@ -10,7 +10,14 @@ The exhibit and this repository work together:
 2. They scan the QR code (or take an invitation card for later).
 3. Their phone opens the [interactive web experience](https://robgruhl.github.io/apollo-13-scout-mission/) — the code in this repo.
 4. They make the 10 real decisions NASA faced and earn a rank.
-5. Scouts who score 5+ correct earn the **Apollo reward card** (the poster's "Score 5+ trophies" rule).
+5. Scouts who score 8+ correct earn the **Apollo reward card** — excellent, but
+   perfection not required. The completion page tells them to show their screen
+   at the Apollo Table.
+
+> ⚠️ **Poster discrepancy**: the printed poster masters say "Score 5+ trophies.
+> Earn the Apollo card." The app awards the card at **8+** (decided 2026-07-05).
+> Before printing, either regenerate the poster's bottom band with the new rule
+> or brief Ed to honor whichever threshold he prefers at the table.
 
 ---
 
@@ -42,9 +49,10 @@ the web experience. "Free · Any phone · No app."
 
 ![Reward card preview](card-reward-preview.jpg)
 
-Given only to scouts who complete the mission with 5+ correct decisions (the poster's
-"Score 5+ trophies" rule). The artwork proclaims the top rank — Mission Commander,
-"Earned, not given." No QR on purpose — it's a trophy, not an ad.
+Given only to scouts who complete the mission with 8+ correct decisions (excellent,
+but not perfect — see the poster-discrepancy note above). The artwork proclaims the
+top rank — Mission Commander, "Earned, not given." No QR on purpose — it's a trophy,
+not an ad.
 
 ## QR codes
 

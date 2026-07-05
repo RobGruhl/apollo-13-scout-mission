@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apollo 13 Decision #9: Should they attempt an untested battery jump-start from the LM to the CM?">
+    <meta name="description" content="Apollo 13 Decision #9: Should Houston run a never-tested reverse charge from the LM to refill the Command Module's re-entry battery?">
     <title>Apollo 13 - Decision: Battery Jump-Start</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -15,15 +15,15 @@
         <div class="decision-tracker" id="decisionTracker">
             <span class="tracker-label">Decisions:</span>
             <div class="decision-badges">
-                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
-                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
-                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
-                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
-                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
-                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
-                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
-                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
-                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="4" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="6" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="9" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="11" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="12" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="13" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="16" title="Comm Power">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Recharge">⚪</span>
                 <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
             </div>
         </div>
@@ -32,98 +32,81 @@
         <article class="slide decision">
             <header class="slide-header">
                 <span class="slide-type">🚨 Decision Point #9</span>
-                <h1>Battery Jump-Start?</h1>
-                <time class="timestamp">GET ~138:00:00 | Dead Batteries for Re-Entry</time>
+                <h1>Recharge for Re-Entry?</h1>
+                <time class="timestamp">GET ~112:00:00 | 30 Hours to Re-Entry</time>
             </header>
 
             <section class="situation">
                 <h2>⚠️ The Situation</h2>
                 <ul>
-                    <li>Approaching Earth—Command Module needed for re-entry (only module with heat shield)</li>
-                    <li>CM batteries drained to 2% during 4-day power-down</li>
-                    <li>LM has remaining battery power available</li>
-                    <li>Need to transfer power from LM to CM to charge batteries</li>
-                    <li>Procedure never tested—could short-circuit both systems</li>
-                    <li>Without power, CM computers, parachutes, and life support won't function</li>
+                    <li>Re-entry — the one part the LM lifeboat can't help with — is about 30 hours away</li>
+                    <li>During the post-explosion scramble, the dying Command Module ran on its re-entry batteries — battery A lost about half its charge (~20 of 40 amp-hours)</li>
+                    <li>The CM's three entry batteries now hold about 99 of their ~120 amp-hours. A normal re-entry uses roughly 70–80</li>
+                    <li>The math works — barely. No cushion for a longer timeline, an extra system draw, or one weak battery</li>
+                    <li>In Houston, flight controller <strong>John Aaron</strong>'s power team has an idea nobody designed for: push electricity <em>backwards</em> through the docking umbilical, letting the LM's descent batteries refill CM battery A</li>
                 </ul>
 
-                <div style="background: var(--bg-light); border: 2px solid var(--crisis-red); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                    <h3 style="color: var(--crisis-red); margin-bottom: 1rem;">The Critical Reality:</h3>
-                    <p style="font-weight: 700;">2% battery power = certain death</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>❌ Not enough for guidance computer</li>
-                        <li>❌ Not enough for parachute deployment</li>
-                        <li>❌ Not enough for life support</li>
-                        <li>❌ Crew will die during re-entry</li>
-                    </ul>
+                <div style="background: var(--bg-light); border: 2px solid var(--nasa-blue); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h3 style="color: var(--nasa-blue); margin-bottom: 1rem;">The Twist:</h3>
+                    <p>The umbilical linking the two ships was built to send power the <strong>other way</strong> — from the CM, keeping the docked LM warm on the way to the Moon. Reversing it has never been tried. Not in space. Not in a simulator. Not anywhere.</p>
                 </div>
+
+                <figure style="margin: 1.5rem 0;">
+                    <img src="../assets/images/decision08_battery_jumpstart.png" alt="Apollo electrical system and battery connections between the LM and Command Module" loading="lazy">
+                    <figcaption>Two spacecraft, one cable — never designed to carry charge from the LM to the CM</figcaption>
+                </figure>
             </section>
 
             <section class="options">
                 <div class="option" data-option="jumpstart">
-                    <h3>⚡ JUMP-START FROM LM</h3>
-                    <p class="option-subtitle">Connect LM batteries to charge CM systems</p>
+                    <h3>⚡ CHARGE FROM THE LM</h3>
+                    <p class="option-subtitle">Trickle-charge CM battery A from the LM's descent batteries — a procedure invented this week</p>
                     <button class="btn-choose">Choose This Option</button>
 
                     <div class="option-details">
-                        <figure style="margin: 1.5rem 0;">
-                            <img src="../assets/images/decision08_battery_jumpstart.png" alt="Apollo electrical system and battery connections" loading="lazy">
-                            <figcaption>Electrical systems - never designed to transfer power between spacecraft</figcaption>
-                        </figure>
-
                         <div class="pros">
                             <h4>✓ Advantages</h4>
                             <ul>
-                                <li>Can fully charge CM batteries for re-entry</li>
-                                <li>Provides power for computers and navigation</li>
-                                <li>Enables parachute deployment systems</li>
-                                <li>Only option with chance of survival</li>
-                                <li>LM power otherwise wasted after jettison</li>
+                                <li>The CM would hit re-entry with essentially <strong>full batteries</strong> — real margin for surprises</li>
+                                <li>Uses hardware already connected: no spacewalk, no new wiring</li>
+                                <li>The crew's brutal power-down left the LM batteries ahead of budget — power to spare</li>
+                                <li>Aaron's team has already drafted the procedure and checked the numbers</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h4>✕ Disadvantages</h4>
                             <ul>
-                                <li>Never attempted in space—completely improvised</li>
-                                <li>Could short-circuit both LM and CM systems</li>
-                                <li>Might electrocute crew through metal hulls</li>
-                                <li>Could lose ALL remaining power</li>
-                                <li>Electrical fire risk in oxygen environment</li>
-                                <li>If it fails, no backup plan</li>
+                                <li>Never designed for, never tested — anywhere</li>
+                                <li>Spends LM battery power the lifeboat still needs for the next ~29 hours</li>
+                                <li>Slow and inefficient: about 15 hours of charging</li>
+                                <li>A wiring fault could damage <strong>both</strong> ships' electrical systems at once</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="option" data-option="reserve">
-                    <h3>🔋 USE ONLY CM RESERVE BATTERIES</h3>
-                    <p class="option-subtitle">Attempt re-entry with 2% battery power</p>
+                    <h3>🔋 FLY WITH REDUCED MARGIN</h3>
+                    <p class="option-subtitle">Skip the experiment — 99 amp-hours should cover a normal re-entry</p>
                     <button class="btn-choose">Choose This Option</button>
 
                     <div class="option-details">
                         <div class="pros">
                             <h4>✓ Advantages</h4>
                             <ul>
-                                <li>No risk of short-circuit damaging systems</li>
-                                <li>Avoids untested procedure</li>
-                                <li>Simple—no complex power transfer</li>
-                                <li>Can't make batteries worse than they are</li>
+                                <li>No untested procedure — zero chance of an electrical fault touching two ships</li>
+                                <li>Every amp-hour stays in the lifeboat, where the crew is living</li>
+                                <li>On paper, ~99 amp-hours covers a normal 70–80 amp-hour re-entry</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h4>✕ Disadvantages</h4>
                             <ul>
-                                <li>Insufficient power for guidance computers</li>
-                                <li>Not enough power for parachute deployment</li>
-                                <li>Life support systems won't function</li>
-                                <li><strong>Crew will die during re-entry</strong></li>
-                                <li><strong>2% power = certain death</strong></li>
+                                <li>Only ~20 amp-hours of cushion — and nothing on this mission has gone to plan</li>
+                                <li>No room for a longer re-entry timeline or an unexpected system draw</li>
+                                <li>Battery A stays half-empty; one battery hiccup and the margin is gone</li>
+                                <li>Once the LM is cut loose, there is no second chance to charge</li>
                             </ul>
-                        </div>
-
-                        <div style="background: var(--bg-light); border: 2px solid var(--crisis-red); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                            <p style="font-weight: 700; color: var(--crisis-red);">This is not a viable option.</p>
-                            <p style="margin-top: 0.5rem;">The crew needs at least 40 amp-hours for re-entry. They have ~1 amp-hour remaining.</p>
                         </div>
                     </div>
                 </div>
@@ -137,63 +120,44 @@
             <section class="decision-result hidden" id="result">
                 <h2>NASA's Decision</h2>
                 <div class="result-content">
-                    <p class="result-choice">✓ ATTEMPT THE JUMP-START</p>
-                    <p>
-                        Mission Control had no choice: <strong>"We're going to attempt the LM-to-CM power transfer. It's never been done, but it's the only option."</strong>
-                    </p>
-
-                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Emergency Procedure:</h3>
-                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
-                        <p style="font-weight: 700; margin-bottom: 1rem;">Houston designed a brand-new power-up procedure:</p>
-                        <ul>
-                            <li><strong>Step 1:</strong> Connect LM batteries to CM charging system</li>
-                            <li><strong>Step 2:</strong> Carefully monitor voltage and current</li>
-                            <li><strong>Step 3:</strong> Transfer power slowly to avoid surges</li>
-                            <li><strong>Step 4:</strong> Watch for short circuits or battery failures</li>
-                            <li><strong>Step 5:</strong> Charge CM batteries to sufficient levels</li>
-                        </ul>
-
-                        <p style="margin-top: 1rem; font-style: italic;">
-                            Engineers held their breath. This had never been tested. Not in simulators. Not on the ground. Never.
-                        </p>
-                    </div>
-
-                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Execution:</h3>
-                    <p>Jack Swigert executed the procedure step by step, calling out voltages and currents. Mission Control tracked every amp transferred.</p>
-
-                    <div style="background: var(--bg-yellow-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
-                        <h4>The Close Call:</h4>
-                        <p style="margin-top: 0.5rem;">
-                            During the transfer, one CM battery briefly "dropped off the line"—the voltage dipped and engineers feared it had failed. But it recovered. The transfer continued.
-                        </p>
-                    </div>
+                    <p class="result-choice">✓ CHARGE FROM THE LM</p>
 
                     <blockquote style="margin: 1.5rem 0;">
-                        "We watched those numbers like hawks. Every volt, every amp. If we saw a short circuit, we'd have to abort. But the procedure worked. The batteries charged."
-                        <cite>— John Aaron, EECOM (who designed the power plan)</cite>
+                        "We're 20 amp-hours short on one of the entry batteries."
+                        <cite>— CAPCOM Jack Lousma to the crew, GET 111:05 (Apollo 13 Flight Journal)</cite>
                     </blockquote>
+
+                    <p>About an hour later Houston gave the go, and at roughly <strong>GET 112:12</strong> Jack Swigert started the charge.</p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">How It Worked:</h3>
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <ul>
+                            <li><strong>Reverse flow:</strong> the LM's descent batteries fed current backwards through the existing LM–CM umbilical into CM battery A</li>
+                            <li><strong>Trickle charge:</strong> slow and gentle — about 15 hours in all</li>
+                            <li><strong>Constant watch:</strong> Houston monitored voltage and current for any sign of a fault</li>
+                        </ul>
+                    </div>
 
                     <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
                         <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Success!</p>
-                        <p style="margin-bottom: 0.5rem;">The jump-start worked perfectly.</p>
-                        <p><strong>CM batteries charged to sufficient levels for re-entry.</strong></p>
-                        <p style="margin-top: 0.5rem; font-style: italic;">This procedure was added to NASA's emergency playbook.</p>
+                        <p>When Odyssey powered up for re-entry, its batteries held about <strong>118 of 120 amp-hours</strong> — nearly what they held at liftoff. The crew hit the most dangerous minutes of the mission with power to spare.</p>
                     </div>
 
                     <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Hero: John Aaron</h3>
-                    <p>John Aaron, the EECOM (Electrical, Environmental, and Communications) flight controller, led the power plan that made this possible. He was the same engineer who saved Apollo 12 with "SCE to AUX" after a lightning strike. Now, he saved Apollo 13 with a power transfer procedure written from scratch.</p>
+                    <p>John Aaron, the EECOM (electrical systems) flight controller, led the "tiger team" that budgeted every amp of the trip home — including this improvised reverse charge. He's the same controller who saved Apollo 12 with the legendary call "SCE to AUX" after a lightning strike. You'll meet him again later in this story.</p>
 
-                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Why This Mattered:</h3>
-                    <ul>
-                        <li>✓ <strong>Re-entry made possible:</strong> Without this, crew would have died</li>
-                        <li>✓ <strong>Computer power:</strong> Guidance system had sufficient power</li>
-                        <li>✓ <strong>Parachute deployment:</strong> Enough power for pyrotechnics</li>
-                        <li>✓ <strong>Survival margin:</strong> Extra power for unexpected issues</li>
-                    </ul>
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Why It Was the Right Call:</h3>
+                    <p>The charge cost the LM power it could afford and bought the CM margin it couldn't live without. Re-entry is exactly when you want spare electricity: computers, thrusters, and the parachute pyrotechnics all run on those three batteries. NASA traded a known surplus for a critical reserve — and it paid off.</p>
 
-                    <p style="margin-top: 1.5rem;">
-                        <strong>Why it was the right decision:</strong> There was no alternative. The jump-start was risky, untested, and could have failed catastrophically. But 2% power was certain death. They gambled on ingenuity and it paid off. This made re-entry possible.
-                    </p>
+                    <div class="sources-box">
+                        <h3>📚 Sources for Skeptics</h3>
+                        <p>Would you have risked the untested charge, or flown with the thinner margin? <strong>Good — arguing trade-offs is exactly how engineers think.</strong> Don't take our word for it — here's the real record:</p>
+                        <ul>
+                            <li><a href="https://www.nasa.gov/history/afj/ap13fj/index.html" target="_blank" rel="noopener">Apollo 13 Flight Journal</a> — the Day 5 "Starting the Battery Charge" chapter has every radio call from this decision</li>
+                            <li><a href="https://apolloinrealtime.org/13/" target="_blank" rel="noopener">Apollo 13 in Real Time</a> — replay the whole mission with real Mission Control audio, synced to the second</li>
+                            <li><a href="https://ntrs.nasa.gov/api/citations/19710003598/downloads/19710003598.pdf" target="_blank" rel="noopener">Apollo 13 Mission Report (PDF)</a> — NASA's official engineering report on the trip home</li>
+                        </ul>
+                    </div>
 
                     <div id="alignmentIndicator" class="alignment-indicator"></div>
                 </div>

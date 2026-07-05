@@ -15,15 +15,15 @@
         <div class="decision-tracker" id="decisionTracker">
             <span class="tracker-label">Decisions:</span>
             <div class="decision-badges">
-                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
-                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
-                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
-                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
-                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
-                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
-                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
-                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
-                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="4" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="6" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="9" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="11" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="12" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="13" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="16" title="Comm Power">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Recharge">⚪</span>
                 <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
             </div>
         </div>
@@ -33,7 +33,7 @@
             <header class="slide-header">
                 <span class="slide-type">🚨 Decision Point #4</span>
                 <h1>Stars or Sun/Earth Navigation?</h1>
-                <time class="timestamp">GET ~79:27:38 | Lost in Space</time>
+                <time class="timestamp">GET ~73:46 | Lost in Space</time>
             </header>
 
             <section class="situation">
@@ -45,13 +45,14 @@
                     <li>Through telescope, debris looks identical to stars</li>
                     <li>Impossible to determine which points of light are real stars</li>
                     <li>Without proper alignment, can't aim precisely for Earth</li>
+                    <li>A big course-correction burn is coming after the Moon flyby — the platform must be checked before then</li>
                 </ul>
             </section>
 
             <section class="options">
                 <div class="option" data-option="sunearth">
                     <h3>☀️ SUN/EARTH TERMINATOR</h3>
-                    <p class="option-subtitle">Manually align using Sun in AOT + Earth edge in COAS</p>
+                    <p class="option-subtitle">Check the alignment on the Sun — the one light no debris can fake</p>
                     <button class="btn-choose">Choose This Option</button>
 
                     <div class="option-details">
@@ -73,11 +74,10 @@
                         <div class="cons">
                             <h4>✕ Disadvantages</h4>
                             <ul>
-                                <li>Less precise than star alignment</li>
-                                <li>Manual alignment is tricky</li>
-                                <li>Requires simultaneous viewing through two instruments</li>
-                                <li>Small errors could compound over distance</li>
-                                <li>Not the "approved" NASA procedure</li>
+                                <li>Less precise than star alignment — the Sun is a big, fuzzy target compared to a pinpoint star</li>
+                                <li>Manual maneuvering to the check attitude is tricky</li>
+                                <li>Small errors could compound over 200,000 miles</li>
+                                <li>Not the standard NASA procedure</li>
                             </ul>
                         </div>
                     </div>
@@ -115,8 +115,9 @@
                         </div>
 
                         <div style="background: var(--bg-yellow-light); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                            <p style="font-weight: 700;">Lovell's frustration:</p>
-                            <p style="margin-top: 0.5rem; font-style: italic;">"I can't tell a star from a piece of debris. It's like being in a snowstorm."</p>
+                            <p style="font-weight: 700;">Lovell described the problem in his own account:</p>
+                            <p style="margin-top: 0.5rem; font-style: italic;">"A swarm of debris from the ruptured service module made it impossible to sight real stars."</p>
+                            <p style="margin-top: 0.5rem; font-size: 0.85rem;">— Jim Lovell, <em>Apollo Expeditions to the Moon</em> (NASA SP-350)</p>
                         </div>
                     </div>
                 </div>
@@ -132,65 +133,71 @@
                 <div class="result-content">
                     <p class="result-choice">✓ SUN/EARTH TERMINATOR METHOD</p>
                     <p>
-                        Mission Control made the call: <strong>"Use the Sun and Earth's terminator for your alignment. We'll walk you through the calculations."</strong>
+                        Mission Control made the call: forget the stars — check the platform against the <strong>Sun</strong>, the one light in the sky no piece of debris could imitate.
                     </p>
 
-                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">GET ~79:27:38 - Manual Alignment Procedure:</h3>
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">GET ~73:46 - The Sun Check:</h3>
                     <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
                         <h4>The Process:</h4>
                         <ol>
-                            <li><strong>Step 1:</strong> Sun positioned in AOT (Alignment Optical Telescope)</li>
-                            <li><strong>Step 2:</strong> Earth terminator (day/night line) centered in COAS (Crew Optical Alignment Sight)</li>
-                            <li><strong>Step 3:</strong> Jim Lovell performed delicate manual alignment</li>
-                            <li><strong>Step 4:</strong> "Good enough" accuracy achieved for safe trajectory</li>
+                            <li><strong>Step 1:</strong> Houston radioed up the attitude angles; Lovell and Haise carefully maneuvered Aquarius</li>
+                            <li><strong>Step 2:</strong> Lovell watched through the AOT (Alignment Optical Telescope) for the Sun</li>
+                            <li><strong>Step 3:</strong> If the guidance platform was aligned correctly, the Sun would appear right where the computer predicted</li>
+                            <li><strong>Step 4:</strong> It did — within about 1 degree. "Good enough" to trust for the burns ahead</li>
                         </ol>
                     </div>
 
                     <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Jim Lovell's Skill:</h3>
-                    <p>Commander Lovell had trained for this. As a Navy pilot, he'd navigated by stars over the Pacific Ocean. Now he did the same—just 200,000 miles higher.</p>
+                    <p>Commander Lovell had trained for this. As a Navy pilot, he'd navigated by the sky over the Pacific Ocean. Now he did the same—just 200,000 miles higher. From the real mission transcript:</p>
 
                     <blockquote style="margin: 1.5rem 0;">
-                        "Navigation is the same whether you're at sea level or in space. Find your reference points, calculate your position, make your corrections. The math doesn't change—just the stakes."
-                        <cite>— Jim Lovell</cite>
+                        "Okay. It looks like the Sun check passes."
+                        <cite>— Jim Lovell, GET 073:47:05</cite>
+                    </blockquote>
+                    <blockquote style="margin: 1.5rem 0;">
+                        "We understand it checks out. We're kind of glad to hear that."
+                        <cite>— Vance Brand, CapCom in Mission Control, GET 073:47:10</cite>
                     </blockquote>
 
                     <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Perfect Alignment!</p>
-                        <p style="margin-bottom: 0.5rem;">The Sun/Earth terminator method worked beautifully.</p>
-                        <p><strong>Trajectory accuracy:</strong> Within 0.01 degrees of target.</p>
-                        <p style="margin-top: 0.5rem; font-style: italic;">Manual skill beat perfect equipment.</p>
+                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Alignment Confirmed!</p>
+                        <p style="margin-bottom: 0.5rem;">The Sun showed up where the computer predicted — off by less than one Sun-width (about half a degree), well inside the 1-degree limit.</p>
+                        <p style="margin-top: 0.5rem; font-style: italic;">Mission Control cheered. The platform could be trusted.</p>
                     </div>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Trick That Kept On Giving:</h3>
+                    <p>The same keep-it-simple idea returned for the hand-flown MCC-5 course correction (~GET 105:18): with the computer powered down, Lovell kept <strong>Earth's terminator — the day/night line — centered in the COAS gunsight</strong> while the crew timed the 14-second burn. Sun, Earth, eyeballs, and a watch steered them home.</p>
 
                     <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Why This Mattered:</h3>
                     <ul>
-                        <li>✓ <strong>Improvisation works:</strong> Unorthodox methods saved the day</li>
-                        <li>✓ <strong>Simple is better:</strong> When high-tech fails, go low-tech</li>
-                        <li>✓ <strong>Human skill:</strong> Lovell's Navy training proved critical</li>
-                        <li>✓ <strong>Accuracy achieved:</strong> Hit re-entry corridor perfectly</li>
+                        <li>✓ <strong>Improvisation works:</strong> When high-tech fails, go low-tech</li>
+                        <li>✓ <strong>Human skill:</strong> Lovell's Navy navigation training proved critical</li>
+                        <li>✓ <strong>Every burn that followed</strong> depended on trusting this alignment</li>
+                        <li>🎯 <strong>The target:</strong> a re-entry corridor only about 2 degrees wide, aimed from around 240,000 miles out</li>
                     </ul>
 
-                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Manual Navigation Triumph:</h3>
-                    <p>Using Sun/Earth alignment, stopwatches, and eyeball sightings, Apollo 13 navigated 200,000 miles through space with incredible accuracy:</p>
-
                     <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
-                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Final re-entry accuracy:</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li>☀️ The Sun (brightest object)</li>
-                            <li>🌍 Earth's terminator (day/night line)</li>
-                            <li>⏱️ A stopwatch</li>
-                            <li>👁️ Human eyeballs</li>
-                            <li>🎯 Result: Hit re-entry corridor within 0.01 degrees</li>
-                        </ul>
-                        <p style="margin-top: 1rem; font-style: italic;">
-                            Modern spacecraft rely on GPS and computers. Apollo 13 proved human navigators with basic tools could do the impossible.
+                        <p style="font-style: italic;">
+                            Think a modern spacecraft would just use GPS? GPS only works close to Earth, where the satellites are. Deep-space missions today navigate by radio tracking from giant dish antennas and automated star trackers. Apollo 13 did it with human eyeballs.
                         </p>
                     </div>
 
                     <p style="margin-top: 1.5rem;">
-                        <strong>Why it was the right decision:</strong> The debris field made star sighting impossible. By adapting to an improvised method, they proved that simple, reliable techniques beat complex systems when conditions are uncertain. Lovell's manual skill got them home.
+                        <strong>Why it was the right decision:</strong> The debris field really did make star sighting impossible. A simple, reliable improvised method beat insisting on the "proper" technique.
                     </p>
 
                     <div id="alignmentIndicator" class="alignment-indicator"></div>
+
+                    <div class="sources-box">
+                        <h3>📚 Sources for Skeptics</h3>
+                        <p>Would you have kept hunting for stars? <strong>Doubting the answer and checking
+                        the record is exactly how engineers think.</strong> The Sun check is all on tape:</p>
+                        <ul>
+                            <li><a href="https://www.nasa.gov/history/afj/ap13fj/index.html" target="_blank" rel="noopener">Apollo 13 Flight Journal</a> — every radio call between the crew and Houston, annotated day by day; the Sun check is in Day 4, "Approaching the Moon"</li>
+                            <li><a href="https://ntrs.nasa.gov/api/citations/20160014370/downloads/20160014370.pdf" target="_blank" rel="noopener">Air-to-Ground Voice Transcript (PDF)</a> — the verbatim record, including "the Sun check passes" at 073:47</li>
+                            <li><a href="https://apolloinrealtime.org/13/" target="_blank" rel="noopener">Apollo 13 in Real Time</a> — replay the whole mission with real Mission Control audio, synced to the second</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </article>

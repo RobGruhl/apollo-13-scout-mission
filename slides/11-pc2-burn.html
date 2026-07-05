@@ -15,15 +15,15 @@
         <div class="decision-tracker" id="decisionTracker">
             <span class="tracker-label">Decisions:</span>
             <div class="decision-badges">
-                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
-                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
-                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
-                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
-                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
-                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
-                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
-                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
-                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="4" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="6" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="9" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="11" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="12" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="13" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="16" title="Comm Power">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Recharge">⚪</span>
                 <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
             </div>
         </div>
@@ -33,18 +33,23 @@
             <header class="slide-header">
                 <span class="slide-type">🚨 Decision Point #5</span>
                 <h1>Speed Up or Coast?</h1>
-                <time class="timestamp">GET 79:27:40 | Wrong Ocean Landing Zone</time>
+                <time class="timestamp">GET 79:27:38 | Wrong Ocean Landing Zone</time>
             </header>
 
             <section class="situation">
                 <h2>⚠️ The Situation</h2>
                 <ul>
-                    <li>Free-return trajectory will get them home, but too late and in wrong ocean</li>
-                    <li>Current path would land far from recovery ships (wrong ocean)</li>
-                    <li>Solution: Major burn 2 hours after pericynthion (PC+2) to speed up and retarget</li>
-                    <li>Risk: LM Descent Engine will run for 4.5-5 minutes in deep space</li>
+                    <li>The free-return path will get them home—but slowly, and aimed at the Indian Ocean, far from the recovery fleet</li>
+                    <li>The recovery ships are waiting in the Pacific</li>
+                    <li>Solution: a major burn 2 hours after pericynthion (PC+2) to speed up and retarget</li>
+                    <li>Risk: the LM Descent Engine must run about 4½ minutes in deep space</li>
                     <li>Longest burn yet—within design limits but high-stakes</li>
                 </ul>
+
+                <figure style="margin: 1.5rem 0;">
+                    <img src="../assets/images/decision06_engine_burn.jpg" alt="Lunar Module descent engine" loading="lazy">
+                    <figcaption>The LM Descent Engine—built for a Moon landing. Fire it again, or leave it cold?</figcaption>
+                </figure>
             </section>
 
             <section class="options">
@@ -54,15 +59,10 @@
                     <button class="btn-choose">Choose This Option</button>
 
                     <div class="option-details">
-                        <figure style="margin: 1.5rem 0;">
-                            <img src="../assets/images/decision06_engine_burn.jpg" alt="Lunar Module descent engine" loading="lazy">
-                            <figcaption>LM Descent Engine - designed for landing, now their only way to speed up</figcaption>
-                        </figure>
-
                         <div class="pros">
                             <h4>✓ Advantages</h4>
                             <ul>
-                                <li>Cuts ~9-10 hours off return time</li>
+                                <li>Cuts roughly 10 hours off return time</li>
                                 <li>Targets Pacific recovery zone near USS Iwo Jima</li>
                                 <li>Less time for systems to fail</li>
                                 <li>Faster medical attention for crew</li>
@@ -72,8 +72,8 @@
                         <div class="cons">
                             <h4>✕ Disadvantages</h4>
                             <ul>
-                                <li>Long engine burn (4.5-5 minutes) stresses systems</li>
-                                <li>Uses significant fuel (~900 ft/s delta-V)</li>
+                                <li>Long engine burn (about 4½ minutes) stresses systems</li>
+                                <li>Uses significant fuel (~860 ft/s delta-V)</li>
                                 <li>Any failure during burn leaves crew stranded</li>
                                 <li>Engine designed for lunar landing, not deep space burns</li>
                                 <li>Single point of failure—if engine quits, no backup</li>
@@ -100,7 +100,7 @@
                         <div class="cons">
                             <h4>✕ Disadvantages</h4>
                             <ul>
-                                <li>Longer mission time (~9-10 hours extra)</li>
+                                <li>Longer mission time (roughly 10 hours extra)</li>
                                 <li>Lands in wrong ocean, far from recovery fleet</li>
                                 <li>More time for systems to fail</li>
                                 <li>Longer exposure to cold, dehydration, CO2</li>
@@ -121,32 +121,36 @@
                 <div class="result-content">
                     <p class="result-choice">✓ PERFORM THE PC+2 BURN</p>
                     <p>
-                        Mission Control made the call: <strong>"You are go for PC+2 burn."</strong>
+                        CAPCOM Vance Brand radioed the call from Houston: <strong>"Jim, you are Go for the burn. Go for the burn."</strong> Lovell answered: <strong>"Roger. I understand. Go for the burn."</strong>
                     </p>
 
-                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">GET 79:27:40 - The Burn</h3>
+                    <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">GET 79:27:38 - The Burn</h3>
                     <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
                         <h4>Burn Parameters:</h4>
                         <ul>
-                            <li><strong>Duration:</strong> ~4.5-5 minutes total</li>
-                            <li><strong>Velocity change:</strong> ~900 ft/s of delta-V</li>
-                            <li><strong>Time saved:</strong> ~9-10 hours</li>
-                            <li><strong>Target:</strong> Pacific recovery zone near USS Iwo Jima</li>
+                            <li><strong>Duration:</strong> 4 minutes, 24 seconds</li>
+                            <li><strong>Velocity change:</strong> ~860 ft/s of delta-V</li>
+                            <li><strong>Time saved:</strong> about 10 hours</li>
+                            <li><strong>New target:</strong> splashdown moved from the Indian Ocean to the Pacific recovery zone near USS Iwo Jima</li>
                         </ul>
                     </div>
 
                     <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">The Execution:</h3>
-                    <p>Jim Lovell piloted the LM while Fred Haise watched the instruments. Jack Swigert monitored from the Command Module. The engine fired perfectly.</p>
+                    <p>All three astronauts rode it out in Aquarius—the Command Module above them was powered down, dark, and silent. Lovell brought the engine up in stages: 10 percent throttle, then 40 percent, then full power, while Haise watched the LM's systems. The engine fired perfectly.</p>
 
                     <blockquote style="margin: 1.5rem 0;">
-                        "That was the longest 4 and a half minutes of my life. If that engine had quit, we were dead. But it ran like a sewing machine."
-                        <cite>— Jim Lovell</cite>
+                        Lovell: "We're burning. 40 percent."<br>
+                        Lovell: "One hundred percent."<br>
+                        Brand (Houston): "Aquarius, you were looking good at 2 minutes. Still looking good."<br>
+                        Lovell: "Shutdown."<br>
+                        Brand: "Roger. Shutdown. ... Good burn, Aquarius."
+                        <cite>— Actual radio transmissions, GET 79:27–79:33 (Apollo 13 Flight Journal)</cite>
                     </blockquote>
 
                     <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
                         <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Perfect Burn!</p>
                         <p style="margin-bottom: 0.5rem;">The LM descent engine performed flawlessly—never missed a beat.</p>
-                        <p><strong>New splashdown time:</strong> 9-10 hours earlier, Pacific Ocean near rescue ships.</p>
+                        <p><strong>New splashdown time:</strong> about 10 hours earlier, in the Pacific Ocean near the rescue ships.</p>
                     </div>
 
                     <h3 style="margin-top: 1.5rem; color: var(--nasa-blue);">Why This Mattered:</h3>
@@ -158,8 +162,22 @@
                     </ul>
 
                     <p style="margin-top: 1.5rem;">
-                        <strong>Why it was the right decision:</strong> The crew was grateful for every hour saved. Fred Haise was developing a serious kidney infection from dehydration. The cold was unbearable. Getting home 9 hours sooner may have saved their lives.
+                        <strong>Why it was the right decision:</strong> The crew was grateful for every hour saved. Fred Haise was coming down with a painful kidney infection. The cold was unbearable. Getting home about 10 hours sooner may have saved their lives—but reasonable engineers argued the other side, too. Firing a landing engine for over four minutes with no backup was a real gamble.
                     </p>
+
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted, #666);">
+                        🎬 Dramatization — not a documented quote: Lovell is often paraphrased as saying the engine "ran like a sewing machine." No transcript or memoir records that line.
+                    </p>
+
+                    <div class="sources-box">
+                        <h3>📚 Sources for Skeptics</h3>
+                        <p>Would you have coasted instead? Plenty of smart people weighed that option in 1970. <strong>Arguing with the answer is good engineering</strong>—so check the record yourself:</p>
+                        <ul>
+                            <li><a href="https://www.nasa.gov/history/afj/ap13fj/index.html" target="_blank" rel="noopener">Apollo 13 Flight Journal</a> — every radio call between the crew and Houston, including the full PC+2 burn sequence</li>
+                            <li><a href="https://apolloinrealtime.org/13/" target="_blank" rel="noopener">Apollo 13 in Real Time</a> — replay the burn with real Mission Control audio, synced to the second</li>
+                            <li><a href="https://ntrs.nasa.gov/api/citations/19710003598/downloads/19710003598.pdf" target="_blank" rel="noopener">Apollo 13 Mission Report (PDF)</a> — NASA's official engineering report, with the exact burn numbers</li>
+                        </ul>
+                    </div>
 
                     <div id="alignmentIndicator" class="alignment-indicator"></div>
                 </div>
