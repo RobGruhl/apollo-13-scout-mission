@@ -99,7 +99,7 @@ function initProgressTracking() {
     // Only update progress for mission slides (1-29)
     // Completion (30) and merit badge pages (31-34) use custom progress text
     if (progressText && current >= 1 && current <= 29) {
-        const total = 29;
+        const total = 30;
         progressText.textContent = `Slide ${current} of ${total}`;
     }
 }
@@ -202,27 +202,27 @@ function resetProgress() {
 
 // Correct NASA decisions (10 total)
 const CORRECT_ANSWERS = {
-    '2': 'squeeze',           // Decision #1: Freeze or Squeeze → SQUEEZE (move to LM)
-    '5': 'freereturn',        // Decision #2: Turn Around → FREE-RETURN (use Moon's gravity)
-    '6': 'burn',              // Decision #3: PC+2 Burn → PERFORM BURN (speed up return)
-    '10': 'buildmailbox',     // Decision #4: CO2 Mailbox → BUILD (improvise adapter)
-    '11': 'sunearth',         // Decision #5: Navigation → SUN/EARTH (manual alignment)
-    '13': 'shutdown',         // Decision #6: CM Power → SHUTDOWN (preserve batteries)
-    '14': 'extreme',          // Decision #7: Water Conservation → EXTREME RATIONING
-    '15': 'silence',          // Decision #8: Communication → RADIO SILENCE (save power)
-    '17': 'jumpstart',        // Decision #9: Battery Jump-Start → ATTEMPT JUMPSTART
+    '4': 'squeeze',           // Decision #1: Freeze or Squeeze → SQUEEZE (move to LM)
+    '5': 'shutdown',          // Decision #2: CM Power → SHUTDOWN (preserve batteries)
+    '6': 'freereturn',        // Decision #3: Turn Around → FREE-RETURN (use Moon's gravity)
+    '9': 'sunearth',          // Decision #4: Navigation → SUN/EARTH (manual alignment)
+    '11': 'burn',             // Decision #5: PC+2 Burn → PERFORM BURN (speed up return)
+    '12': 'extreme',          // Decision #6: Water Conservation → EXTREME RATIONING
+    '13': 'buildmailbox',     // Decision #7: CO2 Mailbox → BUILD (improvise adapter)
+    '16': 'silence',          // Decision #8: Comm Power → LOW-POWER CONFIG
+    '17': 'jumpstart',        // Decision #9: Battery Recharge → ATTEMPT LM-TO-CM CHARGE
     '18': 'early'             // Decision #10: SM Jettison → EARLY JETTISON (photograph damage)
 };
 
 const DECISION_NAMES = {
-    '2': 'Freeze or Squeeze',
-    '5': 'Turn Around Decision',
-    '6': 'PC+2 Burn (Speed Up)',
-    '10': 'CO2 Mailbox',
-    '11': 'Stars or Sun Navigation',
-    '13': 'Power Conservation',
-    '14': 'Water Conservation',
-    '15': 'Communication Discipline',
+    '4': 'Freeze or Squeeze',
+    '6': 'Turn Around Decision',
+    '11': 'PC+2 Burn (Speed Up)',
+    '13': 'CO2 Mailbox',
+    '9': 'Stars or Sun Navigation',
+    '5': 'Power Conservation',
+    '12': 'Water Conservation',
+    '16': 'Communication Discipline',
     '17': 'Battery Jump-Start',
     '18': 'SM Jettison Timing'
 };
@@ -424,7 +424,7 @@ function updateDecisionTracker() {
     }
 
     // Update each badge (all 10 decisions)
-    for (const slideId of ['2', '5', '6', '10', '11', '13', '14', '15', '17', '18']) {
+    for (const slideId of ['4', '5', '6', '9', '11', '12', '13', '16', '17', '18']) {
         const badge = document.querySelector(`[data-decision="${slideId}"]`);
         if (!badge) continue;
 
@@ -513,7 +513,7 @@ function updateScoreSummary() {
     decisionsList.innerHTML = '';
 
     // Show all 10 decisions
-    for (const slideId of ['2', '5', '6', '10', '11', '13', '14', '15', '17', '18']) {
+    for (const slideId of ['4', '5', '6', '9', '11', '12', '13', '16', '17', '18']) {
         const decision = decisions[slideId];
         const decisionName = DECISION_NAMES[slideId];
         const item = document.createElement('div');
