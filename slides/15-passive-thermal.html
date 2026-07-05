@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apollo 13 - Passive Thermal Control. The barbecue roll maneuver to prevent freezing and overheating.">
+    <title>Apollo 13 - Passive Thermal Control</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="15">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 15 of 30</span>
+        <!-- Decision Tracker (shown after first decision) -->
+        <div class="decision-tracker" id="decisionTracker">
+            <span class="tracker-label">Decisions:</span>
+            <div class="decision-badges">
+                <span class="badge pending" data-decision="4" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="6" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="9" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="11" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="12" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="13" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="16" title="Comm Power">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Recharge">⚪</span>
+                <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
+            </div>
+        </div>    </nav>
+    <main class="slide-container">
+        <article class="slide info">
+            <header class="slide-header">
+                <span class="slide-type">Background Information</span>
+                <h1>Passive Thermal Control</h1>
+                <time class="timestamp">Meanwhile — The "Barbecue Roll" That Kept Them Alive</time>
+            </header>
+            <figure class="slide-image">
+                <img src="../assets/images/slide13_ptc_diagram.png" alt="Passive Thermal Control rotation diagram" loading="lazy">
+                <figcaption>The spacecraft slowly rotating to distribute heat evenly</figcaption>
+            </figure>
+            <section class="slide-content">
+                <p>While the crew battled the other crises, a quieter life-saver had been at work for days: Apollo 13 was turning in a slow spin — the "barbecue roll" — the whole way home.</p>
+
+                <h2>The Problem: Space Is Both Freezing AND Boiling</h2>
+                <p>In space, there's no air to spread heat around. Whatever faces the Sun bakes; whatever faces away freezes:</p>
+
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">Temperature Extremes:</h3>
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="background: linear-gradient(to right, #FF6B00, #FF0000); color: white; padding: 1rem; border-radius: 8px;">
+                            <strong>☀️ Side facing the Sun:</strong> +250°F (121°C)
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Hot enough to boil water</p>
+                        </div>
+                        <div style="background: linear-gradient(to right, #0066CC, #000033); color: white; padding: 1rem; border-radius: 8px;">
+                            <strong>❄️ Side in shadow:</strong> -250°F (-157°C)
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Colder than Antarctica's coldest day</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem;"><strong>Temperature difference:</strong> a 500°F swing from one side of the ship to the other!</p>
+                </div>
+
+                <h2>What Happens Without Rotation?</h2>
+                <div style="background: var(--bg-light); border-left: 4px solid var(--crisis-red); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <ul>
+                        <li>🔥 <strong>Sun side:</strong> electronics overheat, seals fail, windows crack from thermal stress</li>
+                        <li>❄️ <strong>Shadow side:</strong> batteries lose capacity, propellants freeze in their lines, mechanisms jam</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-weight: 700; color: var(--crisis-red);">
+                        Result: a spacecraft slowly wrecked by its own hot and cold spots.
+                    </p>
+                </div>
+
+                <h2>The Solution: Passive Thermal Control (PTC)</h2>
+                <p>Apollo used a simple, brilliant fix: <strong>rotate slowly</strong> so every side takes its turn in the Sun and in shadow.</p>
+
+                <details class="info-section" open>
+                    <summary>🔄 How the "Barbecue Roll" Works</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>The Maneuver:</h4>
+                        <ul>
+                            <li><strong>Rotation axis:</strong> the spacecraft's long axis — like a rotisserie chicken</li>
+                            <li><strong>Rotation rate:</strong> a few lazy revolutions per hour — Apollo 13's improvised roll came out to roughly one rotation every 10–20 minutes</li>
+                            <li><strong>Method:</strong> small RCS (Reaction Control System) thruster pulses start the spin, then occasional pulses keep it steady</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">Why It Works:</h4>
+                        <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p>Think of a hot dog on a grill: leave it still and one side burns while the other stays raw; keep it turning and it cooks evenly. Same physics in space — the slowly rolling hull stayed at moderate, safe temperatures.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>⚠️ PTC Challenges on Apollo 13</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>Problem #1: A Wounded, Lopsided Spacecraft</h4>
+                        <p>The damaged Service Module was still venting oxygen and water. The escaping gas acted like tiny rocket engines, constantly nudging the slow spin into a wobble.</p>
+
+                        <h4 style="margin-top: 1.5rem;">Problem #2: Hard to Check Their Orientation</h4>
+                        <p>Normally the autopilot and the spacecraft's gyroscopic platform held the PTC attitude automatically — star sightings only re-checked the platform's alignment now and then. With those systems powered down, and a glittering debris cloud hiding the real stars, the crew had to set up and watch the roll largely by hand.</p>
+
+                        <h4 style="margin-top: 1.5rem;">Problem #3: Limited Thruster Fuel</h4>
+                        <p>Every correction pulse burned propellant that might be needed for course corrections later. Keep the roll steady, but spend as little as possible.</p>
+
+                        <div style="background: var(--bg-yellow-light); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <p style="font-weight: 700;">Solution:</p>
+                            <p style="margin-top: 0.5rem;">Mission Control worked out a modified, mostly manual PTC procedure. The crew timed the rotation and nudged it with short thruster pulses every few hours.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="info-section">
+                    <summary>🎯 Why PTC Was Critical for Apollo 13</summary>
+                    <div style="padding: 1.5rem;">
+                        <h4>A Colder Ride Than Planned:</h4>
+                        <p>Apollo 13 was planned as a ten-day mission with a lunar landing. Instead it flew about six days straight out and back — with the Command Module shut down and nearly every heater off to save power. The slow roll was almost the only thermal control left.</p>
+
+                        <h4 style="margin-top: 1.5rem;">Critical Systems That Needed Protection:</h4>
+                        <ul>
+                            <li>💧 <strong>Water tanks:</strong> couldn't be allowed to freeze — needed for drinking and equipment cooling</li>
+                            <li>🚀 <strong>Thruster propellants:</strong> freeze at surprisingly warm temperatures (around +12 to +19°F) — a frozen thruster is a dead thruster</li>
+                            <li>🪟 <strong>Windows:</strong> thermal shock can crack glass</li>
+                            <li>🛡️ <strong>Heat shield:</strong> nobody knew how days of deep cold-soak might affect it</li>
+                        </ul>
+
+                        <h4 style="margin-top: 1.5rem;">Crew Comfort (Barely):</h4>
+                        <p>Even with PTC working, the LM cabin fell to around 50°F, and the powered-down Command Module dropped to about 38°F. Without the roll, it would have been far worse.</p>
+                        <p style="margin-top: 0.5rem; font-style: italic;">Still miserable, but survivable.</p>
+
+                        <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <p style="font-weight: 700;">Success!</p>
+                            <p style="margin-top: 0.5rem;">Despite the challenges, the barbecue roll held for the entire journey home. Every critical system stayed within its temperature limits.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <h2 style="margin-top: 2rem;">The Manual Process</h2>
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p>Every few hours, the crew timed a full rotation, fired a short thruster pulse if the spin had drifted, logged the fuel used, and reported to Houston.</p>
+                    <p style="margin-top: 1rem; font-style: italic;">
+                        Routine, repetitive background work — on top of every other survival task, for days on end.
+                    </p>
+                </div>
+
+                <blockquote style="margin: 2rem 0 0.5rem 0;">
+                    "We're rotating like a chicken on a spit. Every 20 minutes, we'd go from looking at the Sun to looking at black space to looking at the Sun again. It was hypnotic. But it was keeping us alive."
+                    <cite>— Fred Haise</cite>
+                </blockquote>
+                <p style="margin: 0 0 2rem 0; font-size: 0.85rem; font-style: italic;">🎬 Dramatization — not a documented quote.</p>
+
+                <div style="background: var(--bg-blue-light); border: 2px solid var(--nasa-blue); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <h3 style="margin-bottom: 1rem;">🔬 The Engineering Genius</h3>
+                    <ul style="margin-top: 1rem;">
+                        <li>✓ <strong>Simple concept:</strong> just spin the ship</li>
+                        <li>✓ <strong>No heaters, coolers, or pumps needed</strong></li>
+                        <li>✓ <strong>Tiny fuel cost:</strong> a few thruster pulses every few hours</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; font-weight: 700;">
+                        Sometimes the best solutions are the simplest ones.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-green-light); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                    <p style="font-weight: 700; font-size: 1.1rem;">The barbecue roll wasn't glamorous.</p>
+                    <p style="margin-top: 0.5rem;">But it was one more piece of the survival puzzle that worked.</p>
+                    <p style="margin-top: 0.5rem;">And in space, "it worked" is the highest praise.</p>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="slide-nav">
+        <a href="14-long-journey.html" class="btn-prev">← Previous</a>
+        <a href="16-communication-discipline.html" class="btn-next">Next →</a>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

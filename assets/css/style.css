@@ -1048,3 +1048,41 @@ cite {
         max-width: 100%;
     }
 }
+
+/* Running score in the decision tracker */
+.tracker-score {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--nasa-blue);
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    align-self: center;
+}
+
+/* Locked decision buttons — the call is made, no do-overs */
+.btn-choose:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+.option.selected .btn-choose:disabled {
+    opacity: 1;
+}
+
+/* "Sources for Skeptics" citation block on decision results */
+.sources-box {
+    background: var(--bg-blue-light, #eef4fb);
+    border-left: 4px solid var(--nasa-blue, #0B3D91);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+}
+.sources-box h3 {
+    margin-bottom: 0.5rem;
+}
+.sources-box ul {
+    margin: 0.75rem 0 0 1.25rem;
+}
+.sources-box li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
+}
