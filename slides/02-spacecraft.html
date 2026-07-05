@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about the three-module Apollo spacecraft system: Command Module, Service Module, and Lunar Module.">
+    <title>Apollo 13 - Spacecraft Configuration</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="2">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 2 of 30</span>
+        <!-- Decision Tracker (shown after first decision) -->
+        <div class="decision-tracker" id="decisionTracker">
+            <span class="tracker-label">Decisions:</span>
+            <div class="decision-badges">
+                <span class="badge pending" data-decision="4" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="6" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="9" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="11" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="12" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="13" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="16" title="Comm Power">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Recharge">⚪</span>
+                <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
+            </div>
+        </div>    </nav>
+
+    <!-- Main Content -->
+    <main class="slide-container">
+        <article class="slide info">
+            <header class="slide-header">
+                <span class="slide-type">Background Information</span>
+                <h1>Spacecraft Configuration</h1>
+                <p style="font-style: italic; color: #666;">Know Your Ship: Three Spacecraft in One</p>
+            </header>
+
+            <section class="slide-content">
+                <p>
+                    Before you fly a mission, you need to know your ship. The Apollo "spacecraft" was actually <strong>three separate vehicles</strong> stacked together: the Command Module, the Service Module, and the Lunar Module. Each one had its own job. Take the tour — some of these details will matter more than you think.
+                </p>
+
+                <figure class="slide-image">
+                    <img src="../assets/images/spacecraft.jpg" alt="Apollo spacecraft showing the three-module configuration" loading="lazy">
+                    <figcaption>The complete Apollo spacecraft: Command Module (top), Service Module (middle), and Lunar Module (bottom)</figcaption>
+                </figure>
+
+                <h2 style="margin-top: 2rem;">The Three Modules</h2>
+
+                <!-- Info Grid -->
+                <div class="info-grid" style="grid-template-columns: 1fr; gap: 1.5rem;">
+                    <!-- Command Module -->
+                    <details class="info-section" open>
+                        <summary>🔺 Command Module "Odyssey" — Crew Cabin & Re-Entry Capsule</summary>
+                        <div style="padding: 1.5rem;">
+                            <p style="margin-bottom: 1rem;">
+                                The cone-shaped cabin where all three astronauts live for most of the trip — about as much room inside as a large walk-in closet. It's the only part of the ship with a heat shield, which means it's the <strong>only part that can come home</strong> through Earth's atmosphere.
+                            </p>
+                            <h4 style="margin-bottom: 0.5rem; color: var(--nasa-blue);">Key Features:</h4>
+                            <ul style="margin-bottom: 1rem;">
+                                <li>Ablative heat shield (burns away during re-entry to carry heat off)</li>
+                                <li>Three 83-foot parachutes for splashdown</li>
+                                <li>Navigation and guidance systems</li>
+                                <li>Small re-entry batteries — backup power for the final hours only</li>
+                            </ul>
+                            <div style="background: var(--bg-yellow-light); padding: 1rem; border-left: 4px solid var(--caution-yellow); border-radius: 8px;">
+                                <strong>Worth noticing:</strong> On its own, Odyssey has only those small batteries and a limited oxygen supply. Nearly all of its electricity, oxygen, and water is piped in from the module behind it.
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Service Module -->
+                    <details class="info-section">
+                        <summary>⚙️ Service Module — Power & Propulsion Workhorse</summary>
+                        <div style="padding: 1.5rem;">
+                            <p style="margin-bottom: 1rem;">
+                                If the Command Module is the crew's apartment, the Service Module is the power plant, water works, oxygen supply, and main engine — all bolted on behind it in one big cylinder.
+                            </p>
+                            <h4 style="margin-bottom: 0.5rem; color: var(--nasa-blue);">What It Carries:</h4>
+                            <ul style="margin-bottom: 1rem;">
+                                <li><strong>3 Fuel Cells:</strong> Combine oxygen + hydrogen to make electricity — with drinking water as a bonus byproduct</li>
+                                <li><strong>2 Oxygen Tanks:</strong> Super-cold liquid oxygen at -297°F, feeding both the fuel cells and the air the crew breathes</li>
+                                <li><strong>Main Engine (SPS):</strong> 20,500 pounds of thrust for big course changes</li>
+                                <li><strong>High-Gain Antenna:</strong> The main radio link to Earth</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- Lunar Module -->
+                    <details class="info-section">
+                        <summary>🛸 Lunar Module "Aquarius" — The Moon Lander</summary>
+                        <div style="padding: 1.5rem;">
+                            <p style="margin-bottom: 1rem;">
+                                The spider-legged lander riding along below the other two modules. Its whole job: carry two astronauts down to the Moon's surface and back up again — a design life of about 45 hours for a crew of two. The cabin is even smaller than the Command Module's, with standing room only. <strong>No seats.</strong>
+                            </p>
+                            <h4 style="margin-bottom: 0.5rem; color: var(--nasa-blue);">A Complete Spacecraft of Its Own:</h4>
+                            <ul style="margin-bottom: 1rem;">
+                                <li>Its own oxygen supply</li>
+                                <li>Its own batteries (completely separate from the CM and SM)</li>
+                                <li>Its own engines — including a throttleable descent engine</li>
+                                <li>Its own life support and water tanks</li>
+                            </ul>
+                            <div style="background: var(--bg-green-light); padding: 1rem; border-left: 4px solid var(--success-green); border-radius: 8px;">
+                                <strong>Remember this:</strong> Once the LM separates to land on the Moon, no one can help it — so it has to carry <em>everything</em> it needs to keep its crew alive, all by itself. A fully independent spacecraft, docked right there in the stack. File that away. It matters later.
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- How They Connect -->
+                    <details class="info-section">
+                        <summary>🔗 How They Connect — The Docking System</summary>
+                        <div style="padding: 1.5rem;">
+                            <h4 style="margin-bottom: 0.5rem; color: var(--nasa-blue);">After Launch:</h4>
+                            <ol style="margin-bottom: 1rem;">
+                                <li>CM/SM separate from the Saturn V's third stage</li>
+                                <li>CM/SM turn around 180°</li>
+                                <li>CM docks with the LM nose-to-nose</li>
+                                <li>LM is pulled free of its adapter</li>
+                                <li>The combined spacecraft flies on to the Moon</li>
+                            </ol>
+                            <p style="margin: 0;">
+                                <strong>Docking Tunnel:</strong> A 32-inch-wide tunnel connects the Command Module to the Lunar Module. Whenever both cabins are pressurized, crew members can float through it from one spacecraft to the other.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Why Three Modules? -->
+                <div style="background: var(--bg-blue-light); border: 2px solid var(--nasa-blue); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Why Three Modules?</h3>
+                    <div style="display: grid; gap: 1rem;">
+                        <div>
+                            <h4 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">Specialization</h4>
+                            <p style="margin: 0; font-size: 0.95rem;">Each module is built for exactly one job: CM for carrying the crew home, SM for power and propulsion, LM for landing on the Moon.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">Weight Savings</h4>
+                            <p style="margin: 0; font-size: 0.95rem;">Don't haul landing legs back to Earth. Don't drag the heavy Service Module through the atmosphere. Shed what you no longer need at each stage.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">Independence</h4>
+                            <p style="margin: 0; font-size: 0.95rem;">The LM has to survive on its own far from the mothership, so the stack really carries <strong>two complete, self-sufficient spacecraft</strong> — each with its own power, oxygen, and engines.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Complete -->
+                <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: var(--bg-light); border-radius: 8px;">
+                    <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Three modules. Three jobs. One ship.</p>
+                    <p style="font-size: 1.125rem; font-style: italic; color: #666;">Tour complete — now back to the mission.</p>
+                    <p style="font-size: 1.5rem; margin-top: 1rem;">🔺 CM + ⚙️ SM + 🛸 LM = 🚀 One Moon Ship</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="slide-nav">
+        <a href="01-launch.html" class="btn-prev">← Previous</a>
+        <a href="03-explosion.html" class="btn-next">Next →</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -11,19 +11,19 @@
     <nav class="main-nav">
         <a href="../index.html" class="nav-home">🏠 Home</a>
         <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
-        <span class="nav-progress">Slide 28 of 29</span>
+        <span class="nav-progress">Slide 28 of 30</span>
         <div class="decision-tracker" id="decisionTracker">
             <span class="tracker-label">Decisions:</span>
             <div class="decision-badges">
-                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
-                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
-                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
-                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
-                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
-                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
-                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
-                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
-                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="4" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="6" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="9" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="11" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="12" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="13" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="16" title="Comm Power">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Recharge">⚪</span>
                 <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
             </div>
         </div>
@@ -43,184 +43,80 @@
 
             <section class="slide-content">
                 <h2>Who Was John Aaron?</h2>
-                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                    <ul>
-                        <li><strong>Full Name:</strong> John W. Aaron</li>
-                        <li><strong>Born:</strong> 1943, rural western Oklahoma</li>
-                        <li><strong>Education:</strong> Physics degree (1964) from Southwestern State College, Weatherford, OK</li>
-                        <li><strong>NASA Career:</strong> Joined NASA in 1964, became legendary flight controller</li>
-                        <li><strong>Role:</strong> EECOM (Electrical, Environmental, and Communications systems)</li>
-                        <li><strong>EECOM duties:</strong> Power, oxygen, cooling, sensors, telemetry to Mission Control</li>
-                    </ul>
-                </div>
+                <p>Born in 1943 in Wellington, Texas, and raised on a ranch in rural western Oklahoma, John Aaron earned a physics degree in 1964 and joined NASA the same year. By Apollo he was an <strong>EECOM</strong>—the Mission Control position responsible for a spacecraft's electrical, environmental, and communication systems. Two missions made him a legend.</p>
 
                 <h2 style="margin-top: 2rem;">Apollo 12: "SCE to AUX"</h2>
                 <details class="info-section" open>
-                    <summary>⚡ The Lightning Strike That Should Have Ended the Mission</summary>
+                    <summary>⚡ The Lightning Strikes That Nearly Ended a Moon Landing</summary>
                     <div style="padding: 1.5rem;">
-                        <h4>November 14, 1969 - 36 Seconds After Liftoff:</h4>
-                        <p>Two lightning strikes hit Apollo 12 during ascent. The spacecraft's data went completely haywire. Mission Control's screens filled with gibberish. Controllers were blind to power and fuel-cell data. An abort seemed inevitable.</p>
+                        <p><strong>November 14, 1969.</strong> Lightning hit Apollo 12 twice—36 seconds after liftoff, and again at 52 seconds. The fuel cells dropped offline, alarms lit up the cockpit, and the telemetry on Mission Control's screens turned to gibberish. Controllers were blind. An abort looked likely.</p>
 
-                        <div style="background: var(--bg-yellow-light); padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
-                            <h4>The Problem:</h4>
-                            <ul>
-                                <li>⚡ Lightning scrambled telemetry data</li>
-                                <li>⚡ Screens showed random, meaningless numbers</li>
-                                <li>⚡ Flight Director couldn't see power or fuel status</li>
-                                <li>⚡ Standard procedure: ABORT</li>
-                            </ul>
-                        </div>
-
-                        <h4 style="margin-top: 1.5rem;">John Aaron's Split-Second Call:</h4>
-                        <p>Watching his EECOM screens, Aaron recognized a specific telemetry pattern. He'd seen it before—once—during a simulation when the Signal Conditioning Equipment (SCE) lost its normal power supply.</p>
+                        <p style="margin-top: 1rem;">Aaron had seen that exact pattern of garbage data once, in a ground test a year earlier—and had bothered to trace it to an obscure box called the <strong>Signal Conditioning Equipment (SCE)</strong>, which had a backup power mode.</p>
 
                         <div style="background: var(--bg-blue-light); border-left: 4px solid var(--nasa-blue); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                            <p style="font-weight: 700; margin-bottom: 0.5rem;">Aaron to Flight Director:</p>
                             <blockquote style="margin: 0;">
-                                "Flight, try SCE to AUX."
+                                "Flight, EECOM. Try SCE to Aux."
+                                <cite>— John Aaron, Mission Control</cite>
                             </blockquote>
 
-                            <p style="margin-top: 1rem;">CAPCOM relayed it to the crew. Nobody on board knew what SCE was.</p>
+                            <p style="margin-top: 1rem;">Almost nobody knew what he meant. When CAPCOM Gerald Carr relayed the call, Commander <strong>Pete Conrad</strong> shot back: <em>"What the hell is that?"</em></p>
 
-                            <p style="margin-top: 1rem;"><strong>Alan Bean</strong> (Lunar Module Pilot): "What's that?"</p>
+                            <p style="margin-top: 1rem;">But Lunar Module Pilot <strong>Alan Bean</strong> remembered the little switch on Panel 8—and flipped it to AUX.</p>
 
-                            <p style="margin-top: 0.5rem;">Then Bean remembered—a tiny switch on Panel 8. He flipped it to AUX.</p>
-
-                            <p style="margin-top: 1rem; font-weight: 700;">Telemetry came back. Data was clean. Mission saved.</p>
+                            <p style="margin-top: 1rem; font-weight: 700;">Telemetry snapped back clean. With good data again, the crew reset the fuel cells, and Apollo 12 flew on to a pinpoint Moon landing.</p>
                         </div>
-
-                        <h4 style="margin-top: 1.5rem;">Why This Mattered:</h4>
-                        <p>Without that switch flip, controllers were blind. They would have aborted the mission. Instead, Apollo 12 went on to complete a perfect lunar landing. All because John Aaron:</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li>✓ Remembered an obscure simulation from months earlier</li>
-                            <li>✓ Recognized a pattern no one else saw</li>
-                            <li>✓ Acted with confidence under extreme pressure</li>
-                            <li>✓ Made a call that saved the mission in seconds</li>
-                        </ul>
 
                         <div style="background: var(--bg-green-light); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
                             <p style="font-weight: 700;">The Nickname:</p>
-                            <p style="margin-top: 0.5rem;">NASA Flight Director Gerry Griffin called Aaron a <strong>"steely-eyed missile man"</strong>—the highest compliment in Mission Control. The nickname stuck.</p>
+                            <p style="margin-top: 0.5rem;">That call earned Aaron Mission Control's highest compliment: <strong>"steely-eyed missile man."</strong> It stuck for the rest of his career.</p>
                         </div>
                     </div>
                 </details>
 
-                <h2 style="margin-top: 2rem;">Apollo 13: The Power Plan</h2>
+                <h2 style="margin-top: 2rem;">Apollo 13: Master of the Watts</h2>
                 <details class="info-section" open>
-                    <summary>🔋 Leading the Power & Consumables Strategy</summary>
+                    <summary>🔋 In Charge of Every Watt on Two Spacecraft</summary>
                     <div style="padding: 1.5rem;">
-                        <h4>After the Explosion:</h4>
-                        <p>When Apollo 13's oxygen tank exploded, Flight Director Gene Kranz made a critical decision: <strong>Put John Aaron in charge of ALL power and consumables for both spacecraft.</strong></p>
+                        <p>After the explosion, Gene Kranz put Aaron in charge of <strong>power and consumables for both spacecraft</strong>—with authority to veto anything that used a watt he hadn't budgeted. Mission Control's mainframes crunched the trajectory; the watt-counting was done with slide rules and graph paper.</p>
 
-                        <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
-                            <h4>Aaron's Authority:</h4>
-                            <ul>
-                                <li>💡 <strong>Complete control:</strong> Every watt on both spacecraft</li>
-                                <li>💡 <strong>Veto power:</strong> Could reject any checklist item that used too much power</li>
-                                <li>💡 <strong>Master strategist:</strong> Shaped every decision around power budget</li>
-                                <li>💡 <strong>Team leadership:</strong> Coordinated with Arnie Aldrich (master checklists) and Bill Peters (LM survival systems)</li>
-                            </ul>
+                        <h4 style="margin-top: 1.5rem;">The Battery Problem</h4>
+                        <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <p>Odyssey's three re-entry batteries held about <strong>120 amp-hours</strong> when full, and a normal re-entry burned roughly 70–80. In the scramble after the explosion, one battery had been drawn down to about half—the set was some 20 amp-hours short, and nobody wanted to fly re-entry without margin.</p>
+
+                            <p style="margin-top: 1rem;"><strong>The fix nobody had ever tried:</strong> run power backwards through the docking-tunnel umbilical and recharge Odyssey's battery from Aquarius. Aaron's team worked out the procedure with LM specialist Bill Peters. The trickle charge ran about 15 hours and brought the batteries back to roughly <strong>118 amp-hours—essentially full</strong> for the ride home.</p>
                         </div>
 
-                        <h4 style="margin-top: 1.5rem;">The Challenges:</h4>
-                        <p>The crew needed power for 90+ hours to reach Earth, then enough to power up the Command Module for re-entry. Aaron had to:</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li>📊 Calculate exact power budget for entire mission</li>
-                            <li>📊 Account for every amp-hour remaining</li>
-                            <li>📊 Build minimal power-up sequence for frozen CM</li>
-                            <li>📊 Design LM-to-CM battery charging procedure (never done before)</li>
-                            <li>📊 Leave margin for unexpected emergencies</li>
-                        </ul>
-
-                        <h4 style="margin-top: 1.5rem;">The Tools: Slide Rules and Graph Paper</h4>
-                        <p>This was 1970. No computers for controllers. Aaron's team calculated power budgets by hand:</p>
-                        <ul style="margin-top: 0.5rem;">
-                            <li>📐 Slide rules for multiplication and division</li>
-                            <li>📐 Graph paper to track power over time</li>
-                            <li>📐 Reference manuals for every system's power draw</li>
-                            <li>📐 Coffee, determination, and zero margin for error</li>
-                        </ul>
-
-                        <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                            <h4>The Battery Charging Plan:</h4>
-                            <p>One of Aaron's team's greatest innovations: charging the Command Module batteries from the Lunar Module. This had never been attempted.</p>
-
-                            <p style="margin-top: 1rem;"><strong>The Problem:</strong> CM batteries drained to ~2% during 4-day power-down. Not enough for re-entry.</p>
-
-                            <p style="margin-top: 1rem;"><strong>The Solution:</strong> Aaron's team created a procedure to transfer LM battery power to CM batteries. Engineers Jim Kelly and Bill Peters worked out the details. Ken Mattingly tested it in simulators.</p>
-
-                            <p style="margin-top: 1rem; font-weight: 700;">It worked. Without this, the crew would have died during re-entry.</p>
-                        </div>
-
-                        <h4 style="margin-top: 1.5rem;">The Re-Entry Power Budget:</h4>
-                        <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace;">
-                            <p><strong>Available power:</strong> ~43 amp-hours (after 4 days)</p>
-                            <p style="margin-top: 0.5rem;"><strong>Required for re-entry:</strong> ~40 amp-hours minimum</p>
-                            <p style="margin-top: 0.5rem; color: var(--caution-yellow);"><strong>Margin for error:</strong> ~3 amp-hours (7%)</p>
-                        </div>
-
-                        <p style="margin-top: 1rem;">Aaron's power plan left just enough margin. At splashdown, batteries had ~20% remaining. Any less, and the crew would have died.</p>
+                        <h4 style="margin-top: 1.5rem;">The Power-Up Sequence</h4>
+                        <p>No one had ever restarted a cold, dead Command Module in flight. Aaron's tiger team wrote a bare-minimum sequence to wake Odyssey without blowing the power budget. <strong>Arnie Aldrich</strong> integrated the checklists, and <strong>Ken Mattingly</strong> flew them over and over in the simulator, feeding fixes back until every step worked. Reading the final procedures up to the crew took about two hours.</p>
 
                         <div style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                            <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: They Made It Home</p>
-                            <p>John Aaron's power budget was perfect. Every calculation correct. Every decision sound. The crew had just enough electricity to light the guidance computer and re-enter safely.</p>
+                            <p style="font-weight: 700; margin-bottom: 0.5rem;">Result: Odyssey Woke Up</p>
+                            <p>The frozen, dripping-wet Command Module powered up without a single short circuit—and splashed down with amp-hours to spare. Aaron's budget held.</p>
                         </div>
                     </div>
                 </details>
 
-                <h2 style="margin-top: 2rem;">Career After Apollo</h2>
-                <details class="info-section">
-                    <summary>🚀 From Flight Controller to NASA Leadership</summary>
-                    <div style="padding: 1.5rem;">
-                        <ul>
-                            <li><strong>Skylab (1973-1974):</strong> Headed EECOM section, training controllers for America's first space station</li>
-                            <li><strong>Space Shuttle (1970s-1980s):</strong> Moved to Orbiter development; became project manager for Shuttle flight software (5-computer software-voting flight control system)</li>
-                            <li><strong>Space Station Freedom (1984-1993):</strong> Served as deputy and later manager at JSC for Space Station projects</li>
-                            <li><strong>Later roles:</strong> Systems engineering and program leadership at JSC, assignments with NASA HQ and JPL</li>
-                            <li><strong>Retirement:</strong> Left NASA in 2000 after 36 years of service</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <h2 style="margin-top: 2rem;">Recognition & Legacy</h2>
-                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                    <h4>Presidential Medal of Freedom:</h4>
-                    <p>John Aaron received the Presidential Medal of Freedom as part of the Apollo 13 Mission Operations Team. President Nixon awarded the medal to the team for their extraordinary efforts in bringing the crew home safely.</p>
-
-                    <h4 style="margin-top: 1.5rem;">In Popular Culture:</h4>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>🎬 Portrayed by Loren Dean in the film <em>Apollo 13</em> (1995)</li>
-                        <li>📺 Featured in documentaries like <em>Mission Control: The Unsung Heroes of Apollo</em></li>
-                        <li>📚 Mentioned in countless books about the Apollo program</li>
-                    </ul>
-                </div>
+                <h2 style="margin-top: 2rem;">After Apollo</h2>
+                <p>Aaron led the EECOM section through Skylab, managed the Space Shuttle's flight software, and rose to senior leadership at Johnson Space Center, retiring in 2000 after 36 years at NASA. With the rest of the Apollo 13 Mission Operations Team, he received the <strong>Presidential Medal of Freedom</strong>. In the 1995 film <em>Apollo 13</em> he is played by Loren Dean.</p>
 
                 <h2 style="margin-top: 2rem;">Why John Aaron Matters</h2>
                 <div style="background: var(--bg-blue-light); border-left: 4px solid var(--nasa-blue); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
-                    <h3 style="margin-bottom: 1rem;">Three Principles of Excellence:</h3>
+                    <h4>1. He did his homework</h4>
+                    <p>"SCE to AUX" wasn't luck. Aaron chased down a weird reading from a test a year earlier when nobody asked him to. When the same pattern hit a real mission, he was the one person ready.</p>
 
-                    <h4>1. Pattern Recognition Under Stress</h4>
-                    <p>Aaron didn't panic when Apollo 12's data went crazy. He recognized a pattern he'd seen once before. That split-second recognition saved the mission.</p>
+                    <h4 style="margin-top: 1.5rem;">2. He thought in systems</h4>
+                    <p>On Apollo 13 he treated power as the mission's master constraint—and made every checklist answer to it.</p>
 
-                    <h4 style="margin-top: 1.5rem;">2. Systems Thinking</h4>
-                    <p>On Apollo 13, Aaron treated power as the mission's master constraint. Every decision flowed from that understanding. He built checklists around it, vetoed actions that violated it, and made sure every watt counted.</p>
-
-                    <h4 style="margin-top: 1.5rem;">3. Team Orchestration</h4>
-                    <p>Aaron didn't work alone. He integrated efforts from flight directors, subsystem leads, simulator teams, and engineers across NASA. Ken Mattingly verified procedures in simulators. Jim Kelly and Bill Peters worked battery charging. Aaron coordinated it all.</p>
+                    <h4 style="margin-top: 1.5rem;">3. He worked through a team</h4>
+                    <p>Checklist writers, simulator crews, contractor engineers—Aaron orchestrated them all. The rescue's most famous procedure carries his name because of how many hands he coordinated, not because he worked alone.</p>
                 </div>
-
-                <blockquote style="margin: 2rem 0; font-size: 1.1rem;">
-                    "John Aaron represents the best of NASA: brilliant technical knowledge, calm under pressure, decisive action, and the humility to work as part of a team. He saved two missions. He saved six lives. He's the engineer everyone hopes to be."
-                    <cite>— Gene Kranz, Apollo Flight Director</cite>
-                </blockquote>
 
                 <div style="background: var(--bg-green-light); padding: 2rem; text-align: center; border-radius: 8px; margin: 2rem 0;">
                     <h3 style="margin-bottom: 1rem;">A Steely-Eyed Missile Man</h3>
                     <p style="font-size: 1.1rem; line-height: 1.6;">
-                        When spacecraft fail, systems break, and lives hang in the balance—<br>
-                        That's when you need someone like John Aaron.<br>
-                        Cool. Decisive. Brilliant.<br>
-                        A steely-eyed missile man.
+                        When spacecraft fail and lives hang on the numbers,<br>
+                        you want someone cool, prepared, and decisive at the console.<br>
+                        NASA had John Aaron.
                     </p>
                 </div>
             </section>

@@ -1,8 +1,24 @@
 # Apollo 13 Interactive - GitHub Pages Deployment Guide
 
-**Status**: ✅ Deployed to GitHub Pages
+**Status**: ✅ Deployed to GitHub Pages with a custom domain
 **Branch**: `main`
-**Live URL**: `https://robgruhl.github.io/apollo-13-scout-mission/`
+**Live URL**: `https://apollo13.quest/`
+**Underlying Pages URL**: `https://robgruhl.github.io/apollo-13-scout-mission/` (301-redirects to the custom domain — old QR codes keep working)
+
+---
+
+## 🌐 Custom Domain (apollo13.quest)
+
+Registered at Porkbun (2026-07-05). Three pieces make it work:
+
+1. **DNS at Porkbun** (apex + www):
+   - Four `A` records on the apex → GitHub Pages IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - Four `AAAA` records on the apex → `2606:50c0:8000::153`, `8001::153`, `8002::153`, `8003::153`
+   - `CNAME` record `www` → `robgruhl.github.io`
+2. **`CNAME` file** at the repo root containing exactly `apollo13.quest` — GitHub Pages reads it on every deploy. Don't delete it.
+3. **Repo Settings → Pages**: Custom domain = `apollo13.quest`, with **Enforce HTTPS** checked (the certificate takes a few minutes to provision after the first setup).
+
+To verify: `dig +short apollo13.quest` should return the four A-record IPs, and the old github.io URL should 301 to `https://apollo13.quest/`.
 
 ---
 
@@ -33,7 +49,7 @@ On the Pages settings screen:
 
 After 1-2 minutes, visit:
 ```
-https://robgruhl.github.io/apollo-13-scout-mission/
+https://apollo13.quest/
 ```
 
 You should see the Apollo 13 landing page with:
@@ -48,12 +64,12 @@ You should see the Apollo 13 landing page with:
 
 ### Option 1: Direct URL
 1. Open your phone browser
-2. Type: `robgruhl.github.io/apollo-13-scout-mission/`
+2. Type: `apollo13.quest`
 3. Bookmark for easy access
 
 ### Option 2: QR Code (Recommended)
 1. Go to: https://www.qr-code-generator.com/
-2. Paste URL: `https://robgruhl.github.io/apollo-13-scout-mission/`
+2. Paste URL: `https://apollo13.quest/`
 3. Download QR code (PNG or SVG)
 4. Scan with phone camera to test
 
@@ -138,7 +154,7 @@ git push origin main
 
 **Tip**: Add `?v=2` to URL to bypass browser cache:
 ```
-https://robgruhl.github.io/apollo-13-scout-mission/?v=2
+https://apollo13.quest/?v=2
 ```
 
 ---
@@ -169,7 +185,7 @@ https://robgruhl.github.io/apollo-13-scout-mission/?v=2
 
 2. **Settings**:
    - Content Type: URL
-   - URL: `https://robgruhl.github.io/apollo-13-scout-mission/`
+   - URL: `https://apollo13.quest/`
    - Error Correction: High (30%)
    - Size: 1000×1000 px minimum
 
@@ -192,7 +208,7 @@ Front: "Experience Apollo 13"
        "Scan to start your mission →"
 
 Back:  Large QR code (2" × 2")
-       URL underneath: robgruhl.github.io/apollo-13-scout-mission/
+       URL underneath: apollo13.quest
 ```
 
 **Option 2: Table Sign** (8.5" × 11")
@@ -260,7 +276,7 @@ Caption: "Continue online →"
 
 Once deployed, verify:
 
-- [ ] Site loads at: https://robgruhl.github.io/apollo-13-scout-mission/
+- [ ] Site loads at: https://apollo13.quest/
 - [ ] Landing page displays correctly
 - [ ] All 34 slides load (narrative, decision, and info pages)
 - [ ] Timeline page loads and links to slides
@@ -282,7 +298,7 @@ Once deployed, verify:
    - Tablet (if available)
 
 2. **Share with Ed**:
-   - Send URL: https://robgruhl.github.io/apollo-13-scout-mission/
+   - Send URL: https://apollo13.quest/
    - Get feedback on the full 34-slide experience
    - Walk through the exhibit table plan (`exhibit/README.md`)
 

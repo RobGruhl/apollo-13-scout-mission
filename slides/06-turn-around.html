@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apollo 13 Decision #1: Turn around and blast home, or use Moon's gravity in a free-return trajectory?">
+    <meta name="description" content="Apollo 13 Decision #3: Turn around and blast home, or use Moon's gravity in a free-return trajectory?">
     <title>Apollo 13 - Decision: Turn Around or Free-Return?</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body data-slide-id="5">
+<body data-slide-id="6">
     <!-- Navigation -->
     <nav class="main-nav">
         <a href="../index.html" class="nav-home">🏠 Home</a>
         <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
-        <span class="nav-progress">Slide 5 of 29</span>
+        <span class="nav-progress">Slide 6 of 30</span>
         <!-- Decision Tracker (shown after first decision) -->
         <div class="decision-tracker" id="decisionTracker">
             <span class="tracker-label">Decisions:</span>
             <div class="decision-badges">
-                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
-                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
-                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
-                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
-                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
-                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
-                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
-                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
-                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="4" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="6" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="9" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="11" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="12" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="13" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="16" title="Comm Power">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Recharge">⚪</span>
                 <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
             </div>
         </div>
@@ -35,9 +35,9 @@
     <main class="slide-container">
         <article class="slide decision">
             <header class="slide-header">
-                <span class="slide-type">🚨 Decision Point #2</span>
+                <span class="slide-type">🚨 Decision Point #3</span>
                 <h1>Turn Around or Free-Return?</h1>
-                <time class="timestamp">GET 61:29:42 | Post-Explosion Crisis</time>
+                <time class="timestamp">GET 61:29:43 | Post-Explosion Crisis</time>
             </header>
 
             <!-- The Situation -->
@@ -45,11 +45,16 @@
                 <h2>⚠️ The Situation</h2>
                 <ul>
                     <li>Oxygen tank explosion 6 hours ago at 200,000 miles from Earth</li>
-                    <li>Currently traveling ~24,000 mph AWAY from Earth toward the Moon</li>
-                    <li>Service module damaged, Command Module engine operation uncertain</li>
+                    <li>Still coasting toward the Moon at a few thousand mph — Earth's gravity has been slowing the climb the whole way out</li>
+                    <li>Service Module damaged — its main engine (the SPS) may be broken, and no one can tell</li>
                     <li>Fuel cells offline, running on limited backup batteries</li>
                     <li>Must decide route home NOW: direct reversal or loop around Moon</li>
                 </ul>
+
+                <figure style="margin: 1.5rem 0;">
+                    <img src="../assets/images/slide05_turn_or_free_return.png" alt="Trajectory diagram comparing a direct turnaround with a free-return path looping around the Moon" loading="lazy">
+                    <figcaption>The two possible routes home: turn straight around, or loop behind the Moon and let its gravity sling the spacecraft back toward Earth</figcaption>
+                </figure>
             </section>
 
             <!-- Decision Options -->
@@ -73,11 +78,10 @@
                         <div class="cons">
                             <h4>✕ Disadvantages</h4>
                             <ul>
-                                <li>Requires massive fuel burn</li>
-                                <li>Risks explosion of already damaged systems</li>
-                                <li>Burns through all LM descent fuel</li>
+                                <li>Requires a massive burn from the Service Module's big SPS engine — the engine sitting right next to the explosion damage, and nobody knows if it still works</li>
+                                <li>To get enough thrust, the crew would have to jettison the Lunar Module — throwing away their only lifeboat</li>
+                                <li>If the damaged engine failed or blew up mid-burn, there would be no backup and no LM to retreat to</li>
                                 <li>May damage weakened spacecraft structure further</li>
-                                <li>Untested maneuver with damaged systems</li>
                             </ul>
                         </div>
                     </div>
@@ -90,11 +94,6 @@
                     <button class="btn-choose">Choose This Option</button>
 
                     <div class="option-details">
-                        <figure style="margin: 1.5rem 0;">
-                            <img src="../assets/images/slide05_turn_or_free_return.png" alt="Free-return trajectory diagram showing path around the Moon" loading="lazy">
-                            <figcaption>Free-return trajectory uses lunar gravity</figcaption>
-                        </figure>
-
                         <div class="pros">
                             <h4>✓ Advantages</h4>
                             <ul>
@@ -109,7 +108,7 @@
                             <h4>✕ Disadvantages</h4>
                             <ul>
                                 <li>Takes much longer (must loop around Moon first)</li>
-                                <li>Crew waits 4+ days in damaged spacecraft</li>
+                                <li>Crew must survive nearly 4 more days in a crippled spacecraft</li>
                                 <li>More time for additional systems to fail</li>
                                 <li>Psychological stress of waiting</li>
                                 <li>More consumables needed (oxygen, water, power)</li>
@@ -131,21 +130,22 @@
                 <div class="result-content">
                     <p class="result-choice">✓ FREE-RETURN TRAJECTORY</p>
                     <p>
-                        At <strong>GET 61:29:42</strong>, the crew fired the Lunar Module descent engine for 31 seconds to put Apollo 13 back on a free-return trajectory - a path that would loop behind the Moon and use lunar gravity to slingshot them back to Earth.
+                        At <strong>GET 61:29:43</strong>, the crew fired the Lunar Module descent engine for about 34 seconds to put Apollo 13 back on a free-return trajectory - a path that would loop behind the Moon and use lunar gravity to slingshot them back to Earth.
                     </p>
                     <p>
                         <strong>Why NASA chose FREE-RETURN:</strong>
                     </p>
                     <ul style="margin: 1rem 0;">
                         <li>Safer approach that wouldn't stress already damaged systems</li>
-                        <li>Used the undamaged LM descent engine instead of the risky Service Module engine</li>
+                        <li>Used the undamaged LM descent engine instead of the Service Module's SPS engine, which sat right next to the explosion damage</li>
+                        <li>Kept the LM lifeboat — a direct abort would have meant jettisoning it and betting everything on the possibly damaged SPS</li>
                         <li>Conserved critical fuel for later course corrections</li>
                         <li>Proven technique from previous Apollo missions</li>
                         <li>Required patience, but minimized risk of catastrophic failure</li>
                     </ul>
                     <blockquote>
-                        "We're not going to try some crazy stunt to get them home faster. We're going to do this right, step by step, and bring them back alive."
-                        <cite>— Gene Kranz, Flight Director</cite>
+                        "Let's solve the problem, but let's not make it any worse by guessing."
+                        <cite>— Gene Kranz, Flight Director, to his controllers on the night of the accident</cite>
                     </blockquote>
                     <p style="background: var(--bg-green-light); border-left: 4px solid var(--success-green); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
                         <strong>Outcome:</strong> The free-return trajectory worked perfectly. Apollo 13 swung around the Moon and headed back toward Earth, giving the crew a chance at survival. The conservative choice saved lives.
@@ -153,6 +153,17 @@
 
                     <!-- Alignment Indicator (populated by JavaScript) -->
                     <div id="alignmentIndicator" class="alignment-indicator"></div>
+
+                    <div class="sources-box">
+                        <h3>📚 Sources for Skeptics</h3>
+                        <p>Would you have gambled on the fast way home? <strong>Arguing with the answer
+                        is exactly what good engineers do.</strong> Check the mission record yourself:</p>
+                        <ul>
+                            <li><a href="https://www.nasa.gov/history/afj/ap13fj/index.html" target="_blank" rel="noopener">Apollo 13 Flight Journal</a> — every radio call between the crew and Houston, annotated day by day, with photos and audio</li>
+                            <li><a href="https://apolloinrealtime.org/13/" target="_blank" rel="noopener">Apollo 13 in Real Time</a> — replay the whole mission with real Mission Control audio, synced to the second</li>
+                            <li><a href="https://ntrs.nasa.gov/api/citations/19710003598/downloads/19710003598.pdf" target="_blank" rel="noopener">Apollo 13 Mission Report (PDF)</a> — NASA's official engineering report: what broke, and exactly how they got home</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </article>
@@ -160,8 +171,8 @@
 
     <!-- Footer Navigation -->
     <footer class="slide-nav">
-        <a href="04-explosion.html" class="btn-prev">← Previous</a>
-        <a href="06-pc2-burn.html" class="btn-next">Next →</a>
+        <a href="05-power-conservation.html" class="btn-prev">← Previous</a>
+        <a href="07-explosion-cause.html" class="btn-next">Next →</a>
     </footer>
 
     <!-- JavaScript -->
