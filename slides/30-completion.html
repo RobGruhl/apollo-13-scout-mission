@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="You completed the Apollo 13 mission! Summary and share.">
+    <title>Apollo 13 - Mission Complete!</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="30">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Mission Complete!</span>
+        <!-- Decision Tracker hidden on completion page - full breakdown shown below -->
+    </nav>
+
+    <!-- Main Content -->
+    <main class="slide-container">
+        <article class="slide">
+            <header class="slide-header">
+                <span class="slide-type" style="background: var(--success-green);">🎉 Mission Complete</span>
+                <h1>A Successful Failure</h1>
+                <p style="font-style: italic; color: #666;">April 11-17, 1970</p>
+            </header>
+
+            <section class="slide-content">
+                <div style="background: linear-gradient(135deg, var(--nasa-blue) 0%, #1a5db8 100%); color: white; padding: 3rem 2rem; border-radius: 8px; text-align: center; margin: 2rem 0;">
+                    <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">🏆 Mission Accomplished</h2>
+                    <p style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">Three astronauts launched to the Moon</p>
+                    <p style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">An explosion 200,000 miles from Earth</p>
+                    <p style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">10 critical decisions</p>
+                    <p style="font-size: 1.5rem; margin-top: 1.5rem; font-weight: 700; color: white;">Three lives saved</p>
+                </div>
+
+                <h2>Mission Summary</h2>
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <ul class="event-list">
+                        <li><strong>April 11, 1970:</strong> Launch from Kennedy Space Center</li>
+                        <li><strong>April 13, GET 55:54:53:</strong> Oxygen tank explosion</li>
+                        <li><strong>Decision:</strong> Free-return trajectory around Moon</li>
+                        <li><strong>Decision:</strong> Move to Lunar Module lifeboat</li>
+                        <li><strong>Challenge:</strong> Survive 4 days in freezing, cramped conditions</li>
+                        <li><strong>April 17, 1970:</strong> Safe splashdown in Pacific Ocean</li>
+                        <li><strong>Result:</strong> All three astronauts survived</li>
+                    </ul>
+                </div>
+
+                <h2>Key Lessons</h2>
+                <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">🧠 Problem-Solving</h3>
+                        <p>When faced with impossible odds, break problems into manageable pieces. "Work the problem" became NASA's mantra.</p>
+                    </div>
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">🤝 Teamwork</h3>
+                        <p>Success required cooperation between crew in space and hundreds of engineers on Earth working around the clock.</p>
+                    </div>
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">🎯 Stay Calm</h3>
+                        <p>"Failure is not an option" - Gene Kranz. Staying calm under pressure enabled clear thinking and good decisions.</p>
+                    </div>
+                    <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--nasa-blue); margin-bottom: 0.5rem;">🔧 Creativity</h3>
+                        <p>The "mailbox" CO2 scrubber adapter was built from spare parts. Sometimes you have to improvise with what you have.</p>
+                    </div>
+                </div>
+
+                <h2>The Legacy</h2>
+                <p>
+                    While Apollo 13 never landed on the Moon, it became one of NASA's finest hours. The mission demonstrated that when things go wrong, human ingenuity, teamwork, and determination can overcome seemingly impossible odds.
+                </p>
+                <p>
+                    Jim Lovell called it a <strong>"successful failure"</strong> - they didn't achieve the Moon landing, but they brought three astronauts home alive against all odds.
+                </p>
+
+                <!-- Score Display -->
+                <div id="scoreSection" style="display: none;">
+                    <h2 style="text-align: center; margin-top: 3rem;">Your Mission Performance</h2>
+
+                    <!-- Score Badge -->
+                    <div id="scoreBadge" style="background: linear-gradient(135deg, var(--nasa-blue) 0%, #1a5db8 100%); color: white; padding: 3rem 2rem; border-radius: 8px; text-align: center; margin: 2rem 0;">
+                        <div id="rankEmoji" style="font-size: 4rem; margin-bottom: 1rem;">🏆</div>
+                        <h2 id="rankTitle" style="color: white; font-size: 2rem; margin-bottom: 1rem;">Mission Commander</h2>
+                        <p id="scoreDisplay" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">4/4</p>
+                        <p id="rankMessage" style="font-size: 1.125rem; color: white;">Perfect score! You made every decision exactly like NASA!</p>
+                    </div>
+
+                    <!-- Decision Comparison Table -->
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Your Decisions vs. NASA's Choices</h3>
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; overflow-x: auto;">
+                        <table id="comparisonTable" style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: var(--nasa-blue); color: white;">
+                                    <th style="padding: 0.75rem; text-align: left;">Decision Point</th>
+                                    <th style="padding: 0.75rem; text-align: center;">Your Choice</th>
+                                    <th style="padding: 0.75rem; text-align: center;">NASA's Choice</th>
+                                    <th style="padding: 0.75rem; text-align: center;">Result</th>
+                                </tr>
+                            </thead>
+                            <tbody id="comparisonBody">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Ed Gruhl Certificate Message -->
+                    <div style="background: var(--bg-yellow-light); border: 3px solid var(--caution-yellow); padding: 2rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+                        <h3 style="margin-bottom: 1rem;">📜 Earn Your Official Certificate!</h3>
+                        <p style="font-size: 1.125rem; margin-bottom: 1rem;">
+                            <strong>Visit the NASA Tent, Apollo Table</strong> to receive your official Apollo 13 Mission Completion Certificate!
+                        </p>
+                        <p style="font-size: 1rem; color: #666;">
+                            <strong>Location:</strong> STEM Area, NASA Tent, Apollo Table<br>
+                            <strong>Presented by:</strong> Ed Gruhl, Scout District Commissioner
+                        </p>
+                    </div>
+
+                    <!-- Share Your Score -->
+                    <h3 style="text-align: center; margin-top: 3rem; margin-bottom: 1rem;">Share Your Score with Fellow Scouts!</h3>
+                    <div id="shareForm" style="background: var(--bg-blue-light); padding: 2rem; border-radius: 8px; max-width: 500px; margin: 0 auto 2rem auto;">
+                        <p style="margin-bottom: 1.5rem; text-align: center;">Generate a shareable link to show your score and challenge your friends!</p>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div>
+                                <label for="scoutName" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Scout Name:</label>
+                                <input type="text" id="scoutName" placeholder="Your name" style="width: 100%; padding: 0.75rem; border: 2px solid #ccc; border-radius: 4px; font-size: 1rem;" required>
+                            </div>
+                            <div>
+                                <label for="troopNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Troop Number:</label>
+                                <input type="text" id="troopNumber" placeholder="e.g., Troop 123" style="width: 100%; padding: 0.75rem; border: 2px solid #ccc; border-radius: 4px; font-size: 1rem;" required>
+                            </div>
+                            <button onclick="generateShareLink()" class="btn-primary" style="margin-top: 0.5rem;">🔗 Generate Share Link</button>
+                        </div>
+                    </div>
+
+                    <!-- Share Link Display (hidden until generated) -->
+                    <div id="shareLinkDisplay" style="display: none; background: var(--bg-green-light); border: 2px solid var(--success-green); padding: 2rem; border-radius: 8px; max-width: 500px; margin: 0 auto 2rem auto; text-align: center;">
+                        <h4 style="margin-bottom: 1rem;">🎉 Your Share Link is Ready!</h4>
+                        <input type="text" id="shareURL" readonly style="width: 100%; padding: 0.75rem; border: 2px solid var(--success-green); border-radius: 4px; font-size: 0.875rem; margin-bottom: 1rem; background: white;">
+                        <button onclick="copyShareLink()" class="btn-primary">📋 Copy Link</button>
+                        <p style="margin-top: 1rem; font-size: 0.875rem; color: #666;">Share this link with fellow scouts to show your score and challenge them to try!</p>
+                    </div>
+                </div>
+
+                <div style="background: var(--bg-green-light); border: 2px solid var(--success-green); padding: 2rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+                    <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">🌟 You Helped Save Apollo 13! 🌟</p>
+                    <p style="font-size: 1.125rem;">By working through these decisions, you experienced the same choices NASA faced in 1970.</p>
+                </div>
+
+                <!-- Share Buttons -->
+                <div style="text-align: center; margin: 3rem 0;">
+                    <h3 style="margin-bottom: 1.5rem;">What's Next?</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 0 auto;">
+                        <a href="31-merit-badges.html" class="btn-primary" style="display: inline-block;">🏕️ Earn Merit Badges with This Project!</a>
+                        <a href="../index.html" class="btn-secondary">🏠 Return to Home</a>
+                        <a href="../timeline.html" class="btn-secondary">📅 View Timeline</a>
+                    </div>
+                </div>
+
+                <!-- Learn How This Was Built -->
+                <div style="background: var(--bg-blue-light); border: 2px solid var(--nasa-blue); padding: 2rem; border-radius: 8px; margin: 3rem 0;">
+                    <h3 style="margin-bottom: 1rem; text-align: center;">💻 Interested in How This Website Works?</h3>
+                    <p style="margin-bottom: 1rem; text-align: center;">
+                        This interactive experience is built with simple HTML, CSS, and JavaScript - the same technologies used to build websites all over the internet!
+                    </p>
+                    <p style="margin-bottom: 1.5rem; text-align: center; font-weight: 600;">
+                        Want to learn how to build something like this yourself?
+                    </p>
+                    <div style="text-align: center;">
+                        <a href="https://github.com/RobGruhl/apollo-13-scout-mission" target="_blank" rel="noopener" class="btn-primary" style="display: inline-block;">
+                            📖 View Code on GitHub
+                        </a>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #666; margin-top: 1.5rem; text-align: center;">
+                        The code is <strong>open source (MIT License)</strong> and free to explore, modify, and learn from!
+                    </p>
+                </div>
+
+                <!-- Merit Badge Section -->
+                <div style="background: var(--bg-yellow-light); border: 3px solid var(--caution-yellow); padding: 2rem; border-radius: 8px; margin: 3rem 0;">
+                    <h3 style="margin-bottom: 1rem; text-align: center;">🏕️ Working on Merit Badges?</h3>
+                    <p style="margin-bottom: 1.5rem; text-align: center;">
+                        This project can help you complete requirements for <strong>three different merit badges</strong>!
+                    </p>
+
+                    <!-- Programming Merit Badge -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--nasa-blue); margin-bottom: 1rem;">💻 Programming Merit Badge (2025)</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Requirement 4c:</strong> Learn about <strong>open source software</strong> (MIT License) vs. freeware and commercial software</li>
+                            <li><strong>Requirement 5:</strong> Use this as one of your <strong>three programming projects</strong> - modify the code, add features, or create your own version!</li>
+                            <li><strong>General Knowledge:</strong> Study real-world <strong>web development</strong> with HTML, CSS, and JavaScript</li>
+                            <li><strong>Careers:</strong> Explore software engineering and web development career paths</li>
+                        </ul>
+                    </div>
+
+                    <!-- Digital Technology Merit Badge -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--nasa-blue); margin-bottom: 1rem;">🌐 Digital Technology Merit Badge (2025)</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Requirement 3c:</strong> This is a complete <strong>website with 29 HTML pages</strong>, text content, images, and navigation</li>
+                            <li><strong>Requirement 4a:</strong> Learn about <strong>intellectual property</strong> (copyright, licensing) through our MIT License</li>
+                            <li><strong>Requirement 4b:</strong> Understand when it's permissible to use/modify open source software</li>
+                        </ul>
+                    </div>
+
+                    <!-- Space Exploration Merit Badge -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--nasa-blue); margin-bottom: 1rem;">🚀 Space Exploration Merit Badge (2025)</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Requirement 1:</strong> Historical reasons for space exploration and international cooperation</li>
+                            <li><strong>Requirement 2:</strong> Learn about <strong>space pioneers</strong> - Jim Lovell, Jack Swigert, Fred Haise, and John Aaron</li>
+                            <li><strong>Requirement 5a:</strong> Discuss a <strong>historic crewed mission</strong> - Apollo 13's rescue operation and major learnings</li>
+                            <li><strong>Requirement 7:</strong> Explore careers in space (NASA engineers, flight controllers, astronauts)</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--nasa-blue); margin-bottom: 1rem;">💡 Project Ideas to Modify This Code:</h4>
+                        <ul style="line-height: 1.8;">
+                            <li>Add audio narration to the slides</li>
+                            <li>Create a similar experience for another space mission (Apollo 11, Mars rovers, etc.)</li>
+                            <li>Add a timer to track how long each decision takes</li>
+                            <li>Create a multiplayer version where scouts can compare decisions in real-time</li>
+                            <li>Translate the content into another language</li>
+                            <li>Add accessibility features like screen reader support or high-contrast mode</li>
+                        </ul>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.875rem; color: #666; margin-bottom: 1rem;">
+                            <strong>Technology Stack:</strong> HTML5, CSS3, JavaScript (ES6+)<br>
+                            <strong>Total Code:</strong> ~1,200 lines (370 JS + 580 CSS + 29 HTML files)<br>
+                            <strong>License:</strong> MIT (free to use, modify, and share)
+                        </p>
+                        <p style="font-size: 1rem; font-weight: 600; margin-top: 1rem;">
+                            Talk to your merit badge counselor about how this project can help you!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Credits -->
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 8px; margin: 3rem 0; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">🎪 2026 Elevate Scout Jamboree</h3>
+                    <p style="margin-bottom: 0.5rem;"><strong>NASA Tent - Apollo Table</strong></p>
+                    <p style="margin-bottom: 1rem;">Presented by <strong>Ed Gruhl</strong><br>Scout District Commissioner, Glacial Trails District</p>
+                    <p style="font-size: 0.875rem; color: #666; margin-top: 1.5rem;">
+                        Educational content based on NASA historical records<br>
+                        Apollo 13 mission: April 11-17, 1970<br>
+                        All three astronauts survived and returned safely
+                    </p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="slide-nav">
+        <a href="29-ed-gruhl.html" class="btn-prev">← Previous</a>
+        <a href="31-merit-badges.html" class="btn-next">🏕️ Merit Badges →</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/app.js"></script>
+    <script>
+        // Display score and comparison table on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            displayScore();
+        });
+
+        function displayScore() {
+            const { correct, total } = calculateScore();
+            const rank = getScoreRank(correct, total);
+            const comparison = getDecisionComparison();
+
+            // Show score section
+            document.getElementById('scoreSection').style.display = 'block';
+
+            // Update score badge
+            document.getElementById('rankEmoji').textContent = rank.emoji;
+            document.getElementById('rankTitle').textContent = rank.rank;
+            document.getElementById('scoreDisplay').textContent = `${correct}/${total}`;
+            document.getElementById('rankMessage').textContent = rank.message;
+            document.getElementById('scoreBadge').style.background =
+                `linear-gradient(135deg, ${rank.color} 0%, ${adjustColor(rank.color, -20)} 100%)`;
+
+            // Populate comparison table
+            const tbody = document.getElementById('comparisonBody');
+            tbody.innerHTML = '';
+
+            comparison.forEach(item => {
+                const row = tbody.insertRow();
+                row.style.background = item.correct ? 'var(--bg-green-light)' : 'var(--bg-light)';
+
+                const cellName = row.insertCell(0);
+                cellName.textContent = item.name;
+                cellName.style.padding = '0.75rem';
+
+                const cellYour = row.insertCell(1);
+                cellYour.textContent = formatChoice(item.userChoice);
+                cellYour.style.padding = '0.75rem';
+                cellYour.style.textAlign = 'center';
+
+                const cellNasa = row.insertCell(2);
+                cellNasa.textContent = formatChoice(item.nasaChoice);
+                cellNasa.style.padding = '0.75rem';
+                cellNasa.style.textAlign = 'center';
+                cellNasa.style.fontWeight = '600';
+
+                const cellResult = row.insertCell(3);
+                cellResult.textContent = item.correct ? '✅' : '❌';
+                cellResult.style.padding = '0.75rem';
+                cellResult.style.textAlign = 'center';
+                cellResult.style.fontSize = '1.5rem';
+            });
+        }
+
+        function formatChoice(choice) {
+            const labels = {
+                'freeze': 'Freeze (Stay in CM)',
+                'squeeze': 'Squeeze (Move to LM)',
+                'turnaround': 'Turn Around',
+                'freereturn': 'Free-Return',
+                'burn': 'Perform PC+2 Burn',
+                'coast': 'Coast on Free-Return',
+                'donothing': 'Do Nothing',
+                'buildmailbox': 'Build Mailbox',
+                'sunearth': 'Sun/Earth Terminator',
+                'stars': 'Star Sighting',
+                'keeprunning': 'Keep Running',
+                'shutdown': 'Shut Down',
+                'extreme': 'Extreme Rationing',
+                'equal': 'Equal Rationing',
+                'drinking': 'Prioritize Drinking Water',
+                'silence': 'Radio Silence',
+                'regular': 'Regular Communication',
+                'jumpstart': 'Jump-Start from LM',
+                'reserve': 'CM Reserve Batteries Only',
+                'early': 'Early Jettison',
+                'late': 'Late Jettison',
+                'not made': '(Not Made)'
+            };
+            return labels[choice] || choice;
+        }
+
+        function adjustColor(color, amount) {
+            return '#' + color.replace(/^#/, '').replace(/../g,
+                color => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+        }
+
+        function generateShareLink() {
+            const name = document.getElementById('scoutName').value.trim();
+            const troop = document.getElementById('troopNumber').value.trim();
+
+            if (!name || !troop) {
+                alert('Please enter both your name and troop number!');
+                return;
+            }
+
+            const shareURL = generateShareURL(name, troop);
+            document.getElementById('shareURL').value = shareURL;
+            document.getElementById('shareLinkDisplay').style.display = 'block';
+            document.getElementById('shareLinkDisplay').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function copyShareLink() {
+            const shareURL = document.getElementById('shareURL').value;
+
+            try {
+                await navigator.clipboard.writeText(shareURL);
+                alert('Link copied! Share it with your fellow scouts!');
+            } catch (err) {
+                // Fallback: select the text
+                document.getElementById('shareURL').select();
+                alert('Link selected. Press Ctrl+C (or Cmd+C) to copy!');
+            }
+        }
+    </script>
+</body>
+</html>

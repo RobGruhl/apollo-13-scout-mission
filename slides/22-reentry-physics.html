@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo 13 - Re-Entry Corridor Physics</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-slide-id="22">
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Slide 22 of 29</span>
+        <!-- Decision Tracker (shown after first decision) -->
+        <div class="decision-tracker" id="decisionTracker">
+            <span class="tracker-label">Decisions:</span>
+            <div class="decision-badges">
+                <span class="badge pending" data-decision="2" title="Freeze or Squeeze">⚪</span>
+                <span class="badge pending" data-decision="5" title="Turn Around">⚪</span>
+                <span class="badge pending" data-decision="6" title="PC+2 Burn">⚪</span>
+                <span class="badge pending" data-decision="10" title="CO2 Mailbox">⚪</span>
+                <span class="badge pending" data-decision="11" title="Navigation">⚪</span>
+                <span class="badge pending" data-decision="13" title="Power Conservation">⚪</span>
+                <span class="badge pending" data-decision="14" title="Water Conservation">⚪</span>
+                <span class="badge pending" data-decision="15" title="Communication">⚪</span>
+                <span class="badge pending" data-decision="17" title="Battery Jump-Start">⚪</span>
+                <span class="badge pending" data-decision="18" title="SM Jettison">⚪</span>
+            </div>
+        </div>    </nav>
+    <main class="slide-container">
+        <article class="slide info">
+            <header class="slide-header">
+                <span class="slide-type">Background Information</span>
+                <h1>Re-Entry Corridor Physics</h1>
+            </header>
+            <figure class="slide-image">
+                <img src="../assets/images/slide22_reentry_corridor.jpg" alt="Re-entry corridor diagram" loading="lazy">
+                <figcaption>The narrow corridor for safe re-entry</figcaption>
+            </figure>
+            <section class="slide-content">
+                <h2>The Narrow Window</h2>
+                <p>Re-entering Earth's atmosphere from the Moon requires hitting a corridor just 2.15 degrees wide - like threading a needle from 200,000 miles away.</p>
+                <details class="info-section" open>
+                    <summary>Too Steep (-7.4° or steeper)</summary>
+                    <div style="padding: 1.5rem;">
+                        <p style="color: var(--crisis-red); font-weight: 700;">Result: Burn up</p>
+                        <p>Too much friction, too much heat. Heat shield fails at 5,000°F+. Crew dies.</p>
+                    </div>
+                </details>
+                <details class="info-section">
+                    <summary>Just Right (-6.5° target)</summary>
+                    <div style="padding: 1.5rem;">
+                        <p style="color: var(--success-green); font-weight: 700;">Result: Safe landing</p>
+                        <p>Gradual descent, heat shield works, parachutes deploy. Crew survives.</p>
+                    </div>
+                </details>
+                <details class="info-section">
+                    <summary>Too Shallow (-5.25° or shallower)</summary>
+                    <div style="padding: 1.5rem;">
+                        <p style="color: var(--crisis-red); font-weight: 700;">Result: Skip off atmosphere</p>
+                        <p>Bounce back into space like a stone on water. Lost in orbit. Crew dies.</p>
+                    </div>
+                </details>
+                <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                    <p style="font-size: 1.25rem; font-weight: 700;">Apollo 13 hit -6.49° - nearly perfect!</p>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="slide-nav">
+        <a href="21-reentry-prep.html" class="btn-prev">← Previous</a>
+        <a href="23-the-blackout.html" class="btn-next">Next →</a>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

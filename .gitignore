@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude
+.claude/
+
+# Logs
+*.log
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Temporary files
+*.tmp
+*.temp
+
+# Playwright MCP cache
+.playwright-mcp/
