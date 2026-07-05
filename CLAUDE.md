@@ -108,7 +108,7 @@ After changing any page or asset list, bump `CACHE_VERSION` in `sw.js` so return
 - **Decisions lock on first tap** (`lockDecision`) and restore locked on revisit — no answer-flipping
 - **Generous hints are intentional**: pros/cons openly favor NASA's choice; kids who read score well. Do not "balance" options into trick questions. Never let an *image* mark the correct option, though — pictures live in the situation section.
 - **Ranks** (`getScoreRank`): 10/10 Mission Commander 🏆, 8–9 Flight Director ⭐, 6–7 Flight Controller 🎯, 0–5 Ground Crew 📡
-- **Physical Apollo card**: completion page shows the "show this screen at the Apollo Table" banner at **8+ correct**. ⚠️ The printed poster masters still say 5+ — see `exhibit/README.md` before printing.
+- **Physical Apollo card**: completion page shows the "show this screen at the Apollo Table" banner at **8+ correct**. The web preview poster (`exhibit/poster-1-attract-preview.jpg`) matches at 8+; the full-resolution print masters in the private archive still say 5+ — see `exhibit/README.md` before printing.
 - **Quick Mission**: `?mode=quick` chains only the decision slides (`QUICK_CHAIN`), entered from index.html, exits at completion
 - **Running score**: tracker badges + `🏆 N/10` text on every mission slide
 - **Progress text**: `Slide N of 30` (JS normalizes); completion page uses custom text

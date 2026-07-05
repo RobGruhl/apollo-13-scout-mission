@@ -14,10 +14,11 @@ The exhibit and this repository work together:
    perfection not required. The completion page tells them to show their screen
    at the Apollo Table.
 
-> ⚠️ **Poster discrepancy**: the printed poster masters say "Score 5+ trophies.
-> Earn the Apollo card." The app awards the card at **8+** (decided 2026-07-05).
-> Before printing, either regenerate the poster's bottom band with the new rule
-> or brief Ed to honor whichever threshold he prefers at the table.
+> ⚠️ **Poster discrepancy — partially resolved**: `poster-1-attract-preview.jpg` in
+> this repo now says "Score 8+ trophies" (updated 2026-07-05, masked gpt-image-2 edit,
+> QR re-verified). The full-resolution **print masters** (~170 MB, private
+> `apollo-working-materials` archive) still say 5+ and have not been regenerated —
+> do that (or brief Ed to honor 8+ regardless of what's printed) before ordering prints.
 
 ---
 
@@ -59,11 +60,11 @@ not an ad.
 `qr-code.png` (2294×2294 px — use for print) and `qr-code-small.png` (1480×1480 px —
 for cards/web) decode to **`https://apollo13.quest/`** (regenerated 2026-07-05 for the
 custom domain; zbarimg-verified, error correction Q). The QR codes baked into the
-existing print masters point at the old
-`robgruhl.github.io/apollo-13-scout-mission/` URL — those still work because GitHub
-301-redirects to apollo13.quest, but any *newly generated* print materials should use
-these files. If you regenerate, keep dark-on-white — inverted QR codes fail on many
-phone cameras.
+existing print masters — and the one in `poster-1-attract-preview.jpg` in this repo —
+point at the old `robgruhl.github.io/apollo-13-scout-mission/` URL — those still work
+because GitHub 301-redirects to apollo13.quest, but any *newly generated* print
+materials should use these files. If you regenerate, keep dark-on-white — inverted
+QR codes fail on many phone cameras.
 
 ---
 
