@@ -163,6 +163,8 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 **Keep binary churn out of history**: the canonical print masters in `print-ready/` (2 posters + 4 rank cards + 1 invitation) are the deliberate exception (added 2026-07-05 at Rob's direction). Never commit drafts, superseded candidates, or other large binaries — those belong in `~/Projects/apollo-working-materials/`. If a print master changes, replace it in ONE commit — iterate in the archive, commit only the winner.
 
+**⚠️ GitHub hard-rejects files >100 MB** — a push with an oversized poster master fails at the pre-receive hook and **silently stalls deploys of everything behind it** (this bit us 2026-07-05: two poster commits blocked the live site until history was rewritten). Before committing a print master, run `oxipng -o 4 --strip safe <file>` (lossless, ~20% smaller) and confirm it is under 100 MB. If a rejected commit already exists, squash the unpushed range so the oversized blob never reaches the remote.
+
 ---
 
 ## Testing Checklist
