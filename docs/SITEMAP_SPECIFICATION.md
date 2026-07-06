@@ -1,11 +1,12 @@
 # Apollo 13 Interactive Experience - Sitemap Specification
 
-**Version**: 3.0
+**Version**: 3.1
 **Date**: 2026-07-05
 **Purpose**: Standardized navigation structure and scoring system integration for all 36 pages (index + timeline + 34 slides: 30 mission pages + 4 merit badge resource pages, 10 scored decisions).
 
 ## Changelog
 
+- **v3.1 (2026-07-05)** — Reward system aligned to Ed's four-rank-card scheme: the completion page awards the **rank card matching the score** from **4 of 10** (Ground Crew 4–5, Flight Controller 6–7, Flight Director 8–9, Mission Commander 10), replacing the single "Apollo card at 8+" rule. Poster 1's reward block was updated to match.
 - **v3.0 (2026-07-05)** — Full regeneration after the chronology reorder. Slides were renumbered into true mission order (e.g., Freeze or Squeeze is now slide 04, Power Conservation is slide 05, CO2 Mailbox is slide 13), ~70 fact errors were fixed, and decisions were relabeled. Every entry below was re-derived from the current HTML/JS files. New in this version: Quick Mission mode, service worker offline precache, decision locking, running tracker score, QR score sharing, `bestScore` personal best, and the Apollo card rule (8+ of 10).
 - **v2.x (through 2026-07-04)** — Assumed the **old slide order** (e.g., `02-freeze-squeeze.html`, `13-power-conservation.html`). Do not use v2.x slide numbers, filenames, or decision keys; the localStorage decision keys changed with the renumbering.
 
@@ -30,7 +31,7 @@ The experience tracks user decisions and compares them to NASA's historical choi
 
 ### Score Display Pages
 
-- **Slide 30** (`slides/30-completion.html`): score badge, rank, Apollo card banner, personal best line, comparison table, share form + QR code, replay button. Shows an **empty state** (no fake score) if none of the 10 decisions have been made.
+- **Slide 30** (`slides/30-completion.html`): score badge, rank, rank-card banner, personal best line, comparison table, share form + QR code, replay button. Shows an **empty state** (no fake score) if none of the 10 decisions have been made.
 
 ### Score Sharing Pages
 
@@ -581,7 +582,7 @@ The merit badge detail pages (32–34) are not linked from the timeline — scou
 - **Empty state**: if none of the 10 decision keys (`4, 5, 6, 9, 11, 12, 13, 16, 17, 18`) are in localStorage, shows "You haven't made your decisions yet" with CTAs `▶️ Make Your First Decision` → `04-freeze-squeeze.html` and `🏠 Mission Home` → `../index.html` (page is deep-linkable from the timeline).
 - **Score badge**: rank emoji, rank title, `correct/total`, message, rank-colored gradient (all from `calculateScore()` / `getScoreRank()`).
 - **Personal best**: `Best so far: N/10` line shown only when stored `bestScore` exceeds the current run.
-- **🎖️ Apollo card banner**: `correct >= 8` → "You earned the Apollo card!" (show screen at the Apollo Table in the NASA Tent); otherwise "Go for the Apollo card!" — match NASA on **8 of 10** calls, with a replay nudge.
+- **🎖️ Rank-card banner**: `correct >= 4` → "You earned the [rank] card!" (the rank name from `getScoreRank()` matches the four physical cards; show screen at the Apollo Table in the NASA Tent), plus a climb-toward-Mission-Commander nudge below 10/10; otherwise "Go for a rank card!" — match NASA on **4 of 10** calls, with a replay nudge.
 - **Replay**: `🔁 Fly the Mission Again` button (`flyAgain()`): saves `bestScore = max(current, stored)`, clears `decisions` + `visitedSlides`, clears the URL hash, redirects to `01-launch.html`. (Defined locally because app.js's `startNewMission()` hardcodes `slides/01-launch.html`, which 404s from inside `slides/`.)
 - **Comparison table**: your choice vs NASA's for all 10 decisions, human-readable labels via the page's `formatChoice()` map, ✅/❌ per row.
 - **Share**: name + troop form → `generateShareURL()` link, `📋 Copy Link` (clipboard API with select-text fallback), and a **QR code** of the link rendered by the vendored `assets/js/qrcode.js` (`qrcode(0, 'M')`, `createImgTag(4, 8)`); QR failure is silent — the copyable link still works.
@@ -714,11 +715,9 @@ Each decision is worth 1 point (10% of the total).
 | ≥ 60% | 6-7 | Flight Controller | 🎯 | `#CD7F32` (Bronze) |
 | < 60% | 0-5 | Ground Crew | 📡 | `#666666` (Gray) |
 
-### 🎖️ Apollo Card Rule
+### 🎖️ Rank Card Rule
 
-The physical Apollo reward card is earned at **8 or more correct decisions out of 10** (Flight Director or better). Implemented on `slides/30-completion.html` (`if (correct >= 8)` → `.card-banner.earned`, else `.card-banner.tryagain` telling the scout to match NASA on 8 of 10). Scouts show the earned banner at the Apollo Table in the NASA Tent to pick up the card.
-
-> ⚠️ Known discrepancy: the printed poster masters say "Score 5+". The app awards at 8+ (decided 2026-07-05); see `exhibit/README.md` for the reprint/briefing plan.
+Four physical rank cards (Ed's 2026-07-05 scheme, trophy counts 4/6/8/10) are handed out at the Apollo Table to match the scout's score: Ground Crew (4–5), Flight Controller (6–7), Flight Director (8–9), Mission Commander (10). A card is earned from **4 or more correct decisions out of 10**. Implemented on `slides/30-completion.html` (`if (correct >= 4)` → `.card-banner.earned` naming the rank card, else `.card-banner.tryagain` telling the scout to match NASA on 4 of 10). Scouts show the earned banner at the Apollo Table in the NASA Tent to pick up the card. Poster 1 reads "Score 4+ trophies. Earn your rank card." to match.
 
 ### Decision Locking
 
@@ -732,7 +731,7 @@ Decisions lock in on the **first tap** (`initDecisions()` / `lockDecision()` in 
 | Page | Role | Functionality |
 |------|------|---------------|
 | **index.html** | Score Sharing Landing | Dual mode: default landing OR celebration card for shared scores; hidden full-reset button |
-| **slides/30-completion.html** | Score Display & Generation | Score, rank, Apollo card banner, best score, comparison table, share link + QR, replay |
+| **slides/30-completion.html** | Score Display & Generation | Score, rank, rank-card banner, best score, comparison table, share link + QR, replay |
 
 ### Storage Keys
 
@@ -766,9 +765,9 @@ https://apollo13.quest/#name=Scout&troop=Troop+123&score=8&total=10&rank=Flight+
 
 ## Known Discrepancies (as of 2026-07-05)
 
-1. **Poster threshold.** Printed poster masters say the Apollo card is earned at "5+"; the app awards it at 8+. Documented in `exhibit/README.md`.
+None.
 
-(Resolved 2026-07-05: timeline decision numbering now matches slide badges; chapter badges renumbered sequentially 1–9; `startNewMission()` is now path-aware and safe from any page.)
+(Resolved 2026-07-05: reward messaging now matches the physical four-rank-card scheme — completion banner awards the matching rank card from 4/10 and poster 1 reads "Score 4+ trophies. Earn your rank card."; timeline decision numbering now matches slide badges; chapter badges renumbered sequentially 1–9; `startNewMission()` is now path-aware and safe from any page.)
 
 ---
 

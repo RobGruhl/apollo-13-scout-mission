@@ -60,7 +60,7 @@ Compare your decisions to NASA's actual choices:
 - 🎯 **Flight Controller** - 6-7/10 correct
 - 📡 **Ground Crew** - 0-5/10 correct
 
-**Playing at the jamboree?** Score 8 or better at the Apollo table and you earn a real, physical **Apollo card** to take home.
+**Playing at the jamboree?** Score 4 or better at the Apollo table and you take home a real, physical **rank card** matching your score — Ground Crew, Flight Controller, Flight Director, or Mission Commander.
 
 ### 📲 Share Your Score
 Finish the mission and get a shareable link — plus a QR code right on your screen that a friend can scan to see your score. Challenge your troop or patrol to beat it!

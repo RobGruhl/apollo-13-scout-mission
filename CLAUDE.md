@@ -71,7 +71,7 @@ After changing any page or asset list, bump `CACHE_VERSION` in `sw.js` so return
 ├── CLAUDE.md / README.md / LICENSE
 ```
 
-**Print masters are CANONICAL here** in `print-ready/` (~173 MB, the four files sent to the printer — see `print-ready/README.md`). Design drafts, superseded candidates, and planning notes → private local archive `~/Projects/apollo-working-materials/`.
+**Print masters are CANONICAL here** in `print-ready/` — the print files sent to the printer: **2 posters + 4 rank cards + 1 invitation card** (see `print-ready/README.md`). Design drafts, superseded candidates, and planning notes → private local archive `~/Projects/apollo-working-materials/`.
 
 ### Slide inventory (chronological)
 
@@ -108,7 +108,7 @@ After changing any page or asset list, bump `CACHE_VERSION` in `sw.js` so return
 - **Decisions lock on first tap** (`lockDecision`) and restore locked on revisit — no answer-flipping
 - **Generous hints are intentional**: pros/cons openly favor NASA's choice; kids who read score well. Do not "balance" options into trick questions. Never let an *image* mark the correct option, though — pictures live in the situation section.
 - **Ranks** (`getScoreRank`): 10/10 Mission Commander 🏆, 8–9 Flight Director ⭐, 6–7 Flight Controller 🎯, 0–5 Ground Crew 📡
-- **Physical Apollo card**: completion page shows the "show this screen at the Apollo Table" banner at **8+ correct**. The web preview poster (`exhibit/poster-1-attract-preview.jpg`) matches at 8+; the full-resolution print masters in the private archive still say 5+ — see `exhibit/README.md` before printing.
+- **Physical rank cards** (Ed's 2026-07-05 scheme): four take-home cards — Ground Crew (4 🏆) / Flight Controller (6) / Flight Director (8) / Mission Commander (10) — handed out at the Apollo Table to match the scout's score (cards from score 4). They replaced the single "Apollo reward card." The web app completion banner (`correct >= 4` → names the earned rank card) and poster 1 ("Score 4+ trophies. Earn your rank card.") were aligned to this scheme 2026-07-05.
 - **Quick Mission**: `?mode=quick` chains only the decision slides (`QUICK_CHAIN`), entered from index.html, exits at completion
 - **Running score**: tracker badges + `🏆 N/10` text on every mission slide
 - **Progress text**: `Slide N of 30` (JS normalizes); completion page uses custom text
@@ -161,7 +161,7 @@ All styles in `assets/css/style.css` (CSS variables in `:root`). Components: `.o
 Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
-**Keep binary churn out of history**: the four canonical print masters in `print-ready/` are the deliberate exception (added 2026-07-05 at Rob's direction). Never commit drafts, superseded candidates, or other large binaries — those belong in `~/Projects/apollo-working-materials/`. If a print master changes, replace it in ONE commit — iterate in the archive, commit only the winner.
+**Keep binary churn out of history**: the canonical print masters in `print-ready/` (2 posters + 4 rank cards + 1 invitation) are the deliberate exception (added 2026-07-05 at Rob's direction). Never commit drafts, superseded candidates, or other large binaries — those belong in `~/Projects/apollo-working-materials/`. If a print master changes, replace it in ONE commit — iterate in the archive, commit only the winner.
 
 ---
 
@@ -169,7 +169,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 - [ ] `./scripts/verify-navigation.sh` and `./scripts/verify-button-text.sh` pass
 - [ ] Chrome + Safari iOS (real device)
-- [ ] A full decision run: lock behavior, running score, completion banner at 8+, replay, QR renders
+- [ ] A full decision run: lock behavior, running score, rank-card banner at 4+ (names the matching card), replay, QR renders
 - [ ] Quick Mission chains correctly and exits at completion
 - [ ] Offline: load index over HTTP, go airplane-mode, navigate slides
 - [ ] Lighthouse >90
@@ -186,4 +186,4 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 **Live Site**: https://apollo13.quest/
 **Pages**: 36 (index + timeline + 34 slides) | **Decisions**: 10 (slides 4,5,6,9,11,12,13,16,17,18)
-**Apollo card**: 8+ correct | **Ranks**: 4 tiers | **Dependencies**: zero runtime, one vendored MIT file
+**Rank cards**: from 4 correct (tiers 4/6/8/10) | **Ranks**: 4 tiers | **Dependencies**: zero runtime, one vendored MIT file

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="You completed the Apollo 13 mission! See your score, earn the Apollo card, and fly again.">
+    <meta name="description" content="You completed the Apollo 13 mission! See your score, earn your rank card, and fly again.">
     <title>Apollo 13 - Mission Complete!</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
@@ -107,7 +107,7 @@
                     </div>
                     <p id="bestScoreLine" class="best-score-line"></p>
 
-                    <!-- Apollo Card Banner (filled by JS based on score) -->
+                    <!-- Rank Card Banner (filled by JS based on score) -->
                     <div id="cardBanner" class="card-banner"></div>
 
                     <!-- Replay Loop -->
@@ -251,19 +251,23 @@
                 bestLine.style.display = 'block';
             }
 
-            // Apollo card banner — threshold is 8 of 10 (Flight Director or better)
+            // Rank-card banner — four physical cards, earned from 4 of 10
+            // (Ground Crew 4–5, Flight Controller 6–7, Flight Director 8–9, Mission Commander 10)
             const card = document.getElementById('cardBanner');
-            if (correct >= 8) {
+            if (correct >= 4) {
+                const climb = correct === 10
+                    ? 'The highest rank there is — NASA would have hired you on the spot.'
+                    : 'Fly the mission again to climb toward <strong>Mission Commander</strong>!';
                 card.className = 'card-banner earned';
                 card.innerHTML =
                     '<div class="card-score">' + correct + '/10</div>' +
-                    '<h3>🎖️ You earned the Apollo card!</h3>' +
-                    '<p>Show this screen at the <strong>Apollo Table in the NASA Tent</strong> to pick up your card.</p>';
+                    '<h3>🎖️ You earned the ' + rank.rank + ' card!</h3>' +
+                    '<p>Show this screen at the <strong>Apollo Table in the NASA Tent</strong> to pick up your rank card. ' + climb + '</p>';
             } else {
                 card.className = 'card-banner tryagain';
                 card.innerHTML =
-                    '<h3>🎖️ Go for the Apollo card!</h3>' +
-                    '<p>Match NASA on <strong>8 of 10</strong> calls to earn the Apollo card. Every rank you flew still brought the crew home — fly the mission again and go for it!</p>';
+                    '<h3>🎖️ Go for a rank card!</h3>' +
+                    '<p>Match NASA on <strong>4 of 10</strong> calls to earn a rank card — all the way up to <strong>Mission Commander</strong> at 10/10. Every rank you flew still brought the crew home — fly the mission again and go for it!</p>';
             }
 
             // Populate comparison table

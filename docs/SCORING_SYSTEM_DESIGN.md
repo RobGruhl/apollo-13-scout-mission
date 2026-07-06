@@ -36,11 +36,11 @@ The Apollo 13 Interactive Experience includes a scoring system that tracks user 
 ### 4. Decision Locking
 - Each decision locks the moment a scout taps a choice — both buttons disable and the pick can't be changed
 - Locked state is restored on revisit (choice highlighted, buttons still disabled)
-- Keeps on-screen scores honest so they match the physical Apollo card handed out at the table
+- Keeps on-screen scores honest so they match the physical rank card handed out at the table
 
 ### 5. Running Score Tracker
 - A `🏆 N/10` badge in the decision tracker updates live as decisions are made
-- Lets scouts always see whether they're on pace for the Apollo card
+- Lets scouts always see which rank card they're on pace for
 
 ### 6. Quick Mission Mode
 - `?mode=quick` chains just the 10 decision slides (~10 minutes) for scouts at the table
@@ -213,7 +213,7 @@ function lockDecision(options, result, chosenValue) {
 
 On revisit, `initDecisions()` reads the stored decision and re-applies the locked state (highlighted choice, buttons disabled, result revealed) before wiring any click handlers — so a scout can re-read a slide but not re-answer it.
 
-**Why lock?** The on-screen `N/10` score is the ticket to a **physical Apollo card** at the table. If scouts could revise past answers after seeing later feedback, the number on the completion screen would drift away from the calls they actually made. Locking keeps the digital score honest so table staff can trust it when handing out cards. Real mission decisions couldn't be taken back either — neither can these.
+**Why lock?** The on-screen `N/10` score is the ticket to a **physical rank card** at the table. If scouts could revise past answers after seeing later feedback, the number on the completion screen would drift away from the calls they actually made. Locking keeps the digital score honest so table staff can trust it when handing out cards. Real mission decisions couldn't be taken back either — neither can these.
 
 ---
 
@@ -234,7 +234,7 @@ if (!scoreText) {
 scoreText.textContent = `🏆 ${correct}/${Object.keys(CORRECT_ANSWERS).length}`;
 ```
 
-The tracker itself only appears once the first decision is made (`initDecisionTracker()`), so scouts always know whether they're on pace for the 8/10 Apollo card without waiting for the completion page.
+The tracker itself only appears once the first decision is made (`initDecisionTracker()`), so scouts always know which rank card they're on pace for (cards from 4/10) without waiting for the completion page.
 
 ---
 
@@ -368,18 +368,18 @@ if (best > correct) {
 }
 ```
 
-**Step 4: Apollo card banner (≥ 8/10)**
-Matching NASA on **8 of 10** calls (Flight Director or better) earns the physical Apollo card. At 8+ the banner shows the big score and directs the scout to the table; below 8 it's an encouraging "go for it" prompt.
+**Step 4: Rank-card banner (≥ 4/10)**
+Matching NASA on **4 of 10** calls earns a physical rank card matching the score — Ground Crew (4–5), Flight Controller (6–7), Flight Director (8–9), Mission Commander (10) (Ed's 2026-07-05 four-card scheme, trophy counts 4/6/8/10). At 4+ the banner shows the big score, names the earned rank card, and directs the scout to the table (with a climb-toward-Mission-Commander nudge below 10/10); below 4 it's an encouraging "go for it" prompt.
 ```javascript
-if (correct >= 8) {
+if (correct >= 4) {
     card.className = 'card-banner earned';
     card.innerHTML =
         '<div class="card-score">' + correct + '/10</div>' +
-        '<h3>🎖️ You earned the Apollo card!</h3>' +
-        '<p>Show this screen at the <strong>Apollo Table in the NASA Tent</strong> to pick up your card.</p>';
+        '<h3>🎖️ You earned the ' + rank.rank + ' card!</h3>' +
+        '<p>Show this screen at the <strong>Apollo Table in the NASA Tent</strong> to pick up your rank card. ' + climb + '</p>';
 } else {
     card.className = 'card-banner tryagain';
-    // ... "Go for the Apollo card!" — match NASA on 8 of 10 to earn it
+    // ... "Go for a rank card!" — match NASA on 4 of 10 to earn one
 }
 ```
 
@@ -802,7 +802,7 @@ _(QR code generation from the share URL shipped in v2.0 — see the completion f
 **Expected:**
 - Score: 6/10 (60%)
 - Rank: Flight Controller 🎯
-- Apollo-card banner in "try again" state (6 < 8): "Go for the Apollo card!"
+- Rank-card banner in "earned" state (6 ≥ 4): "You earned the Flight Controller card!"
 - 6 green rows, 4 red rows in table
 - Share URL contains `score=6&total=10&rank=Flight%20Controller`
 
