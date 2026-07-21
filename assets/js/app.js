@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initOfflineCache() {
     if (!('serviceWorker' in navigator)) return;
-    const swPath = window.location.pathname.includes('/slides/') ? '../sw.js' : 'sw.js';
+    const inSubdir = window.location.pathname.includes('/slides/') || window.location.pathname.includes('/explore/');
+    const swPath = inSubdir ? '../sw.js' : 'sw.js';
     navigator.serviceWorker.register(swPath).catch(() => {
         // Offline caching is a bonus, never a blocker
     });

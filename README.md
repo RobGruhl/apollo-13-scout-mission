@@ -107,6 +107,7 @@ apollo-13-scout-mission/
 ├── index.html              # Home page (full mission or Quick Mission)
 ├── timeline.html           # Timeline navigator
 ├── privacy.html            # No tracking here — and how tracking actually works
+├── explore/                # Merit badge deep dives: hack a URL, airplane-mode test, basketball Moon
 ├── sw.js                   # Service worker — makes the site work offline
 ├── slides/                 # 34 HTML files, in true mission chronological order
 │   ├── 01-launch.html

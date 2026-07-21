@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trace the journey from QR code to your screen, test the site offline in airplane mode, and compare your phone to Apollo's radio link to Earth.">
+    <title>Explore: The Internet - Apollo 13 Interactive Experience</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Explore: The Internet</span>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="slide-container">
+        <article class="slide">
+            <header class="slide-header">
+                <span class="slide-type" style="background: var(--nasa-blue); color: white;">🌐 Deep Dive · Digital Technology</span>
+                <h1>How This Site Reached Your Phone</h1>
+                <p style="font-style: italic; color: #666;">You scanned a QR code and a whole website appeared. A lot happened in that half-second — let's trace it.</p>
+            </header>
+
+            <section class="slide-content">
+
+                <!-- The journey -->
+                <div style="background: white; border: 3px solid var(--nasa-blue); border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                    <h2 style="color: var(--nasa-blue); margin-bottom: 1rem;">🛰️ The Half-Second Journey</h2>
+                    <ol style="line-height: 2; margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li><strong>📷 The scan.</strong> Your camera reads the QR code's black-and-white grid and decodes it into text: <code>https://apollo13.quest/</code>. A QR code is just a web address wearing a costume.</li>
+                        <li><strong>📖 The phone book.</strong> Your phone asks the internet's directory service — <strong>DNS</strong> — "where is <code>apollo13.quest</code>?" and gets back a number: an IP address. Every device on the internet has one, like a street address.</li>
+                        <li><strong>🤝 The secret handshake.</strong> Before sending anything, your phone and the server agree on an encryption code — that's <strong>HTTPS</strong>, the padlock in your address bar. From now on, anyone eavesdropping on the network sees only scrambled noise.</li>
+                        <li><strong>🏢 The nearest copy.</strong> The site is delivered by an <strong>edge network</strong> — computers in hundreds of cities that each keep a copy close to visitors. Your pages probably came from a server in your region, not from one specific machine far away.</li>
+                        <li><strong>📦 The download.</strong> HTML files (the words), a CSS file (the style), JavaScript files (the behavior) arrive, and your browser assembles them into the page you see. View source and it's all there — nothing hidden.</li>
+                        <li><strong>💾 The stash.</strong> Quietly, a <strong>service worker</strong> — a small program that comes with the site — downloads <em>every page</em> into your phone's cache. Why? Keep reading. 👇</li>
+                    </ol>
+                </div>
+
+                <!-- Airplane mode experiment -->
+                <div style="background: white; border: 3px solid var(--success-green); border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                    <h2 style="color: var(--success-green); margin-bottom: 1rem;">✈️ Try It Now: The Airplane Mode Test</h2>
+                    <p style="margin-bottom: 1rem;">
+                        Here's a party trick almost no website can do:
+                    </p>
+                    <ol style="line-height: 2; margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Turn on <strong>airplane mode</strong> (kill your Wi-Fi too)</li>
+                        <li>Navigate to a mission slide you've never opened</li>
+                        <li>It loads. Instantly. With no internet at all.</li>
+                    </ol>
+                    <p style="margin-bottom: 1rem;">
+                        That's the service worker from step 6. On your very first visit, it stored the entire mission on your phone, so the site keeps working in a tent, in a basement, or in a spacecraft behind the Moon. (Turn your connection back on when you're done!)
+                    </p>
+                    <div style="background: var(--bg-blue-light); padding: 1.25rem; border-radius: 8px;">
+                        <p style="margin-bottom: 0;"><strong>💬 Talk it over:</strong> Jamboree cell coverage is famously terrible with thousands of phones in one field. What else could "offline-first" design help with — school buses? Rural areas? Disaster response? Who benefits when engineers assume the network will fail?</p>
+                    </div>
+                </div>
+
+                <!-- Apollo comms comparison -->
+                <div style="background: white; border: 3px solid var(--caution-yellow); border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                    <h2 style="color: #d4a500; margin-bottom: 1rem;">📡 Your Phone vs. Apollo's Radio</h2>
+                    <p style="margin-bottom: 1rem;">
+                        Apollo 13 talked to Earth over a single radio system called the <strong>Unified S-Band</strong> — voice, data, and TV all squeezed through one link, at data rates <em>thousands of times slower</em> than the connection your phone is probably using right now. When power ran short, even that link got cut to a whisper (you made that call on <a href="../slides/16-communication-discipline.html">slide 16</a>).
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        On the ground, Mission Control's wall of glowing screens wasn't run by desktop computers — those didn't exist yet. Everything was crunched by <strong>IBM mainframes</strong> in a back room called the RTCC (Real-Time Computer Complex), each machine filling a good chunk of a room.
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        The kicker: <strong>your phone out-computes all of it combined</strong> — the spacecraft and the mainframes — while also being a camera, a flashlight, and a QR code scanner. The engineering lesson isn't "old computers were bad." It's that Apollo did <em>more with less</em> than almost any project in history, because every bit and every watt was budgeted like oxygen.
+                    </p>
+                </div>
+
+                <!-- Privacy + open source -->
+                <div style="background: linear-gradient(135deg, var(--nasa-blue) 0%, #1a5db8 100%); color: white; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <h2 style="color: white; margin-bottom: 1rem;">🔍 Two More Rabbit Holes</h2>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>🔒 Who's watching you online?</strong> On this site: nobody — no cookies, no trackers, and your game progress never leaves your phone. Most of the internet works very differently. Our <a href="../privacy.html" style="color: white; text-decoration: underline;">privacy page</a> explains cookies, tracking pixels, and fingerprinting — and shows you how to inspect any website yourself. It counts toward the Digital Technology badge's internet-safety discussions, too.
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        <strong>📜 Who's allowed to copy this site?</strong> You are! It's open source under the MIT License. On <a href="https://github.com/RobGruhl/apollo-13-scout-mission" style="color: white; text-decoration: underline;">GitHub</a> you can read every line — and every <em>change ever made</em>, with a note explaining why. That public change-log is called commit history, and it's the mission log of software: who did what, when, and what went wrong along the way.
+                    </p>
+                </div>
+
+                <div class="sources-box">
+                    <h3>📚 Sources for Skeptics</h3>
+                    <p>Room-sized mainframes and one radio link to the Moon? <strong>Check the record:</strong></p>
+                    <ul>
+                        <li><a href="https://www.nasa.gov/history/computers-in-spaceflight-the-nasa-experience/" target="_blank" rel="noopener">Computers in Spaceflight: The NASA Experience</a> — NASA's history of the RTCC mainframes and onboard systems</li>
+                        <li><a href="https://www.nasa.gov/history/afj/ap13fj/index.html" target="_blank" rel="noopener">Apollo 13 Flight Journal</a> — the real communication logs, including the low-power comm procedures</li>
+                        <li><a href="https://github.com/RobGruhl/apollo-13-scout-mission/blob/main/sw.js" target="_blank" rel="noopener">This site's service worker (sw.js)</a> — the ~90 lines of code behind the airplane-mode trick, comments included</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="slide-nav">
+        <a href="../slides/33-merit-badge-digital-technology.html" class="btn-prev">← Digital Tech Badge</a>
+        <a href="space.html" class="btn-next">Explore: Space →</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

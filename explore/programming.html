@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the real code behind this site from your phone — hack a URL, meet the Apollo Guidance Computer, and think like a programmer.">
+    <title>Explore: The Code - Apollo 13 Interactive Experience</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-home">🏠 Home</a>
+        <a href="../timeline.html" class="nav-timeline">📅 Timeline</a>
+        <span class="nav-progress">Explore: The Code</span>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="slide-container">
+        <article class="slide">
+            <header class="slide-header">
+                <span class="slide-type" style="background: var(--nasa-blue); color: white;">💻 Deep Dive · Programming</span>
+                <h1>Explore the Code — Right From Your Phone</h1>
+                <p style="font-style: italic; color: #666;">Got a few minutes in line? You don't need a computer to start thinking like a programmer.</p>
+            </header>
+
+            <section class="slide-content">
+
+                <!-- Activity 1: URL hacking -->
+                <div style="background: white; border: 3px solid var(--nasa-blue); border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                    <h2 style="color: var(--nasa-blue); margin-bottom: 1rem;">🔧 Try It Now: Hack Your Own Score Link</h2>
+                    <p style="margin-bottom: 1rem;">
+                        When you finish the mission, the site builds a share link that looks something like this:
+                    </p>
+                    <div style="background: var(--bg-light); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; word-break: break-all; margin-bottom: 1rem;">
+                        apollo13.quest/#name=Alex&amp;troop=113&amp;score=8&amp;total=10&amp;rank=Flight%20Director
+                    </div>
+                    <p style="margin-bottom: 1rem;">
+                        Everything after the <code>#</code> is just <strong>data written into the link</strong>. Try this: open a share link (yours or a friend's), tap the address bar, and <strong>change the score or the name</strong>. Reload. The celebration card changes!
+                    </p>
+                    <div style="background: var(--bg-yellow-light); padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--caution-yellow);">
+                        <p style="margin-bottom: 0.5rem;"><strong>🤔 So… can you cheat your way to a Mission Commander card?</strong></p>
+                        <p style="margin-bottom: 0;">
+                            Nope — and the reason is a big idea in real software. The web page runs entirely <em>on your phone</em>, so anyone can change what it shows. That's called <strong>client-side code</strong>, and programmers know they can never fully trust it. It's why banks check everything again on their own servers — and why the only rank cards that count are handed out <em>by a human at the Apollo Table who watched your score screen</em>. The humans are the server.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- The real code -->
+                <div style="background: white; border: 3px solid var(--success-green); border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                    <h2 style="color: var(--success-green); margin-bottom: 1rem;">🧠 Read Real Code: the 10-Decision Brain</h2>
+                    <p style="margin-bottom: 1rem;">
+                        This is not a simplified example — it's the <em>actual code</em> running on your phone right now, from the file <code>assets/js/app.js</code>. This one structure holds NASA's answers to all 10 decisions:
+                    </p>
+                    <div style="background: #1e1e2e; color: #cdd6f4; padding: 1.25rem; border-radius: 8px; font-family: monospace; font-size: 0.75rem; overflow-x: auto; margin-bottom: 1rem; line-height: 1.7;">
+<pre style="margin: 0; font-family: inherit;">const CORRECT_ANSWERS = {
+    '4':  'squeeze',      // Decision #1: move to the LM
+    '5':  'shutdown',     // Decision #2: power down the CM
+    '6':  'freereturn',   // Decision #3: use the Moon's gravity
+    '9':  'sunearth',     // Decision #4: navigate by Sun + Earth
+    '11': 'burn',         // Decision #5: fire the PC+2 burn
+    '12': 'extreme',      // Decision #6: extreme water rationing
+    '13': 'buildmailbox', // Decision #7: build the CO2 mailbox
+    '16': 'silence',      // Decision #8: low-power comms
+    '17': 'jumpstart',    // Decision #9: LM-to-CM recharge
+    '18': 'early'         // Decision #10: jettison SM early
+};</pre>
+                    </div>
+                    <p style="margin-bottom: 1rem;">
+                        This is called an <strong>object</strong> — a list of <em>keys</em> (the slide numbers) paired with <em>values</em> (the right choice). When you lock in a decision, one line of code asks: <em>does your choice equal the value for this key?</em> Ten little questions like that add up to your score.
+                    </p>
+                    <div style="background: var(--bg-blue-light); padding: 1.25rem; border-radius: 8px;">
+                        <p style="margin-bottom: 0.5rem;"><strong>💬 Talk it over in line:</strong></p>
+                        <ul style="margin-left: 1.25rem; line-height: 1.8; margin-bottom: 0;">
+                            <li>Why do you think decisions <strong>lock</strong> after your first tap instead of letting you flip answers until they're right?</li>
+                            <li>If you added an 11th decision, what <em>three places</em> in the site do you think would need to change? (Hint: the slide itself, this object, and the score screen.)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AGC -->
+                <div style="background: white; border: 3px solid var(--caution-yellow); border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                    <h2 style="color: #d4a500; margin-bottom: 1rem;">🌙 The Computer That Flew to the Moon</h2>
+                    <p style="margin-bottom: 1rem;">
+                        The phone in your hand is running this website with power to spare. Now meet the <strong>Apollo Guidance Computer (AGC)</strong> — the machine that navigated Apollo 13:
+                    </p>
+                    <ul style="line-height: 2; margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>⚖️ Weighed about <strong>70 pounds</strong> — a checked suitcase</li>
+                        <li>🧠 Had roughly <strong>4 kilobytes</strong> of erasable memory (RAM). Your phone has <em>millions of times</em> more.</li>
+                        <li>🧵 Its programs were stored in <strong>rope memory</strong> — wires literally woven through tiny magnetic rings by hand, mostly by women workers whose weaving had to be perfect. Software you could <em>touch</em>.</li>
+                        <li>⌨️ No screen, no mouse — astronauts typed <strong>verb and noun codes</strong> into a panel called the DSKY ("Verb 37, Noun 31…")</li>
+                        <li>👩‍💻 The flight software team at MIT was led by <strong>Margaret Hamilton</strong>, who helped invent the very idea of "software engineering" as a serious discipline</li>
+                    </ul>
+                    <p style="margin-bottom: 0;">
+                        And here's the Apollo 13 connection you already lived through on <a href="../slides/19-computer-restart.html">slide 19</a>: after days powered down and freezing, the Command Module's computer had to be brought back to life before reentry — a restart sequence nobody had ever tried in flight. It worked. Good code, written carefully, by people who assumed things would go wrong: that's the whole discipline in one story.
+                    </p>
+                </div>
+
+                <!-- Deeper challenge -->
+                <div style="background: linear-gradient(135deg, var(--nasa-blue) 0%, #1a5db8 100%); color: white; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <h2 style="color: white; margin-bottom: 1rem;">🏠 When You Get Home</h2>
+                    <p style="margin-bottom: 1rem;">
+                        Everything on this site is open source — free for you to download, break, and rebuild. Three challenges, easiest to hardest:
+                    </p>
+                    <ol style="line-height: 2; margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li><strong>Change a rank name.</strong> Find <code>getScoreRank</code> in <code>app.js</code> and rename "Ground Crew" to something of your own.</li>
+                        <li><strong>Add a decision timer.</strong> Show how many seconds each choice takes.</li>
+                        <li><strong>Build your own mission.</strong> Copy this project's structure and tell a different story — Apollo 11, a Mars rover, your troop's toughest campout.</li>
+                    </ol>
+                    <p style="margin-bottom: 0;">
+                        The <a href="../slides/32-merit-badge-programming.html" style="color: white; text-decoration: underline;">Programming merit badge page</a> shows how these count toward Requirement 5, and the <a href="https://github.com/RobGruhl/apollo-13-scout-mission" style="color: white; text-decoration: underline;">full code is on GitHub</a>.
+                    </p>
+                </div>
+
+                <div class="sources-box">
+                    <h3>📚 Sources for Skeptics</h3>
+                    <p>A 70-pound computer with 4KB of RAM flew people to the Moon? <strong>Check the record:</strong></p>
+                    <ul>
+                        <li><a href="https://www.nasa.gov/history/computers-in-spaceflight-the-nasa-experience/" target="_blank" rel="noopener">Computers in Spaceflight: The NASA Experience</a> — NASA's own history of the AGC and its memory</li>
+                        <li><a href="https://ibiblio.org/apollo/" target="_blank" rel="noopener">Virtual AGC Project</a> — the actual AGC source code, preserved and even runnable today</li>
+                        <li><a href="https://github.com/RobGruhl/apollo-13-scout-mission" target="_blank" rel="noopener">This site's source code</a> — every line quoted on this page, verifiable in <code>assets/js/app.js</code></li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="slide-nav">
+        <a href="../slides/32-merit-badge-programming.html" class="btn-prev">← Programming Badge</a>
+        <a href="digital-technology.html" class="btn-next">Explore: The Internet →</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

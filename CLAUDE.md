@@ -59,6 +59,7 @@ After changing any page or asset list, bump `CACHE_VERSION` in `sw.js` so return
 ├── index.html              # Landing page (Full/Quick mission CTAs, shared-score celebration)
 ├── timeline.html           # Chapter map of all slides + decisions
 ├── privacy.html            # Privacy explainer (no tracking + how tracking works; keep honest about Cloudflare visitor counting)
+├── explore/                # 3 merit-badge deep dives (programming, digital-technology, space) — phone-first "in line at the trading post" pages; linked from slides 31–34, NOT in the 34-slide nav chain
 ├── sw.js                   # Offline service worker (precache list — keep in sync with slides/)
 ├── slides/                 # 34 slides in TRUE MISSION CHRONOLOGY (see inventory below)
 ├── assets/
@@ -188,5 +189,5 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 ## Quick Reference
 
 **Live Site**: https://apollo13.quest/
-**Pages**: 37 (index + timeline + privacy + 34 slides) | **Decisions**: 10 (slides 4,5,6,9,11,12,13,16,17,18)
+**Pages**: 40 (index + timeline + privacy + 34 slides + 3 explore deep-dives) | **Decisions**: 10 (slides 4,5,6,9,11,12,13,16,17,18)
 **Rank cards**: from 4 correct (tiers 4/6/8/10) | **Ranks**: 4 tiers | **Dependencies**: zero runtime, one vendored MIT file
