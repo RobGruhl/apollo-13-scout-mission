@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="No cookies, no accounts, no ads, no tracking. How this site respects your privacy — and how to check for yourself. Plus: how tracking on the internet actually works.">
+    <title>Your Privacy Here - Apollo 13 Interactive Experience</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="landing">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🔒 Nobody Is Tracking You Here</h1>
+        <p class="tagline">The short answer for parents and scouts — and then the longer, more interesting story about how the internet actually watches people</p>
+    </section>
+
+    <!-- The short answer -->
+    <section class="container" style="padding: 3rem 1rem; max-width: 800px; margin: 0 auto;">
+
+        <div style="background: #E8F5E9; border-left: 4px solid #2E7D32; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+            <h3 style="color: #000; margin-bottom: 1rem;">✅ The short answer</h3>
+            <p style="margin-bottom: 0.5rem;">This site has <strong>no cookies, no accounts, no ads, no tracking scripts, and no data collection</strong>. It doesn't know your name, your email, or anything about you. Your game progress is saved <strong>only on your own phone</strong> and never sent anywhere. Nothing here is sold, shared, or profiled — there is nothing <em>to</em> sell.</p>
+            <p style="margin-bottom: 0;">Don't take our word for it — this page shows you <strong>how to check for yourself</strong>. 👇</p>
+        </div>
+
+        <h2 style="margin-bottom: 1rem;">What this site remembers (and where)</h2>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+            When you play the mission, your browser saves three small notes <strong>on your own device</strong> using something called <code>localStorage</code>:
+        </p>
+        <ul style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem; padding-left: 1.5rem;">
+            <li><strong>Your decisions</strong> — so the site remembers which choices you locked in</li>
+            <li><strong>Which slides you've visited</strong> — so your progress survives closing the browser</li>
+            <li><strong>Your best score</strong> — for bragging rights</li>
+        </ul>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+            That data lives in your phone the way a bookmark lives in your book. It is <strong>never uploaded</strong> — there's no server to upload it to. This site has no database and no login. If you want it gone, tap the 🔄 button at the bottom of the <a href="index.html">home page</a> and it's erased instantly.
+        </p>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem;">
+            What about the <strong>share-your-score QR code</strong>? When you finish the mission, you can share a link with your first name, troop number, and score. Here's the neat part: that information is stored in the part of the link after the <code>#</code> symbol — called the <em>fragment</em> — and browsers <strong>never send the fragment to any server</strong>. It travels from your phone to your friend's phone inside the link itself. We couldn't collect it if we wanted to.
+        </p>
+
+        <h2 style="margin-bottom: 1rem;">🕵️ Check it yourself (really — we insist)</h2>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+            Every decision slide on this site has a "Sources for Skeptics" section, because checking claims is what real engineers do. Same rule applies to this page. On a computer, open this site in Chrome or Firefox and press <strong>F12</strong> (or right-click → "Inspect") to open the developer tools — the same tools professionals use. Then look:
+        </p>
+        <ol style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem; padding-left: 1.5rem;">
+            <li><strong>Application → Cookies</strong> — empty. This site sets zero cookies.</li>
+            <li><strong>Application → Local Storage</strong> — there are your decisions, sitting on <em>your</em> device. That's all of it.</li>
+            <li><strong>Network tab</strong> (refresh the page) — every request goes to <code>apollo13.quest</code>. No ad networks, no analytics companies, no social media buttons phoning home. The site doesn't talk to anyone else.</li>
+            <li><strong>The code itself</strong> — this whole site is <a href="https://github.com/RobGruhl/apollo-13-scout-mission">open source on GitHub</a>. Anyone on Earth can read every line and verify what it does. Secrets don't survive that.</li>
+        </ol>
+
+        <div style="background: #FFF9C4; border-left: 4px solid #FFA000; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+            <h3 style="color: #000; margin-bottom: 1rem;">🧮 One honest detail: we do count visitors</h3>
+            <p style="margin-bottom: 0.5rem;">
+                Like almost every website, this one sits behind a service (Cloudflare) that delivers the pages — and it can tell us <strong>how many</strong> people visited, roughly <strong>where from</strong> (country level), and <strong>which pages</strong> were popular. That's how we'll know how many scouts scanned the QR code at the jamboree!
+            </p>
+            <p style="margin-bottom: 0;">
+                Here's the difference that matters: this counting happens <strong>without cookies, without identifying anyone, and without following you</strong>. It's a turnstile at the museum door — it counts that <em>someone</em> came in, not <em>who you are</em>, and it can't see where you go afterward. Tracking, by contrast, tries to recognize <em>you specifically</em> and follow you from site to site. We count. We don't track.
+            </p>
+        </div>
+
+        <h2 style="margin-bottom: 1rem;">🍪 So how do other sites track people?</h2>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+            Great question — and knowing the answer makes you safer everywhere. The big three techniques:
+        </p>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+            <strong>1. Cookies.</strong> A cookie is a tiny note a website asks your browser to keep and show back on every visit. Cookies have honest jobs — keeping you logged in, remembering your shopping cart. The trouble is <em>third-party</em> cookies: when an ad company's code is embedded on thousands of different sites, its cookie lets it recognize you on all of them. Visit a shoe store, then a news site, then a game — the same ad network saw you in all three places, and now it has a diary of your day.
+        </p>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+            <strong>2. Tracking scripts and pixels.</strong> Those "Like" buttons, comment boxes, and invisible one-pixel images on many pages? Each one is code loaded from another company's server, which means that company learns you were there — even if you never click it. Free analytics tools work the same way: the site owner gets charts, and the analytics company gets to watch the site's visitors.
+        </p>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+            <strong>3. Fingerprinting.</strong> The sneakiest one. Your browser reveals little facts about itself — screen size, fonts, time zone, graphics hardware. Any one fact is common; the <em>combination</em> is nearly unique, like how no two scouts have the same height, shoe size, hometown, and favorite merit badge all at once. Sites can recognize the combination — no cookie required. That's why "clearing cookies" doesn't always mean starting fresh.
+        </p>
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem;">
+            <strong>Why do they do it?</strong> Mostly advertising: a profile of what you read, watch, and shop for is worth money, because ads aimed at <em>you specifically</em> sell more. That's the deal behind most "free" websites and apps — you pay with information about yourself. It's not necessarily evil, but it's a trade, and you deserve to know you're making it.
+        </p>
+
+        <h2 style="margin-bottom: 1rem;">🛡️ How to protect yourself out there</h2>
+        <ul style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem; padding-left: 1.5rem;">
+            <li><strong>Look for the padlock (HTTPS)</strong> in the address bar — it means your connection is encrypted so others on the network can't read it. (This site is HTTPS-only.)</li>
+            <li><strong>Question every account.</strong> When an app demands a sign-up, ask: why does it need to know who I am? Often it doesn't — it wants to build a profile.</li>
+            <li><strong>Give away less.</strong> Real name, birthday, school, location — the less you post, the less can be collected, leaked, or misused. You can't un-share.</li>
+            <li><strong>Use your browser's defenses.</strong> Modern browsers can block third-party cookies and known trackers — it's usually one switch in Settings → Privacy.</li>
+            <li><strong>Ask an adult before sharing personal info.</strong> Not because you're not smart — because a second opinion is how NASA catches problems too. Every decision in this mission was double-checked by somebody.</li>
+            <li><strong>Be a skeptic.</strong> "This app is free!" — then how does it pay its engineers? Following the money is a superpower.</li>
+        </ul>
+
+        <div style="background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border: 2px solid #0B3D91; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+            <h3 style="color: #0B3D91; margin-bottom: 1rem; text-align: center;">🏕️ Working on the Digital Technology merit badge?</h3>
+            <p style="margin-bottom: 0.5rem;">
+                This page covers real ground for the badge's internet-safety and personal-information requirements: what data websites collect, how cookies and tracking work, and how to protect your privacy online. Talk through the "check it yourself" steps above with your counselor — inspecting a live website's cookies and network traffic is a genuinely professional skill.
+            </p>
+            <p style="text-align: center; margin-top: 1rem; margin-bottom: 0;">
+                <a href="slides/33-merit-badge-digital-technology.html" style="color: #0B3D91; font-weight: 600; text-decoration: underline;">See the Digital Technology merit badge guide →</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <h2 style="margin-bottom: 2rem;">Now go save Apollo 13</h2>
+        <div class="cta-buttons">
+            <a href="index.html" class="btn-primary">🚀 Back to the Mission</a>
+            <a href="https://github.com/RobGruhl/apollo-13-scout-mission" class="btn-secondary">👀 Read the Source Code</a>
+        </div>
+        <p style="margin-top: 2rem; color: #666; font-size: 0.875rem;">
+            Questions about privacy on this site? Ask at the Apollo Table, or open an issue on GitHub.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #0B3D91; color: white; padding: 2rem 1rem; text-align: center;">
+        <p style="margin-bottom: 0.5rem;">
+            <strong>Apollo 13 Interactive Experience</strong>
+        </p>
+        <p style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 0;">
+            Created for Scouting America • 2026 Elevate Scout Jamboree • No cookies were baked, tracked, or harmed in the making of this site 🍪
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

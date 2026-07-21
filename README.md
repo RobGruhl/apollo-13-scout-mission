@@ -76,7 +76,8 @@ Finish the mission and get a shareable link — plus a QR code right on your scr
 ✅ **Quick Mission mode** - Short on time? Play just the 10 decisions in about 10 minutes
 ✅ **Share by QR code** - Your final score becomes a QR code friends can scan
 ✅ **Fast loading** - Works even on slow connections
-✅ **Free forever** - No ads, no tracking, no cost
+✅ **Free forever** - No ads, no cookies, no accounts, no cost
+✅ **Private by design** - Your progress stays on your device; nothing about you is collected ([read how, and check for yourself](https://apollo13.quest/privacy.html))
 ✅ **Educational** - Based on real NASA mission records
 
 ### 📚 Sources for Skeptics
@@ -105,6 +106,7 @@ This website is built with the **simplest possible tech stack** - perfect for le
 apollo-13-scout-mission/
 ├── index.html              # Home page (full mission or Quick Mission)
 ├── timeline.html           # Timeline navigator
+├── privacy.html            # No tracking here — and how tracking actually works
 ├── sw.js                   # Service worker — makes the site work offline
 ├── slides/                 # 34 HTML files, in true mission chronological order
 │   ├── 01-launch.html
@@ -230,7 +232,8 @@ This project is designed to help with multiple merit badge requirements:
 - Add accessibility features (screen reader support, high-contrast mode)
 
 **🌐 Digital Technology Merit Badge** (2025 requirements):
-- **Requirement 3c** - This project is a complete website with 36 HTML pages, text content, images, and navigation - perfect example of creating digital content for an audience
+- **Requirement 3c** - This project is a complete website with 37 HTML pages, text content, images, and navigation - perfect example of creating digital content for an audience
+- **Internet safety & privacy requirements** - The site's [privacy explainer](https://apollo13.quest/privacy.html) teaches how cookies, tracking, and fingerprinting work — and how to inspect a live website's cookies and network traffic yourself
 - **Requirement 4a** - Discusses intellectual property protections (our MIT License demonstrates copyright and licensing)
 - **Requirement 4b** - Learn when it's permissible to use/modify open source software (MIT License allows free use and modification)
 
@@ -295,7 +298,9 @@ Start by reading these files in order:
 
 ## Contributing
 
-**Found a bug?** [Open an issue on GitHub](https://github.com/RobGruhl/apollo-13-scout-mission/issues)
+**Found a bug?** [Open an issue on GitHub](https://github.com/RobGruhl/apollo-13-scout-mission/issues) — there are ready-made templates for bug reports and (our favorite) **factual corrections with sources**.
+
+**Want to contribute code or content?** Start with the [contributing guide](.github/CONTRIBUTING.md) — it explains the ground rules (no frameworks, every fact sourced) and how to test your changes.
 
 **Have an idea?** This is an open source educational project! Contributions welcome:
 - Fix typos or improve explanations
@@ -341,4 +346,4 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-*"Failure is not an option."* - Gene Kranz, Apollo 13 Flight Director
+*"Houston, we've had a problem."* — Jim Lovell, Apollo 13 Commander, April 13, 1970 (the real quote, straight from the mission transcript)

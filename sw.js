@@ -5,11 +5,12 @@
  * the whole game up front, so losing signal mid-mission costs nothing.
  * Pages + code are precached; images cache as you browse.
  */
-const CACHE_VERSION = 'apollo13-v2';
+const CACHE_VERSION = 'apollo13-v3';
 
 const PRECACHE = [
     'index.html',
     'timeline.html',
+    'privacy.html',
     'assets/css/style.css',
     'assets/js/app.js',
     'assets/js/qrcode.js',
