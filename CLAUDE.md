@@ -151,6 +151,7 @@ All styles in `assets/css/style.css` (CSS variables in `:root`). Components: `.o
 - **Accessibility**: semantic HTML, alt text, WCAG 2.1 AA contrast, arrow-key navigation
 - **Performance**: target <500KB/page, Lighthouse >90; spotty cell coverage is the design constraint the service worker exists for
 - **Share URLs use hash params** (`#name=...&troop=...&score=...`) parsed by `getURLParams` — keep PII light (first names)
+- **Score census beacon**: on a full 10-decision completion, slide 30 pings `/ping/completion/<score>` once per new score per device (a deliberate 404 — Cloudflare counts it by path; SW never caches it). Anonymous by design and **disclosed on privacy.html — keep that disclosure in sync if the beacon changes**
 
 ---
 

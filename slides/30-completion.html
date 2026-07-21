@@ -242,6 +242,15 @@
             document.getElementById('scoreBadge').style.background =
                 `linear-gradient(135deg, ${rank.color} 0%, ${adjustColor(rank.color, -20)} 100%)`;
 
+            // Anonymous score census — one same-origin ping carrying only the final
+            // score (no name, no choices; disclosed on /privacy.html). Fires once per
+            // new final score on this device; offline finishes retry on a later visit.
+            if (answered === total && localStorage.getItem('scorePinged') !== String(correct)) {
+                fetch(`../ping/completion/${correct}`, { cache: 'no-store' })
+                    .then(() => localStorage.setItem('scorePinged', String(correct)))
+                    .catch(() => {}); // no signal? counting is never worth blocking a scout
+            }
+
             // Personal best across replays (written by flyAgain before clearing)
             const stored = parseInt(localStorage.getItem('bestScore') || '0', 10);
             const best = isNaN(stored) ? 0 : stored;
