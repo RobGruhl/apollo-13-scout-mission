@@ -210,6 +210,9 @@ python3 -m http.server 8000
 - 🎥 **YouTube: "HTML & CSS Tutorial"** by Traversy Media
 - 📖 **MDN Web Docs** - The best reference for HTML/CSS/JavaScript
 
+**Ready for real software engineering?**
+- 🦴 **[The Walking Skeleton Tutorial](https://walkingskeleton.org/)** - From the same family as this project: build the smallest possible *production-shaped* app (tests, config, logging, health checks, CI) in 21 small steps, with Claude Code as your tutor. This is the craft as it's actually practiced now — great next step after modifying this site.
+
 **For Scouts Working on Merit Badges:**
 
 This project is designed to help with multiple merit badge requirements:
