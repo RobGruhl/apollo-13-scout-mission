@@ -219,7 +219,7 @@
   <header>
     <p class="eyebrow">Apollo 13 · apollo13.quest</p>
     <h1>Mission Telemetry</h1>
-    <p class="meta">Visitor analytics via Cloudflare edge · counting began <span class="mono">Jul 21, 2026 · 10:14 CT</span> · snapshot <span class="mono">Jul 21 · 10:34 CT</span></p>
+    <p class="meta">Visitor analytics via Cloudflare edge · counting began <span class="mono">Jul 21, 2026 · 10:14 CT</span> · snapshot <span class="mono">Jul 21 · 10:48 CT</span></p>
   </header>
 
   <div class="pills">
@@ -232,8 +232,8 @@
   <div class="tiles">
     <div class="tile hero">
       <p class="label">Verified visits</p>
-      <p class="value">16</p>
-      <p class="sub">sessions today · scanners excluded</p>
+      <p class="value">8</p>
+      <p class="sub">human sessions today · bots excluded</p>
     </div>
     <div class="tile">
       <p class="label">Unique devices</p>
@@ -242,8 +242,8 @@
     </div>
     <div class="tile">
       <p class="label">Countries</p>
-      <p class="value">3</p>
-      <p class="sub">US, Belgium, Malaysia</p>
+      <p class="value">2</p>
+      <p class="sub">US, Ireland</p>
     </div>
     <div class="tile">
       <p class="label">Mission completions</p>
@@ -254,9 +254,9 @@
 
   <div class="card">
     <h2>Verified visits by day</h2>
-    <p class="sub">Successful page sessions only — scanner and probe traffic removed. The jamboree crowd will fill this chart.</p>
+    <p class="sub">Real-browser sessions only — scanners, crawlers, and headless browsers removed. The jamboree crowd will fill this chart.</p>
     <div class="chart-box" id="chartbox">
-      <svg id="chart" viewBox="0 0 960 240" role="img" aria-label="Bar chart of verified visits per day. Telemetry began July 21 with 16 verified visits; earlier days have no data."></svg>
+      <svg id="chart" viewBox="0 0 960 240" role="img" aria-label="Bar chart of verified visits per day. Telemetry began July 21 with 8 verified visits; earlier days have no data."></svg>
       <div class="tooltip" id="tip"></div>
     </div>
   </div>
@@ -278,14 +278,14 @@
         <thead><tr><th>Country</th><th></th><th class="num">Visits</th></tr></thead>
         <tbody id="countries"></tbody>
       </table>
-      <p class="row-note">Filtered out today: 26 requests from a Poland-based scanner probing for <span class="mono">/.env</span> secrets files. Every probe got a 404 — the site is static and hosts no secrets. This page counts only successful page loads, so probe traffic never appears in any number above.</p>
+      <p class="row-note">Filtered out today: a Poland-based scanner probing for <span class="mono">/.env</span> secrets files (26 requests, all 404 — the site is static and hosts no secrets), a headless-browser speed-test crawl (41 requests), and assorted Go-language bots from the US, Belgium, and Malaysia. Only real-browser sessions count above.</p>
     </div>
   </div>
 
   <div class="card notes">
     <h2>Reading the numbers</h2>
     <ul>
-      <li><strong>Verified visits ≈ how many kids.</strong> Only successful page sessions count — failed requests, secrets probes, and scanner noise are excluded by the query itself. Each QR scan at the table lands here.</li>
+      <li><strong>Verified visits ≈ how many kids.</strong> Only successful sessions from real browsers count — failed requests, secrets probes, headless browsers, and known bot user-agents are excluded by the query itself. Each QR scan at the table lands here.</li>
       <li><strong>The service worker hides repeat visits.</strong> After the first load, the whole site is cached on the phone, so a scout replaying the mission offline generates no new traffic. First visits are counted reliably; browsing depth is undercounted.</li>
       <li><strong>Unique devices is the raw number.</strong> Cloudflare computes it before filtering, so crawlers are in it. When the two disagree, trust verified visits.</li>
       <li><strong>This page refreshes automatically</strong> from Cloudflare analytics. You can also tell Claude “refresh the telemetry dashboard” anytime for an on-demand update.</li>
@@ -294,7 +294,7 @@
 
   <footer>
     <span>Apollo 13 Interactive Experience · 2026 Elevate Scout Jamboree · NASA Tent, Apollo Table</span>
-    <span class="mono">SNAPSHOT 2026-07-21T15:34Z</span>
+    <span class="mono">SNAPSHOT 2026-07-21T15:48Z</span>
   </footer>
 </div>
 
@@ -308,28 +308,25 @@
     { d: "Jul 18", v: null },
     { d: "Jul 19", v: null },
     { d: "Jul 20", v: null },
-    { d: "Jul 21", v: 16 },
+    { d: "Jul 21", v: 8 },
   ];
 
   const PAGES = [
-    { name: "Landing page", path: "/", v: 16 },
+    { name: "Landing page", path: "/", v: 8 },
     { name: "Computer restart", path: "/slides/19", v: 8 },
     { name: "Merit badges hub", path: "/slides/31", v: 8 },
-    { name: "Decision 4 · Navigation", path: "/slides/09", v: 6 },
     { name: "Space Exploration badge", path: "/slides/34", v: 6 },
-    { name: "Recovery", path: "/slides/26", v: 6 },
-    { name: "Timeline", path: "/timeline", v: 6 },
     { name: "Lifeboat Moon", path: "/slides/10", v: 4 },
     { name: "Meet the presenter", path: "/slides/29", v: 4 },
     { name: "Programming badge", path: "/slides/32", v: 4 },
     { name: "Decision 7 · CO₂ mailbox", path: "/slides/13", v: 3 },
+    { name: "Decision 2 · Power conservation", path: "/slides/05", v: 2 },
     { name: "Mission complete 🏆", path: "/slides/30", v: 1 },
   ];
 
   const COUNTRIES = [
-    { flag: "🇺🇸", name: "United States", v: 13 },
-    { flag: "🇧🇪", name: "Belgium", v: 2 },
-    { flag: "🇲🇾", name: "Malaysia", v: 1 },
+    { flag: "🇺🇸", name: "United States", v: 7 },
+    { flag: "🇮🇪", name: "Ireland", v: 1 },
   ];
 
   const Y_MAX = 20; // chart y-axis top; raise as jamboree traffic grows
