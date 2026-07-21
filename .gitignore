@@ -14,6 +14,9 @@
 # Claude
 .claude/
 
+# Secrets (domain/DNS/analytics credentials — never commit)
+.env
+
 # Logs
 *.log
 
