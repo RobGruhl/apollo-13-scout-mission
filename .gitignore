@@ -17,6 +17,9 @@
 # Secrets (domain/DNS/analytics credentials — never commit)
 .env
 
+# Local working notes and session logs — never commit
+working/
+
 # Logs
 *.log
 
