@@ -5,7 +5,7 @@
  * the whole game up front, so losing signal mid-mission costs nothing.
  * Pages + code are precached; images cache as you browse.
  */
-const CACHE_VERSION = 'apollo13-v8';
+const CACHE_VERSION = 'apollo13-v9';
 
 const PRECACHE = [
     'index.html',
@@ -56,7 +56,9 @@ const PRECACHE = [
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_VERSION)
-            .then((cache) => cache.addAll(PRECACHE))
+            // no-cache: a version bump must precache fresh copies, not whatever
+            // the browser's HTTP cache still holds from before the update
+            .then((cache) => cache.addAll(PRECACHE.map((u) => new Request(u, { cache: 'no-cache' }))))
             .then(() => self.skipWaiting())
     );
 });
