@@ -14,7 +14,42 @@ document.addEventListener('DOMContentLoaded', () => {
     initDecisionTracker();
     initQuickMode();
     initOfflineCache();
+    initViewCensus();
 });
+
+/**
+ * View census: because the service worker serves pages from cache, the server
+ * never sees which slides actually get read. So the first time each page is
+ * viewed on a device, it raises its hand once — an anonymous ping to
+ * /ping/view/<page> with no name, no score, no order of visits. Pings that
+ * can't get through (airplane mode, no bars in the tent) wait in a queue and
+ * try again on a later page load. Disclosed in full on privacy.html — if you
+ * change what this sends, update that page too.
+ */
+function initViewCensus() {
+    const page = window.location.pathname
+        .replace(/\.html$/, '').replace(/^\//, '').replace(/\//g, '-') || 'index';
+    let census;
+    try { census = JSON.parse(localStorage.getItem('viewPings')) || {}; } catch (e) { census = {}; }
+    if (!Array.isArray(census.sent) || !Array.isArray(census.queued)) census = { sent: [], queued: [] };
+    if (!census.sent.includes(page) && !census.queued.includes(page)) {
+        census.queued.push(page);
+        localStorage.setItem('viewPings', JSON.stringify(census));
+    }
+    const prefix = /\/(slides|explore)\//.test(window.location.pathname) ? '../' : '';
+    (function flush() {
+        const next = census.queued[0];
+        if (!next) return;
+        fetch(prefix + 'ping/view/' + next, { cache: 'no-store' })
+            .then(() => {
+                census.queued.shift();
+                census.sent.push(next);
+                localStorage.setItem('viewPings', JSON.stringify(census));
+                flush();
+            })
+            .catch(() => {}); // no signal? counting is never worth blocking a scout
+    })();
+}
 
 /**
  * Offline support: register the service worker so the whole game downloads
