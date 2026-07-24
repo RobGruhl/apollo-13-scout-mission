@@ -187,7 +187,8 @@ img {
 }
 
 .hero img {
-    max-width: 140px;
+    /* featured poster, not a postage stamp — buttons flow below it */
+    width: min(82vw, 340px);
     margin: 0 auto var(--space-lg);
     /* no rounding: the vintage poster art has its own printed paper edge,
        and 24px corners were trimming it */
@@ -222,7 +223,7 @@ img {
 
 @media (min-width: 768px) {
     .hero img {
-        max-width: 220px;
+        width: 400px;
     }
 }
 
