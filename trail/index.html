@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Apollo Trail — an Oregon Trail-style retro remake of the Apollo 13 Interactive Experience. The same 10 real NASA decisions, played as a 1985 pixel-art trail game.">
+    <meta name="theme-color" content="#000000">
+    <title>Apollo Trail — The Apollo 13 Rescue</title>
+    <link rel="stylesheet" href="trail.css">
+</head>
+<body>
+    <div id="game">
+        <!-- Status strip: the Oregon Trail "weather/health/food" bar, Apollo-flavored -->
+        <header id="status" hidden>
+            <div class="st-row">
+                <span id="st-get">GET 000:00</span>
+                <span id="st-miles">EARTH 0 MI</span>
+                <span id="st-score" title="Decisions matched with Mission Control">SCORE 0/10</span>
+            </div>
+            <div class="st-row st-gauges">
+                <span class="gauge"><span class="glabel">PWR</span><span class="bar"><span id="g-pwr"></span></span></span>
+                <span class="gauge"><span class="glabel">H2O</span><span class="bar"><span id="g-h2o"></span></span></span>
+                <span class="gauge"><span class="glabel">CO2</span><span class="bar"><span id="g-co2"></span></span></span>
+                <span id="st-crew">CREW OK</span>
+            </div>
+        </header>
+
+        <!-- Scene panel: the top-half picture area of the 1985 Apple II Oregon Trail -->
+        <div id="scene-wrap">
+            <canvas id="scene" width="240" height="160" role="img" aria-label="Mission scene"></canvas>
+        </div>
+
+        <!-- Teletype console: story text + numbered menu, Oregon Trail style -->
+        <main id="console">
+            <div id="story" aria-live="polite"></div>
+            <div id="menu" role="group" aria-label="Choices"></div>
+        </main>
+
+        <footer id="foot">
+            <button id="btn-sound" type="button" aria-pressed="false">SOUND OFF</button>
+            <span class="foot-sep">·</span>
+            <a href="../index.html">CLASSIC MISSION</a>
+            <span class="foot-sep">·</span>
+            <a href="../privacy.html">PRIVACY</a>
+        </footer>
+    </div>
+
+    <noscript>
+        <p style="color:#33ff33;background:#000;font-family:monospace;padding:1rem;">
+            APOLLO TRAIL needs JavaScript to run.
+            Try the <a style="color:#fff" href="../index.html">classic Apollo 13 mission</a> instead —
+            it works without it.
+        </p>
+    </noscript>
+
+    <script src="trail-data.js"></script>
+    <script src="trail.js"></script>
+</body>
+</html>
