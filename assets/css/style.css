@@ -189,7 +189,8 @@ img {
 .hero img {
     max-width: 140px;
     margin: 0 auto var(--space-lg);
-    border-radius: 24px;
+    /* no rounding: the vintage poster art has its own printed paper edge,
+       and 24px corners were trimming it */
 }
 
 /* Mission-start buttons live in the hero: day-1 telemetry showed half the
