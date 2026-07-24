@@ -71,7 +71,21 @@ procedurally in `trail.js` at integer pixel positions.
 
 ## If this ever goes to production (deliberately not done)
 
-- Add `trail/` files to the `sw.js` precache list and bump `CACHE_VERSION`
+- **Add `trail/` files to the `sw.js` precache list and bump `CACHE_VERSION`.**
+  This one matters: the classic service worker is root-scoped and cache-first,
+  so without precache versioning it would freeze trail files at whatever
+  version a phone saw first (and could even pair `trail.js` from one deploy
+  with `trail-data.js` from another). Precache makes updates atomic.
 - Link it from `index.html` (e.g. as a third mission mode)
 - No analytics beacons here — if any are added, update `privacy.html` first
 - Test on a real iPhone (Safari), run Lighthouse, re-check touch targets
+
+**Local dev note:** if you've opened a classic page on your local port, its
+service worker is registered for the whole origin and will serve *stale trail
+files* cache-first. When trail edits don't show up: DevTools → Application →
+Service Workers → Unregister (or use a fresh port).
+
+**One number beyond the slides:** the travel odometer peaks at 248,655 statute
+miles from Earth near pericynthion — that's the documented Apollo 13 record
+distance (Mission Report MSC-02680), included as an easter egg for the scout
+who watches the odometer.

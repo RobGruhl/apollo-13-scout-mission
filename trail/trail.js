@@ -27,13 +27,22 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// localStorage can throw (private browsing, storage denied) — never let
+// score-keeping crash the game
+function lsGet(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+}
+function lsSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* keeping score is a bonus */ }
+}
+
 /* ========================================================================
  * Sound — Apple II speaker blips, WebAudio, zero assets
  * ====================================================================== */
 
 const Sound = {
     ctx: null,
-    on: localStorage.getItem('trailSound') === '1',
+    on: lsGet('trailSound') === '1',
 
     ensure() {
         if (!this.ctx) {
@@ -78,6 +87,7 @@ const state = {
     rates: { pwr: 0, h2o: 0, co2: 0 },   // change per mission hour, applied while traveling
     done: false,
 };
+// (best score lives in localStorage 'trailBestScore', read where needed)
 
 function saveRun() {
     try {
@@ -129,11 +139,23 @@ const EVENTS = [
     { get: 65.0,   type: 'decision', scene: 'mcc',       d: '16' },
     { get: 73.77,  type: 'decision', scene: 'suncheck',  d: '9'  },
     { get: 77.13,  type: 'story', scene: 'moon',       narr: NARR['10'] },
-    { get: 79.46,  type: 'decision', scene: 'burn',      d: '11', minigame: 'burn' },
+    { get: 79.46,  type: 'decision', scene: 'burn',      d: '11' },
     { get: 80.8,   type: 'story', scene: null,         narr: NARR['15'] },  // PTC — over the travel view
     { get: 85.0,   type: 'decision', scene: 'crew',      d: '12' },
     { get: 93.0,   type: 'decision', scene: 'mailbox',   d: '13', minigame: 'mailbox' },
     { get: 100.0,  type: 'story', scene: 'frost',      narr: NARR['14'] },
+    {
+        // MCC-5 is where the hand-flown Earth-terminator technique really lived
+        // (slide 09: COAS gunsight, hand-timed 14-second burn, ~GET 105:18)
+        get: 105.3, type: 'story', scene: 'burn', minigame: 'burn',
+        beat: {
+            title: 'MCC-5 — THE 14-SECOND BURN', get: '~105:18',
+            text: 'The course has drifted shallow — the LM’s venting nudges it every hour. ' +
+                'Houston’s fix, with the computer powered down: a 14-second burn flown by hand. ' +
+                'Lovell keeps Earth’s terminator — the day/night line — centered in the COAS gunsight ' +
+                'while the crew times the burn. Sun, Earth, eyeballs, and a watch.',
+        },
+    },
     { get: 112.2,  type: 'decision', scene: 'frost',     d: '17' },
     { get: 137.0,  type: 'story', scene: 'mcc',        beat: ARC[0] },
     { get: 138.03, type: 'decision', scene: 'smadrift',  d: '18' },
@@ -264,10 +286,28 @@ function distanceAt(get) {
 /* View state consumed by the render loop */
 const view = { mode: 'boot', sprite: null, burn: null, staticUntil: 0, buildFrac: 1 };
 
+const SCENE_LABELS = {
+    title: 'The Apollo spacecraft stack in space between Earth and Moon',
+    launch: 'Saturn V lifting off from the pad',
+    explosion: 'The Service Module venting oxygen into space',
+    moon: 'The cratered far side of the Moon',
+    burn: 'The Lunar Module descent engine firing',
+    mailbox: 'The improvised CO2 scrubber adapter',
+    frost: 'Frost on the window of the dark, cold cabin',
+    crew: 'Three astronauts huddled together for warmth',
+    reentry: 'The Command Module reentering as a fireball',
+    splashdown: 'Odyssey descending under three parachutes',
+    mcc: 'The Mission Control room in Houston',
+    farewell: 'The Lunar Module drifting away',
+    suncheck: 'The Sun centered in the alignment telescope',
+    smadrift: 'The damaged Service Module drifting, one side blown out',
+};
+
 function setPanel(name) {
     view.mode = 'panel';
     view.sprite = name;
     view.buildFrac = 1;
+    canvas.setAttribute('aria-label', SCENE_LABELS[name] || 'Mission scene');
 }
 
 function renderFrame(t) {
@@ -293,7 +333,7 @@ function renderFrame(t) {
         }
     } else if (view.mode === 'travel') {
         const outbound = state.get < 77.13;
-        drawStars(t / 90);
+        drawStars(REDUCED_MOTION ? 0 : t / 90);
         const dist = distanceAt(state.get);
         const earthR = Math.max(4, Math.round(16 - 12 * (dist / 248655)));
         const moonNear = clamp(1 - Math.abs(state.get - 77.13) / 30, 0, 1);
@@ -365,20 +405,22 @@ function crewLabel() {
     return 'CREW GO FOR ENTRY';
 }
 
-function setBar(el, frac, warnAt, badAt, invert) {
+function setBar(el, frac, warnAt, badAt, invert, srName) {
     const pct = clamp(frac, 0, 1);
     el.style.width = (pct * 100).toFixed(0) + '%';
     const level = invert ? pct : 1 - pct;   // invert: high value is the problem (CO2)
     el.className = level > badAt ? 'bad' : (level > warnAt ? 'warn' : '');
+    const gauge = el.closest('.gauge');
+    if (gauge) gauge.setAttribute('aria-label', srName + ' ' + (pct * 100).toFixed(0) + ' percent');
 }
 
 function renderStatus() {
     $('#st-get').textContent = fmtGET(state.get);
     $('#st-miles').textContent = 'EARTH ' + distanceAt(state.get).toLocaleString('en-US') + ' MI';
     $('#st-score').textContent = 'SCORE ' + state.score + '/' + TOTAL_DECISIONS;
-    setBar($('#g-pwr'), state.pwr / 100, 0.5, 0.75, false);
-    setBar($('#g-h2o'), state.h2o / 100, 0.5, 0.75, false);
-    setBar($('#g-co2'), state.co2 / 15, 0.45, 0.8, true);
+    setBar($('#g-pwr'), state.pwr / 100, 0.5, 0.75, false, 'Power');
+    setBar($('#g-h2o'), state.h2o / 100, 0.5, 0.75, false, 'Water');
+    setBar($('#g-co2'), state.co2 / 15, 0.45, 0.8, true, 'Carbon dioxide');
     const crew = $('#st-crew');
     crew.textContent = crewLabel();
     crew.className = state.get >= 55.92 && !state.done ? 'warn' : '';
@@ -419,15 +461,23 @@ async function type(lines, { instant = false } = {}) {
             await sleep(text[i] === ' ' ? 8 : 17);
             if (skipTyping) { p.textContent = text; break; }
         }
+        p.scrollIntoView({ block: 'nearest' });
         if (!skipTyping) await sleep(140);
     }
     story.classList.remove('typing');
+    // announce whole lines to screen readers instead of per-character typing
+    const sr = $('#sr-live');
+    if (sr) sr.textContent = lines.map((l) => (typeof l === 'string' ? l : l.text)).join(' ');
 }
 
-// Tapping the console (or pressing a key) fast-forwards the teletype
+// Tapping the console (or pressing a key) fast-forwards the teletype;
+// keys also skip travel/blackout so keyboard players are never stuck waiting
 $('#console').addEventListener('click', () => { skipTyping = true; });
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') skipTyping = true;
+    if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+        skipTyping = true;
+        skipTravel = true;
+    }
 });
 
 /**
@@ -469,7 +519,9 @@ function menu(options) {
             else if ((e.key === 'Enter' || e.key === ' ') && btns.length === 1) btns[0].click();
         };
         document.addEventListener('keydown', onKey);
-        menuEl.querySelector('.opt').scrollIntoView({ block: 'nearest' });
+        const first = menuEl.querySelector('.opt');
+        first.focus({ preventScroll: true });   // keep keyboard/AT focus in the flow
+        first.scrollIntoView({ block: 'nearest' });
     });
 }
 
@@ -590,27 +642,25 @@ async function runDecision(ev) {
     }
     await type(outcome);
     await pressOn();
-
-    if (ev.minigame === 'burn') await burnMinigame();
-    if (ev.minigame === 'mailbox') await mailboxMinigame();
 }
 
 /* ========================================================================
- * Minigame 1 — PC+2 burn attitude hold
- * (The real crew hand-flew burns keeping the Earth in the window reticle.)
+ * Minigame 1 — the hand-flown MCC-5 course correction
+ * (Slide 09: Lovell held Earth's terminator in the COAS gunsight while the
+ * crew hand-timed the 14-second burn.)
  * ====================================================================== */
 
 async function burnMinigame() {
     await type([
-        { text: 'MANUAL ATTITUDE HOLD', cls: 'loc' },
-        'The LM has no working autopilot alignment. Lovell hand-flies, keeping the Earth centered in the window reticle. Your turn.',
+        { text: 'MANUAL BURN — HANDS ON', cls: 'loc' },
+        'No computer. Lovell aims, keeping the Earth centered in the gunsight. Swigert calls the time: 14 seconds.',
         { text: 'HOLD ◀ / ▶ TO STEER. KEEP EARTH IN THE CROSSHAIR.', cls: 'warn' },
         { text: '(SIM PRACTICE — DOES NOT AFFECT YOUR SCORE)', cls: 'dim' },
     ]);
 
     if (REDUCED_MOTION) {
         await type([
-            'Houston calls the marks; you hold the attitude steady through all 4 minutes 24 seconds.',
+            'Houston calls the marks; you hold the attitude steady through all 14 seconds.',
             { text: '✔ BURN COMPLETE. RIGHT DOWN THE PIPE.', cls: 'good' },
         ], { instant: true });
         await pressOn();
@@ -639,14 +689,15 @@ async function burnMinigame() {
     const rBtn = mk('THRUST ▶');
     menuEl.appendChild(row);
 
-    const press = (set) => (e) => { e.preventDefault(); set(true); };
-    const release = (set) => () => set(false);
-    lBtn.addEventListener('pointerdown', press((v) => { left = v; }));
-    lBtn.addEventListener('pointerup', release((v) => { left = v; }));
-    lBtn.addEventListener('pointerleave', release((v) => { left = v; }));
-    rBtn.addEventListener('pointerdown', press((v) => { right = v; }));
-    rBtn.addEventListener('pointerup', release((v) => { right = v; }));
-    rBtn.addEventListener('pointerleave', release((v) => { right = v; }));
+    const bind = (btn, set) => {
+        btn.addEventListener('pointerdown', (e) => { e.preventDefault(); set(true); });
+        // release on every way a press can end, or thrust latches on
+        for (const evName of ['pointerup', 'pointerleave', 'pointercancel', 'lostpointercapture']) {
+            btn.addEventListener(evName, () => set(false));
+        }
+    };
+    bind(lBtn, (v) => { left = v; });
+    bind(rBtn, (v) => { right = v; });
     const onKey = (e) => {
         if (e.key === 'ArrowLeft') left = e.type === 'keydown';
         if (e.key === 'ArrowRight') right = e.type === 'keydown';
@@ -654,7 +705,7 @@ async function burnMinigame() {
     document.addEventListener('keydown', onKey);
     document.addEventListener('keyup', onKey);
 
-    const DURATION = 12000;
+    const DURATION = 14000;   // the real MCC-5 burn: 14 seconds
     const t0 = performance.now();
     let centered = 0, samples = 0;
     while (true) {
@@ -681,7 +732,7 @@ async function burnMinigame() {
     const steadiness = centered / Math.max(1, samples);
     Sound.select();
     const grade = steadiness >= 0.7
-        ? '✔ DEAD ON. 4 MIN 24 SEC, RIGHT DOWN THE PIPE.'
+        ? '✔ DEAD ON. 14 SECONDS, RIGHT DOWN THE PIPE.'
         : steadiness >= 0.35
             ? '✔ A LITTLE RAGGED — HOUSTON CALLS THE MARKS, YOU CATCH UP. BURN GOOD.'
             : '✔ YOU FIGHT IT ALL THE WAY. HOUSTON TALKS YOU THROUGH. BURN GOOD.';
@@ -697,13 +748,14 @@ async function burnMinigame() {
  * ====================================================================== */
 
 async function mailboxMinigame() {
+    // materials the slide lists as aboard: plastic bags, cardboard, duct tape,
+    // hoses, flight manual covers — plus the CM's square canisters themselves
     const parts = [
-        'CM LITHIUM HYDROXIDE CANISTER',
-        'PLASTIC STOWAGE BAG',
-        'FLIGHT PLAN COVER (CARDBOARD)',
+        'CM SQUARE LIOH CANISTER',
+        'PLASTIC BAG',
+        'CARDBOARD FLIGHT MANUAL COVER',
         'GRAY TAPE — LOTS OF IT',
-        'SUIT HOSE',
-        'ONE SOCK',
+        'HOSE',
     ];
     await type([
         { text: 'BUILD THE MAILBOX', cls: 'loc' },
@@ -815,39 +867,44 @@ async function runEnd() {
     setPanel('splashdown');
     renderStatus();
 
-    const best = parseInt(localStorage.getItem('trailBestScore') || '-1', 10);
-    if (state.score > best) localStorage.setItem('trailBestScore', String(state.score));
+    const best = parseInt(lsGet('trailBestScore') || '-1', 10);
+    if (state.score > best) lsSet('trailBestScore', String(state.score));
 
     const { rank, emoji } = getRank(state.score, TOTAL_DECISIONS);
     const card = cardName(state.score);
     const who = state.name ? state.name : 'ASTRONAUT';
 
-    const lines = [
-        { text: 'MISSION COMPLETE · GET 142:54:41', cls: 'loc' },
-        { text: 'THE CREW OF APOLLO 13 IS HOME.', cls: 'good' },
-        who + ', you called ' + state.score + ' of ' + TOTAL_DECISIONS + ' decisions the way Mission Control did.',
-        { text: emoji + ' RANK: ' + rank, cls: 'title-big' },
-    ];
-    if (card) {
-        lines.push({ text: 'SHOW THIS SCREEN AT THE APOLLO TABLE — YOU EARNED THE ' + card + ' RANK CARD.', cls: 'warn' });
-    } else {
-        lines.push({ text: 'REPLAY THE MISSION TO SEE WHAT NASA CHOSE AND WHY — RANK CARDS START AT 4.', cls: 'dim' });
-    }
-    if (state.score > best && best >= 0) lines.push({ text: 'NEW PERSONAL BEST!', cls: 'good' });
-    await type(lines);
+    // renders the summary + recap; called again after SOURCES so the rank
+    // screen is never lost
+    async function renderSummary(instant) {
+        const lines = [
+            { text: 'MISSION COMPLETE · GET 142:54:41', cls: 'loc' },
+            { text: 'THE CREW OF APOLLO 13 IS HOME.', cls: 'good' },
+            who + ', you called ' + state.score + ' of ' + TOTAL_DECISIONS + ' decisions the way Mission Control did.',
+            { text: emoji + ' RANK: ' + rank, cls: 'title-big' },
+        ];
+        if (card) {
+            lines.push({ text: 'SHOW THIS SCREEN AT THE APOLLO TABLE — YOU EARNED THE ' + card + ' RANK CARD.', cls: 'warn' });
+        } else {
+            lines.push({ text: 'REPLAY THE MISSION TO SEE WHAT NASA CHOSE AND WHY — RANK CARDS START AT 4.', cls: 'dim' });
+        }
+        if (state.score > best && best >= 0) lines.push({ text: 'NEW PERSONAL BEST!', cls: 'good' });
+        await type(lines, { instant });
 
-    // recap list, classic-tracker style
-    const ul = document.createElement('ul');
-    ul.className = 'recap';
-    for (const d of TRAIL_DATA.decisions) {
-        const li = document.createElement('li');
-        const chose = state.decisions[d.slide];
-        const ok = chose === d.correctKey;
-        li.className = ok ? 'ok' : 'miss';
-        li.textContent = (ok ? '🏆 ' : '⚠ ') + d.title.toUpperCase();
-        ul.appendChild(li);
+        // recap list, classic-tracker style
+        const ul = document.createElement('ul');
+        ul.className = 'recap';
+        for (const d of TRAIL_DATA.decisions) {
+            const li = document.createElement('li');
+            const ok = state.decisions[d.slide] === d.correctKey;
+            li.className = ok ? 'ok' : 'miss';
+            li.textContent = (ok ? '🏆 ' : '⚠ ') + d.title.toUpperCase();
+            ul.appendChild(li);
+        }
+        story.appendChild(ul);
     }
-    story.appendChild(ul);
+
+    await renderSummary(false);
 
     while (true) {
         const pick = await menu([
@@ -858,6 +915,7 @@ async function runEnd() {
         if (pick === 'again') { window.location.reload(); return; }
         if (pick === 'classic') { window.location.href = '../index.html'; return; }
         await showSources();
+        await renderSummary(true);   // bring the rank screen back after BACK
         story.scrollIntoView({ block: 'start' });
     }
 }
@@ -896,7 +954,7 @@ async function showSources() {
 
 async function titleScreen() {
     setPanel('title');
-    const best = parseInt(localStorage.getItem('trailBestScore') || '-1', 10);
+    const best = parseInt(lsGet('trailBestScore') || '-1', 10);
     const lines = [
         { text: 'APOLLO TRAIL', cls: 'title-big' },
         { text: 'THE APOLLO 13 RESCUE · APRIL 1970', cls: 'title-sub' },
@@ -986,6 +1044,8 @@ async function main() {
         else if (ev.type === 'decision') await runDecision(ev);
         else if (ev.type === 'blackout') await runBlackout(ev);
         else if (ev.type === 'end') { await runEnd(); return; }
+        if (ev.minigame === 'burn') await burnMinigame();
+        if (ev.minigame === 'mailbox') await mailboxMinigame();
         state.idx++;
         saveRun();
         renderStatus();
@@ -1003,7 +1063,7 @@ function renderSoundBtn() {
 }
 soundBtn.addEventListener('click', () => {
     Sound.on = !Sound.on;
-    localStorage.setItem('trailSound', Sound.on ? '1' : '0');
+    lsSet('trailSound', Sound.on ? '1' : '0');
     Sound.ensure();
     if (Sound.on) Sound.select();
     renderSoundBtn();

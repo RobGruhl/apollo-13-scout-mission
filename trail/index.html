@@ -32,9 +32,19 @@
 
         <!-- Teletype console: story text + numbered menu, Oregon Trail style -->
         <main id="console">
-            <div id="story" aria-live="polite"></div>
+            <div id="story"></div>
             <div id="menu" role="group" aria-label="Choices"></div>
+            <noscript>
+                <p style="color:#33ff33;padding:1rem 0;">
+                    APOLLO TRAIL needs JavaScript to run.
+                    Try the <a style="color:#fff" href="../index.html">classic Apollo 13 mission</a> instead —
+                    it works without it.
+                </p>
+            </noscript>
         </main>
+
+        <!-- Screen-reader announcements: whole lines, not per-character typing -->
+        <div id="sr-live" class="sr-only" aria-live="polite"></div>
 
         <footer id="foot">
             <button id="btn-sound" type="button" aria-pressed="false">SOUND OFF</button>
@@ -44,14 +54,6 @@
             <a href="../privacy.html">PRIVACY</a>
         </footer>
     </div>
-
-    <noscript>
-        <p style="color:#33ff33;background:#000;font-family:monospace;padding:1rem;">
-            APOLLO TRAIL needs JavaScript to run.
-            Try the <a style="color:#fff" href="../index.html">classic Apollo 13 mission</a> instead —
-            it works without it.
-        </p>
-    </noscript>
 
     <script src="trail-data.js"></script>
     <script src="trail.js"></script>

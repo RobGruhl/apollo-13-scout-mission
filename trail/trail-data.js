@@ -402,7 +402,7 @@ const TRAIL_DATA = {
       "slide": "01-launch",
       "title": "Launch & Mission Overview",
       "get": "GET 00:00:00",
-      "text": "APRIL 11, 1970. 2:13 PM EST. You ride the Saturn V off Pad 39A with Lovell, Swigert, and Haise. Destination: Fra Mauro. Ten days planned. GET 00:05:30 — pogo vibrations kill the second stage center engine early. Four engines burn longer. You reach orbit anyway. GET 02:35:46 — Trans-Lunar Injection. You are Moon-bound and off free-return. Everything nominal. For now.",
+      "text": "APRIL 11, 1970. 2:13 PM EST. You ride the Saturn V off Pad 39A with Lovell, Swigert, and Haise. Destination: Fra Mauro. Ten days planned. GET 00:05:30 — pogo vibrations kill the second stage center engine early. Four engines burn longer. You reach orbit anyway. GET 02:35:46 — Trans-Lunar Injection. You are Moon-bound — and to aim for Fra Mauro, your course was taken off free-return. That choice matters in 56 hours.",
       "oneLiner": "SATURN V AWAY. ONE ENGINE DOWN. MOON AHEAD."
     },
     {
