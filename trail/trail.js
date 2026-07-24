@@ -651,15 +651,11 @@ async function runDecision(ev) {
  * ====================================================================== */
 
 async function burnMinigame() {
-    await type([
-        { text: 'MANUAL BURN — HANDS ON', cls: 'loc' },
-        'No computer. Lovell aims, keeping the Earth centered in the gunsight. Swigert calls the time: 14 seconds.',
-        { text: 'HOLD ◀ / ▶ TO STEER. KEEP EARTH IN THE CROSSHAIR.', cls: 'warn' },
-        { text: '(SIM PRACTICE — DOES NOT AFFECT YOUR SCORE)', cls: 'dim' },
-    ]);
-
     if (REDUCED_MOTION) {
+        // no motion game — tell the story instead, with no phantom instructions
         await type([
+            { text: 'MANUAL BURN — HANDS ON', cls: 'loc' },
+            'No computer. Lovell aims, keeping the Earth centered in the gunsight. Swigert calls the time: 14 seconds.',
             'Houston calls the marks; you hold the attitude steady through all 14 seconds.',
             { text: '✔ BURN COMPLETE. RIGHT DOWN THE PIPE.', cls: 'good' },
         ], { instant: true });
@@ -667,40 +663,52 @@ async function burnMinigame() {
         return;
     }
 
+    await type([
+        { text: 'MANUAL BURN — HANDS ON', cls: 'loc' },
+        'No computer. Lovell aims, keeping the Earth centered in the gunsight. Swigert calls the time: 14 seconds.',
+        { text: 'DRAG THE PICTURE TO STEER — HOLD EARTH IN THE CROSSHAIR.', cls: 'warn' },
+        { text: '(SIM PRACTICE — DOES NOT AFFECT YOUR SCORE · KEYBOARD: ← →)', cls: 'dim' },
+    ]);
+
     const b = { pos: 0, vel: 0, progress: 0 };
     view.burn = b;
     view.mode = 'burn';
 
-    let left = false, right = false;
+    // Direct manipulation: drag the picture, the Earth follows your finger —
+    // no abstract thrust buttons to decode. Arrow keys cover desktop.
     menuEl.innerHTML = '';
-    const row = document.createElement('div');
-    row.style.display = 'flex';
-    row.style.gap = '0.5rem';
-    const mk = (txt) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'opt continue';
-        btn.style.flex = '1';
-        btn.textContent = txt;
-        row.appendChild(btn);
-        return btn;
-    };
-    const lBtn = mk('◀ THRUST');
-    const rBtn = mk('THRUST ▶');
-    menuEl.appendChild(row);
+    const hint = document.createElement('div');
+    hint.style.cssText = 'color:#8a8a8a; text-align:center; padding:0.7rem 0.5rem; font-size:0.8rem; letter-spacing:0.06em;';
+    hint.setAttribute('aria-hidden', 'true');   // instructions already typed to the story/live region
+    hint.textContent = '☝ DRAG THE PICTURE — HOLD EARTH IN THE CROSSHAIR';
+    menuEl.appendChild(hint);
 
-    const bind = (btn, set) => {
-        btn.addEventListener('pointerdown', (e) => { e.preventDefault(); set(true); });
-        // release on every way a press can end, or thrust latches on
-        for (const evName of ['pointerup', 'pointerleave', 'pointercancel', 'lostpointercapture']) {
-            btn.addEventListener(evName, () => set(false));
-        }
+    const wrap = $('#scene-wrap');
+    const prevTouchAction = wrap.style.touchAction;
+    wrap.style.touchAction = 'none';   // horizontal drags must not become page scrolls
+    let activePointer = null, lastX = 0;
+    // the canvas can be letterboxed inside the wrap — scale by its rendered width
+    const toCanvasX = (dx) => dx * (CW / canvas.getBoundingClientRect().width);
+    const onDown = (e) => {
+        if (activePointer !== null) return;   // one finger steers; ignore the rest
+        activePointer = e.pointerId;
+        lastX = e.clientX;
+        e.preventDefault();
     };
-    bind(lBtn, (v) => { left = v; });
-    bind(rBtn, (v) => { right = v; });
+    const onMove = (e) => {
+        if (e.pointerId !== activePointer) return;
+        b.pos = clamp(b.pos + toCanvasX(e.clientX - lastX), -60, 60);
+        lastX = e.clientX;
+    };
+    const onUp = (e) => { if (e.pointerId === activePointer) activePointer = null; };
+    wrap.addEventListener('pointerdown', onDown);
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
+    let keyDir = 0;
     const onKey = (e) => {
-        if (e.key === 'ArrowLeft') left = e.type === 'keydown';
-        if (e.key === 'ArrowRight') right = e.type === 'keydown';
+        if (e.key === 'ArrowLeft') keyDir = e.type === 'keydown' ? -1 : 0;
+        if (e.key === 'ArrowRight') keyDir = e.type === 'keydown' ? 1 : 0;
     };
     document.addEventListener('keydown', onKey);
     document.addEventListener('keyup', onKey);
@@ -711,12 +719,10 @@ async function burnMinigame() {
     while (true) {
         const t = performance.now() - t0;
         b.progress = clamp(t / DURATION, 0, 1);
-        // drift: slow random shove + player thrust
-        b.vel += (Math.random() - 0.5) * 0.35;
-        if (left) b.vel -= 0.28;
-        if (right) b.vel += 0.28;
-        b.vel = clamp(b.vel, -3, 3);
-        b.pos = clamp(b.pos + b.vel * 0.5, -60, 60);
+        // drift shoves the view; the player drags it back
+        b.vel += (Math.random() - 0.5) * 0.4;
+        b.vel = clamp(b.vel, -2.5, 2.5);
+        b.pos = clamp(b.pos + b.vel * 0.5 + keyDir * 2.2, -60, 60);
         if (Math.abs(b.pos) >= 60) b.vel *= -0.4;
         samples++;
         if (Math.abs(b.pos) < 12) centered++;
@@ -725,6 +731,11 @@ async function burnMinigame() {
     }
     document.removeEventListener('keydown', onKey);
     document.removeEventListener('keyup', onKey);
+    wrap.removeEventListener('pointerdown', onDown);
+    window.removeEventListener('pointermove', onMove);
+    window.removeEventListener('pointerup', onUp);
+    window.removeEventListener('pointercancel', onUp);
+    wrap.style.touchAction = prevTouchAction;
     menuEl.innerHTML = '';
     view.mode = 'panel';
     view.sprite = 'burn';
@@ -870,6 +881,10 @@ async function runEnd() {
     const best = parseInt(lsGet('trailBestScore') || '-1', 10);
     if (state.score > best) lsSet('trailBestScore', String(state.score));
 
+    // Anonymous score census: one ping per new trail score per device —
+    // same pattern as the classic completion page (disclosed on privacy.html)
+    sendTrailScorePing(state.score);
+
     const { rank, emoji } = getRank(state.score, TOTAL_DECISIONS);
     const card = cardName(state.score);
     const who = state.name ? state.name : 'ASTRONAUT';
@@ -946,6 +961,80 @@ async function showSources() {
     }
     story.appendChild(ul);
     await pressOn('BACK');
+}
+
+/* ========================================================================
+ * Production wiring: offline cache + anonymous view census
+ * (same mechanisms as the classic app — disclosed on ../privacy.html;
+ * keep that page in sync if these change)
+ * ====================================================================== */
+
+function initOfflineCache() {
+    if (!('serviceWorker' in navigator)) return;
+    navigator.serviceWorker.register('../sw.js').catch(() => {
+        // offline caching is a bonus, never a blocker
+    });
+}
+
+/**
+ * Census pings only make sense with working storage — without it there's no
+ * "once per device" dedupe, and a privacy-mode browser would over-count on
+ * every visit. Fail closed, exactly like the classic app does.
+ */
+function storageWorks() {
+    lsSet('trailStorageProbe', '1');
+    return lsGet('trailStorageProbe') === '1';
+}
+
+/**
+ * One anonymous "someone opened the trail" ping per device — same queue and
+ * localStorage key as the classic app's view census, so offline pings retry
+ * on any later page load, classic or trail.
+ */
+function initViewCensus() {
+    if (!storageWorks()) return;
+    let census;
+    try { census = JSON.parse(lsGet('viewPings')) || {}; } catch (e) { census = {}; }
+    if (!Array.isArray(census.sent) || !Array.isArray(census.queued)) census = { sent: [], queued: [] };
+    const page = 'trail';
+    if (!census.sent.includes(page) && !census.queued.includes(page)) {
+        census.queued.push(page);
+        lsSet('viewPings', JSON.stringify(census));
+    }
+    (function flush() {
+        const next = census.queued[0];
+        if (!next) return;
+        fetch('../ping/view/' + next, { cache: 'no-store' })
+            .then(() => {
+                census.queued.shift();
+                census.sent.push(next);
+                lsSet('viewPings', JSON.stringify(census));
+                flush();
+            })
+            .catch(() => {}); // no signal? counting is never worth blocking a scout
+    })();
+}
+
+/**
+ * Anonymous score census with an offline retry: a finish with no bars queues
+ * the score (trailScorePending) and the next trail visit sends it — keeping
+ * privacy.html's "pings simply wait and try again" promise true here too.
+ */
+function sendTrailScorePing(score) {
+    if (!storageWorks()) return;
+    if (lsGet('trailScorePinged') === String(score)) return;
+    lsSet('trailScorePending', String(score));
+    fetch('../ping/trail-completion/' + score, { cache: 'no-store' })
+        .then(() => {
+            lsSet('trailScorePinged', String(score));
+            lsSet('trailScorePending', '');
+        })
+        .catch(() => {}); // stays pending; retried on the next trail visit
+}
+
+function flushPendingScorePing() {
+    const pending = lsGet('trailScorePending');
+    if (pending) sendTrailScorePing(pending);
 }
 
 /* ========================================================================
@@ -1027,6 +1116,9 @@ async function titleScreen() {
 async function main() {
     view.mode = 'boot';
     story.innerHTML = '<p class="loc">LOADING TAPE ▌</p>';
+    initOfflineCache();
+    initViewCensus();
+    flushPendingScorePing();
     await loadSprites();
 
     await titleScreen();

@@ -67,6 +67,11 @@ After changing any page or asset list, bump `CACHE_VERSION` in `sw.js` so return
 │   ├── js/app.js          # All game logic (scoring, locking, tracker, quick mode, SW registration)
 │   ├── js/qrcode.js       # Vendored MIT QR generator (score sharing)
 │   └── images/            # Web-optimized images (only referenced files)
+├── trail/                 # 🥚 "Apollo Trail" — Oregon Trail-style (MECC Apple II 1985) secret remake:
+│                          #    same 10 decisions/answers/ranks, own CSS/JS/data, pixel-art sprites.
+│                          #    DIRECT URL ONLY (/trail/) — deliberately no links anywhere on the site;
+│                          #    privacy.html's "hidden retro mini-game" line is the only hint.
+│                          #    Keys: trailBestScore/trailSound/trailRun/trailScorePinged.
 ├── exhibit/               # The physical jamboree table: poster/card previews, QR codes
 ├── docs/                  # DEPLOYMENT_GUIDE, SITEMAP_SPECIFICATION, SCORING_SYSTEM_DESIGN
 ├── scripts/               # Verification scripts
@@ -152,6 +157,7 @@ All styles in `assets/css/style.css` (CSS variables in `:root`). Components: `.o
 - **Performance**: target <500KB/page, Lighthouse >90; spotty cell coverage is the design constraint the service worker exists for
 - **Share URLs use hash params** (`#name=...&troop=...&score=...`) parsed by `getURLParams` — keep PII light (first names)
 - **Score census beacon**: on a full 10-decision completion, slide 30 pings `/ping/completion/<score>` once per new score per device (a deliberate 404 — Cloudflare counts it by path; SW never caches it). Anonymous by design and **disclosed on privacy.html — keep that disclosure in sync if the beacon changes**
+- **Trail beacons**: the Apollo Trail easter egg counts the same two ways — `/ping/view/trail` (once per device, shared `viewPings` queue) and `/ping/trail-completion/<score>` (once per new score, key `trailScorePinged`). Also disclosed on privacy.html — same sync rule
 
 ---
 

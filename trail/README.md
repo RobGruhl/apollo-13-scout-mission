@@ -2,7 +2,12 @@
 
 An **Oregon Trail-style remake** of the Apollo 13 Interactive Experience — the same
 10 real NASA decisions as the classic slide mission, played as a 1985 trail game.
-Built for local assessment on branch `trail-game`; **not deployed**.
+Lives on branch `trail-game` as a deploy-ready **secret**: reachable only by
+typing the direct URL — `apollo13.quest/trail/` — with deliberately no links
+anywhere on the site. The only breadcrumbs are the privacy page's
+"hidden retro mini-game" disclosure and the service-worker cache a curious
+scout might inspect (both very much in the spirit of the exhibit). Share it
+by word of mouth at the Apollo Table.
 
 Play locally (service worker not required for this page, but HTTP is):
 
@@ -69,16 +74,22 @@ Scene panels are **gpt-image-2 renders pixel-aligned into real pixel art**:
 The travel-screen stack, Earth/Moon, starfield and burn reticle are drawn
 procedurally in `trail.js` at integer pixel positions.
 
-## If this ever goes to production (deliberately not done)
+## Production wiring (done on this branch — deploys when merged to main)
 
-- **Add `trail/` files to the `sw.js` precache list and bump `CACHE_VERSION`.**
-  This one matters: the classic service worker is root-scoped and cache-first,
-  so without precache versioning it would freeze trail files at whatever
-  version a phone saw first (and could even pair `trail.js` from one deploy
-  with `trail-data.js` from another). Precache makes updates atomic.
-- Link it from `index.html` (e.g. as a third mission mode)
-- No analytics beacons here — if any are added, update `privacy.html` first
-- Test on a real iPhone (Safari), run Lighthouse, re-check touch targets
+- **Offline + freshness**: all 18 trail files are in the `sw.js` precache
+  (`CACHE_VERSION` bumped to v10), and `trail.js` registers the service worker
+  itself, so a scout who lands straight on `/trail/` still gets the offline
+  download. Precaching also keeps trail updates atomic — the root-scoped
+  cache-first SW would otherwise freeze trail files at first-visit versions.
+  **Any future trail change needs a `CACHE_VERSION` bump**, same as the slides.
+- **View census**: one anonymous `/ping/view/trail` per device, using the same
+  `viewPings` queue as the classic pages (offline pings retry later).
+- **Score census**: one anonymous `/ping/trail-completion/<score>` per new
+  score per device (key `trailScorePinged`) — Cloudflare counts by path,
+  exactly like the classic `/ping/completion/<score>`.
+- **Privacy**: both beacons are disclosed on `privacy.html` (which now also
+  hints that the hidden game exists — full-transparency rule kept).
+- Before pushing: test on a real iPhone (Safari), run Lighthouse.
 
 **Local dev note:** if you've opened a classic page on your local port, its
 service worker is registered for the whole origin and will serve *stale trail

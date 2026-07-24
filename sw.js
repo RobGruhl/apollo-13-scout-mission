@@ -5,7 +5,7 @@
  * the whole game up front, so losing signal mid-mission costs nothing.
  * Pages + code are precached; images cache as you browse.
  */
-const CACHE_VERSION = 'apollo13-v9';
+const CACHE_VERSION = 'apollo13-v10';
 
 const PRECACHE = [
     'index.html',
@@ -50,7 +50,25 @@ const PRECACHE = [
     'slides/31-merit-badges.html',
     'slides/32-merit-badge-programming.html',
     'slides/33-merit-badge-digital-technology.html',
-    'slides/34-merit-badge-space-exploration.html'
+    'slides/34-merit-badge-space-exploration.html',
+    'trail/index.html',
+    'trail/trail.css',
+    'trail/trail.js',
+    'trail/trail-data.js',
+    'trail/sprites/burn.png',
+    'trail/sprites/crew.png',
+    'trail/sprites/explosion.png',
+    'trail/sprites/farewell.png',
+    'trail/sprites/frost.png',
+    'trail/sprites/launch.png',
+    'trail/sprites/mailbox.png',
+    'trail/sprites/mcc.png',
+    'trail/sprites/moon.png',
+    'trail/sprites/reentry.png',
+    'trail/sprites/smadrift.png',
+    'trail/sprites/splashdown.png',
+    'trail/sprites/suncheck.png',
+    'trail/sprites/title.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -81,9 +99,15 @@ self.addEventListener('fetch', (event) => {
     // network — they're how the site counts reads despite this very cache
     if (url.pathname.includes('/ping/')) return;
 
+    // Directory navigations ('/', '/trail/') live in the precache under their
+    // index.html key — normalize the lookup so typing a bare URL works offline
+    const lookup = url.pathname.endsWith('/')
+        ? new Request(url.pathname + 'index.html')
+        : event.request;
+
     // Cache-first: precached pages/code hit instantly; images cache on first view
     event.respondWith(
-        caches.match(event.request, { ignoreSearch: true }).then((cached) => {
+        caches.match(lookup, { ignoreSearch: true }).then((cached) => {
             if (cached) return cached;
             return fetch(event.request).then((response) => {
                 if (response.ok) {
