@@ -110,6 +110,14 @@
                     <!-- Rank Card Banner (filled by JS based on score) -->
                     <div id="cardBanner" class="card-banner"></div>
 
+                    <!-- MERIT BADGE CTA — lives at the score moment, where every scout
+                         actually is. (Telemetry 2026-07-25: 300+ completions, ~0 reads
+                         of anything placed below the score screen's fold.) -->
+                    <div style="background: var(--bg-yellow-light); border: 3px solid var(--caution-yellow); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; text-align: center;">
+                        <p style="margin-bottom: 1rem;"><strong>🏕️ Working on merit badges?</strong> This mission counts toward <strong>Programming</strong>, <strong>Digital Technology</strong>, and <strong>Space Exploration</strong> requirements.</p>
+                        <a href="31-merit-badges.html" class="btn-primary">🏅 See How It Counts →</a>
+                    </div>
+
                     <!-- Replay Loop -->
                     <div class="replay-cta">
                         <button type="button" onclick="flyAgain()" class="btn-primary btn-replay">🔁 Fly the Mission Again</button>
@@ -170,18 +178,6 @@
                     <p style="margin-bottom: 0;">
                         Jim Lovell called it a <strong>"successful failure"</strong> — no Moon landing, but a rescue that became one of NASA's finest hours. Work the problem, stay calm, and use what you have: that's how the crew came home.
                     </p>
-                </div>
-
-                <!-- MERIT BADGE TEASER (full breakdown lives on the merit-badges page) -->
-                <div style="background: var(--bg-yellow-light); border: 3px solid var(--caution-yellow); padding: 2rem; border-radius: 8px; margin: 3rem 0; text-align: center;">
-                    <h3 style="margin-bottom: 1rem;">🏕️ Working on Merit Badges?</h3>
-                    <p style="margin-bottom: 1.5rem;">
-                        This whole experience is open source — about <strong>1,600 lines of CSS and JavaScript across 36 HTML pages</strong> — and can count toward <strong>Programming</strong>, <strong>Digital Technology</strong>, and <strong>Space Exploration</strong> requirements.
-                    </p>
-                    <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 0 auto;">
-                        <a href="31-merit-badges.html" class="btn-primary">🏅 See How It Counts →</a>
-                        <a href="https://github.com/RobGruhl/apollo-13-scout-mission" target="_blank" rel="noopener" class="btn-secondary">📖 View the Code (MIT)</a>
-                    </div>
                 </div>
 
                 <!-- Credits -->
