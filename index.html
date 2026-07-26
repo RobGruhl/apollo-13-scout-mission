@@ -89,6 +89,9 @@
         <p style="line-height: 1.6; margin-bottom: 0.75rem;">
             You'll face the same <strong>10 critical decisions</strong> the crew and Mission Control did — choices that determined whether the astronauts lived or died. Will you make the calls NASA made?
         </p>
+        <p style="line-height: 1.6; margin-bottom: 0.75rem;">
+            People argue about whether deep space is a new frontier or an old one with better math: a wagon on the <span class="trailhead">Oregon Trail</span> and a spacecraft on a free-return trajectory are both a long way from help, rationing what they carry and fixing what breaks.
+        </p>
         <p style="text-align: center; margin: 0 0 0.75rem;">
             <a href="timeline.html" style="color: #0B3D91; font-weight: 600;">📅 Prefer to browse first? View the mission timeline →</a>
         </p>
@@ -198,6 +201,33 @@
         document.getElementById('resetButton').addEventListener('mouseleave', function() {
             this.style.opacity = '0.3';
         });
+
+        /**
+         * 🥚 Secret door: the words "Oregon Trail" in the mission paragraph above
+         * open the Apollo Trail — the 1985-style retro remake at /trail/. Same 10
+         * decisions, same correct answers, same rank cards, so a scout who finds
+         * it is playing for the same prize.
+         *
+         * It is a plain <span>, styled like the sentence around it on purpose: no
+         * underline, no color, no cursor change, nothing for a screen reader to
+         * announce. The sentence itself is the hint — it's a little out of place,
+         * and a curious scout pokes at the odd thing. Word of mouth at the Apollo
+         * Table does the rest.
+         */
+        (function initTrailhead() {
+            const trailhead = document.querySelector('.trailhead');
+            if (!trailhead) return;
+
+            trailhead.addEventListener('click', () => {
+                const flash = document.createElement('div');
+                flash.className = 'egg-flash';
+                flash.textContent = 'APOLLO TRAIL · 1985';
+                document.body.appendChild(flash);
+                // Hash, not a query string, so /trail/ still matches the service
+                // worker's precached copy when the tent has no signal.
+                setTimeout(() => { window.location.href = 'trail/#tap'; }, 550);
+            });
+        })();
     </script>
 </body>
 </html>

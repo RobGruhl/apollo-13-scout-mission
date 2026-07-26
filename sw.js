@@ -5,7 +5,7 @@
  * the whole game up front, so losing signal mid-mission costs nothing.
  * Pages + code are precached; images cache as you browse.
  */
-const CACHE_VERSION = 'apollo13-v16';
+const CACHE_VERSION = 'apollo13-v17';
 
 const PRECACHE = [
     'index.html',
@@ -102,8 +102,9 @@ self.addEventListener('fetch', (event) => {
     if (event.request.method !== 'GET') return;
     const url = new URL(event.request.url);
     if (url.origin !== self.location.origin) return;
-    // Census pings (/ping/view/*, /ping/completion/*) must always reach the
-    // network — they're how the site counts reads despite this very cache
+    // Census pings (/ping/view/*, /ping/completion/*, /ping/trail-completion/*,
+    // /ping/card/*) must always reach the network — they're how the site counts
+    // reads and rank cards despite this very cache
     if (url.pathname.includes('/ping/')) return;
 
     // Directory navigations ('/', '/trail/') live in the precache under their

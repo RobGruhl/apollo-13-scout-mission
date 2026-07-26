@@ -227,6 +227,28 @@ img {
     }
 }
 
+/* 🥚 Secret door (see initTrailhead in index.html): the words "Oregon Trail" in
+   the mission paragraph open the retro game. Deliberately styled as NOTHING —
+   no underline, no color, no pointer cursor, no tap highlight. If it ever looks
+   like a link, the secret is gone. */
+.trailhead {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.egg-flash {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000;
+    color: #33ff33;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 1.1rem;
+    letter-spacing: 0.22em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .hero h1 {
     color: var(--mission-white);
     font-size: var(--text-2xl);

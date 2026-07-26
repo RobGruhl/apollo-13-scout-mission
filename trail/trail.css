@@ -169,6 +169,31 @@ body {
 #story .title-sub { text-align: center; color: var(--paper); }
 #story .center { text-align: center; }
 
+/* Rank-card claim on the end screen — the screen a scout holds up at the
+   Apollo Table. Boxed and amber so Ed can read the tier at arm's length,
+   matching the classic mission's .card-banner.earned. */
+#story .claim {
+    color: var(--amber);
+    text-align: center;
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+    border: 2px solid var(--amber);
+    border-bottom: none;
+    padding: 0.7rem 0.6rem 0.5rem;
+    margin: 0.8rem 0 0;
+    text-shadow: 0 0 6px rgba(255, 176, 0, 0.4);
+}
+#story .claim-sub {
+    color: var(--amber);
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    border: 2px solid var(--amber);
+    border-top: none;
+    padding: 0 0.6rem 0.7rem;
+    margin: 0 0 0.8rem;
+}
+
 /* blinking teletype caret while text is typing */
 #story.typing > p:last-of-type::after {
     content: "▌";

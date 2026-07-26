@@ -884,6 +884,9 @@ async function runEnd() {
     // Anonymous score census: one ping per new trail score per device —
     // same pattern as the classic completion page (disclosed on privacy.html)
     sendTrailScorePing(state.score);
+    // ...plus the shared rank-card count, so a card earned out here shows up in
+    // the same tally as one earned in the classic mission
+    sendCardPing(state.score);
 
     const { rank, emoji } = getRank(state.score, TOTAL_DECISIONS);
     const card = cardName(state.score);
@@ -899,7 +902,11 @@ async function runEnd() {
             { text: emoji + ' RANK: ' + rank, cls: 'title-big' },
         ];
         if (card) {
-            lines.push({ text: 'SHOW THIS SCREEN AT THE APOLLO TABLE — YOU EARNED THE ' + card + ' RANK CARD.', cls: 'warn' });
+            // The claim screen Ed reads at the table — same deal as the classic
+            // mission's rank-card banner, boxed so it's unmistakable across a
+            // crowded table on a phone held up at arm's length.
+            lines.push({ text: '🎖️ YOU EARNED THE ' + card + ' RANK CARD', cls: 'claim' });
+            lines.push({ text: 'SHOW THIS SCREEN AT THE APOLLO TABLE (NASA TENT) TO PICK IT UP.', cls: 'claim-sub' });
         } else {
             lines.push({ text: 'REPLAY THE MISSION TO SEE WHAT NASA CHOSE AND WHY — RANK CARDS START AT 4.', cls: 'dim' });
         }
@@ -996,10 +1003,17 @@ function initViewCensus() {
     let census;
     try { census = JSON.parse(lsGet('viewPings')) || {}; } catch (e) { census = {}; }
     if (!Array.isArray(census.sent) || !Array.isArray(census.queued)) census = { sent: [], queued: [] };
-    const page = 'trail';
-    if (!census.sent.includes(page) && !census.queued.includes(page)) {
-        census.queued.push(page);
-        lsSet('viewPings', JSON.stringify(census));
+    // 'trail' = someone opened the trail at all. 'trail-tap' additionally means
+    // they got here through the five-tap secret door on the landing page
+    // (index.html sends them to /trail/#tap) — that's how we learn whether the
+    // secret is actually spreading at the table, or only by typed URL.
+    const pages = ['trail'];
+    if (window.location.hash === '#tap') pages.push('trail-tap');
+    for (const page of pages) {
+        if (!census.sent.includes(page) && !census.queued.includes(page)) {
+            census.queued.push(page);
+            lsSet('viewPings', JSON.stringify(census));
+        }
     }
     (function flush() {
         const next = census.queued[0];
@@ -1035,6 +1049,61 @@ function sendTrailScorePing(score) {
 function flushPendingScorePing() {
     const pending = lsGet('trailScorePending');
     if (pending) sendTrailScorePing(pending);
+}
+
+/**
+ * Rank-card census — mirrors sendCardPing in ../assets/js/app.js and shares its
+ * `cardPings` queue on purpose: both games hand out the SAME four physical
+ * cards, so /ping/card/<tier> counts cards to stock at the Apollo Table, not
+ * which game a scout played. One ping per tier per device; a queued card left
+ * over from a no-signal finish goes out on the next visit to either game.
+ * Anonymous (tier only, no name, no score, no choices) and disclosed on
+ * ../privacy.html — keep that page in sync if this changes.
+ */
+const CARD_TIER_PINGS = [
+    { min: 10, slug: 'mission-commander' },
+    { min: 8,  slug: 'flight-director' },
+    { min: 6,  slug: 'flight-controller' },
+    { min: 4,  slug: 'ground-crew' },
+];
+
+function readCardCensus() {
+    let census;
+    try { census = JSON.parse(lsGet('cardPings')) || {}; } catch (e) { census = {}; }
+    if (!Array.isArray(census.sent) || !Array.isArray(census.queued)) census = { sent: [], queued: [] };
+    return census;
+}
+
+function sendCardPing(correct) {
+    if (!storageWorks()) return;
+    const tier = CARD_TIER_PINGS.find((t) => correct >= t.min);
+    if (!tier) return;   // under 4 of 10 — no card, nothing to count
+    const census = readCardCensus();
+    if (!census.sent.includes(tier.slug) && !census.queued.includes(tier.slug)) {
+        census.queued.push(tier.slug);
+        lsSet('cardPings', JSON.stringify(census));
+    }
+    flushCardPings();
+}
+
+let cardFlushRunning = false;   // one drain at a time, or a tier queued from an
+                                // offline finish could go out twice on one load
+function flushCardPings() {
+    if (cardFlushRunning) return;
+    const census = readCardCensus();
+    cardFlushRunning = true;
+    (function flush() {
+        const next = census.queued[0];
+        if (!next) { cardFlushRunning = false; return; }
+        fetch('../ping/card/' + next, { cache: 'no-store' })
+            .then(() => {
+                census.queued.shift();
+                census.sent.push(next);
+                lsSet('cardPings', JSON.stringify(census));
+                flush();
+            })
+            .catch(() => { cardFlushRunning = false; }); // stays queued for a later visit
+    })();
 }
 
 /* ========================================================================
@@ -1119,6 +1188,7 @@ async function main() {
     initOfflineCache();
     initViewCensus();
     flushPendingScorePing();
+    flushCardPings();   // retry a rank card earned with no bars in the tent
     await loadSprites();
 
     await titleScreen();

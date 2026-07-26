@@ -247,6 +247,11 @@
                     .catch(() => {}); // no signal? counting is never worth blocking a scout
             }
 
+            // Rank-card census — one anonymous ping per card tier earned on this
+            // device, shared with the Apollo Trail so the table's card count covers
+            // both games (sendCardPing in assets/js/app.js; on privacy.html)
+            if (answered === total) sendCardPing(correct, '../');
+
             // Personal best across replays (written by flyAgain before clearing)
             const stored = parseInt(localStorage.getItem('bestScore') || '0', 10);
             const best = isNaN(stored) ? 0 : stored;

@@ -2,12 +2,21 @@
 
 An **Oregon Trail-style remake** of the Apollo 13 Interactive Experience — the same
 10 real NASA decisions as the classic slide mission, played as a 1985 trail game.
-Lives on branch `trail-game` as a deploy-ready **secret**: reachable only by
-typing the direct URL — `apollo13.quest/trail/` — with deliberately no links
-anywhere on the site. The only breadcrumbs are the privacy page's
-"hidden retro mini-game" disclosure and the service-worker cache a curious
-scout might inspect (both very much in the spirit of the exhibit). Share it
-by word of mouth at the Apollo Table.
+A deploy-ready **secret**: no visible link anywhere on the site. Two ways in —
+
+1. the direct URL, `apollo13.quest/trail/`
+2. the **secret door**: the landing page's mission copy carries one sentence
+   that doesn't quite belong — about deep space being "an old frontier with
+   better math," with a wagon on the **Oregon Trail** in it. Tapping those two
+   words opens the game (`initTrailhead` in `index.html` → `trail/#tap`). The
+   phrase is a bare `<span>`: no underline, no color, no cursor change, nothing
+   announced to a screen reader. The out-of-place sentence is the whole hint —
+   a curious scout pokes at the odd thing. Word of mouth at the Apollo Table
+   does the rest.
+
+The other breadcrumbs are the privacy page's "hidden retro mini-game"
+disclosure and the service-worker cache a curious scout might inspect (both
+very much in the spirit of the exhibit).
 
 Play locally (service worker not required for this page, but HTTP is):
 
@@ -42,7 +51,9 @@ Everything that counts is identical to the classic mission (see `assets/js/app.j
 - Same 10 decisions, same correct answers (`CORRECT_ANSWERS`), locked on first tap
 - Same rank thresholds and names: 10 Mission Commander 🏆 / 8–9 Flight Director ⭐ /
   6–7 Flight Controller 🎯 / 0–5 Ground Crew 📡
-- Same physical rank-card call-outs at 4+ correct (tiers 4/6/8/10)
+- Same physical rank-card call-outs at 4+ correct (tiers 4/6/8/10) — the end
+  screen shows the same boxed "show this screen at the Apollo Table" claim the
+  classic mission shows, so Ed hands out the same card either way
 - Same "Sources for Skeptics" primary-source links on the end screen
 - Decisions play in **true GET order** (slide 16's own timestamp puts comm power
   at ~GET 65, between the free-return burn and the sun check)
@@ -83,10 +94,16 @@ procedurally in `trail.js` at integer pixel positions.
   cache-first SW would otherwise freeze trail files at first-visit versions.
   **Any future trail change needs a `CACHE_VERSION` bump**, same as the slides.
 - **View census**: one anonymous `/ping/view/trail` per device, using the same
-  `viewPings` queue as the classic pages (offline pings retry later).
+  `viewPings` queue as the classic pages (offline pings retry later). Arriving
+  via the secret door (`#tap`) also queues `/ping/view/trail-tap`, so we can
+  see whether scouts are finding the hidden phrase or only typing the URL.
 - **Score census**: one anonymous `/ping/trail-completion/<score>` per new
   score per device (key `trailScorePinged`) — Cloudflare counts by path,
   exactly like the classic `/ping/completion/<score>`.
+- **Rank-card census**: `/ping/card/<tier>` on a 4+ finish, sharing the
+  `cardPings` queue with the classic mission *on purpose* — both games hand out
+  the same physical card, so the count answers "how many of each card do we
+  need on the table?" Read it all back with `../scripts/ping-census.sh`.
 - **Privacy**: both beacons are disclosed on `privacy.html` (which now also
   hints that the hidden game exists — full-transparency rule kept).
 - Before pushing: test on a real iPhone (Safari), run Lighthouse.

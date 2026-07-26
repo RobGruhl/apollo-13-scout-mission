@@ -283,6 +283,23 @@
   </div>
 
   <div class="card">
+    <h2>Rank cards earned · last 24 h</h2>
+    <p class="sub">One anonymous ping per card tier per device — <span class="mono">/ping/card/&lt;tier&gt;</span> — sent by <em>both</em> the classic mission and the Apollo Trail, because both hand out the same physical cards. This is the stock-the-table number.</p>
+    <div class="tiles" id="cards"></div>
+    <p class="row-note" id="cardsNote"></p>
+  </div>
+
+  <div class="card">
+    <h2>Missions finished · last 24 h</h2>
+    <p class="sub">Scouts who completed all 10 decisions, by game — <span class="mono">Jul 26, 2026 · 21:00–20:00 UTC</span>. Score pings are <span class="mono">/ping/completion/&lt;score&gt;</span> (classic) and <span class="mono">/ping/trail-completion/&lt;score&gt;</span> (trail), one per new score per device.</p>
+    <table>
+      <thead><tr><th>Game</th><th></th><th class="num">Finishes</th></tr></thead>
+      <tbody id="games"></tbody>
+    </table>
+    <p class="row-note">Trail reach: <span class="mono">/ping/view/trail</span> counts every device that opened the retro game; <span class="mono">/ping/view/trail-tap</span> counts the subset who found it by tapping the hidden "Oregon Trail" phrase in the landing page's mission copy rather than by typing the URL.</p>
+  </div>
+
+  <div class="card">
     <h2>Second site: walkingskeleton.org</h2>
     <p class="sub">The Walking Skeleton tutorial — production-shaped software instincts for new developers, linked from the Apollo merit-badge pages.</p>
     <div class="pills" style="margin: 0;">
@@ -298,6 +315,8 @@
       <li><strong>Verified visits ≈ how many kids.</strong> Only successful sessions from real browsers count — failed requests, secrets probes, headless browsers, and known bot user-agents are excluded by the query itself. Each QR scan at the table lands here.</li>
       <li><strong>The service worker hides repeat visits.</strong> After the first load, the whole site is cached on the phone, so a scout replaying the mission offline generates no new traffic. First visits are counted reliably; browsing depth is undercounted.</li>
       <li><strong>Unique devices is the raw number.</strong> Cloudflare computes it before filtering, so crawlers are in it. When the two disagree, trust verified visits.</li>
+      <li><strong>How many scouts total</strong> = verified visits (every QR scan lands on the landing page). <strong>How many finished</strong> = the two <span class="mono">/ping/…completion/*</span> rows above, added. <strong>How many of each victory</strong> = the four <span class="mono">/ping/card/*</span> counts — those already combine the classic mission and the Apollo Trail, since a trail winner walks up to the table for the same card.</li>
+      <li><strong>The pings are all 404s on purpose.</strong> The site is static, so there's nothing to receive them — Cloudflare counts the request path at the edge and the 404 costs the scout nothing. Every one of them is disclosed on <span class="mono">/privacy.html</span>; if you change a beacon, change that page in the same commit.</li>
       <li><strong>This page refreshes automatically</strong> from Cloudflare analytics. You can also tell Claude “refresh the telemetry dashboard” anytime for an on-demand update.</li>
     </ul>
   </div>
@@ -337,6 +356,26 @@
   const COUNTRIES = [
     { flag: "🇺🇸", name: "United States", v: 7 },
     { flag: "🇮🇪", name: "Ireland", v: 1 },
+  ];
+
+  // Rank cards + finishes. v: null means "the beacon is live, no data yet" —
+  // never fill these with guesses; read them off Cloudflare path counts.
+  // Card pings ship 2026-07-26, so counting starts then.
+  const CARDS = [
+    { emoji: "📡", name: "Ground Crew",       path: "/ping/card/ground-crew",       v: null },
+    { emoji: "🎯", name: "Flight Controller", path: "/ping/card/flight-controller", v: null },
+    { emoji: "⭐", name: "Flight Director",   path: "/ping/card/flight-director",   v: null },
+    { emoji: "🏆", name: "Mission Commander", path: "/ping/card/mission-commander", v: null },
+  ];
+  const CARDS_SINCE = "Jul 26, 2026";
+
+  // Read off Cloudflare GraphQL httpRequestsAdaptiveGroups, clientRequestPath
+  // dimension. The free plan keeps per-path detail for ~24 h and refuses time
+  // ranges wider than a day, so this is a rolling window, not a running total —
+  // during the jamboree, snapshot it at the end of each day.
+  const GAMES = [
+    { name: "Classic mission", path: "/ping/completion/*", v: 1 },        // one 9/10 finish
+    { name: "Apollo Trail (retro)", path: "/ping/trail-completion/*", v: 0 },
   ];
 
   const Y_MAX = 20; // chart y-axis top; raise as jamboree traffic grows
@@ -426,6 +465,28 @@
         <td><div class="rowlabel"><span class="name">${p.name}</span><span class="path mono">${p.path}</span></div></td>
         <td style="width:30%"><span class="pagebar" style="width:${Math.round((p.v / pmax) * 100)}%"></span></td>
         <td class="num">${p.v}</td>
+      </tr>`).join("");
+
+    const num = v => (v === null ? "—" : v);
+
+    document.getElementById("cards").innerHTML = CARDS.map(c => `
+      <div class="tile">
+        <p class="label">${c.emoji} ${c.name}</p>
+        <p class="value">${num(c.v)}</p>
+        <p class="sub mono">${c.path.replace("/ping/card/", "")}</p>
+      </div>`).join("");
+
+    const earned = CARDS.reduce((s, c) => s + (c.v || 0), 0);
+    document.getElementById("cardsNote").textContent = CARDS.every(c => c.v === null)
+      ? `Card counting began ${CARDS_SINCE} — no cards claimed yet in this snapshot.`
+      : `${earned} rank cards earned since ${CARDS_SINCE}. A scout who replays and climbs a tier earns a second card, and it is counted — that is the point.`;
+
+    const gmax = Math.max(1, ...GAMES.map(g => g.v || 0));
+    document.getElementById("games").innerHTML = GAMES.map(g => `
+      <tr>
+        <td><div class="rowlabel"><span class="name">${g.name}</span><span class="path mono">${g.path}</span></div></td>
+        <td style="width:30%"><span class="pagebar" style="width:${Math.round(((g.v || 0) / gmax) * 100)}%"></span></td>
+        <td class="num">${num(g.v)}</td>
       </tr>`).join("");
 
     const cmax = Math.max(...COUNTRIES.map(c => c.v));

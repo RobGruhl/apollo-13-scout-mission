@@ -15,7 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initQuickMode();
     initOfflineCache();
     initViewCensus();
+    flushCardPings(pingPrefix());   // retry any rank card earned while offline
 });
+
+/** Census pings live at the site root; slide/explore pages sit one level down. */
+function pingPrefix() {
+    return /\/(slides|explore)\//.test(window.location.pathname) ? '../' : '';
+}
 
 /**
  * View census: because the service worker serves pages from cache, the server
@@ -36,7 +42,7 @@ function initViewCensus() {
         census.queued.push(page);
         localStorage.setItem('viewPings', JSON.stringify(census));
     }
-    const prefix = /\/(slides|explore)\//.test(window.location.pathname) ? '../' : '';
+    const prefix = pingPrefix();
     (function flush() {
         const next = census.queued[0];
         if (!next) return;
@@ -48,6 +54,77 @@ function initViewCensus() {
                 flush();
             })
             .catch(() => {}); // no signal? counting is never worth blocking a scout
+    })();
+}
+
+/**
+ * Rank-card census: the four physical cards handed out at the Apollo Table
+ * (Ground Crew 4–5, Flight Controller 6–7, Flight Director 8–9, Mission
+ * Commander 10). When a scout earns one, that tier raises its hand once per
+ * device — an anonymous ping to /ping/card/<tier>, no name, no score, no
+ * choices. It answers Ed's actual question ("how many of each card do we need
+ * on the table?") in one number per card instead of adding up score paths.
+ *
+ * Both games send it, sharing this queue, because both hand out the SAME
+ * physical card: the Apollo Trail (trail/trail.js sendCardPing) mirrors this
+ * function. Per tier, not per finish — a scout who replays and climbs from
+ * Flight Controller to Mission Commander really does collect a second card,
+ * and that's exactly what gets counted. Disclosed on privacy.html; keep that
+ * page in sync if this changes.
+ */
+const CARD_TIERS = [
+    { min: 10, slug: 'mission-commander' },
+    { min: 8,  slug: 'flight-director' },
+    { min: 6,  slug: 'flight-controller' },
+    { min: 4,  slug: 'ground-crew' }
+];
+
+function cardTierSlug(correct) {
+    const tier = CARD_TIERS.find((t) => correct >= t.min);
+    return tier ? tier.slug : null;
+}
+
+function sendCardPing(correct, prefix) {
+    const tier = cardTierSlug(correct);
+    if (!tier) return;   // under 4 of 10 — no card, nothing to count
+    const census = readCardCensus();
+    if (!census.sent.includes(tier) && !census.queued.includes(tier)) {
+        census.queued.push(tier);
+        try { localStorage.setItem('cardPings', JSON.stringify(census)); } catch (e) { return; }
+    }
+    flushCardPings(prefix);
+}
+
+function readCardCensus() {
+    let census;
+    try { census = JSON.parse(localStorage.getItem('cardPings')) || {}; } catch (e) { census = {}; }
+    if (!Array.isArray(census.sent) || !Array.isArray(census.queued)) census = { sent: [], queued: [] };
+    return census;
+}
+
+/**
+ * Drain queued card pings — called on the completion page and on every later
+ * page load, so a card earned in airplane mode still gets counted when the
+ * scout walks back into signal (privacy.html's "pings simply wait and try
+ * again" promise).
+ */
+let cardFlushRunning = false;   // one drain at a time, or a queued tier from an
+                                // offline finish could go out twice on one load
+function flushCardPings(prefix) {
+    if (cardFlushRunning) return;
+    const census = readCardCensus();
+    cardFlushRunning = true;
+    (function flush() {
+        const next = census.queued[0];
+        if (!next) { cardFlushRunning = false; return; }
+        fetch((prefix || '') + 'ping/card/' + next, { cache: 'no-store' })
+            .then(() => {
+                census.queued.shift();
+                census.sent.push(next);
+                try { localStorage.setItem('cardPings', JSON.stringify(census)); } catch (e) { /* ignore */ }
+                flush();
+            })
+            .catch(() => { cardFlushRunning = false; }); // no bars? stays queued for next time
     })();
 }
 

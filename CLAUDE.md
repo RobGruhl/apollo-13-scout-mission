@@ -68,10 +68,14 @@ After changing any page or asset list, bump `CACHE_VERSION` in `sw.js` so return
 │   ├── js/qrcode.js       # Vendored MIT QR generator (score sharing)
 │   └── images/            # Web-optimized images (only referenced files)
 ├── trail/                 # 🥚 "Apollo Trail" — Oregon Trail-style (MECC Apple II 1985) secret remake:
-│                          #    same 10 decisions/answers/ranks, own CSS/JS/data, pixel-art sprites.
-│                          #    DIRECT URL ONLY (/trail/) — deliberately no links anywhere on the site;
-│                          #    privacy.html's "hidden retro mini-game" line is the only hint.
-│                          #    Keys: trailBestScore/trailSound/trailRun/trailScorePinged.
+│                          #    same 10 decisions/answers/ranks/rank cards, own CSS/JS/data, sprites.
+│                          #    Two ways in: the direct URL (/trail/) or the SECRET DOOR — tapping the
+│                          #    words "Oregon Trail" in the odd-one-out sentence in index.html's mission
+│                          #    copy (span.trailhead → initTrailhead → trail/#tap). Unstyled on purpose:
+│                          #    no underline, color, or cursor change — if it looks like a link the
+│                          #    secret is gone. privacy.html's "hidden retro mini-game" line and word
+│                          #    of mouth at the table are the only other hints.
+│                          #    Keys: trailBestScore/trailSound/trailRun/trailScorePinged/cardPings.
 ├── exhibit/               # The physical jamboree table: poster/card previews, QR codes
 ├── docs/                  # DEPLOYMENT_GUIDE, SITEMAP_SPECIFICATION, SCORING_SYSTEM_DESIGN
 ├── scripts/               # Verification scripts
@@ -157,7 +161,9 @@ All styles in `assets/css/style.css` (CSS variables in `:root`). Components: `.o
 - **Performance**: target <500KB/page, Lighthouse >90; spotty cell coverage is the design constraint the service worker exists for
 - **Share URLs use hash params** (`#name=...&troop=...&score=...`) parsed by `getURLParams` — keep PII light (first names)
 - **Score census beacon**: on a full 10-decision completion, slide 30 pings `/ping/completion/<score>` once per new score per device (a deliberate 404 — Cloudflare counts it by path; SW never caches it). Anonymous by design and **disclosed on privacy.html — keep that disclosure in sync if the beacon changes**
-- **Trail beacons**: the Apollo Trail easter egg counts the same two ways — `/ping/view/trail` (once per device, shared `viewPings` queue) and `/ping/trail-completion/<score>` (once per new score, key `trailScorePinged`). Also disclosed on privacy.html — same sync rule
+- **Trail beacons**: the Apollo Trail easter egg counts the same two ways — `/ping/view/trail` (once per device, shared `viewPings` queue) and `/ping/trail-completion/<score>` (once per new score, key `trailScorePinged`). Arriving through the secret door (`trail/#tap`) also queues `/ping/view/trail-tap`, so we can tell "found the hidden phrase" from "typed the URL". Also disclosed on privacy.html — same sync rule
+- **Rank-card beacon** (`/ping/card/<tier>`): `sendCardPing` in app.js, mirrored in trail.js, **shares the `cardPings` queue across both games on purpose** — both hand out the same four physical cards, so this counts *cards to stock*, not who played what. One ping per tier per device (a scout who replays and climbs really does collect a second card). Slugs: `ground-crew` / `flight-controller` / `flight-director` / `mission-commander`. Disclosed on privacy.html
+- **Reading the counts**: `./scripts/ping-census.sh` pulls all of the above from Cloudflare (needs `CLOUDFLARE_READ_TOKEN` in the gitignored `.env`) and prints scouts / finishes-by-game / cards-by-tier. Free-plan path detail only goes back ~24 h, so snapshot it each jamboree day into `docs/telemetry-dashboard.html`
 
 ---
 
@@ -182,6 +188,8 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 - [ ] Chrome + Safari iOS (real device)
 - [ ] A full decision run: lock behavior, running score, rank-card banner at 4+ (names the matching card), replay, QR renders
 - [ ] Quick Mission chains correctly and exits at completion
+- [ ] Secret door: tapping "Oregon Trail" in the mission copy opens `/trail/#tap`, and the phrase still looks like plain text (no underline/color/cursor tell)
+- [ ] A trail run at 4+ shows the boxed rank-card claim and fires `/ping/card/<tier>` (check the Network tab; the 404 is the point)
 - [ ] Offline: load index over HTTP, go airplane-mode, navigate slides
 - [ ] Lighthouse >90
 
@@ -197,4 +205,5 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 **Live Site**: https://apollo13.quest/
 **Pages**: 40 (index + timeline + privacy + 34 slides + 3 explore deep-dives) | **Decisions**: 10 (slides 4,5,6,9,11,12,13,16,17,18)
-**Rank cards**: from 4 correct (tiers 4/6/8/10) | **Ranks**: 4 tiers | **Dependencies**: zero runtime, one vendored MIT file
+**Rank cards**: from 4 correct (tiers 4/6/8/10), earned in *either* game | **Ranks**: 4 tiers | **Dependencies**: zero runtime, one vendored MIT file
+**Secret door**: tap "Oregon Trail" in the mission copy → `/trail/` | **Census**: `./scripts/ping-census.sh`
