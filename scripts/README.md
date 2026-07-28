@@ -36,10 +36,11 @@ Utility scripts for testing and verification. Both work from any clone location
   walks up for the same physical card as a classic-mission winner
 - Needs `CLOUDFLARE_READ_TOKEN` (Zone → Analytics → Read) in `.env`, which is
   gitignored — never commit it
-- Cloudflare's free plan keeps per-path detail for ~24 h and refuses wider
-  ranges, so this is a rolling window, not a running total. **Run it at the end
-  of each jamboree day** and paste the numbers into
-  `docs/telemetry-dashboard.html`
+- Cloudflare's free plan keeps per-path detail for **8 days**, but a single
+  query may span at most 24 h — so this prints one rolling window, not a
+  running total. Refresh `docs/telemetry-dashboard.html` at least weekly
+  (Claude walks the 8-day history one 24 h window at a time and sums), or
+  jamboree days fall off the back of the window
 
 ```bash
 ./scripts/ping-census.sh        # last 24 hours

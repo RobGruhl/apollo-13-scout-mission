@@ -11,9 +11,10 @@
 # Needs a Cloudflare API token with Zone → Analytics → Read in .env
 # (CLOUDFLARE_READ_TOKEN). .env is gitignored — never commit it.
 #
-# Note: on Cloudflare's free plan, per-path detail is kept for about a day and
-# the API refuses a range wider than 24 h. This is a rolling window, not a
-# running total: during the jamboree, run it at the end of each day.
+# Note: on Cloudflare's free plan, per-path detail is kept for 8 days, but a
+# single query may span at most 24 h — so this script reads one rolling window,
+# not a running total. (A running total means walking the 8-day history one
+# 24 h window at a time; that's how docs/telemetry-dashboard.html is refreshed.)
 #
 # Usage: ./scripts/ping-census.sh [hours]     (default 24, max 24)
 

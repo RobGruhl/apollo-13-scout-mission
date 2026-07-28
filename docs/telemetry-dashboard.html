@@ -219,7 +219,7 @@
   <header>
     <p class="eyebrow">Apollo 13 · apollo13.quest</p>
     <h1>Mission Telemetry</h1>
-    <p class="meta">Visitor analytics via Cloudflare edge · counting began <span class="mono">Jul 21, 2026 · 10:14 CT</span> · snapshot <span class="mono">Jul 21 · 10:48 CT</span></p>
+    <p class="meta">Visitor analytics via Cloudflare edge · counting began <span class="mono">Jul 21, 2026 · 10:14 CT</span> · snapshot <span class="mono">Jul 28 · 10:46 CT</span></p>
   </header>
 
   <div class="pills">
@@ -231,40 +231,40 @@
 
   <div class="tiles">
     <div class="tile hero">
-      <p class="label">Verified visits</p>
-      <p class="value">8</p>
-      <p class="sub">human sessions today · bots excluded</p>
+      <p class="label">Scouts reached</p>
+      <p class="value">942</p>
+      <p class="sub">unique devices since the counter shipped Jul 22</p>
     </div>
     <div class="tile">
-      <p class="label">Unique devices</p>
-      <p class="value">6</p>
-      <p class="sub">raw count · includes crawlers</p>
+      <p class="label">Missions finished</p>
+      <p class="value">397</p>
+      <p class="sub">all 10 decisions · 396 classic + 1 trail</p>
     </div>
     <div class="tile">
-      <p class="label">Countries</p>
-      <p class="value">2</p>
-      <p class="sub">US, Ireland</p>
+      <p class="label">Rank cards earned</p>
+      <p class="value">58</p>
+      <p class="sub">score 4+ · card counting began Jul 26</p>
     </div>
     <div class="tile">
-      <p class="label">Mission completions</p>
-      <p class="value">1</p>
-      <p class="sub">reached the final slide 🏆</p>
+      <p class="label">Perfect scores</p>
+      <p class="value">69</p>
+      <p class="sub">10/10 Mission Commander runs 🏆</p>
     </div>
   </div>
 
   <div class="card">
-    <h2>Verified visits by day</h2>
-    <p class="sub">Real-browser sessions only — scanners, crawlers, and headless browsers removed. The jamboree crowd will fill this chart.</p>
+    <h2>New scouts by day</h2>
+    <p class="sub">First-time devices per day via the <span class="mono">/ping/view/index</span> beacon — each phone counts once, ever, so this is arrivals, not traffic. The beacon shipped the evening of Jul 22; the jamboree opened Jul 23. Jul 28 is a partial day (snapshot at 10:46 CT).</p>
     <div class="chart-box" id="chartbox">
-      <svg id="chart" viewBox="0 0 960 240" role="img" aria-label="Bar chart of verified visits per day. Telemetry began July 21 with 8 verified visits; earlier days have no data."></svg>
+      <svg id="chart" viewBox="0 0 960 240" role="img" aria-label="Bar chart of new scout devices per day. July 23: 574. July 24: 98. July 25: 101. July 26: 16. July 27: 122. July 28 so far: 31. Days before July 23 predate the counter."></svg>
       <div class="tooltip" id="tip"></div>
     </div>
   </div>
 
   <div class="cols">
     <div class="card">
-      <h2>Pages visited</h2>
-      <p class="sub">Successful page loads today — how far into the mission people got.</p>
+      <h2>Pages visited · last 24 h</h2>
+      <p class="sub">Successful page loads — how far into the mission people got.</p>
       <table>
         <thead><tr><th>Page</th><th></th><th class="num">Loads</th></tr></thead>
         <tbody id="pages"></tbody>
@@ -272,113 +272,140 @@
       <p class="row-note">Repeat navigation is cached on-device by the service worker, so these counts skew toward first visits.</p>
     </div>
     <div class="card">
-      <h2>Where verified visits came from</h2>
-      <p class="sub">Sessions by country, today — bot-filtered.</p>
+      <h2>Where visits came from · last 24 h</h2>
+      <p class="sub">Cloudflare's bot-filtered visit metric, by country.</p>
       <table>
         <thead><tr><th>Country</th><th></th><th class="num">Visits</th></tr></thead>
         <tbody id="countries"></tbody>
       </table>
-      <p class="row-note">Filtered out today: a Poland-based scanner probing for <span class="mono">/.env</span> secrets files (26 requests, all 404 — the site is static and hosts no secrets), a headless-browser speed-test crawl (41 requests), and assorted Go-language bots from the US, Belgium, and Malaysia. Only real-browser sessions count above.</p>
+      <p class="row-note">Filtered out: a Switzerland-based crawler (147 requests, zero real visits) and assorted bot fetches from SE, GB, and AE. The US number is the jamboree.</p>
     </div>
   </div>
 
   <div class="card">
-    <h2>Rank cards earned · last 24 h</h2>
+    <h2>Rank cards earned · since Jul 26</h2>
     <p class="sub">One anonymous ping per card tier per device — <span class="mono">/ping/card/&lt;tier&gt;</span> — sent by <em>both</em> the classic mission and the Apollo Trail, because both hand out the same physical cards. This is the stock-the-table number.</p>
     <div class="tiles" id="cards"></div>
     <p class="row-note" id="cardsNote"></p>
   </div>
 
   <div class="card">
-    <h2>Missions finished · last 24 h</h2>
-    <p class="sub">Scouts who completed all 10 decisions, by game — <span class="mono">Jul 26, 2026 · 21:00–20:00 UTC</span>. Score pings are <span class="mono">/ping/completion/&lt;score&gt;</span> (classic) and <span class="mono">/ping/trail-completion/&lt;score&gt;</span> (trail), one per new score per device.</p>
+    <h2>Missions finished · since Jul 21</h2>
+    <p class="sub">Scouts who completed all 10 decisions, by game and by score. Score pings are <span class="mono">/ping/completion/&lt;score&gt;</span> (classic) and <span class="mono">/ping/trail-completion/&lt;score&gt;</span> (trail), one per new score per device.</p>
     <table>
       <thead><tr><th>Game</th><th></th><th class="num">Finishes</th></tr></thead>
       <tbody id="games"></tbody>
     </table>
-    <p class="row-note">Trail reach: <span class="mono">/ping/view/trail</span> counts every device that opened the retro game; <span class="mono">/ping/view/trail-tap</span> counts the subset who found it by tapping the hidden "Oregon Trail" phrase in the landing page's mission copy rather than by typing the URL.</p>
+    <table style="margin-top: 18px;">
+      <thead><tr><th>Score</th><th></th><th class="num">Scouts</th></tr></thead>
+      <tbody id="scores"></tbody>
+    </table>
+    <p class="row-note">Generous hints are working as designed: 59% of finishers scored 8 or better. Trail reach so far: <span class="mono">/ping/view/trail</span> counts 3 devices that opened the retro game, and <span class="mono">/ping/view/trail-tap</span> says just 1 found it by tapping the hidden "Oregon Trail" phrase — the secret is holding.</p>
   </div>
 
   <div class="card">
     <h2>Second site: walkingskeleton.org</h2>
     <p class="sub">The Walking Skeleton tutorial — production-shaped software instincts for new developers, linked from the Apollo merit-badge pages.</p>
-    <div class="pills" style="margin: 0;">
+    <div class="pills" style="margin: 0 0 10px;">
       <span class="pill"><span class="dot"></span>Domain <strong>Live</strong></span>
       <span class="pill"><span class="dot"></span>GitHub Pages <strong>Serving</strong></span>
-      <span class="pill" style="opacity: 0.65;"><span class="dot" style="background: var(--muted);"></span>Analytics — pending Cloudflare zone setup</span>
+      <span class="pill"><span class="dot"></span>Cloudflare analytics <strong>Active</strong></span>
     </div>
+    <p class="row-note">806 page views Jul 21–28, from 49 to 175 per day. Raw Cloudflare numbers — the site has no beacons, so crawlers are included.</p>
   </div>
 
   <div class="card notes">
     <h2>Reading the numbers</h2>
     <ul>
-      <li><strong>Verified visits ≈ how many kids.</strong> Only successful sessions from real browsers count — failed requests, secrets probes, headless browsers, and known bot user-agents are excluded by the query itself. Each QR scan at the table lands here.</li>
+      <li><strong>Scouts reached ≈ how many kids.</strong> The <span class="mono">/ping/view/index</span> beacon fires once per device, ever — it needs JavaScript, so crawlers don't trip it, and the service worker never caches it. Each QR scan at the table lands here exactly once.</li>
       <li><strong>The service worker hides repeat visits.</strong> After the first load, the whole site is cached on the phone, so a scout replaying the mission offline generates no new traffic. First visits are counted reliably; browsing depth is undercounted.</li>
-      <li><strong>Unique devices is the raw number.</strong> Cloudflare computes it before filtering, so crawlers are in it. When the two disagree, trust verified visits.</li>
-      <li><strong>How many scouts total</strong> = verified visits (every QR scan lands on the landing page). <strong>How many finished</strong> = the two <span class="mono">/ping/…completion/*</span> rows above, added. <strong>How many of each victory</strong> = the four <span class="mono">/ping/card/*</span> counts — those already combine the classic mission and the Apollo Trail, since a trail winner walks up to the table for the same card.</li>
+      <li><strong>How many finished</strong> = the two <span class="mono">/ping/…completion/*</span> rows above, added. <strong>How many of each victory</strong> = the four <span class="mono">/ping/card/*</span> counts — those already combine the classic mission and the Apollo Trail, since a trail winner walks up to the table for the same card.</li>
       <li><strong>The pings are all 404s on purpose.</strong> The site is static, so there's nothing to receive them — Cloudflare counts the request path at the edge and the 404 costs the scout nothing. Every one of them is disclosed on <span class="mono">/privacy.html</span>; if you change a beacon, change that page in the same commit.</li>
-      <li><strong>This page refreshes automatically</strong> from Cloudflare analytics. You can also tell Claude “refresh the telemetry dashboard” anytime for an on-demand update.</li>
+      <li><strong>This page is a snapshot, not a live view.</strong> The numbers are baked into the HTML — a static page can't hold the Cloudflare API token, so it can never refresh itself in the browser. The <strong>auto-refreshing dashboard</strong> lives at <a href="https://robgruhl.github.io/apollo-telemetry/">robgruhl.github.io/apollo-telemetry</a> (separate repo, GitHub Actions + laptop dispatch, ~every 15–30 min). To refresh <em>this</em> snapshot, tell Claude "refresh the telemetry dashboard" or run <span class="mono">./scripts/ping-census.sh</span>. Cloudflare's free plan keeps per-path detail for <strong>8 days</strong> (queried one 24-h window at a time), so refresh at least weekly or the daily series loses its tail.</li>
     </ul>
   </div>
 
   <footer>
     <span>Apollo 13 Interactive Experience · 2026 Elevate Scout Jamboree · NASA Tent, Apollo Table</span>
-    <span class="mono">SNAPSHOT 2026-07-21T15:48Z</span>
+    <span class="mono">SNAPSHOT 2026-07-28T15:46Z</span>
   </footer>
 </div>
 
 <script>
   // ===== DATA (baked at refresh time — update these consts + the tile values,
   // snapshot timestamps, and country note above when regenerating) =====
+  // New scout devices per CT day (/ping/view/index, one ping per device ever).
+  // null = the beacon didn't exist yet (it shipped Jul 22, 8:59 pm CT).
   const DAYS = [
-    { d: "Jul 15", v: null },
-    { d: "Jul 16", v: null },
-    { d: "Jul 17", v: null },
-    { d: "Jul 18", v: null },
-    { d: "Jul 19", v: null },
-    { d: "Jul 20", v: null },
-    { d: "Jul 21", v: 8 },
+    { d: "Jul 21", v: null },
+    { d: "Jul 22", v: null },
+    { d: "Jul 23", v: 574 },
+    { d: "Jul 24", v: 98 },
+    { d: "Jul 25", v: 101 },
+    { d: "Jul 26", v: 16 },
+    { d: "Jul 27", v: 122 },
+    { d: "Jul 28", v: 31 },   // partial day — snapshot 10:46 CT
   ];
 
   const PAGES = [
-    { name: "Landing page", path: "/", v: 8 },
-    { name: "Computer restart", path: "/slides/19", v: 8 },
-    { name: "Merit badges hub", path: "/slides/31", v: 8 },
-    { name: "Space Exploration badge", path: "/slides/34", v: 6 },
-    { name: "Lifeboat Moon", path: "/slides/10", v: 4 },
-    { name: "Meet the presenter", path: "/slides/29", v: 4 },
-    { name: "Programming badge", path: "/slides/32", v: 4 },
-    { name: "Decision 7 · CO₂ mailbox", path: "/slides/13", v: 3 },
-    { name: "Decision 2 · Power conservation", path: "/slides/05", v: 2 },
-    { name: "Mission complete 🏆", path: "/slides/30", v: 1 },
+    { name: "Landing page", path: "/", v: 198 },
+    { name: "Meet the crew", path: "/slides/08", v: 163 },
+    { name: "Meet the presenter", path: "/slides/29", v: 162 },
+    { name: "Computer restart", path: "/slides/19", v: 160 },
+    { name: "Mission Control Today", path: "/spacex.html", v: 154 },
+    { name: "Decision 5 · PC+2 burn", path: "/slides/11", v: 143 },
+    { name: "Decision 1 · Freeze or squeeze", path: "/slides/04", v: 139 },
+    { name: "Decision 6 · Water conservation", path: "/slides/12", v: 138 },
+    { name: "Space Exploration badge", path: "/slides/34", v: 135 },
+    { name: "Spacecraft tour", path: "/slides/02", v: 134 },
   ];
 
   const COUNTRIES = [
-    { flag: "🇺🇸", name: "United States", v: 7 },
-    { flag: "🇮🇪", name: "Ireland", v: 1 },
+    { flag: "🇺🇸", name: "United States", v: 153 },
+    { flag: "🇩🇪", name: "Germany", v: 5 },
+    { flag: "🇯🇵", name: "Japan", v: 5 },
+    { flag: "🇸🇬", name: "Singapore", v: 5 },
+    { flag: "🇨🇳", name: "China", v: 3 },
+    { flag: "🇫🇷", name: "France", v: 3 },
+    { flag: "🇰🇷", name: "South Korea", v: 2 },
+    { flag: "🇳🇱", name: "Netherlands", v: 2 },
   ];
 
-  // Rank cards + finishes. v: null means "the beacon is live, no data yet" —
-  // never fill these with guesses; read them off Cloudflare path counts.
-  // Card pings ship 2026-07-26, so counting starts then.
+  // Rank cards, cumulative since the beacon shipped. v: null means "the beacon
+  // is live, no data yet" — never fill these with guesses; read them off
+  // Cloudflare path counts. Card pings ship 2026-07-26, so counting starts then.
   const CARDS = [
-    { emoji: "📡", name: "Ground Crew",       path: "/ping/card/ground-crew",       v: null },
-    { emoji: "🎯", name: "Flight Controller", path: "/ping/card/flight-controller", v: null },
-    { emoji: "⭐", name: "Flight Director",   path: "/ping/card/flight-director",   v: null },
-    { emoji: "🏆", name: "Mission Commander", path: "/ping/card/mission-commander", v: null },
+    { emoji: "📡", name: "Ground Crew",       path: "/ping/card/ground-crew",       v: 2 },
+    { emoji: "🎯", name: "Flight Controller", path: "/ping/card/flight-controller", v: 20 },
+    { emoji: "⭐", name: "Flight Director",   path: "/ping/card/flight-director",   v: 26 },
+    { emoji: "🏆", name: "Mission Commander", path: "/ping/card/mission-commander", v: 10 },
   ];
   const CARDS_SINCE = "Jul 26, 2026";
 
   // Read off Cloudflare GraphQL httpRequestsAdaptiveGroups, clientRequestPath
-  // dimension. The free plan keeps per-path detail for ~24 h and refuses time
-  // ranges wider than a day, so this is a rolling window, not a running total —
-  // during the jamboree, snapshot it at the end of each day.
+  // dimension. The free plan keeps per-path detail for 8 days but a single
+  // query may span at most 24 h — the refresh walks one CT day at a time and
+  // sums, so these are running totals since Jul 21. Refresh at least weekly
+  // or days fall off the back of the 8-day window.
   const GAMES = [
-    { name: "Classic mission", path: "/ping/completion/*", v: 1 },        // one 9/10 finish
-    { name: "Apollo Trail (retro)", path: "/ping/trail-completion/*", v: 0 },
+    { name: "Classic mission", path: "/ping/completion/*", v: 396 },
+    { name: "Apollo Trail (retro)", path: "/ping/trail-completion/*", v: 1 },
   ];
 
-  const Y_MAX = 20; // chart y-axis top; raise as jamboree traffic grows
+  // Both games, cumulative. Tier emoji matches the rank earned at that score.
+  const SCORES = [
+    { s: "10/10 🏆", v: 69 },
+    { s: "9/10 ⭐", v: 78 },
+    { s: "8/10 ⭐", v: 87 },
+    { s: "7/10 🎯", v: 66 },
+    { s: "6/10 🎯", v: 50 },
+    { s: "5/10 📡", v: 34 },
+    { s: "4/10 📡", v: 9 },
+    { s: "3/10 📡", v: 2 },
+    { s: "2/10 📡", v: 1 },
+  ];
+
+  const Y_MAX = 600; // chart y-axis top; sized to the Jul 23 opening-day spike
 
   // ---- daily bar chart ----
   (function () {
@@ -444,8 +471,8 @@
       const rect = box.getBoundingClientRect();
       const scale = rect.width / W;
       tip.innerHTML = day.v === null
-        ? `${day.d}, 2026<br>Before telemetry began`
-        : `${day.d}, 2026<br><span class="t-val">${day.v} verified visits</span>`;
+        ? `${day.d}, 2026<br>Before the scout counter shipped`
+        : `${day.d}, 2026<br><span class="t-val">${day.v} new scouts</span>`;
       tip.style.left = (cx * scale) + "px";
       tip.style.top = (padT * scale + 38) + "px";
       tip.classList.add("on");
@@ -487,6 +514,14 @@
         <td><div class="rowlabel"><span class="name">${g.name}</span><span class="path mono">${g.path}</span></div></td>
         <td style="width:30%"><span class="pagebar" style="width:${Math.round(((g.v || 0) / gmax) * 100)}%"></span></td>
         <td class="num">${num(g.v)}</td>
+      </tr>`).join("");
+
+    const smax = Math.max(...SCORES.map(s => s.v));
+    document.getElementById("scores").innerHTML = SCORES.map(s => `
+      <tr>
+        <td>${s.s}</td>
+        <td style="width:34%"><span class="pagebar" style="width:${Math.round((s.v / smax) * 100)}%"></span></td>
+        <td class="num">${s.v}</td>
       </tr>`).join("");
 
     const cmax = Math.max(...COUNTRIES.map(c => c.v));
