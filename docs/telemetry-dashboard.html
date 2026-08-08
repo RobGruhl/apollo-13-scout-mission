@@ -219,7 +219,7 @@
   <header>
     <p class="eyebrow">Apollo 13 · apollo13.quest</p>
     <h1>Mission Telemetry — the whole arc</h1>
-    <p class="meta">Visitor analytics via Cloudflare edge · counting began <span class="mono">Jul 21, 2026 · 10:14 CT</span> · jamboree opened Jul 23 · full-arc snapshot <span class="mono">Aug 8 · 13:40 CT</span></p>
+    <p class="meta">Visitor analytics via Cloudflare edge · counting began <span class="mono">Jul 21, 2026 · 10:14 CT</span> · jamboree ran Jul 22–31 · full-arc snapshot <span class="mono">Aug 8 · 13:40 CT</span></p>
   </header>
 
   <div class="pills">
@@ -256,20 +256,20 @@
     <h2>Mobile visits by day · Jul 21 – Aug 8</h2>
     <p class="sub">Cloudflare's bot-filtered mobile visit metric, per CT day. Hover a bar for that day's finished missions. The service worker caches the whole site on first load, so replays are invisible — this chart undercounts enthusiasm, never inflates it.</p>
     <div class="chart-box" id="chartbox">
-      <svg id="chart" viewBox="0 0 960 240" role="img" aria-label="Bar chart of mobile visits per day, July 21 through August 8. Opening day July 23 peaked at 639 visits with 213 finished missions. A second wave July 29, after scouts got home, reached 243 visits and 111 finishes. August tapers to single digits."></svg>
+      <svg id="chart" viewBox="0 0 960 240" role="img" aria-label="Bar chart of mobile visits per day, July 21 through August 8. Opening day July 23 peaked at 639 visits with 213 finished missions. A second surge on July 29, a day-visitor day late in the jamboree, reached 243 visits and 111 finishes. After the jamboree ended July 31, August tapers to single digits."></svg>
       <div class="tooltip" id="tip"></div>
     </div>
   </div>
 
   <div class="cols">
     <div class="card">
-      <h2>The three waves</h2>
-      <p class="sub">The arc in three acts: the jamboree itself, the homecoming wave when the QR code traveled home in scouts' pockets, and the long tail.</p>
+      <h2>The three acts</h2>
+      <p class="sub">The 2026 Elevate Jamboree ran Jul 22–31 at the Summit Bechtel Reserve — opening show Jul 23, closing show Jul 30. The arc: opening week, the packed final stretch, and the quiet after everyone went home.</p>
       <table>
         <thead><tr><th>Phase</th><th class="num">Visits</th><th class="num">Finishes</th></tr></thead>
         <tbody id="waves"></tbody>
       </table>
-      <p class="row-note">The homecoming wave is the surprise: Jul 29 alone saw 243 visits and 111 finished missions — scouts got home and put the mission in front of siblings and friends. A third of all completed missions happened after the jamboree ended.</p>
+      <p class="row-note">The second surge was still jamboree traffic: Jul 29 — a day-visitor-pass day, the eve of the closing show — saw 243 visits and 111 finished missions. Once scouts headed home Jul 31, traffic fell to a trickle: all but one of the 575 finished missions happened during jamboree days.</p>
     </div>
     <div class="card">
       <h2>Rank tiers earned · full run</h2>
@@ -351,9 +351,9 @@
   ];
 
   const WAVES = [
-    { name: "Jamboree week", span: "Jul 21–27", v: 1302, f: 377 },
-    { name: "Homecoming wave", span: "Jul 28–31", v: 482, f: 197 },
-    { name: "The long tail", span: "Aug 1–8", v: 130, f: 1 },
+    { name: "Opening week", span: "Jul 21–27 · site live Jul 21, scouts arrive Jul 22", v: 1302, f: 377 },
+    { name: "Final stretch", span: "Jul 28–31 · visitor days + closing show", v: 482, f: 197 },
+    { name: "After the jamboree", span: "Aug 1–8", v: 130, f: 1 },
   ];
 
   // Rank tiers derived from the complete score census (classic mission only —
